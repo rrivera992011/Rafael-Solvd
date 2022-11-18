@@ -60,7 +60,7 @@ class Main {
 
 	int size = args.length; // Get the size of the array
 	
-	int [] data = new int[size]; // New array to get the information from the 
+	int [] data = new int[size]; // New array to get the information from the args
 	
 	for(int i=0; i<size; i++) {
          data[i] = Integer.parseInt(args[i]);
