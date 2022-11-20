@@ -1,10 +1,10 @@
 Location A information - pricing, address of both locations, ETA 
 Drive from facility to location A - Driver, route, car status
 Location A check - Check if package is outside, Bar code scan
-Drive from location A to facility - Driver, route, car status, package status
+Drive from location A to facility - Driver, route, car status, package status, weight
 Arrival to facility - check for package, package drop-off
 Facility - package weight, transfer to new vehicle
-Drive from location B to facility - Driver, route, car status, package status
+Drive from location B to facility - Driver, route, car status, package status, weight
 Location B status - Confirm address, date, time 
 Drop-off - Bar code scan, confirm drop-off
 End - confirm package delivery and return to facility
