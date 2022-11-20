@@ -1,5 +1,4 @@
-import java.util.Random;
-import java.util.Scanner; // Import scanner class
+import java.util.*;
 
 public class Main {
 
@@ -8,6 +7,8 @@ public class Main {
     static FacilityToA facToA = new FacilityToA();
     static LocationACheck locA = new LocationACheck();
     static LocationACheck facility = new LocationACheck();
+
+    static LocAToFacility transferData1 = new LocAToFacility();
 
     public static void main(String[] args) {
 
@@ -77,6 +78,8 @@ public class Main {
 
         locationACheck(barCode);
         locAToFacility();
+        checkForPackage();
+
 
 
     }
@@ -125,10 +128,8 @@ public class Main {
         facility.setBarCode(facilityBar);
         locA.setBarCode(barCodeSpotted);
 
-        // LinkedHashSet<LocationACheck> compareBar = new LinkedHashSet<>();
-        // compareBar.add(new LocationACheck(delivery.getName1(),locA.getBarCode()));
         // If bar codes aren't equal, return to the facility and exit the program
-        if (!locA.equals(facility)){
+        if ( facility.getBarCode() != locA.getBarCode() ){
             System.out.println("No package. Return to the facility");
             System.exit(0);
         }
@@ -139,9 +140,31 @@ public class Main {
 
     public static void locAToFacility() {
 
-        System.out.println("Mapped route from " + delivery.getAddress1() + " to facility");
+        System.out.println("\nMapped route from " + delivery.getAddress1() + " to facility");
+        // Weigh the package and send it to the facility
         System.out.println("Insert the weight of the package in pounds");
         int packageWeight = myObj.nextInt();
+        transferData1.setWeigh(packageWeight);
+
+        System.out.println("The package weighs " + packageWeight + " pounds.");
+        System.out.println("Sending to the facility now");
+
+    }
+
+    public static void checkForPackage(){
+        System.out.println("\nYou have arrived to the facility");
+        int weightFromA = transferData1.getWeigh();
+        System.out.print("What is the weight now?");
+        int currentWeight = myObj.nextInt();
+
+        CheckForPackage fromLocation = new CheckForPackage(delivery.getName1() ,weightFromA);
+        CheckForPackage fromFacility = new CheckForPackage(facToA.getDriverFirstA(),currentWeight);
+
+        Set<CheckForPackage> weightSet= new HashSet<>();
+        weightSet.add(fromLocation);
+        weightSet.add(fromFacility);
+
+
 
     }
 }
