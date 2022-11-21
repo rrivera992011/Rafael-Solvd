@@ -12,10 +12,4 @@ class LocationACheck {
     public int getBarCode () {
         return this.barCode;
     }
-
-    /*@Override
-    public boolean equals(Object obj) {
-        LocationACheck bar = (LocationACheck) obj;
-        return (this.getBarCode() == bar.getBarCode());
-    }*/
 }
