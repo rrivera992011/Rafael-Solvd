@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57df26db-d0a8-4220-b650-a828d5c22555" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CheckForPackageFac.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ConfirmDelivery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FacilityCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FacilityToB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LocationBCheck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PrepareReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PriceDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Delivery/CheckForPackage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Delivery/LocAToFacility.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Delivery/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Delivery/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CheckForPackage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocAToFacility.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocationACheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocationACheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
