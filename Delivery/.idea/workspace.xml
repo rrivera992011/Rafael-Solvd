@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57df26db-d0a8-4220-b650-a828d5c22555" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Delivery Classes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/out/production/Interfaces/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/out/production/Interfaces/People.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/Box.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/Driver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/Envelope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/Insurance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/PackageType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/People.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/PressureWeight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/Shipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Interfaces/src/TotalPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interfaces/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Interfaces/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Interfaces/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Interfaces/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +53,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/rrive/OneDrive/Desktop/ClassExample&quot;
+    &quot;last_opened_file_path&quot;: &quot;D:/SolvdDev/Notes/SolvdHomeworks/Delivery&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
