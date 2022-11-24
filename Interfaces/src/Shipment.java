@@ -45,10 +45,10 @@ class Shipment {
         return ("\nName of sender: " + sender.getName() +
                 "\nAddress of sender: " + sender.getAddress() +
                 "\nPhone number: " + sender.getPhoneNumber() +
-                "\nName of recipient: " + recipient.getName() +
+                "\n\nName of recipient: " + recipient.getName() +
                 "\nAddress of sender: " + recipient.getAddress() +
                 "\nPhone number: " + recipient.getPhoneNumber() +
-                "\nInsurance number: " + insurance.getInsuranceNumber() +
-                "\nETA: " + price.getDays() + " Day(s)");
+                "\n\nInsurance number: " + insurance.getInsuranceNumber() +
+                "\n\nETA: " + price.getDays() + " Day(s)");
     }
 }

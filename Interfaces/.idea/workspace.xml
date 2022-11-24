@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca076e5-d79a-4031-9d97-ccf787f341e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Delivery/Delivery Classes.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Interfaces/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Interfaces/People.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Box.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Driver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Envelope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Insurance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PackageType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/People.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PressureWeight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TotalPrice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Delivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Delivery/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,14 +35,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SolvdDev/Notes/SolvdHomeworks/Delivery&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/SolvdDev/Notes/SolvdHomeworks/Interfaces",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
