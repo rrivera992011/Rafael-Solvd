@@ -1,4 +1,4 @@
-class SurveyAnswers implements Survey{
+class SurveyAnswers implements ISurvey{
     private int serviceNum;
     private int efficiencyNum;
     private int staffNum;

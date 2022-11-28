@@ -3,8 +3,8 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 public class Main {
 
-    static People sender = new People();
-    static People recipient = new People();
+    static Person sender = new Person();
+    static Person recipient = new Person();
 
     public static void main(String[] args) {
         Scanner myObj = new Scanner(System.in);
@@ -39,7 +39,8 @@ public class Main {
         System.out.println("1. Enter the sender");
         System.out.println("2. Enter the recipient");
         System.out.println("3. Send a package");
-        System.out.println("4. Buy stamps");
+        System.out.println("4. Only buy stamps");
+        System.out.println("5. File a complaint");
         System.out.println("0. Exit the program");
 
     }
@@ -68,6 +69,9 @@ public class Main {
                 break;
             case 4:
                 buyStamps();
+                break;
+            case 5:
+                submitComplaint();
                 break;
             default:
                 System.out.println("Please choose one of these options\n");
@@ -377,7 +381,7 @@ public class Main {
         // Int number for all the stamps
         System.out.println("\nHow many stamps do you want on the envelope?");
         int stampNum = myObj.nextInt();
-        envelope.setNumOfStamps(stampNum);
+        envelope.getStamps().setStampNum(stampNum);
 
         return envelope;
 
@@ -439,7 +443,7 @@ public class Main {
                 break;
             case "Envelope":
                 Envelope envelope = (Envelope) boxOrLetter;
-                System.out.println("It needs " + envelope.getNumOfStamps() + " stamps");
+                System.out.println("It needs " + envelope.getStamps().getStampNum() + " stamps");
                 break;
             default:
                 System.out.println("This is nothing");
@@ -467,12 +471,12 @@ public class Main {
             System.out.println("\nThe correct package is found.");
             System.out.println("ETA is " + shipment.getPrice().getDays() + " day(s) until delivery");
             System.out.println("Entering in vehicle now");
-            vehicleChoice(boxOrLetter, driver, shipment);
+            vehicleChoice(boxOrLetter, shipment);
         }
 
     }
 
-    public static void vehicleChoice(PackageType boxOrLetter, Driver driver, Shipment shipment) {
+    public static void vehicleChoice(PackageType boxOrLetter, Shipment shipment) {
         Scanner myObj = new Scanner(System.in);
         System.out.println("\nWhat vehicle do you want to use? A car or an plane?");
         String choice = myObj.nextLine().toUpperCase();
@@ -493,7 +497,7 @@ public class Main {
                 Car car = new Car();
                 car.setVehicleName("Car");
                 car.setTruckNumber(carOrPlaneNum);
-                vehicleOutput(boxOrLetter, driver, shipment, car);
+                vehicleOutput(boxOrLetter, shipment, car);
                 break;
             case "PLANE":
                 System.out.println("\nYou have chosen an airplane");
@@ -503,16 +507,16 @@ public class Main {
                 Plane plane = new Plane();
                 plane.setVehicleName("Plane");
                 plane.setPlaneNumber(carOrPlaneNum);
-                vehicleOutput(boxOrLetter, driver, shipment, plane);
+                vehicleOutput(boxOrLetter, shipment, plane);
                 break;
             default:
                 System.out.println("\nPlease choose something else");
-                vehicleChoice(boxOrLetter, driver, shipment);
+                vehicleChoice(boxOrLetter, shipment);
                 break;
         }
     }
 
-    public static void vehicleOutput(PackageType boxOrLetter, Driver driver, Shipment shipment, Vehicle carOrPlane) {
+    public static void vehicleOutput(PackageType boxOrLetter, Shipment shipment, IVehicle carOrPlane) {
 
         // Equalize the plane or car object for correct output
         if(carOrPlane.getVehicleName().equals("Car")) {
@@ -687,5 +691,143 @@ public class Main {
                 membership2();
         }
 
+    }
+
+    public static void submitComplaint(){
+        // Use scanner for the user to input their name and type of complaint
+        Scanner myObj = new Scanner(System.in);
+
+        System.out.println("\nWhat is your name?");
+        String complaintName = myObj.nextLine();
+
+        System.out.println("\nWhat type of complaint is it?");
+        System.out.println("1. Issue with a package");
+        System.out.println("2. An employee experience");
+        System.out.println("3. Other");
+        System.out.println("0. Exit");
+
+        int complaintType = myObj.nextInt();
+
+        Random r = new Random();
+        int low = 1;
+        int high = 999999;
+        int complaintNumber = r.nextInt(high-low) + low;
+
+        switch (complaintType){
+            case 1:
+                PackageComplaint packageComplaint = new PackageComplaint();
+                packageComplaint.setComplaintName(complaintName);
+                packageComplaint.setComplaintNumber(complaintNumber);
+                packageComplaint.setBaseComplaintType("Package");
+                complaintOfPackage(packageComplaint);
+                break;
+            case 2:
+                EmployeeComplaint employeeComplaint = new EmployeeComplaint();
+                employeeComplaint.setComplaintName(complaintName);
+                employeeComplaint.setComplaintNumber(complaintNumber);
+                employeeComplaint.setBaseComplaintType("Employee");
+                complaintOfEmployee(employeeComplaint);
+                break;
+            case 3:
+                OtherComplaint otherComplaint = new OtherComplaint();
+                otherComplaint.setComplaintName(complaintName);
+                otherComplaint.setComplaintNumber(complaintNumber);
+                otherComplaint.setBaseComplaintType("Other");
+                complaintOfOther(otherComplaint);
+                break;
+            case 0:
+                System.out.println("\nThank you for your assistance. Goodbye");
+                System.exit(0);
+                break;
+        }
+
+    }
+
+    public static void complaintOfPackage(PackageComplaint packageComplaint) {
+        Scanner myObj = new Scanner(System.in);
+        Scanner myObj2 = new Scanner(System.in);
+
+        // Have the user set the number of the package and the complaint
+        System.out.println("\nWhat is the number of your package?");
+        int numberOfPackage = myObj.nextInt();
+        packageComplaint.setPackageNumber(numberOfPackage);
+
+        System.out.println("\nWhat is your complaint?");
+        String complaint = myObj2.nextLine();
+        packageComplaint.setComplaint(complaint);
+
+        System.out.println("\nYour information:");
+        System.out.println("Name: " + packageComplaint.getComplaintName());
+        System.out.println("Complaint Number: " + packageComplaint.getComplaintNumber());
+        System.out.println("Complaint Type: " + packageComplaint.getBaseComplaintType());
+        System.out.println("Number of Package: " + packageComplaint.getPackageNumber());
+        System.out.println("Complaint: " + packageComplaint.getComplaint());
+
+        complaintCheck();
+
+    }
+
+    public static void complaintOfEmployee(EmployeeComplaint employeeComplaint) {
+
+        Scanner myObj = new Scanner(System.in);
+
+        // Have the user set the name of the employee and the complaint
+        System.out.println("\nWhat is the name of the employee who served you?");
+        String employee = myObj.nextLine();
+        employeeComplaint.setEmployeeName(employee);
+        System.out.println("\nWhat is your complaint?");
+        String complaint = myObj.nextLine();
+        employeeComplaint.setComplaint(complaint);
+
+        System.out.println("\nYour information:");
+        System.out.println("Name: " + employeeComplaint.getComplaintName());
+        System.out.println("Complaint Number: " + employeeComplaint.getComplaintNumber());
+        System.out.println("Complaint Type: " + employeeComplaint.getBaseComplaintType());
+        System.out.println("Name of Employee: " + employeeComplaint.getEmployeeName());
+        System.out.println("Complaint: " + employeeComplaint.getComplaint());
+
+        complaintCheck();
+
+    }
+
+    public static void complaintOfOther(OtherComplaint otherComplaint) {
+
+        Scanner myObj = new Scanner(System.in);
+
+        // Have the user set the name of the employee and the complaint
+        System.out.println("\nWhat is the name of the employee who served you?");
+        String typeOfComplaint = myObj.nextLine();
+        otherComplaint.setOtherComplaintType(typeOfComplaint);
+        System.out.println("\nWhat is your complaint?");
+        String complaint = myObj.nextLine();
+        otherComplaint.setComplaint(complaint);
+
+        System.out.println("\nYour information:");
+        System.out.println("Name: " + otherComplaint.getComplaintName());
+        System.out.println("Complaint Number: " + otherComplaint.getComplaintNumber());
+        System.out.println("Complaint Type: " + otherComplaint.getBaseComplaintType());
+        System.out.println("Type of Complaint: " + otherComplaint.getOtherComplaintType());
+        System.out.println("Complaint: " + otherComplaint.getComplaint());
+
+        complaintCheck();
+
+
+    }
+    public static void complaintCheck() {
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("\nIs this correct? Yes or No? (Not case sensitive)");
+        String choice = myObj.nextLine().toUpperCase();
+
+        switch (choice){
+            case "YES":
+                System.out.println("\nThank you for your assistance. Goodbye");
+                System.exit(0);
+            case "NO":
+                System.out.println("\nPlease enter your information again");
+                submitComplaint();
+            default:
+                System.out.println("\nPlease pick Yes or No");
+                complaintCheck();
+        }
     }
 }

@@ -1,12 +1,12 @@
 class Envelope extends PackageType {
-    private int numOfStamps;
+    private StampTotal stamps;
 
-    public void setNumOfStamps(int numOfStamps) {
-        this.numOfStamps = numOfStamps;
+    public void setStamps(StampTotal stamps) {
+        this.stamps = stamps;
     }
 
-    public int getNumOfStamps() {
-        return this.numOfStamps;
+    public StampTotal getStamps() {
+        return stamps;
     }
 
     @Override

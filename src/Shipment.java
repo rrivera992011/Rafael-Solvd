@@ -1,6 +1,6 @@
 class Shipment {
-    private People sender;
-    private People recipient;
+    private Person sender;
+    private Person recipient;
     private Insurance insurance;
 
     private TotalPrice price;
@@ -8,19 +8,19 @@ class Shipment {
     public Shipment(){
 
     }
-    public void setSender(People sender) {
+    public void setSender(Person sender) {
         this.sender = sender;
     }
 
-    public People getSender() {
+    public Person getSender() {
         return sender;
     }
 
-    public void setRecipient(People recipient) {
+    public void setRecipient(Person recipient) {
         this.recipient = recipient;
     }
 
-    public People getRecipient() {
+    public Person getRecipient() {
         return recipient;
     }
 

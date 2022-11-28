@@ -1,4 +1,4 @@
-class Email implements Membership{
+class Email implements IMembership{
     private String email;
     @Override
     public void setEmail(String email) {

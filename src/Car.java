@@ -1,4 +1,4 @@
-class Car implements Vehicle{
+class Car implements IVehicle{
     private String vehicleName;
     private int truckNumber;
 

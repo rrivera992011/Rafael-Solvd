@@ -1,4 +1,4 @@
-interface Factoid {
+interface IFactoid {
 
     void outputFactoid();
 }

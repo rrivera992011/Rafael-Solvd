@@ -1,4 +1,4 @@
-class FactoidOutput implements Factoid{
+class FactoidOutput implements IFactoid{
     @Override
     public void outputFactoid() {
         System.out.println("Did you know?: THE POSTAL SERVICE EMPLOYS MORE THAN 7.5 MILLION PEOPLE.");

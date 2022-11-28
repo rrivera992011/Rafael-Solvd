@@ -1,4 +1,4 @@
-class Plane implements Vehicle{
+class Plane implements IVehicle{
 
     private String vehicleName;
     private int planeNumber;

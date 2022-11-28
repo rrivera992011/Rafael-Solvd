@@ -4,6 +4,10 @@ abstract class PackageType {
     protected double width;
     protected double weight;
 
+    public PackageType(){
+
+    }
+
     public abstract String getPackageType();
     public abstract void setPackageType(String packageType);
     public abstract double getHeight();

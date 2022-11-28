@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca076e5-d79a-4031-9d97-ccf787f341e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Delivery/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Delivery/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Envelope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Envelope.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IFactoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FactoidOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoidOutput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Membership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMembership.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PackageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PackageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/People.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StampTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StampTotal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stamps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IStamps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISurvey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SurveyAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SurveyAnswers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IVehicle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +35,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://C:/Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/Object.java" root0="FORCE_HIGHLIGHTING" />
@@ -35,14 +49,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/SolvdDev/Notes/SolvdHomeworks/Interfaces",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SolvdDev/Notes/Interfaces&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

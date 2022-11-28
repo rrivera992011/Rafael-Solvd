@@ -1,10 +1,10 @@
-class People {
+class Person {
 
     private String name;
     private String address;
     private int phoneNumber;
 
-    public People(){
+    public Person(){
         this.name = "";
         this.address = "";
         this.phoneNumber = 0;

@@ -1,4 +1,4 @@
-interface Survey {
+interface ISurvey {
     int getServiceNum();
     void setServiceNum(int serviceNum);
     int getEfficiencyNum();

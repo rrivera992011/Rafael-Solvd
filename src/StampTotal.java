@@ -1,4 +1,4 @@
-class StampTotal implements Stamps {
+class StampTotal implements IStamps {
     private int stampNum;
     private double stampTotal;
 
