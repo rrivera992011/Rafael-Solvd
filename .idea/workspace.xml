@@ -2,24 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca076e5-d79a-4031-9d97-ccf787f341e4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Envelope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Envelope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IFactoid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FactoidOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FactoidOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Box.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Car.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Driver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Envelope.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/IVehicle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Insurance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Plane.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/PressureWeight.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/Shipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Functionality/TotalPrice.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Membership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IMembership.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PackageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PackageType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/People.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StampTotal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StampTotal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Stamps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IStamps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ISurvey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SurveyAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SurveyAnswers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/Complaint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/Email.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/EmployeeComplaint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/FactoidOutput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/IFactoid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/IMembership.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/IStamps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/ISurvey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/OtherComplaint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/PackageComplaint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/PackageType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/StampTotal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Miscellaneous/SurveyAnswers.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,20 +53,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2Hxcz3bLIdJ4fA6EEY3XnEkoDcQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SolvdDev/Notes/Interfaces&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/SolvdDev/Notes/Interfaces",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="membership" />
+      <recent name="factoid" />
+      <recent name="complaint" />
+      <recent name="stamp" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

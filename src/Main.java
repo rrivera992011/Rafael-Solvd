@@ -1,3 +1,12 @@
+
+import complaint.*;
+import factoid.FactoidOutput;
+import membership.Email;
+import packageType.*;
+import stamps.StampTotal;
+import survey.SurveyAnswers;
+import vehicle.*;
+
 import java.util.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
@@ -91,7 +100,7 @@ public class Main {
         sender.setAddress(senderAddress);
 
         System.out.println("Enter your phone number");
-        int phoneNumber = myObj.nextInt();
+        String phoneNumber = myObj.nextLine();
         sender.setPhoneNumber(phoneNumber);
 
 
@@ -108,7 +117,7 @@ public class Main {
         recipient.setAddress(recipientAddress);
 
         System.out.println("Enter the recipient's phone number");
-        int phoneNumber = myObj.nextInt();
+        String phoneNumber = myObj.nextLine();
         recipient.setPhoneNumber(phoneNumber);
 
 
@@ -376,7 +385,7 @@ public class Main {
         envelope.setWeight(packageWeight);
         envelope.setHeight(packageHeight);
         envelope.setWidth(packageWidth);
-        envelope.setPackageType("Envelope");
+        envelope.setPackageType("packageType.Envelope");
 
         // Int number for all the stamps
         System.out.println("\nHow many stamps do you want on the envelope?");
@@ -395,7 +404,7 @@ public class Main {
         box.setWeight(packageWeight);
         box.setHeight(packageHeight);
         box.setWidth(packageWidth);
-        box.setPackageType("Box");
+        box.setPackageType("packageType.Box");
 
         //Boolean used to detect whether a package is fragile or not
         System.out.println("\nIs the package fragile? Type true or false");
@@ -427,13 +436,13 @@ public class Main {
         Scanner myObj = new Scanner(System.in);
         String driverFullName = driver.getFirstName() + " " + driver.getLastName();
 
-        // Envelope envelope = (Envelope) boxOrLetter;
+        // packageType.Envelope envelope = (packageType.Envelope) boxOrLetter;
 
         System.out.println("\nThe weight of the object is " + boxOrLetter.getWeight());
         System.out.println("This is a(n) " + boxOrLetter.getPackageType());
 
         switch(boxOrLetter.getPackageType()){
-            case "Box":
+            case "packageType.Box":
                 Box box = (Box) boxOrLetter;
                 if (!box.getFragility()) {
                     System.out.println("It is not fragile");
@@ -441,7 +450,7 @@ public class Main {
                     System.out.println("It is fragile");
                 }
                 break;
-            case "Envelope":
+            case "packageType.Envelope":
                 Envelope envelope = (Envelope) boxOrLetter;
                 System.out.println("It needs " + envelope.getStamps().getStampNum() + " stamps");
                 break;
@@ -495,7 +504,7 @@ public class Main {
                 high = 999999;
                 carOrPlaneNum = r.nextInt(high-low) + low;
                 Car car = new Car();
-                car.setVehicleName("Car");
+                car.setVehicleName("vehicle.Car");
                 car.setTruckNumber(carOrPlaneNum);
                 vehicleOutput(boxOrLetter, shipment, car);
                 break;
@@ -505,7 +514,7 @@ public class Main {
                 high = 500;
                 carOrPlaneNum = r.nextInt(high-low) + low;
                 Plane plane = new Plane();
-                plane.setVehicleName("Plane");
+                plane.setVehicleName("vehicle.Plane");
                 plane.setPlaneNumber(carOrPlaneNum);
                 vehicleOutput(boxOrLetter, shipment, plane);
                 break;
@@ -519,14 +528,14 @@ public class Main {
     public static void vehicleOutput(PackageType boxOrLetter, Shipment shipment, IVehicle carOrPlane) {
 
         // Equalize the plane or car object for correct output
-        if(carOrPlane.getVehicleName().equals("Car")) {
+        if(carOrPlane.getVehicleName().equals("vehicle.Car")) {
             Car car = ((Car) carOrPlane);
             System.out.println("\nVehicle choice: " + car.getVehicleName());
             System.out.println("Number: " + car.getTruckNumber());
             System.out.println("\nSending package now");
             orderFinished(boxOrLetter, shipment);
 
-        } else if (carOrPlane.getVehicleName().equals("Plane")) {
+        } else if (carOrPlane.getVehicleName().equals("vehicle.Plane")) {
             Plane plane = ((Plane) carOrPlane);
             System.out.println("\nVehicle choice: " + plane.getVehicleName());
             System.out.println("Number: " + plane.getPlaneNumber());
@@ -540,7 +549,7 @@ public class Main {
 
         // Output everything
         System.out.println("\nOrder delivered");
-        if (boxOrLetter.getPackageType().equals("Box")) {
+        if (boxOrLetter.getPackageType().equals("packageType.Box")) {
             Box box = (Box) boxOrLetter;
             System.out.println("\n" + box.getPackageType() + " received");
             System.out.println(shipment.toString());
