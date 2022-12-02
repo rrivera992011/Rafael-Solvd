@@ -1,14 +1,16 @@
 package complaint;
 
+import person.Person;
+
 public class Complaint {
-    private String complaintName;
+    private Person person;
     private int complaintNumber;
     private String baseComplaintType;
 
     private String complaint;
 
-    public String getComplaintName() {
-        return this.complaintName;
+    public Person getPerson() {
+        return this.person;
     }
 
     public int getComplaintNumber() {
@@ -27,8 +29,8 @@ public class Complaint {
         this.complaint = complaint;
     }
 
-    public void setComplaintName(String complaintName) {
-        this.complaintName = complaintName;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
     public void setComplaintNumber(int complaintNumber) {

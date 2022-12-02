@@ -1,16 +1,16 @@
 package packageType;
 
-import stamps.*;
+import stamp.*;
 
-public class Envelope extends PackageType {
-    private StampTotal stamps;
+public class Envelope extends Mailing {
+    private Stamp stamp;
 
-    public void setStamps(StampTotal stamps) {
-        this.stamps = stamps;
+    public void setStamp(Stamp stamp) {
+        this.stamp = stamp;
     }
 
-    public StampTotal getStamps() {
-        return stamps;
+    public Stamp getStamp() {
+        return stamp;
     }
 
     @Override

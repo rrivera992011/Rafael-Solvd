@@ -1,12 +1,12 @@
 package packageType;
 
-public abstract class PackageType {
+public abstract class Mailing {
     protected String packageType;
     protected double height;
     protected double width;
     protected double weight;
 
-    public PackageType(){
+    public Mailing(){
 
     }
 

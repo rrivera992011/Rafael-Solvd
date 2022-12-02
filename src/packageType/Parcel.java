@@ -2,7 +2,7 @@ package packageType;
 
 
 
-public class Box extends PackageType {
+public class Parcel extends Mailing {
     private boolean fragility;
 
     public boolean getFragility(){

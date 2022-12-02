@@ -1,8 +1,22 @@
-final class Driver {
+package person;
+
+public class Person {
 
     private String firstName;
+
     private String lastName;
-    private String status;
+
+    private String email;
+
+    private int age;
+
+
+    public Person(){
+        this.firstName = "";
+        this.lastName = "";
+        this.age = 0;
+        this.email = "";
+    }
 
     public void setFirstName (String firstName) {
         this.firstName = firstName;
@@ -21,13 +35,24 @@ final class Driver {
         return this.lastName;
     }
 
-    public void setStatus (String status) {
-        this.status = status;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getStatus() {
-        return this.status;
+
+    public String getEmail() {
+        return this.email;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    public int getAge() {
+        return this.age;
+    }
+
 
     @Override
     public String toString() {

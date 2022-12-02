@@ -1,4 +1,6 @@
-class Insurance{
+package insurance;
+
+public class Insurance{
     private double insurancePrice = 0;
     private int insuranceNumber = 0;
     public Insurance() {

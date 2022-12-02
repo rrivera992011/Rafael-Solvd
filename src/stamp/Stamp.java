@@ -1,8 +1,6 @@
-package stamps;
+package stamp;
 
-import stamps.IStamps;
-
-public class StampTotal implements IStamps {
+public class Stamp implements IStamp {
     private int stampNum;
     private double stampTotal;
 

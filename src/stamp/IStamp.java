@@ -1,6 +1,6 @@
-package stamps;
+package stamp;
 
-interface IStamps {
+interface IStamp {
     void setStampNum(int stampNum);
     int getStampNum();
     void setStampTotal(double stampTotal);

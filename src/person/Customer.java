@@ -1,22 +1,9 @@
-class Person {
+package person;
 
-    private String name;
+public class Customer extends Person {
+
     private String address;
     private String phoneNumber;
-
-    public Person(){
-        this.name = "";
-        this.address = "";
-        this.phoneNumber = "";
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return this.name;
-    }
 
     public void setAddress(String address) {
         this.address = address;

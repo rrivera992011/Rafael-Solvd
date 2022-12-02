@@ -1,7 +1,6 @@
 package vehicle;
 
 public class Plane implements IVehicle {
-
     private String vehicleName;
     private int planeNumber;
 

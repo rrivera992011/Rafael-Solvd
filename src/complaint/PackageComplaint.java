@@ -1,14 +1,17 @@
 package complaint;
 
+import shipment.Shipment;
+
+
 public class PackageComplaint extends Complaint {
 
-    private int packageNumber;
+    private Shipment shipment;
 
-    public int getPackageNumber() {
-        return packageNumber;
+    public Shipment getShipment() {
+        return this.shipment;
     }
 
-    public void setPackageNumber(int packageNumber) {
-        this.packageNumber = packageNumber;
+    public void setShipment(Shipment shipment) {
+        this.shipment = shipment;
     }
 }

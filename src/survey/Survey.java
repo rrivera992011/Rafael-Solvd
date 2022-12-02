@@ -1,7 +1,7 @@
 package survey;
 
 
-public class SurveyAnswers implements ISurvey {
+public class Survey implements ISurvey {
     private int serviceNum;
     private int efficiencyNum;
     private int staffNum;

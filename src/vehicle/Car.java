@@ -2,15 +2,15 @@ package vehicle;
 
 public class Car implements IVehicle {
     private String vehicleName;
-    private int truckNumber;
+    private int carNumber;
 
 
-    public int getTruckNumber() {
-        return this.truckNumber;
+    public int getCarNumber() {
+        return this.carNumber;
     }
 
     public void setTruckNumber(int truckNumber) {
-        this.truckNumber = truckNumber;
+        this.carNumber = truckNumber;
     }
 
     @Override

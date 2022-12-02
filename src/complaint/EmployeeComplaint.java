@@ -1,13 +1,15 @@
 package complaint;
 
-public class EmployeeComplaint extends Complaint {
-    private String employeeName;
+import person.Employee;
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+public class EmployeeComplaint extends Complaint {
+    private Employee employee;
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
-    public String getEmployeeName() {
-        return this.employeeName;
+    public Employee getEmployee() {
+        return this.employee;
     }
 }
