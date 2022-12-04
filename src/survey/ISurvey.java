@@ -5,6 +5,7 @@ public interface ISurvey {
     void setServiceNum(int serviceNum);
     int getEfficiencyNum();
     void setEfficiencyNum(int efficiencyNum);
-    int getStaffNum();
-    void setStaffNum(int staffNum);
+    void setFriendlinessNum(int friendlinessNum);
+
+    int getFriendlinessNum();
 }

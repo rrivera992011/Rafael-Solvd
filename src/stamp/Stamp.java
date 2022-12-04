@@ -1,26 +1,27 @@
 package stamp;
 
 public class Stamp implements IStamp {
-    private int stampNum;
-    private double stampTotal;
+    private String name;
+    private double price;
+
 
     @Override
-    public void setStampNum(int stampNum) {
-        this.stampNum = stampNum;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     @Override
-    public int getStampNum() {
-        return this.stampNum;
+    public double getPrice() {
+        return this.price;
     }
 
     @Override
-    public void setStampTotal(double stampTotal) {
-        this.stampTotal = stampTotal;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    public double getStampTotal() {
-        return this.stampTotal;
+    public String getName() {
+        return this.name;
     }
 }

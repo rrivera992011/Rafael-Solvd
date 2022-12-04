@@ -1,6 +1,6 @@
 package factoid;
 
-interface IFactoid {
+public interface IFactoid {
 
     void outputFactoid();
 }

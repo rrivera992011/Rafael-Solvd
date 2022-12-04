@@ -1,8 +1,8 @@
 package shipment;
 
-import insurance.Insurance;
-import person.Customer;
-import person.Person;
+import insurance.*;
+import mailing.*;
+import person.*;
 
 final public class Shipment {
     private Customer sender;
@@ -12,6 +12,8 @@ final public class Shipment {
     private double weight;
     private int days;
     private long packageNumber;
+
+    private Mailing mailing;
 
     public Shipment(){
 
@@ -69,6 +71,14 @@ final public class Shipment {
 
     public long getPackageNumber() {
         return this.packageNumber;
+    }
+
+    public void setMailing(Mailing mailing) {
+        this.mailing = mailing;
+    }
+
+    public Mailing getMailing() {
+        return this.mailing;
     }
 
     public boolean equals(Object obj) {

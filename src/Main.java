@@ -1,18 +1,15 @@
-
 import complaint.*;
 import factoid.FactoidOutput;
 import insurance.*;
-import membership.MembershipInformation;
-import packageType.*;
-import person.Customer;
-import person.Driver;
-import person.Employee;
-import person.Person;
+import mailing.*;
+import membership.*;
+import person.*;
 import shipment.*;
-import stamp.Stamp;
-import survey.Survey;
+import stamp.*;
+import survey.*;
 import vehicle.*;
 
+import org.apache.logging.log4j.*;
 
 import java.util.*;
 import java.math.RoundingMode;
@@ -22,10 +19,15 @@ public class Main {
     static Customer sender = new Customer();
     static Customer recipient = new Customer();
 
+    static Logger logger = LogManager.getLogger(Main.class);
+    // final static Level MENULOG = Level.forName("MENULOG", 700);
+
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the delivery system. ");
-        System.out.println("Please choose from one of the following options: ");
+        logger.info("Welcome to the delivery system. ");
+        logger.info( "Please choose from one of the following options: ");
         menuOptions();
 
 
@@ -42,24 +44,24 @@ public class Main {
 
         // Print out the sender and the recipient while it's not empty
         if(!sender.getFirstName().equals("")) {
-            System.out.println("\nName of sender: " + sender.toString());
-            System.out.println("Address of sender: " + sender.getAddress());
-            System.out.println("Phone number: " + sender.getPhoneNumber() + "\n");
+            logger.info( "\nName of sender: " + sender.toString());
+            logger.info( "Address of sender: " + sender.getAddress());
+            logger.info( "Phone number: " + sender.getPhoneNumber() + "\n");
         }
 
         if(!recipient.getFirstName().equals("")) {
-            System.out.println("\nName of recipient: " + recipient.toString());
-            System.out.println("Address of recipient: " + recipient.getAddress());
-            System.out.println("Phone number: " + recipient.getPhoneNumber() + "\n");
+            logger.info( "\nName of recipient: " + recipient.toString());
+            logger.info( "Address of recipient: " + recipient.getAddress());
+            logger.info( "Phone number: " + recipient.getPhoneNumber() + "\n");
         }
 
-        System.out.println("1. Enter the sender");
-        System.out.println("2. Enter the recipient");
-        System.out.println("3. Send a package");
-        System.out.println("4. Only buy stamps");
-        System.out.println("5. File a complaint");
-        System.out.println("6. Sign up for our membership");
-        System.out.println("0. Exit the program");
+        logger.info("1. Enter the sender");
+        logger.info("2. Enter the recipient");
+        logger.info("3. Send a package");
+        logger.info("4. Only buy stamps");
+        logger.info("5. File a java.complaint");
+        logger.info("6. Sign up for our java.membership");
+        logger.info("0. Exit the program");
 
     }
 
@@ -67,7 +69,7 @@ public class Main {
 
         switch (selection) {
             case 0:
-                System.out.println("Thank you for your service! Have a great day!");
+                logger.info("Thank you for your service! Have a great day!");
                 System.exit(0);
                 break;
             case 1:
@@ -80,7 +82,7 @@ public class Main {
                 break;
             case 3:
                 if(sender.getFirstName().equals("") || recipient.getFirstName().equals("")) {
-                    System.out.println("\nPlease enter both a sender and a recipient");
+                    logger.info("\nPlease enter both a sender and a recipient");
                     menuOptions();
                 } else {
                     insuranceTotal();
@@ -96,7 +98,7 @@ public class Main {
                 membership();
                 break;
             default:
-                System.out.println("Please choose one of these options\n");
+                logger.info("Please choose one of these options\n");
                 menuOptions();
                 break;
         }
@@ -104,19 +106,19 @@ public class Main {
 
     public static void createASender() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter your first name");
+        logger.info("\nEnter your first name");
         String senderFirstName = scanner.nextLine();
         sender.setFirstName(senderFirstName);
 
-        System.out.println("Enter your last name");
+        logger.info("Enter your last name");
         String senderLastName = scanner.nextLine();
         sender.setLastName(senderLastName);
 
-        System.out.println("Enter your address");
+        logger.info("Enter your address");
         String senderAddress = scanner.nextLine();
         sender.setAddress(senderAddress);
 
-        System.out.println("Enter your phone number");
+        logger.info("Enter your phone number");
         String phoneNumber = scanner.nextLine();
         sender.setPhoneNumber(phoneNumber);
 
@@ -125,19 +127,19 @@ public class Main {
 
     public static void createARecipient() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter the recipient's first name");
+        logger.info("\nEnter the recipient's first name");
         String recipientFirstName = scanner.nextLine();
         recipient.setFirstName(recipientFirstName);
 
-        System.out.println("Enter the recipient's last name");
+        logger.info("Enter the recipient's last name");
         String recipientLastName = scanner.nextLine();
         recipient.setLastName(recipientLastName);
 
-        System.out.println("Enter the recipient's address");
+        logger.info("Enter the recipient's address");
         String recipientAddress = scanner.nextLine();
         recipient.setAddress(recipientAddress);
 
-        System.out.println("Enter the recipient's phone number");
+        logger.info("Enter the recipient's phone number");
         String phoneNumber = scanner.nextLine();
         recipient.setPhoneNumber(phoneNumber);
 
@@ -147,19 +149,19 @@ public class Main {
 
     public static void contDelivery() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nTo return to operation, press 1");
-        System.out.println("To exit the operation, press 0\n");
+        logger.info("\nTo return to operation, press 1");
+        logger.info("To exit the operation, press 0\n");
         int option = scanner.nextInt();
         switch (option) {
             case 0:
-                System.out.println("Thank you for your service! Have a great day!");
+                logger.info("Thank you for your service! Have a great day!");
                 System.exit(0);
                 break;
             case 1:
                 menuOptions();
                 break;
             default:
-                System.out.println("Please choose one of these options\n");
+                logger.info("Please choose one of these options\n");
                 contDelivery();
                 break;
         }
@@ -170,11 +172,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Insurance range
-        System.out.println("\nDo you want insurance? Select from our plans");
-        System.out.println("1. $10 coverage");
-        System.out.println("2. $30 coverage");
-        System.out.println("3. $50 coverage");
-        System.out.println("0. No insurance");
+        logger.info("\nDo you want java.insurance? Select from our plans");
+        logger.info("1. $10 coverage");
+        logger.info("2. $30 coverage");
+        logger.info("3. $50 coverage");
+        logger.info("0. No java.insurance");
         int insuranceSelection = scanner.nextInt();
 
         Insurance insuranceInfo = new Insurance();
@@ -182,13 +184,10 @@ public class Main {
         double priceOfInsurance;
 
         // Random number generating bar code
-        Random r = new Random();
-        int low = 1000000;
-        int high = 9999999;
-        int insuranceNumber = r.nextInt(high-low) + low;
+        long insuranceNumber = setRandomNumber(1000000,9999999 );
         insuranceInfo.setInsuranceNumber(insuranceNumber);
 
-        // Switch statement used for insurance prices using TN state tax
+        // Switch statement used for java.insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
                     priceOfInsurance = 10 + (10 * 0.07);
@@ -207,20 +206,20 @@ public class Main {
                     insuranceInfo.setInsurancePrice(priceOfInsurance);
                     break;
             default:
-                    System.out.println("Please select a number from the choices given\n");
+                    logger.info("Please select a number from the choices given\n");
                     insuranceTotal();
                     break;
         }
 
-        totalFunction(insuranceInfo);
+        setUpTotal(insuranceInfo);
 
 
     }
 
-    public static void totalFunction(Insurance insuranceInfo) {
+    public static void setUpTotal(Insurance insuranceInfo) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
-        System.out.println("Select based on the number of days that you want");
+        logger.info("\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
+        logger.info("Select based on the number of days that you want");
         int numOfDays = scanner.nextInt();
         Shipment shipment = new Shipment();
         shipment.setDays(numOfDays);
@@ -244,8 +243,8 @@ public class Main {
                 shipment.setPrice(priceOfPackage);
                 break;
             default:
-                System.out.println("Please select a number from the choices given\n");
-                totalFunction(insuranceInfo);
+                logger.info("Please select a number from the choices given\n");
+                setUpTotal(insuranceInfo);
                 break;
         }
 
@@ -259,27 +258,24 @@ public class Main {
         final DecimalFormat df = new DecimalFormat("0.00");
 
         // Use a long to get a random package number
-        Random r = new Random();
-        long low = 100000000;
-        long high = 999999999;
-        long packageNumber = r.nextLong(high-low) + low;
+        long packageNumber = setRandomNumber(100000000, 999999999);
 
         shipment.setPackageNumber(packageNumber);
 
-        System.out.println("\nName of sender: " + sender.toString());
-        System.out.println("Address of sender: " + sender.getAddress());
-        System.out.println("Phone number: " + sender.getPhoneNumber() + "\n");
+        logger.info("\nName of sender: " + sender.toString());
+        logger.info("Address of sender: " + sender.getAddress());
+        logger.info("Phone number: " + sender.getPhoneNumber() + "\n");
 
-        System.out.println("\nName of recipient: " + recipient.toString());
-        System.out.println("Address of sender: " + recipient.getAddress());
-        System.out.println("Phone number: " + recipient.getPhoneNumber() + "\n");
+        logger.info("\nName of recipient: " + recipient.toString());
+        logger.info("Address of sender: " + recipient.getAddress());
+        logger.info("Phone number: " + recipient.getPhoneNumber() + "\n");
 
-        System.out.println("\nPackage number: " + shipment.getPackageNumber());
-        System.out.println("Insurance number: " + insuranceInfo.getInsuranceNumber());
-        System.out.println("ETA: " + shipment.getDays() + " Day(s)");
+        logger.info("\nPackage number: " + shipment.getPackageNumber());
+        logger.info("Insurance number: " + insuranceInfo.getInsuranceNumber());
+        logger.info("ETA: " + shipment.getDays() + " Day(s)");
 
         df.setRoundingMode(RoundingMode.UP);
-        System.out.println("Complete total: " + df.format(shipment.getPrice()));
+        logger.info("Complete total: " + df.format(shipment.getPrice()));
 
         confirmationFunc(insuranceInfo, shipment);
 
@@ -288,22 +284,22 @@ public class Main {
 
     public static void confirmationFunc(Insurance insuranceInfo, Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nIs this okay? Yes/No? (Not case sensitive)");
+        logger.info("\nIs this okay? Yes/No? (Not case sensitive)");
         String confirmation = scanner.nextLine().toUpperCase();
 
         switch(confirmation){
             case "YES":
-                        System.out.println("\nSending package now!");
-                        System.out.println("Thank you for your business");
+                        logger.info("\nSending package now!");
+                        logger.info("Thank you for your business");
                         company(insuranceInfo, shipment);
 
                         break;
             case "NO":
-                        System.out.println("\nPlease try again then");
+                        logger.info("\nPlease try again then");
                         insuranceTotal();
                         break;
             default:
-                        System.out.println("\nPlease try something other than Yes or No");
+                        logger.info("\nPlease try something other than Yes or No");
                         confirmationFunc(insuranceInfo, shipment);
 
         }
@@ -311,7 +307,7 @@ public class Main {
 
     public static void company(Insurance insuranceInfo, Shipment shipment) {
         // Output for the company and placing everything in one object
-        System.out.println("\nOrder obtained");
+        logger.info("\nOrder obtained");
 
         shipment.setSender(sender);
         shipment.setRecipient(recipient);
@@ -332,33 +328,30 @@ public class Main {
     public static Driver enterDriver() {
         Driver driver = new Driver();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter your driver's first name");
+        logger.info("\nEnter your driver's first name");
         String driverAFirst = scanner.nextLine();
         driver.setFirstName(driverAFirst);
 
         // Enter the driver's last name
-        System.out.println("Enter your driver's last name");
+        logger.info("Enter your driver's last name");
         String driverALast = scanner.nextLine();
         driver.setLastName(driverALast);
 
-        Random r = new Random();
-        int low = 10000;
-        int high = 99999;
-        int driverNumber = r.nextInt(high-low) + low;
+        long driverNumber = setRandomNumber(10000, 99999);
 
         driver.setEmployeeNumber(driverNumber);
 
         // Enter the car's status
-        System.out.println("How is the car doing?");
+        logger.info("How is the car doing?");
         String carStatus = scanner.nextLine();
         driver.setStatus(carStatus);
 
-        System.out.println("\nDrive information");
+        logger.info("\nDrive information");
         // Using the overridden toString to output in LastName, FirstName format
         String fullName = driver.toString();
-        System.out.println("Name: " + fullName);
-        System.out.println("Number: " + driver.getEmployeeNumber());
-        System.out.println("Status: " + driver.getStatus());
+        logger.info("Name: " + fullName);
+        logger.info("Number: " + driver.getEmployeeNumber());
+        logger.info("Status: " + driver.getStatus());
 
         return driver;
     }
@@ -366,23 +359,23 @@ public class Main {
     public static void driverConfirm(Driver driver, Shipment shipment){
         Scanner scanner = new Scanner(System.in);
 
-        //person.Driver confirmation output
+        //java.person.Driver confirmation output
         System.out.print("\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
-        System.out.println(" will take this delivery? Yes or No? (Not case sensitive)");
+        logger.info(" will take this delivery? Yes or No? (Not case sensitive)");
         String confirmDrive = scanner.nextLine().toUpperCase();
 
         // Use a switch statement for confirmation
         switch(confirmDrive){
             case "YES":
-                System.out.println("\nPreparing package drop off now!");
+                logger.info("\nPreparing package drop off now!");
                 determinePackageValues(driver, shipment);
                 break;
             case "NO":
-                System.out.println("\nPlease go back to the other menu and enter a different driver");
+                logger.info("\nPlease go back to the other menu and enter a different driver");
                 company(shipment.getInsurance(), shipment);
                 break;
             default:
-                System.out.println("\nEntered something other than Yes or No. Please try again");
+                logger.info("\nEntered something other than Yes or No. Please try again");
                 driverConfirm(driver, shipment);
                 break;
 
@@ -395,12 +388,12 @@ public class Main {
 
         // Allow the facility worker to enter the values they need for the package
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nEnter the weight of the package in pounds");
+        logger.info("\nEnter the weight of the package in pounds");
         double packageWeight = scanner.nextDouble();
         shipment.setWeight(packageWeight);
-        System.out.println("Enter the width of the package");
+        logger.info("Enter the width of the package in inches");
         double packageWidth = scanner.nextDouble();
-        System.out.println("Enter the height of the package");
+        logger.info("Enter the height of the package in inches");
         double packageHeight = scanner.nextDouble();
 
         setupForDelivery(packageWeight, packageWidth, packageHeight, driver, shipment);
@@ -410,7 +403,7 @@ public class Main {
 
     }
 
-    public static Envelope envelopeFunction (double packageWeight, double packageWidth, double packageHeight) {
+    public static Envelope sellEnvelope (double packageWeight, double packageWidth, double packageHeight) {
         Scanner scanner = new Scanner(System.in);
 
         // Put all the elements into a single box object
@@ -418,20 +411,31 @@ public class Main {
         envelope.setWeight(packageWeight);
         envelope.setHeight(packageHeight);
         envelope.setWidth(packageWidth);
-        envelope.setPackageType("Envelope");
+        envelope.setPackageType("java.mailing.Envelope");
 
-        Stamp stamp = new Stamp();
-        envelope.setStamp(stamp);
-        // Int number for all the stamps
-        System.out.println("\nHow many stamps do you want on the envelope?");
+        logger.info("\nHow many stamps do you want on the envelope?");
         int stampNum = scanner.nextInt();
-        envelope.getStamp().setStampNum(stampNum);
+        envelope.setNumberOfStamps(stampNum);
+
+        // Use an arraylist to set the stamps on an envelope
+        ArrayList <Stamp> stampArray = new ArrayList<>();
+
+        for(int i = 0; i < stampNum; i++) {
+            Stamp stamp = new Stamp();
+            stamp.setName("Stamp " + i);
+            stamp.setPrice(0.75);
+            stampArray.add(stamp);
+
+        }
+
+        // Set the array in the envelope
+        envelope.setStampArrayList(stampArray);
 
         return envelope;
 
     }
 
-    public static Parcel boxFunction (double packageWeight, double packageWidth, double packageHeight) {
+    public static Parcel sellParcel (double packageWeight, double packageWidth, double packageHeight) {
         Scanner scanner = new Scanner(System.in);
 
         // Put all the elements into a single box object
@@ -442,7 +446,7 @@ public class Main {
         parcel.setPackageType("Box");
 
         //Boolean used to detect whether a package is fragile or not
-        System.out.println("\nIs the package fragile? Type true or false");
+        logger.info("\nIs the package fragile? Type true or false");
         boolean confirmDrive = scanner.nextBoolean();
 
         parcel.setFragility(confirmDrive);
@@ -456,48 +460,55 @@ public class Main {
         // If package weight is less than 10 pounds, put it in a box. Else, put it in an envelope
         if (packageWeight < 10)
         {
-            Envelope envelope = envelopeFunction(packageWeight,packageWidth, packageHeight);
-            weighForFacility(envelope, driver, shipment);
+            Envelope envelope = sellEnvelope(packageWeight,packageWidth, packageHeight);
+            shipment.setMailing(envelope);
+            weighForFacility(driver, shipment);
 
         } else {
-            Parcel box = boxFunction(packageWeight, packageWidth, packageHeight);
-            weighForFacility(box, driver, shipment);
+            Parcel box = sellParcel(packageWeight, packageWidth, packageHeight);
+            shipment.setMailing(box);
+            weighForFacility(driver, shipment);
         }
 
 
     }
 
-    public static void weighForFacility(Mailing boxOrLetter, Driver driver, Shipment shipment) {
+    public static void weighForFacility(Driver driver, Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
         String driverFullName = driver.getFirstName() + " " + driver.getLastName();
         String senderFullName = shipment.getSender().getFirstName() + " " + shipment.getSender().getLastName();
 
-        System.out.println("\nThe weight of the object is " + boxOrLetter.getWeight());
-        System.out.println("This is a(n) " + boxOrLetter.getPackageType());
+        logger.info("\nThe weight of the object is " + shipment.getMailing().getWeight());
+        logger.info("This is a(n) " + shipment.getMailing().getPackageType());
 
         // Switch statement to output based on the package type
-        switch(boxOrLetter.getPackageType()){
+        switch(shipment.getMailing().getPackageType()){
             case "Box":
-                Parcel parcel = (Parcel) boxOrLetter;
+                Parcel parcel = (Parcel) shipment.getMailing();
                 if (!parcel.getFragility()) {
-                    System.out.println("It is not fragile");
+                    logger.info("It is not fragile");
                 } else {
-                    System.out.println("It is fragile");
+                    logger.info("It is fragile");
                 }
                 break;
-            case "Envelope":
-                Envelope envelope = (Envelope) boxOrLetter;
-                System.out.println("It needs " + envelope.getStamp().getStampNum() + " stamp(s)");
+            case "java.mailing.Envelope":
+                Envelope envelope = (Envelope) shipment.getMailing();
+                logger.info("It needs " + envelope.getNumberOfStamps() + " java.stamp(s)\n");
+                ArrayList <Stamp> stampArray = envelope.getStampArrayList();
+                for(int i = 0; i < envelope.getNumberOfStamps(); i++) {
+                    logger.info(stampArray.get(i).getName());
+                    logger.info(stampArray.get(i).getPrice());
+                }
                 break;
             default:
-                System.out.println("This is nothing");
+                logger.info("This is nothing");
                 break;
         }
 
-        System.out.println("\nEnter the weight again in facility to make sure it's the correct object");
+        logger.info("\nEnter the weight again in facility to make sure it's the correct object");
         double weightAtFacility = scanner.nextDouble();
 
-        System.out.println("The weight of the object in the facility is: " + weightAtFacility);
+        logger.info("The weight of the object in the facility is: " + weightAtFacility);
 
         // Create a hash map for the weight set to check for equals
         Map<String, Double> weightSet = new HashMap<>();
@@ -507,92 +518,89 @@ public class Main {
         // If the weight isn't the same as the package weight, return to the function
         if (!weightSet.get(senderFullName).equals(weightSet.get(driverFullName))) {
 
-            System.out.println("\nThe package is not there. Find the correct package");
-            weighForFacility(boxOrLetter, driver, shipment);
+            logger.info("\nThe package is not there. Find the correct package");
+            weighForFacility(driver, shipment);
 
         } else {
-            System.out.println("\nThe correct package is found.");
-            System.out.println("ETA is " + shipment.getDays() + " day(s) until delivery");
-            System.out.println("Entering in vehicle now");
-            vehicleChoice(boxOrLetter, shipment);
+            logger.info("\nThe correct package is found.");
+            logger.info("ETA is " + shipment.getDays() + " day(s) until delivery");
+            logger.info("Entering in java.vehicle now");
+            vehicleChoice(shipment);
         }
 
     }
 
-    public static void vehicleChoice(Mailing boxOrLetter, Shipment shipment) {
+    public static void vehicleChoice(Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nWhat vehicle do you want to use? A car or an plane?");
+        logger.info("\nWhat java.vehicle do you want to use? A car or an plane?");
         String choice = scanner.nextLine().toUpperCase();
 
         // Random element for car/plane number
-        Random r = new Random();
-        int low;
-        int high;
-        int carOrPlaneNum;
+
+        long carOrPlaneNum;
 
         // Use a switch statement to output the correct element
         switch(choice) {
             case "CAR":
-                System.out.println("\nYou have chosen a car");
-                low = 100000;
-                high = 999999;
-                carOrPlaneNum = r.nextInt(high-low) + low;
+                logger.info("\nYou have chosen a car");
+                carOrPlaneNum = setRandomNumber(100000, 999999);
                 Car car = new Car();
                 car.setVehicleName("Car");
                 car.setTruckNumber(carOrPlaneNum);
-                vehicleOutput(boxOrLetter, shipment, car);
+                vehicleOutput(shipment, car);
                 break;
             case "PLANE":
-                System.out.println("\nYou have chosen an airplane");
-                low = 1;
-                high = 500;
-                carOrPlaneNum = r.nextInt(high-low) + low;
+                logger.info("\nYou have chosen an airplane");
+                carOrPlaneNum = setRandomNumber(1, 1000);
                 Plane plane = new Plane();
                 plane.setVehicleName("Plane");
                 plane.setPlaneNumber(carOrPlaneNum);
-                vehicleOutput(boxOrLetter, shipment, plane);
+                vehicleOutput(shipment, plane);
                 break;
             default:
-                System.out.println("\nPlease choose something else");
-                vehicleChoice(boxOrLetter, shipment);
+                logger.info("\nPlease choose something else");
+                vehicleChoice(shipment);
                 break;
         }
     }
 
-    public static void vehicleOutput(Mailing boxOrLetter, Shipment shipment, IVehicle carOrPlane) {
+    public static void vehicleOutput(Shipment shipment, IVehicle carOrPlane) {
 
         // Equalize the plane or car object for correct output
         if(carOrPlane.getVehicleName().equals("Car")) {
             Car car = ((Car) carOrPlane);
-            System.out.println("\nVehicle choice: " + car.getVehicleName());
-            System.out.println("Number: " + car.getCarNumber());
-            System.out.println("\nSending package now");
-            orderFinished(boxOrLetter, shipment);
+            logger.info("\nVehicle choice: " + car.getVehicleName());
+            logger.info("Number: " + car.getCarNumber());
+            logger.info("\nSending package now");
+            orderFinished(shipment);
 
         } else if (carOrPlane.getVehicleName().equals("Plane")) {
             Plane plane = ((Plane) carOrPlane);
-            System.out.println("\nVehicle choice: " + plane.getVehicleName());
-            System.out.println("Number: " + plane.getPlaneNumber());
-            System.out.println("\nSending package now");
-            orderFinished(boxOrLetter, shipment);
+            logger.info("\nVehicle choice: " + plane.getVehicleName());
+            logger.info("Number: " + plane.getPlaneNumber());
+            logger.info("\nSending package now");
+            orderFinished(shipment);
         }
 
     }
 
-    public static void orderFinished(Mailing boxOrLetter, Shipment shipment) {
+    public static void orderFinished(Shipment shipment) {
 
         // Output everything
-        System.out.println("\nOrder delivered");
-        if (boxOrLetter.getPackageType().equals("Box")) {
-            Parcel parcel = (Parcel) boxOrLetter;
-            System.out.println("\n" + parcel.getPackageType() + " received");
-            System.out.println(shipment.toString());
+        String order;
+        logger.info("\nOrder delivered");
+        if (shipment.getMailing().getPackageType().equals("Box")) {
+            Parcel parcel = (Parcel) shipment.getMailing();
+            logger.info("\n" + parcel.getPackageType() + " received");
+            order = shipment.toString();
+            logger.info(order);
             moreOptions();
 
-        } else if (boxOrLetter.getPackageType().equals("Envelope")) {
-            Envelope envelope = (Envelope) boxOrLetter;
-            System.out.println("\n" + envelope.getPackageType() + " received");
-            System.out.println(shipment.toString());
+        } else if (shipment.getMailing().getPackageType().equals("java.mailing.Envelope")) {
+            Envelope envelope = (Envelope) shipment.getMailing();
+            logger.info("\n" + envelope.getPackageType() + " received");
+            order = shipment.toString();
+            logger.info(order);
             moreOptions();
         }
     }
@@ -601,12 +609,12 @@ public class Main {
         // More options
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nMore options");
-        System.out.println("1. Take our 3 question survey");
-        System.out.println("2. Get a small factoid of the mail while leaving");
-        System.out.println("3. Buy stamps. 0.75 per stamp");
-        System.out.println("4. Sign up for our membership");
-        System.out.println("0. End");
+        logger.info("\nMore options");
+        logger.info("1. Take our 3 question java.survey");
+        logger.info("2. Get a small factoid of the mail while leaving");
+        logger.info("3. Buy stamps. 0.75 per java.stamp");
+        logger.info("4. Sign up for our java.membership");
+        logger.info("0. End");
 
         // Use integer for output
         int optionNum = scanner.nextInt();
@@ -614,7 +622,7 @@ public class Main {
         // Switch for more options
         switch (optionNum) {
             case 0:
-                    System.out.println("Thank you for shopping here");
+                    logger.info("Thank you for shopping here");
                     System.exit(0);
                     break;
             case 1:
@@ -630,7 +638,7 @@ public class Main {
                     membership();
                     break;
             default:
-                    System.out.println("You did not enter a choice given. Try again");
+                    logger.info("You did not enter a choice given. Try again");
                     moreOptions();
                     break;
         }
@@ -642,38 +650,38 @@ public class Main {
 
         // Use the surveyor variable to grab the answers
         Survey surveyor = new Survey();
-        System.out.println("\nRate from 1-10. How did you like our service?");
+        logger.info("\nRate from 1-10. How did you like our service?");
         int choiceNum = scanner.nextInt();
         surveyor.setServiceNum(choiceNum);
-        System.out.println("Rate from 1-10. How efficient was our service?");
+        logger.info("Rate from 1-10. How efficient was our service?");
         choiceNum = scanner.nextInt();
         surveyor.setEfficiencyNum(choiceNum);
-        System.out.println("Rate from 1-10. How friendly was our staff?");
+        logger.info("Rate from 1-10. How friendly was our staff?");
         choiceNum = scanner.nextInt();
-        surveyor.setStaffNum(choiceNum);
-        System.out.println("\nYou answers were: " +
+        surveyor.setFriendlinessNum(choiceNum);
+        logger.info("\nYou answers were: " +
                 surveyor.getServiceNum() + ", " + surveyor.getEfficiencyNum() +
-                ", and " + surveyor.getStaffNum());
+                ", and " + surveyor.getFriendlinessNum());
 
         survey2();
     }
 
     public static void survey2() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nIs this correct? Yes or No? (Not case sensitive)");
+        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                System.out.println("\nThank you for your assistance. Goodbye");
+                logger.info("\nThank you for your assistance. Goodbye");
                 System.exit(0);
                 break;
             case "NO":
-                System.out.println("Please select your choices again");
+                logger.info("Please select your choices again");
                 survey();
                 break;
             default:
-                System.out.println("Please pick Yes or No");
+                logger.info("Please pick Yes or No");
                 survey2();
                 break;
         }
@@ -686,20 +694,20 @@ public class Main {
     }
     public static void buyStamps() {
         final DecimalFormat df = new DecimalFormat("0.00");
-        Stamp stamps = new Stamp();
+        Stamp stamp = new Stamp();
         df.setRoundingMode(RoundingMode.UP);
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nHow many stamps would you like to buy? 0.75 per stamp");
-        int numStamps = scanner.nextInt();
+        logger.info("\nHow many stamps would you like to buy? 0.75 per java.stamp");
+        int numOfStamps = scanner.nextInt();
 
         // Calculate the number of stamps
-        stamps.setStampNum(numStamps);
-        double completeTotal = (0.75 * numStamps);
-        stamps.setStampTotal(completeTotal);
+        stamp.setPrice(0.75);
+        double completeTotal = stamp.getPrice() * numOfStamps;
 
-        System.out.println("\nYou bought " + stamps.getStampNum() +
-                " stamps for $" + df.format(stamps.getStampTotal()));
-        System.out.println("Thank you!");
+
+        logger.info("\nYou bought " + numOfStamps +
+                " stamps for $" + df.format(completeTotal));
+        logger.info("Thank you!");
 
         System.exit(0);
 
@@ -712,20 +720,20 @@ public class Main {
         Person person = new Person();
         membershipDetails.setPerson(person);
 
-        System.out.println("\nEnter your first name");
+        logger.info("\nEnter your first name");
         String memberFirstName = scanner.nextLine();
         membershipDetails.getPerson().setFirstName(memberFirstName);
 
-        System.out.println("Enter your last name");
+        logger.info("Enter your last name");
         String memberLastName = scanner.nextLine();
         membershipDetails.getPerson().setLastName(memberLastName);
 
-        // Get the email for the membership
-        System.out.println("What is your email?");
+        // Get the email for the java.membership
+        logger.info("What is your email?");
         String email = scanner.nextLine();
         membershipDetails.getPerson().setEmail(email);
 
-        System.out.println("What is your age?");
+        logger.info("What is your age?");
         int age = scanner.nextInt();
         membershipDetails.getPerson().setAge(age);
 
@@ -736,66 +744,63 @@ public class Main {
     public static void membership2(MembershipInformation membershipDetails){
         Scanner scanner = new Scanner(System.in);
         // If they want
-        System.out.println("\nWould you like information on our special offers and coupons? Yes/No?");
+        logger.info("\nWould you like information on our special offers and coupons? Yes/No?");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                System.out.println("You will receive offers and coupons");
+                logger.info("You will receive offers and coupons");
                 membershipDetails.setOfferStatus(true);
                 membership3(membershipDetails);
                 break;
             case "NO":
-                System.out.println("You will not be sent offers");
+                logger.info("You will not be sent offers");
                 membershipDetails.setOfferStatus(false);
                 membership3(membershipDetails);
                 break;
             default:
-                System.out.println("\nPlease pick Yes or No");
+                logger.info("\nPlease pick Yes or No");
                 membership2(membershipDetails);
                 break;
         }
     }
     public static void membership3(MembershipInformation membershipDetails){
 
-        // Use a long for a random membership number
-        Random r = new Random();
-        long low = 100000000;
-        long high = 999999999;
-        long membershipNumber = r.nextLong(high-low) + low;
+        // Use a long for a random java.membership number
+        long membershipNumber = setRandomNumber(999999999, 100000000);
 
         membershipDetails.setMembershipNumber(membershipNumber);
 
 
         // Output for email correction
-        System.out.println("\nYour name is: " + membershipDetails.getPerson().toString());
-        System.out.println("Your email is: " + membershipDetails.getPerson().getEmail());
-        System.out.println("Your membership status is: " + membershipDetails.getOfferStatus());
-        System.out.println("Your membership number is: " + membershipDetails.getMembershipNumber());
-        System.out.println("Your age is: " + membershipDetails.getPerson().getAge());
+        logger.info("\nYour name is: " + membershipDetails.getPerson().toString());
+        logger.info("Your email is: " + membershipDetails.getPerson().getEmail());
+        logger.info("Your java.membership status is: " + membershipDetails.getOfferStatus());
+        logger.info("Your java.membership number is: " + membershipDetails.getMembershipNumber());
+        logger.info("Your age is: " + membershipDetails.getPerson().getAge());
 
         // Use this for choice
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nIs this correct? Yes or No? (Not case sensitive)");
+        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
                 if(membershipDetails.getPerson().getAge() <= 17) {
-                    System.out.println("\nI'm sorry, but you must be 18 or older to sign up");
-                    System.out.println("Please enter your information again");
+                    logger.info("\nI'm sorry, but you must be 18 or older to sign up");
+                    logger.info("Please enter your information again");
                     membership();
                 } else {
-                    System.out.println("\nThank you for information and welcome to our membership");
+                    logger.info("\nThank you for information and welcome to our java.membership");
                     System.exit(0);
                 }
                 break;
             case "NO":
-                System.out.println("\nPlease enter your information again");
+                logger.info("\nPlease enter your information again");
                 membership();
                 break;
             default:
-                System.out.println("\nPlease pick Yes or No");
+                logger.info("\nPlease pick Yes or No");
                 membership3(membershipDetails);
                 break;
         }
@@ -803,33 +808,31 @@ public class Main {
     }
 
     public static void submitComplaint(){
-        // Use scanner for the user to input their name and type of complaint
+        // Use scanner for the user to input their name and type of java.complaint
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("\nWhat is your first name?");
+        logger.info("\nWhat is your first name?");
         String complaintFirstName = scanner.nextLine();
 
 
-        System.out.println("\nWhat is your last name?");
+        logger.info("\nWhat is your last name?");
         String complaintLastName = scanner.nextLine();
 
-        System.out.println("\nWhat type of complaint is it?");
-        System.out.println("1. Issue with a package");
-        System.out.println("2. An employee experience");
-        System.out.println("3. Other");
-        System.out.println("0. Exit");
+        logger.info("\nWhat type of java.complaint is it?");
+        logger.info("1. Issue with a package");
+        logger.info("2. An employee experience");
+        logger.info("3. Other");
+        logger.info("0. Exit");
 
         int complaintType = scanner.nextInt();
 
         Person person = new Person();
 
-        // Use this random to set a complaint number
-        Random r = new Random();
-        int low = 1;
-        int high = 999999;
-        int complaintNumber = r.nextInt(high-low) + low;
+        // Use this random to set a java.complaint number
 
-        // Switch to select what type of complaint someone wants
+        long complaintNumber = setRandomNumber(1, 999999);
+
+        // Switch to select what type of java.complaint someone wants
         switch (complaintType){
             case 1:
                 PackageComplaint packageComplaint = new PackageComplaint();
@@ -859,7 +862,7 @@ public class Main {
                 complaintOfOther(otherComplaint);
                 break;
             case 0:
-                System.out.println("\nThank you for your assistance. Goodbye");
+                logger.info("\nThank you for your assistance. Goodbye");
                 System.exit(0);
                 break;
         }
@@ -871,24 +874,24 @@ public class Main {
         Scanner scanner2 = new Scanner(System.in);
 
 
-        // Have the user set the number of the package and the complaint
-        System.out.println("\nWhat is the number of your package?");
+        // Have the user set the number of the package and the java.complaint
+        logger.info("\nWhat is the number of your package?");
         Shipment shipment = new Shipment();
         packageComplaint.setShipment(shipment);
         long numberOfPackage = scanner.nextLong();
         // packageComplaint.setPackageNumber(numberOfPackage);
         packageComplaint.getShipment().setPackageNumber(numberOfPackage);
 
-        System.out.println("\nWhat is your complaint?");
+        logger.info("\nWhat is your java.complaint?");
         String complaint = scanner2.nextLine();
         packageComplaint.setComplaint(complaint);
 
-        System.out.println("\nYour information");
-        System.out.println("Name: " + packageComplaint.getPerson().toString());
-        System.out.println("Complaint Number: " + packageComplaint.getComplaintNumber());
-        System.out.println("Complaint Type: " + packageComplaint.getBaseComplaintType());
-        System.out.println("Number of Package: " + packageComplaint.getShipment().getPackageNumber());
-        System.out.println("Complaint: " + packageComplaint.getComplaint());
+        logger.info("\nYour information");
+        logger.info("Name: " + packageComplaint.getPerson().toString());
+        logger.info("Complaint Number: " + packageComplaint.getComplaintNumber());
+        logger.info("Complaint Type: " + packageComplaint.getBaseComplaintType());
+        logger.info("Number of Package: " + packageComplaint.getShipment().getPackageNumber());
+        logger.info("Complaint: " + packageComplaint.getComplaint());
 
         complaintCheck();
 
@@ -902,30 +905,30 @@ public class Main {
 
         employeeComplaint.setEmployee(employee);
 
-        // Have the user set the name of the employee and the complaint
-        System.out.println("\nWhat is the first name of the employee who served you?");
+        // Have the user set the name of the employee and the java.complaint
+        logger.info("\nWhat is the first name of the employee who served you?");
         String employeeFirst = scanner.nextLine();
         employeeComplaint.getEmployee().setFirstName(employeeFirst);
 
-        System.out.println("\nWhat is the last name of the employee who served you?");
+        logger.info("\nWhat is the last name of the employee who served you?");
         String employeeLast = scanner.nextLine();
         employeeComplaint.getEmployee().setLastName(employeeLast);
 
-        System.out.println("\nWhat is the number of the employee? Between 10000 and 99999");
+        logger.info("\nWhat is the number of the employee? Between 10000 and 99999");
         int employeeNum = scanner.nextInt();
         employeeComplaint.getEmployee().setEmployeeNumber(employeeNum);
 
 
-        System.out.println("\nWhat is your complaint?");
+        logger.info("\nWhat is your java.complaint?");
         String complaint = scanner2.nextLine();
         employeeComplaint.setComplaint(complaint);
 
-        System.out.println("\nYour information");
-        System.out.println("Name: " + employeeComplaint.getPerson().toString());
-        System.out.println("Complaint Number: " + employeeComplaint.getComplaintNumber());
-        System.out.println("Complaint Type: " + employeeComplaint.getBaseComplaintType());
-        System.out.println("Name of Employee: " + employeeComplaint.getEmployee().toString());
-        System.out.println("Complaint: " + employeeComplaint.getComplaint());
+        logger.info("\nYour information");
+        logger.info("Name: " + employeeComplaint.getPerson().toString());
+        logger.info("Complaint Number: " + employeeComplaint.getComplaintNumber());
+        logger.info("Complaint Type: " + employeeComplaint.getBaseComplaintType());
+        logger.info("Name of Employee: " + employeeComplaint.getEmployee().toString());
+        logger.info("Complaint: " + employeeComplaint.getComplaint());
 
         complaintCheck();
 
@@ -935,20 +938,20 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        // Have the user set the name of the employee and the complaint
-        System.out.println("\nWhat is the other type of complaint you would like to make?");
+        // Have the user set the name of the employee and the java.complaint
+        logger.info("\nWhat is the other type of java.complaint you would like to make?");
         String typeOfComplaint = scanner.nextLine();
         otherComplaint.setOtherComplaintType(typeOfComplaint);
-        System.out.println("\nWhat is your complaint?");
+        logger.info("\nWhat is your java.complaint?");
         String complaint = scanner.nextLine();
         otherComplaint.setComplaint(complaint);
 
-        System.out.println("\nYour information");
-        System.out.println("Name: " + otherComplaint.getPerson().toString());
-        System.out.println("Complaint Number: " + otherComplaint.getComplaintNumber());
-        System.out.println("Complaint Type: " + otherComplaint.getBaseComplaintType());
-        System.out.println("Type of Complaint: " + otherComplaint.getOtherComplaintType());
-        System.out.println("Complaint: " + otherComplaint.getComplaint());
+        logger.info("\nYour information");
+        logger.info("Name: " + otherComplaint.getPerson().toString());
+        logger.info("Complaint Number: " + otherComplaint.getComplaintNumber());
+        logger.info("Complaint Type: " + otherComplaint.getBaseComplaintType());
+        logger.info("Type of Complaint: " + otherComplaint.getOtherComplaintType());
+        logger.info("Complaint: " + otherComplaint.getComplaint());
 
         complaintCheck();
 
@@ -956,19 +959,24 @@ public class Main {
     }
     public static void complaintCheck() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nIs this correct? Yes or No? (Not case sensitive)");
+        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                System.out.println("\nThank you for your assistance. Goodbye");
+                logger.info("\nThank you for your assistance. Goodbye");
                 System.exit(0);
             case "NO":
-                System.out.println("\nPlease enter your information again");
+                logger.info("\nPlease enter your information again");
                 submitComplaint();
             default:
-                System.out.println("\nPlease pick Yes or No");
+                logger.info("\nPlease pick Yes or No");
                 complaintCheck();
         }
+    }
+
+    public static long setRandomNumber(long low, long high) {
+        Random r = new Random();
+        return r.nextLong(high-low) + low;
     }
 }

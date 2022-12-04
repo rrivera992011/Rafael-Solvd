@@ -2,13 +2,13 @@ package person;
 
 public class Employee extends Person{
 
-    int employeeNumber;
+    long employeeNumber;
 
-    public void setEmployeeNumber(int employeeNumber) {
+    public void setEmployeeNumber(long employeeNumber) {
         this.employeeNumber = employeeNumber;
     }
 
-    public int getEmployeeNumber() {
+    public long getEmployeeNumber() {
         return this.employeeNumber;
     }
 }

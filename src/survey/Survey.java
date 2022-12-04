@@ -4,7 +4,7 @@ package survey;
 public class Survey implements ISurvey {
     private int serviceNum;
     private int efficiencyNum;
-    private int staffNum;
+    private int friendlinessNum;
 
     @Override
     public int getServiceNum() {
@@ -27,12 +27,13 @@ public class Survey implements ISurvey {
     }
 
     @Override
-    public int getStaffNum() {
-        return this.staffNum;
+    public void setFriendlinessNum(int friendlinessNum) {
+        this.friendlinessNum = friendlinessNum;
     }
 
     @Override
-    public void setStaffNum(int staffNum) {
-        this.staffNum = staffNum;
+    public int getFriendlinessNum() {
+        return this.friendlinessNum;
     }
+
 }

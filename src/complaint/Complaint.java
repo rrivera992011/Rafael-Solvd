@@ -4,7 +4,7 @@ import person.Person;
 
 public class Complaint {
     private Person person;
-    private int complaintNumber;
+    private long complaintNumber;
     private String baseComplaintType;
 
     private String complaint;
@@ -13,7 +13,7 @@ public class Complaint {
         return this.person;
     }
 
-    public int getComplaintNumber() {
+    public long getComplaintNumber() {
         return this.complaintNumber;
     }
 
@@ -33,7 +33,7 @@ public class Complaint {
         this.person = person;
     }
 
-    public void setComplaintNumber(int complaintNumber) {
+    public void setComplaintNumber(long complaintNumber) {
         this.complaintNumber = complaintNumber;
     }
 

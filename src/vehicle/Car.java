@@ -2,14 +2,14 @@ package vehicle;
 
 public class Car implements IVehicle {
     private String vehicleName;
-    private int carNumber;
+    private long carNumber;
 
 
-    public int getCarNumber() {
+    public long getCarNumber() {
         return this.carNumber;
     }
 
-    public void setTruckNumber(int truckNumber) {
+    public void setTruckNumber(long truckNumber) {
         this.carNumber = truckNumber;
     }
 

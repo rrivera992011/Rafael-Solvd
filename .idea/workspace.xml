@@ -2,37 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ca076e5-d79a-4031-9d97-ccf787f341e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/membership/MembershipInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/person/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shipment/Shipment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/Driver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Interfaces.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Interfaces/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/PressureWeight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/Shipment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/TotalPrice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/complaint/EmployeeComplaint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/complaint/EmployeeComplaint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/insurance/Insurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/complaint/Complaint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/complaint/Complaint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/factoid/FactoidOutput.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/factoid/FactoidOutput.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/factoid/IFactoid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/factoid/IFactoid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/insurance/Insurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/insurance/Insurance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/packageType/Envelope.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/packageType/Mailing.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/packageType/Parcel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/person/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/person/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/shipment/Shipment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/shipment/Shipment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/stamp/IStamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/stamp/IStamp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/stamp/Stamp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/stamp/Stamp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/survey/ISurvey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/survey/ISurvey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/survey/Survey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/survey/Survey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/vehicle/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/vehicle/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Interfaces/vehicle/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Interfaces/vehicle/Plane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PressureWeight.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shipment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TotalPrice.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/complaint/Complaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/complaint/Complaint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/complaint/EmployeeComplaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/complaint/EmployeeComplaint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/complaint/PackageComplaint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/complaint/PackageComplaint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/membership/Email.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/membership/IMembership.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/membership/IMembership.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageType/Box.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageType/Parcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageType/Envelope.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageType/Envelope.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/packageType/PackageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/packageType/Mailing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stamps/IStamps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stamps/StampTotal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/survey/SurveyAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/Survey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factoid/FactoidOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factoid/FactoidOutput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factoid/IFactoid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/factoid/IFactoid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/insurance/Insurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/insurance/Insurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageType/Envelope.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageType/Mailing.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/packageType/Parcel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/person/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/person/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shipment/Shipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shipment/Shipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stamp/IStamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stamp/IStamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stamp/Stamp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stamp/Stamp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/survey/ISurvey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/ISurvey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/survey/Survey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/survey/Survey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicle/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/Car.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vehicle/IVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/IVehicle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/vehicle/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vehicle/Plane.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,15 +68,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SolvdDev/Notes/Interfaces&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/SolvdDev/Notes/Interfaces/src/resources",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />

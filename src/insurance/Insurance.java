@@ -2,7 +2,7 @@ package insurance;
 
 public class Insurance{
     private double insurancePrice = 0;
-    private int insuranceNumber = 0;
+    private long insuranceNumber = 0;
     public Insurance() {
 
     }
@@ -15,11 +15,11 @@ public class Insurance{
         return this.insurancePrice;
     }
 
-    public void setInsuranceNumber(int insuranceNumber) {
+    public void setInsuranceNumber(long insuranceNumber) {
         this.insuranceNumber = insuranceNumber;
     }
 
-    public int getInsuranceNumber() {
+    public long getInsuranceNumber() {
         return this.insuranceNumber;
     }
 

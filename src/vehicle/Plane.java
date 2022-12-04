@@ -2,13 +2,13 @@ package vehicle;
 
 public class Plane implements IVehicle {
     private String vehicleName;
-    private int planeNumber;
+    private long planeNumber;
 
-    public int getPlaneNumber() {
+    public long getPlaneNumber() {
         return this.planeNumber;
     }
 
-    public void setPlaneNumber(int planeNumber) {
+    public void setPlaneNumber(long planeNumber) {
         this.planeNumber = planeNumber;
     }
 
