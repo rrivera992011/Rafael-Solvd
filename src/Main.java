@@ -1,4 +1,6 @@
 import complaint.*;
+import exceptions.EmptyCustomerException;
+import exceptions.YesOrNoException;
 import factoid.FactoidOutput;
 import insurance.*;
 import mailing.*;
@@ -81,12 +83,13 @@ public class Main {
                 contDelivery();
                 break;
             case 3:
-                if(sender.getFirstName().equals("") || recipient.getFirstName().equals("")) {
-                    logger.error("\nPlease enter both a sender and a recipient");
+                    try {
+                        checkCustomers();
+                    } catch (Exception e) {
+                        logger.error("\nA problem occurred " + e);
+                    }
+
                     menuOptions();
-                } else {
-                    insuranceTotal();
-                }
                 break;
             case 4:
                 buyStamps();
@@ -122,7 +125,6 @@ public class Main {
         logger.info("Enter your phone number");
         String phoneNumber = scanner.nextLine();
         sender.setPhoneNumber(phoneNumber);
-
 
     }
 
@@ -278,12 +280,12 @@ public class Main {
         df.setRoundingMode(RoundingMode.UP);
         logger.info("Complete total: " + df.format(shipment.getPrice()));
 
-        confirmationFunc(insuranceInfo, shipment);
+        confirmShipping(insuranceInfo, shipment);
 
 
     }
 
-    public static void confirmationFunc(Insurance insuranceInfo, Shipment shipment) {
+    public static void confirmShipping(Insurance insuranceInfo, Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
         logger.info("\nIs this okay? Yes/No? (Not case sensitive)");
         String confirmation = scanner.nextLine().toUpperCase();
@@ -300,8 +302,14 @@ public class Main {
                         insuranceTotal();
                         break;
             default:
-                        logger.info("\nPlease try something other than Yes or No");
-                        confirmationFunc(insuranceInfo, shipment);
+                        try{
+                            checkYesOrNo(confirmation);
+                        } catch (Exception e) {
+                            logger.error("\nA problem occurred " + e);
+                        }
+
+                        // logger.info("\nPlease try something other than Yes or No");
+                        confirmShipping(insuranceInfo, shipment);
 
         }
     }
@@ -317,7 +325,7 @@ public class Main {
 
         String outputTest = shipment.toString();
 
-        System.out.print(outputTest + "\n");
+        logger.info(outputTest + "\n");
 
         // Create a driver using the enterDriver function and send it to the confirmation
         Driver driver = enterDriver();
@@ -361,7 +369,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //Driver confirmation output
-        System.out.print("\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
+        logger.info("\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
         logger.info(" will take this delivery? Yes or No? (Not case sensitive)");
         String confirmDrive = scanner.nextLine().toUpperCase();
 
@@ -376,7 +384,11 @@ public class Main {
                 company(shipment.getInsurance(), shipment);
                 break;
             default:
-                logger.error("\nEntered something other than Yes or No. Please try again");
+                try{
+                    checkYesOrNo(confirmDrive);
+                } catch (Exception e) {
+                    logger.error("\nA problem occurred " + e);
+                }
                 driverConfirm(driver, shipment);
                 break;
 
@@ -683,7 +695,11 @@ public class Main {
                 survey();
                 break;
             default:
-                logger.error("Please pick Yes or No");
+                try{
+                    checkYesOrNo(choice);
+                } catch (Exception e) {
+                    logger.error("\nA problem occurred " + e);
+                }
                 survey2();
                 break;
         }
@@ -745,7 +761,7 @@ public class Main {
 
     public static void membership2(MembershipInformation membershipDetails){
         Scanner scanner = new Scanner(System.in);
-        // If they want
+        // If they want special offers, have them choose
         logger.info("\nWould you like information on our special offers and coupons? Yes/No?");
         String choice = scanner.nextLine().toUpperCase();
 
@@ -761,7 +777,11 @@ public class Main {
                 membership3(membershipDetails);
                 break;
             default:
-                logger.error("\nPlease pick Yes or No");
+                try{
+                    checkYesOrNo(choice);
+                } catch (Exception e) {
+                    logger.error("\nA problem occurred " + e);
+                }
                 membership2(membershipDetails);
                 break;
         }
@@ -802,7 +822,11 @@ public class Main {
                 membership();
                 break;
             default:
-                logger.error("\nPlease pick Yes or No");
+                try{
+                    checkYesOrNo(choice);
+                } catch (Exception e) {
+                    logger.error("\nA problem occurred " + e);
+                }
                 membership3(membershipDetails);
                 break;
         }
@@ -972,7 +996,11 @@ public class Main {
                 logger.info("\nPlease enter your information again");
                 submitComplaint();
             default:
-                logger.error("\nPlease pick Yes or No");
+                try{
+                    checkYesOrNo(choice);
+                } catch (Exception e) {
+                    logger.error("\nA problem occurred " + e);
+                }
                 complaintCheck();
         }
     }
@@ -981,4 +1009,21 @@ public class Main {
         Random r = new Random();
         return r.nextLong(high-low) + low;
     }
+
+    public static void checkYesOrNo(String confirmation) throws YesOrNoException {
+        if (!(confirmation.equals("YES") || confirmation.equals("NO"))) {
+            throw new YesOrNoException("\nPlease choose Yes or NO");
+        }
+    }
+
+    public static void checkCustomers() throws EmptyCustomerException {
+        if(sender.getFirstName().equals("") || recipient.getFirstName().equals("")) {
+            throw new EmptyCustomerException("\nPlease enter both a sender and a recipient\n",
+                    "Empty sender or recipient");
+
+        } else {
+            insuranceTotal();
+        }
+    }
+
 }
