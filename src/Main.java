@@ -1,5 +1,6 @@
 import complaint.*;
 import exceptions.EmptyCustomerException;
+import exceptions.TooManyStampsException;
 import exceptions.YesOrNoException;
 import factoid.FactoidOutput;
 import insurance.*;
@@ -21,15 +22,16 @@ public class Main {
     static Customer sender = new Customer();
     static Customer recipient = new Customer();
 
-    static Logger logger = LogManager.getLogger(Main.class);
+    final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
+    private static final Logger LOGGER = LogManager.getLogger("TEST_LOGGER");
 
 
 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        logger.info("Welcome to the delivery system. ");
-        logger.info( "Please choose from one of the following options: ");
+        LOGGER.log(MENU_LOG, "Welcome to the delivery system. ");
+        LOGGER.log(MENU_LOG,"Please choose from one of the following options: ");
         menuOptions();
 
 
@@ -46,24 +48,24 @@ public class Main {
 
         // Print out the sender and the recipient while it's not empty
         if(!sender.getFirstName().equals("")) {
-            logger.info( "\nName of sender: " + sender.toString());
-            logger.info( "Address of sender: " + sender.getAddress());
-            logger.info( "Phone number: " + sender.getPhoneNumber() + "\n");
+            LOGGER.log(MENU_LOG, "\nName of sender: " + sender.toString());
+            LOGGER.log(MENU_LOG, "Address of sender: " + sender.getAddress());
+            LOGGER.log(MENU_LOG, "Phone number: " + sender.getPhoneNumber() + "\n");
         }
 
         if(!recipient.getFirstName().equals("")) {
-            logger.info( "\nName of recipient: " + recipient.toString());
-            logger.info( "Address of recipient: " + recipient.getAddress());
-            logger.info( "Phone number: " + recipient.getPhoneNumber() + "\n");
+            LOGGER.log(MENU_LOG, "\nName of recipient: " + recipient.toString());
+            LOGGER.log(MENU_LOG, "Address of recipient: " + recipient.getAddress());
+            LOGGER.log(MENU_LOG, "Phone number: " + recipient.getPhoneNumber() + "\n");
         }
 
-        logger.info("1. Enter the sender");
-        logger.info("2. Enter the recipient");
-        logger.info("3. Send a package");
-        logger.info("4. Only buy stamps");
-        logger.info("5. File a complaint");
-        logger.info("6. Sign up for our membership");
-        logger.info("0. Exit the program");
+        LOGGER.log(MENU_LOG,"1. Enter the sender");
+        LOGGER.log(MENU_LOG,"2. Enter the recipient");
+        LOGGER.log(MENU_LOG,"3. Send a package");
+        LOGGER.log(MENU_LOG,"4. Only buy stamps");
+        LOGGER.log(MENU_LOG,"5. File a complaint");
+        LOGGER.log(MENU_LOG,"6. Sign up for our membership");
+        LOGGER.log(MENU_LOG,"0. Exit the program");
 
     }
 
@@ -71,25 +73,27 @@ public class Main {
 
         switch (selection) {
             case 0:
-                logger.info("Thank you for your service! Have a great day!");
+                LOGGER.log(MENU_LOG,"Thank you for your service! Have a great day!");
                 System.exit(0);
                 break;
             case 1:
                 createASender();
-                contDelivery();
+                continueDelivery();
                 break;
             case 2:
                 createARecipient();
-                contDelivery();
+                continueDelivery();
                 break;
             case 3:
                     try {
                         checkCustomers();
-                    } catch (Exception e) {
-                        logger.error("\nA problem occurred " + e);
+                    } catch (EmptyCustomerException e) {
+                        LOGGER.error("\nA problem occurred " + e);
+                    } finally {
+                        menuOptions();
                     }
 
-                    menuOptions();
+
                 break;
             case 4:
                 buyStamps();
@@ -98,11 +102,11 @@ public class Main {
                 submitComplaint();
                 break;
             case 6:
-                membership();
+                enterMembershipInfo();
                 break;
             default:
                 // Add exception here
-                logger.error("Please choose one of these options\n");
+                LOGGER.error("Please choose one of these options\n");
                 menuOptions();
                 break;
         }
@@ -110,19 +114,19 @@ public class Main {
 
     public static void createASender() {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nEnter your first name");
+        LOGGER.log(MENU_LOG,"\nEnter your first name");
         String senderFirstName = scanner.nextLine();
         sender.setFirstName(senderFirstName);
 
-        logger.info("Enter your last name");
+        LOGGER.log(MENU_LOG,"Enter your last name");
         String senderLastName = scanner.nextLine();
         sender.setLastName(senderLastName);
 
-        logger.info("Enter your address");
+        LOGGER.log(MENU_LOG,"Enter your address");
         String senderAddress = scanner.nextLine();
         sender.setAddress(senderAddress);
 
-        logger.info("Enter your phone number");
+        LOGGER.log(MENU_LOG,"Enter your phone number");
         String phoneNumber = scanner.nextLine();
         sender.setPhoneNumber(phoneNumber);
 
@@ -130,19 +134,19 @@ public class Main {
 
     public static void createARecipient() {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nEnter the recipient's first name");
+        LOGGER.log(MENU_LOG,"\nEnter the recipient's first name");
         String recipientFirstName = scanner.nextLine();
         recipient.setFirstName(recipientFirstName);
 
-        logger.info("Enter the recipient's last name");
+        LOGGER.log(MENU_LOG,"Enter the recipient's last name");
         String recipientLastName = scanner.nextLine();
         recipient.setLastName(recipientLastName);
 
-        logger.info("Enter the recipient's address");
+        LOGGER.log(MENU_LOG,"Enter the recipient's address");
         String recipientAddress = scanner.nextLine();
         recipient.setAddress(recipientAddress);
 
-        logger.info("Enter the recipient's phone number");
+        LOGGER.log(MENU_LOG,"Enter the recipient's phone number");
         String phoneNumber = scanner.nextLine();
         recipient.setPhoneNumber(phoneNumber);
 
@@ -150,22 +154,22 @@ public class Main {
 
     }
 
-    public static void contDelivery() {
+    public static void continueDelivery() {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nTo return to operation, press 1");
-        logger.info("To exit the operation, press 0\n");
+        LOGGER.log(MENU_LOG,"\nTo return to operation, press 1");
+        LOGGER.log(MENU_LOG,"To exit the operation, press 0\n");
         int option = scanner.nextInt();
         switch (option) {
             case 0:
-                logger.info("Thank you for your service! Have a great day!");
+                LOGGER.log(MENU_LOG,"Thank you for your service! Have a great day!");
                 System.exit(0);
                 break;
             case 1:
                 menuOptions();
                 break;
             default:
-                logger.error("Please choose one of these options\n");
-                contDelivery();
+                LOGGER.error("Please choose one of these options\n");
+                continueDelivery();
                 break;
         }
 
@@ -175,16 +179,21 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Insurance range
-        logger.info("\nDo you want insurance? Select from our plans");
-        logger.info("1. $10 coverage");
-        logger.info("2. $30 coverage");
-        logger.info("3. $50 coverage");
-        logger.info("0. No insurance");
+        LOGGER.log(MENU_LOG,"\nDo you want insurance? Select from our plans");
+        LOGGER.log(MENU_LOG,"1. $10 coverage");
+        LOGGER.log(MENU_LOG,"2. $30 coverage");
+        LOGGER.log(MENU_LOG,"3. $50 coverage");
+        LOGGER.log(MENU_LOG,"0. No insurance");
         int insuranceSelection = scanner.nextInt();
 
         Insurance insuranceInfo = new Insurance();
 
         double priceOfInsurance;
+        final double TEN_DOLLARS = 10;
+        final double THIRTY_DOLLARS = 30;
+        final double FIFTY_DOLLARS = 50;
+        final double TN_STATE_TAX = 0.07;
+        final double ZERO = 0;
 
         // Random number generating bar code
         long insuranceNumber = setRandomNumber(1000000,9999999 );
@@ -193,36 +202,36 @@ public class Main {
         // Switch statement used for insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
-                    priceOfInsurance = 10 + (10 * 0.07);
+                    priceOfInsurance = TEN_DOLLARS + (TEN_DOLLARS * TN_STATE_TAX);
                     insuranceInfo.setInsurancePrice(priceOfInsurance);
                     break;
             case 2:
-                    priceOfInsurance = 30 + (30 * 0.07);
+                    priceOfInsurance = THIRTY_DOLLARS + (THIRTY_DOLLARS * TN_STATE_TAX);
                     insuranceInfo.setInsurancePrice(priceOfInsurance);
                     break;
             case 3:
-                    priceOfInsurance = 50 + (50 * 0.07);
+                    priceOfInsurance = THIRTY_DOLLARS + (FIFTY_DOLLARS * TN_STATE_TAX);
                     insuranceInfo.setInsurancePrice(priceOfInsurance);
                     break;
             case 0:
-                    priceOfInsurance = 0;
+                    priceOfInsurance = ZERO;
                     insuranceInfo.setInsurancePrice(priceOfInsurance);
                     break;
             default:
-                    logger.error("Please select a number from the choices given\n");
+                    LOGGER.error("Please select a number from the choices given\n");
                     insuranceTotal();
                     break;
         }
 
-        setUpTotal(insuranceInfo);
+        setUpShipment(insuranceInfo, TN_STATE_TAX);
 
 
     }
 
-    public static void setUpTotal(Insurance insuranceInfo) {
+    public static void setUpShipment(Insurance insuranceInfo, final double TN_STATE_TAX) {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
-        logger.info("Select based on the number of days that you want");
+        LOGGER.log(MENU_LOG,"\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
+        LOGGER.log(MENU_LOG,"Select based on the number of days that you want");
         int numOfDays = scanner.nextInt();
         Shipment shipment = new Shipment();
         shipment.setDays(numOfDays);
@@ -230,24 +239,28 @@ public class Main {
 
         // Double variable for the price
         double priceOfPackage;
+        final double THREE_DOLLARS = 3;
+        final double SIX_DOLLARS = 6;
+        final double NINE_DOLLARS = 9;
+
 
         // Switch statement used to calculate total using TN state tax
         switch(numOfDays) {
             case 1:
-                priceOfPackage = 9 + (9 * 0.07) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = NINE_DOLLARS + (NINE_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
                 shipment.setPrice(priceOfPackage);
                 break;
             case 3:
-                priceOfPackage = 6 + (6 * 0.07) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = SIX_DOLLARS + (SIX_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
                 shipment.setPrice(priceOfPackage);
                 break;
             case 5:
-                priceOfPackage = 3 + (3 * 0.07) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = THREE_DOLLARS + (THREE_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
                 shipment.setPrice(priceOfPackage);
                 break;
             default:
-                logger.info("Please select a number from the choices given\n");
-                setUpTotal(insuranceInfo);
+                LOGGER.log(MENU_LOG,"Please select a number from the choices given\n");
+                setUpShipment(insuranceInfo, TN_STATE_TAX);
                 break;
         }
 
@@ -265,20 +278,20 @@ public class Main {
 
         shipment.setPackageNumber(packageNumber);
 
-        logger.info("\nName of sender: " + sender.toString());
-        logger.info("Address of sender: " + sender.getAddress());
-        logger.info("Phone number: " + sender.getPhoneNumber() + "\n");
+        LOGGER.log(MENU_LOG,"\nName of sender: " + sender.toString());
+        LOGGER.log(MENU_LOG,"Address of sender: " + sender.getAddress());
+        LOGGER.log(MENU_LOG,"Phone number: " + sender.getPhoneNumber() + "\n");
 
-        logger.info("\nName of recipient: " + recipient.toString());
-        logger.info("Address of sender: " + recipient.getAddress());
-        logger.info("Phone number: " + recipient.getPhoneNumber() + "\n");
+        LOGGER.log(MENU_LOG,"\nName of recipient: " + recipient.toString());
+        LOGGER.log(MENU_LOG,"Address of sender: " + recipient.getAddress());
+        LOGGER.log(MENU_LOG,"Phone number: " + recipient.getPhoneNumber() + "\n");
 
-        logger.info("\nPackage number: " + shipment.getPackageNumber());
-        logger.info("Insurance number: " + insuranceInfo.getInsuranceNumber());
-        logger.info("ETA: " + shipment.getDays() + " Day(s)");
+        LOGGER.log(MENU_LOG,"\nPackage number: " + shipment.getPackageNumber());
+        LOGGER.log(MENU_LOG,"Insurance number: " + insuranceInfo.getInsuranceNumber());
+        LOGGER.log(MENU_LOG,"ETA: " + shipment.getDays() + " Day(s)");
 
         df.setRoundingMode(RoundingMode.UP);
-        logger.info("Complete total: " + df.format(shipment.getPrice()));
+        LOGGER.log(MENU_LOG,"Complete total: " + df.format(shipment.getPrice()));
 
         confirmShipping(insuranceInfo, shipment);
 
@@ -287,28 +300,28 @@ public class Main {
 
     public static void confirmShipping(Insurance insuranceInfo, Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nIs this okay? Yes/No? (Not case sensitive)");
+        LOGGER.log(MENU_LOG,"\nIs this okay? Yes/No? (Not case sensitive)");
         String confirmation = scanner.nextLine().toUpperCase();
 
         switch(confirmation){
             case "YES":
-                        logger.info("\nSending package now!");
-                        logger.info("Thank you for your business");
+                        LOGGER.log(MENU_LOG,"\nSending package now!");
+                        LOGGER.log(MENU_LOG,"Thank you for your business");
                         company(insuranceInfo, shipment);
 
                         break;
             case "NO":
-                        logger.info("\nPlease try again then");
+                        LOGGER.log(MENU_LOG,"\nPlease try again then");
                         insuranceTotal();
                         break;
             default:
                         try{
                             checkYesOrNo(confirmation);
-                        } catch (Exception e) {
-                            logger.error("\nA problem occurred " + e);
+                        } catch (YesOrNoException e) {
+                            LOGGER.error("\nA problem occurred " + e);
                         }
 
-                        // logger.info("\nPlease try something other than Yes or No");
+                        // LOGGER.log(MENU_LOG,"\nPlease try something other than Yes or No");
                         confirmShipping(insuranceInfo, shipment);
 
         }
@@ -316,7 +329,7 @@ public class Main {
 
     public static void company(Insurance insuranceInfo, Shipment shipment) {
         // Output for the company and placing everything in one object
-        logger.info("\nOrder obtained");
+        LOGGER.log(MENU_LOG,"\nOrder obtained");
 
         shipment.setSender(sender);
         shipment.setRecipient(recipient);
@@ -325,11 +338,11 @@ public class Main {
 
         String outputTest = shipment.toString();
 
-        logger.info(outputTest + "\n");
+        LOGGER.log(MENU_LOG,outputTest + "\n");
 
         // Create a driver using the enterDriver function and send it to the confirmation
         Driver driver = enterDriver();
-        driverConfirm(driver, shipment);
+        confirmDriver(driver, shipment);
 
 
     }
@@ -337,12 +350,12 @@ public class Main {
     public static Driver enterDriver() {
         Driver driver = new Driver();
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nEnter your driver's first name");
+        LOGGER.log(MENU_LOG,"\nEnter your driver's first name");
         String driverAFirst = scanner.nextLine();
         driver.setFirstName(driverAFirst);
 
         // Enter the driver's last name
-        logger.info("Enter your driver's last name");
+        LOGGER.log(MENU_LOG,"Enter your driver's last name");
         String driverALast = scanner.nextLine();
         driver.setLastName(driverALast);
 
@@ -351,45 +364,45 @@ public class Main {
         driver.setEmployeeNumber(driverNumber);
 
         // Enter the car's status
-        logger.info("How is the car doing?");
+        LOGGER.log(MENU_LOG,"How is the car doing?");
         String carStatus = scanner.nextLine();
         driver.setStatus(carStatus);
 
-        logger.info("\nDrive information");
+        LOGGER.log(MENU_LOG,"\nDrive information");
         // Using the overridden toString to output in LastName, FirstName format
         String fullName = driver.toString();
-        logger.info("Name: " + fullName);
-        logger.info("Number: " + driver.getEmployeeNumber());
-        logger.info("Status: " + driver.getStatus());
+        LOGGER.log(MENU_LOG,"Name: " + fullName);
+        LOGGER.log(MENU_LOG,"Number: " + driver.getEmployeeNumber());
+        LOGGER.log(MENU_LOG,"Status: " + driver.getStatus());
 
         return driver;
     }
 
-    public static void driverConfirm(Driver driver, Shipment shipment){
+    public static void confirmDriver(Driver driver, Shipment shipment){
         Scanner scanner = new Scanner(System.in);
 
         //Driver confirmation output
-        logger.info("\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
-        logger.info(" will take this delivery? Yes or No? (Not case sensitive)");
+        LOGGER.log(MENU_LOG,"\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
+        LOGGER.log(MENU_LOG," will take this delivery? Yes or No? (Not case sensitive)");
         String confirmDrive = scanner.nextLine().toUpperCase();
 
         // Use a switch statement for confirmation
         switch(confirmDrive){
             case "YES":
-                logger.info("\nPreparing package drop off now!");
+                LOGGER.log(MENU_LOG,"\nPreparing package drop off now!");
                 determinePackageValues(driver, shipment);
                 break;
             case "NO":
-                logger.info("\nPlease go back to the other menu and enter a different driver");
+                LOGGER.log(MENU_LOG,"\nPlease go back to the other menu and enter a different driver");
                 company(shipment.getInsurance(), shipment);
                 break;
             default:
                 try{
                     checkYesOrNo(confirmDrive);
-                } catch (Exception e) {
-                    logger.error("\nA problem occurred " + e);
+                } catch (YesOrNoException e) {
+                    LOGGER.error("\nA problem occurred " + e);
                 }
-                driverConfirm(driver, shipment);
+                confirmDriver(driver, shipment);
                 break;
 
         }
@@ -401,12 +414,12 @@ public class Main {
 
         // Allow the facility worker to enter the values they need for the package
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nEnter the weight of the package in pounds");
+        LOGGER.log(MENU_LOG,"\nEnter the weight of the package in pounds");
         double packageWeight = scanner.nextDouble();
         shipment.setWeight(packageWeight);
-        logger.info("Enter the width of the package in inches");
+        LOGGER.log(MENU_LOG,"Enter the width of the package in inches");
         double packageWidth = scanner.nextDouble();
-        logger.info("Enter the height of the package in inches");
+        LOGGER.log(MENU_LOG,"Enter the height of the package in inches");
         double packageHeight = scanner.nextDouble();
 
         setupForDelivery(packageWeight, packageWidth, packageHeight, driver, shipment);
@@ -426,27 +439,22 @@ public class Main {
         envelope.setWidth(packageWidth);
         envelope.setPackageType("Envelope");
 
-        logger.info("\nHow many stamps do you have on the envelope?");
+        LOGGER.log(MENU_LOG,"\nHow many stamps do you have on the envelope?");
         int stampNum = scanner.nextInt();
         envelope.setNumberOfStamps(stampNum);
 
         // Use an arraylist to set the stamps on an envelope
         ArrayList <Stamp> stamps = new ArrayList<>();
+        final double STAMP_PRICE = 0.75;
 
-        /*for(int i = 0; i < stampNum; i++) {
-            Stamp stamp = new Stamp();
-            int stampNameInt = i+1;
-            stamp.setName("Stamp " + stampNameInt);
-            stamp.setPrice(0.75);
-            stamps.add(stamp);
 
-        }*/
         int i = 0;
         while (i < stampNum) {
+
             Stamp stamp = new Stamp();
             int stampNameInt = i+1;
             stamp.setName("Stamp " + stampNameInt);
-            stamp.setPrice(0.75);
+            stamp.setPrice(STAMP_PRICE);
             stamps.add(stamp);
             i++;
         }
@@ -469,7 +477,7 @@ public class Main {
         parcel.setPackageType("Box");
 
         //Boolean used to detect whether a package is fragile or not
-        logger.info("\nIs the package fragile? Type true or false");
+        LOGGER.log(MENU_LOG,"\nIs the package fragile? Type true or false");
         boolean confirmDrive = scanner.nextBoolean();
 
         parcel.setFragility(confirmDrive);
@@ -501,39 +509,39 @@ public class Main {
         String driverFullName = driver.getFirstName() + " " + driver.getLastName();
         String senderFullName = shipment.getSender().getFirstName() + " " + shipment.getSender().getLastName();
 
-        logger.info("\nThe weight of the object is " + shipment.getMailing().getWeight());
-        logger.info("This is a(n) " + shipment.getMailing().getPackageType());
+        LOGGER.log(MENU_LOG,"\nThe weight of the object is " + shipment.getMailing().getWeight());
+        LOGGER.log(MENU_LOG,"This is a(n) " + shipment.getMailing().getPackageType());
 
         // Switch statement to output based on the package type
         switch(shipment.getMailing().getPackageType()){
             case "Box":
                 Parcel parcel = (Parcel) shipment.getMailing();
                 if (!parcel.getFragility()) {
-                    logger.info("It is not fragile");
+                    LOGGER.log(MENU_LOG,"It is not fragile");
                 } else {
-                    logger.info("It is fragile");
+                    LOGGER.log(MENU_LOG,"It is fragile");
                 }
                 break;
             case "Envelope":
                 Envelope envelope = (Envelope) shipment.getMailing();
-                logger.info("It needs " + envelope.getNumberOfStamps() + " stamp(s)\n");
+                LOGGER.log(MENU_LOG,"It needs " + envelope.getNumberOfStamps() + " stamp(s)\n");
                 ArrayList <Stamp> stampArray = envelope.getStampArrayList();
 
                 for (Stamp s: stampArray) {
-                    logger.info(s.getName());
-                    logger.info(s.getPrice());
+                    LOGGER.log(MENU_LOG,s.getName());
+                    LOGGER.log(MENU_LOG,s.getPrice());
                 }
 
                 break;
             default:
-                logger.error("This is nothing");
+                LOGGER.error("This is nothing");
                 break;
         }
 
-        logger.info("\nEnter the weight again in facility to make sure it's the correct object");
+        LOGGER.log(MENU_LOG,"\nEnter the weight again in facility to make sure it's the correct object");
         double weightAtFacility = scanner.nextDouble();
 
-        logger.info("The weight of the object in the facility is: " + weightAtFacility);
+        LOGGER.log(MENU_LOG,"The weight of the object in the facility is: " + weightAtFacility);
 
         // Create a hash map for the weight set to check for equals
         Map<String, Double> weightSet = new HashMap<>();
@@ -543,13 +551,13 @@ public class Main {
         // If the weight isn't the same as the package weight, return to the function
         if (!weightSet.get(senderFullName).equals(weightSet.get(driverFullName))) {
 
-            logger.info("\nThe package is not there. Find the correct package");
+            LOGGER.log(MENU_LOG,"\nThe package is not there. Find the correct package");
             weighForFacility(driver, shipment);
 
         } else {
-            logger.info("\nThe correct package is found.");
-            logger.info("ETA is " + shipment.getDays() + " day(s) until delivery");
-            logger.info("Entering in vehicle now");
+            LOGGER.log(MENU_LOG,"\nThe correct package is found.");
+            LOGGER.log(MENU_LOG,"ETA is " + shipment.getDays() + " day(s) until delivery");
+            LOGGER.log(MENU_LOG,"Entering in vehicle now");
             vehicleChoice(shipment);
         }
 
@@ -557,7 +565,7 @@ public class Main {
 
     public static void vehicleChoice(Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nWhat vehicle do you want to use? A car or an plane?");
+        LOGGER.log(MENU_LOG,"\nWhat vehicle do you want to use? A car or an plane?");
         String choice = scanner.nextLine().toUpperCase();
 
         // Random element for car/plane number
@@ -567,7 +575,7 @@ public class Main {
         // Use a switch statement to output the correct element
         switch(choice) {
             case "CAR":
-                logger.info("\nYou have chosen a car");
+                LOGGER.log(MENU_LOG,"\nYou have chosen a car");
                 carOrPlaneNum = setRandomNumber(100000, 999999);
                 Car car = new Car();
                 car.setVehicleName("Car");
@@ -575,7 +583,7 @@ public class Main {
                 vehicleOutput(shipment, car);
                 break;
             case "PLANE":
-                logger.info("\nYou have chosen an airplane");
+                LOGGER.log(MENU_LOG,"\nYou have chosen an airplane");
                 carOrPlaneNum = setRandomNumber(1, 1000);
                 Plane plane = new Plane();
                 plane.setVehicleName("Plane");
@@ -583,7 +591,7 @@ public class Main {
                 vehicleOutput(shipment, plane);
                 break;
             default:
-                logger.error("\nPlease choose something else");
+                LOGGER.error("\nPlease choose something else");
                 vehicleChoice(shipment);
                 break;
         }
@@ -594,16 +602,16 @@ public class Main {
         // Equalize the plane or car object for correct output
         if(carOrPlane.getVehicleName().equals("Car")) {
             Car car = ((Car) carOrPlane);
-            logger.info("\nVehicle choice: " + car.getVehicleName());
-            logger.info("Number: " + car.getCarNumber());
-            logger.info("\nSending package now");
+            LOGGER.log(MENU_LOG,"\nVehicle choice: " + car.getVehicleName());
+            LOGGER.log(MENU_LOG,"Number: " + car.getCarNumber());
+            LOGGER.log(MENU_LOG,"\nSending package now");
             orderFinished(shipment);
 
         } else if (carOrPlane.getVehicleName().equals("Plane")) {
             Plane plane = ((Plane) carOrPlane);
-            logger.info("\nVehicle choice: " + plane.getVehicleName());
-            logger.info("Number: " + plane.getPlaneNumber());
-            logger.info("\nSending package now");
+            LOGGER.log(MENU_LOG,"\nVehicle choice: " + plane.getVehicleName());
+            LOGGER.log(MENU_LOG,"Number: " + plane.getPlaneNumber());
+            LOGGER.log(MENU_LOG,"\nSending package now");
             orderFinished(shipment);
         }
 
@@ -613,19 +621,19 @@ public class Main {
 
         // Output everything
         String order;
-        logger.info("\nOrder delivered");
+        LOGGER.log(MENU_LOG,"\nOrder delivered");
         if (shipment.getMailing().getPackageType().equals("Box")) {
             Parcel parcel = (Parcel) shipment.getMailing();
-            logger.info("\n" + parcel.getPackageType() + " received");
+            LOGGER.log(MENU_LOG,"\n" + parcel.getPackageType() + " received");
             order = shipment.toString();
-            logger.info(order);
+            LOGGER.log(MENU_LOG,order);
             moreOptions();
 
         } else if (shipment.getMailing().getPackageType().equals("Envelope")) {
             Envelope envelope = (Envelope) shipment.getMailing();
-            logger.info("\n" + envelope.getPackageType() + " received");
+            LOGGER.log(MENU_LOG,"\n" + envelope.getPackageType() + " received");
             order = shipment.toString();
-            logger.info(order);
+            LOGGER.log(MENU_LOG,order);
             moreOptions();
         }
     }
@@ -634,12 +642,12 @@ public class Main {
         // More options
 
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nMore options");
-        logger.info("1. Take our 3 question survey");
-        logger.info("2. Get a small factoid of the mail while leaving");
-        logger.info("3. Buy stamps. 0.75 per stamp");
-        logger.info("4. Sign up for our membership");
-        logger.info("0. End");
+        LOGGER.log(MENU_LOG,"\nMore options");
+        LOGGER.log(MENU_LOG,"1. Take our 3 question survey");
+        LOGGER.log(MENU_LOG,"2. Get a small factoid of the mail while leaving");
+        LOGGER.log(MENU_LOG,"3. Buy stamps. 0.75 per stamp");
+        LOGGER.log(MENU_LOG,"4. Sign up for our membership");
+        LOGGER.log(MENU_LOG,"0. End");
 
         // Use integer for output
         int optionNum = scanner.nextInt();
@@ -647,11 +655,11 @@ public class Main {
         // Switch for more options
         switch (optionNum) {
             case 0:
-                    logger.info("Thank you for shopping here");
+                    LOGGER.log(MENU_LOG,"Thank you for shopping here");
                     System.exit(0);
                     break;
             case 1:
-                    survey();
+                    enterSurveyInfo();
                     break;
             case 2:
                     factoid();
@@ -660,58 +668,58 @@ public class Main {
                     buyStamps();
                     break;
             case 4:
-                    membership();
+                    enterMembershipInfo();
                     break;
             default:
-                    logger.error("You did not enter a choice given. Try again");
+                    LOGGER.error("You did not enter a choice given. Try again");
                     moreOptions();
                     break;
         }
 
     }
 
-    public static void survey() {
+    public static void enterSurveyInfo() {
         Scanner scanner = new Scanner(System.in);
 
         // Use the surveyor variable to grab the answers
         Survey surveyor = new Survey();
-        logger.info("\nRate from 1-10. How did you like our service?");
+        LOGGER.log(MENU_LOG,"\nRate from 1-10. How did you like our service?");
         int choiceNum = scanner.nextInt();
         surveyor.setServiceNum(choiceNum);
-        logger.info("Rate from 1-10. How efficient was our service?");
+        LOGGER.log(MENU_LOG,"Rate from 1-10. How efficient was our service?");
         choiceNum = scanner.nextInt();
         surveyor.setEfficiencyNum(choiceNum);
-        logger.info("Rate from 1-10. How friendly was our staff?");
+        LOGGER.log(MENU_LOG,"Rate from 1-10. How friendly was our staff?");
         choiceNum = scanner.nextInt();
         surveyor.setFriendlinessNum(choiceNum);
-        logger.info("\nYou answers were: " +
+        LOGGER.log(MENU_LOG,"\nYou answers were: " +
                 surveyor.getServiceNum() + ", " + surveyor.getEfficiencyNum() +
                 ", and " + surveyor.getFriendlinessNum());
 
-        survey2();
+        confirmSurveyInfo();
     }
 
-    public static void survey2() {
+    public static void confirmSurveyInfo() {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
+        LOGGER.log(MENU_LOG,"\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                logger.info("\nThank you for your assistance. Goodbye");
+                LOGGER.log(MENU_LOG,"\nThank you for your assistance. Goodbye");
                 System.exit(0);
                 break;
             case "NO":
-                logger.info("Please select your choices again");
-                survey();
+                LOGGER.log(MENU_LOG,"Please select your choices again");
+                enterSurveyInfo();
                 break;
             default:
                 try{
                     checkYesOrNo(choice);
-                } catch (Exception e) {
-                    logger.error("\nA problem occurred " + e);
+                } catch(YesOrNoException e) {
+                    LOGGER.error("\nA problem occurred " + e);
                 }
-                survey2();
+                confirmSurveyInfo();
                 break;
         }
     }
@@ -722,123 +730,141 @@ public class Main {
         System.exit(0);
     }
     public static void buyStamps() {
-        final DecimalFormat df = new DecimalFormat("0.00");
+
         Stamp stamp = new Stamp();
-        df.setRoundingMode(RoundingMode.UP);
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nHow many stamps would you like to buy? 0.75 per stamp");
-        int numOfStamps = scanner.nextInt();
+        LOGGER.log(MENU_LOG,"\nHow many stamps would you like to buy? 0.75 per stamp");
+        int numberOfStamps = scanner.nextInt();
 
-        // Calculate the number of stamps
-        stamp.setPrice(0.75);
-        double completeTotal = stamp.getPrice() * numOfStamps;
-
-
-        logger.info("\nYou bought " + numOfStamps +
-                " stamps for $" + df.format(completeTotal));
-        logger.info("Thank you!");
-
-        System.exit(0);
+        try{
+            tooManyStamps(numberOfStamps, stamp);
+        } catch (TooManyStampsException e) {
+            LOGGER.warn(e);
+        } finally {
+            buyStamps();
+        }
 
     }
 
-    public static void membership() {
+    public static void calculateStampTotal(int numberOfStamps, Stamp stamp) {
+        // Calculate the number of stamps
+        final double STAMP_PRICE = 0.75;
+        stamp.setPrice(STAMP_PRICE);
+        double completeTotal = stamp.getPrice() * numberOfStamps;
+
+        stampOutput(numberOfStamps, completeTotal);
+    }
+
+    public static void stampOutput(int numberOfStamps, double completeTotal) {
+
+        final DecimalFormat df = new DecimalFormat("0.00");
+        df.setRoundingMode(RoundingMode.UP);
+
+        LOGGER.log(MENU_LOG,"\nYou bought " + numberOfStamps +
+                " stamps for $" + df.format(completeTotal));
+        LOGGER.log(MENU_LOG,"Thank you!");
+
+        System.exit(0);
+    }
+
+
+    public static void enterMembershipInfo() {
         Scanner scanner = new Scanner(System.in);
         MembershipInformation membershipDetails = new MembershipInformation();
 
         Person person = new Person();
         membershipDetails.setPerson(person);
 
-        logger.info("\nEnter your first name");
+        LOGGER.log(MENU_LOG,"\nEnter your first name");
         String memberFirstName = scanner.nextLine();
         membershipDetails.getPerson().setFirstName(memberFirstName);
 
-        logger.info("Enter your last name");
+        LOGGER.log(MENU_LOG,"Enter your last name");
         String memberLastName = scanner.nextLine();
         membershipDetails.getPerson().setLastName(memberLastName);
 
         // Get the email for the membership
-        logger.info("What is your email?");
+        LOGGER.log(MENU_LOG,"What is your email?");
         String email = scanner.nextLine();
         membershipDetails.getPerson().setEmail(email);
 
-        logger.info("What is your age?");
+        LOGGER.log(MENU_LOG,"What is your age?");
         int age = scanner.nextInt();
         membershipDetails.getPerson().setAge(age);
 
-        membership2(membershipDetails);
+        setMembershipNotificationPreferences(membershipDetails);
 
     }
 
-    public static void membership2(MembershipInformation membershipDetails){
+    public static void setMembershipNotificationPreferences(MembershipInformation membershipDetails){
         Scanner scanner = new Scanner(System.in);
         // If they want special offers, have them choose
-        logger.info("\nWould you like information on our special offers and coupons? Yes/No?");
+        LOGGER.log(MENU_LOG,"\nWould you like information on our special offers and coupons? Yes/No?");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                logger.info("You will receive offers and coupons");
+                LOGGER.log(MENU_LOG,"You will receive offers and coupons");
                 membershipDetails.setOfferStatus(true);
-                membership3(membershipDetails);
+                confirmMembershipInfo(membershipDetails);
                 break;
             case "NO":
-                logger.info("You will not be sent offers");
+                LOGGER.log(MENU_LOG,"You will not be sent offers");
                 membershipDetails.setOfferStatus(false);
-                membership3(membershipDetails);
+                confirmMembershipInfo(membershipDetails);
                 break;
             default:
                 try{
                     checkYesOrNo(choice);
-                } catch (Exception e) {
-                    logger.error("\nA problem occurred " + e);
+                } catch (YesOrNoException e) {
+                    LOGGER.error("\nA problem occurred " + e);
                 }
-                membership2(membershipDetails);
+                setMembershipNotificationPreferences(membershipDetails);
                 break;
         }
     }
-    public static void membership3(MembershipInformation membershipDetails){
+    public static void confirmMembershipInfo(MembershipInformation membershipDetails){
 
         // Use a long for a random membership number
-        long membershipNumber = setRandomNumber(999999999, 100000000);
+        long membershipNumber = setRandomNumber(100000000, 999999999);
 
         membershipDetails.setMembershipNumber(membershipNumber);
 
 
         // Output for email correction
-        logger.info("\nYour name is: " + membershipDetails.getPerson().toString());
-        logger.info("Your email is: " + membershipDetails.getPerson().getEmail());
-        logger.info("Your membership status is: " + membershipDetails.getOfferStatus());
-        logger.info("Your membership number is: " + membershipDetails.getMembershipNumber());
-        logger.info("Your age is: " + membershipDetails.getPerson().getAge());
+        LOGGER.log(MENU_LOG,"\nYour name is: " + membershipDetails.getPerson().toString());
+        LOGGER.log(MENU_LOG,"Your email is: " + membershipDetails.getPerson().getEmail());
+        LOGGER.log(MENU_LOG,"Your membership status is: " + membershipDetails.getOfferStatus());
+        LOGGER.log(MENU_LOG,"Your membership number is: " + membershipDetails.getMembershipNumber());
+        LOGGER.log(MENU_LOG,"Your age is: " + membershipDetails.getPerson().getAge());
 
         // Use this for choice
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
+        LOGGER.log(MENU_LOG,"\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
                 if(membershipDetails.getPerson().getAge() <= 17) {
-                    logger.info("\nI'm sorry, but you must be 18 or older to sign up");
-                    logger.info("Please enter your information again");
-                    membership();
+                    LOGGER.log(MENU_LOG,"\nI'm sorry, but you must be 18 or older to sign up");
+                    LOGGER.log(MENU_LOG,"Please enter your information again");
+                    enterMembershipInfo();
                 } else {
-                    logger.info("\nThank you for information and welcome to our membership");
+                    LOGGER.log(MENU_LOG,"\nThank you for information and welcome to our membership");
                     System.exit(0);
                 }
                 break;
             case "NO":
-                logger.info("\nPlease enter your information again");
-                membership();
+                LOGGER.log(MENU_LOG,"\nPlease enter your information again");
+                enterMembershipInfo();
                 break;
             default:
                 try{
                     checkYesOrNo(choice);
-                } catch (Exception e) {
-                    logger.error("\nA problem occurred " + e);
+                } catch (YesOrNoException e) {
+                    LOGGER.error("\nA problem occurred " + e);
                 }
-                membership3(membershipDetails);
+                confirmMembershipInfo(membershipDetails);
                 break;
         }
 
@@ -848,18 +874,18 @@ public class Main {
         // Use scanner for the user to input their name and type of complaint
         Scanner scanner = new Scanner(System.in);
 
-        logger.info("\nWhat is your first name?");
+        LOGGER.log(MENU_LOG,"\nWhat is your first name?");
         String complaintFirstName = scanner.nextLine();
 
 
-        logger.info("\nWhat is your last name?");
+        LOGGER.log(MENU_LOG,"\nWhat is your last name?");
         String complaintLastName = scanner.nextLine();
 
-        logger.info("\nWhat type of complaint is it?");
-        logger.info("1. Issue with a package");
-        logger.info("2. An employee experience");
-        logger.info("3. Other");
-        logger.info("0. Exit");
+        LOGGER.log(MENU_LOG,"\nWhat type of complaint is it?");
+        LOGGER.log(MENU_LOG,"1. Issue with a package");
+        LOGGER.log(MENU_LOG,"2. An employee experience");
+        LOGGER.log(MENU_LOG,"3. Other");
+        LOGGER.log(MENU_LOG,"0. Exit");
 
         int complaintType = scanner.nextInt();
 
@@ -899,7 +925,7 @@ public class Main {
                 complaintOfOther(otherComplaint);
                 break;
             case 0:
-                logger.info("\nThank you for your assistance. Goodbye");
+                LOGGER.log(MENU_LOG,"\nThank you for your assistance. Goodbye");
                 System.exit(0);
                 break;
         }
@@ -912,25 +938,25 @@ public class Main {
 
 
         // Have the user set the number of the package and the complaint
-        logger.info("\nWhat is the number of your package?");
+        LOGGER.log(MENU_LOG,"\nWhat is the number of your package?");
         Shipment shipment = new Shipment();
         packageComplaint.setShipment(shipment);
         long numberOfPackage = scanner.nextLong();
         // packageComplaint.setPackageNumber(numberOfPackage);
         packageComplaint.getShipment().setPackageNumber(numberOfPackage);
 
-        logger.info("\nWhat is your complaint?");
+        LOGGER.log(MENU_LOG,"\nWhat is your complaint?");
         String complaint = scanner2.nextLine();
         packageComplaint.setComplaint(complaint);
 
-        logger.info("\nYour information");
-        logger.info("Name: " + packageComplaint.getPerson().toString());
-        logger.info("Complaint Number: " + packageComplaint.getComplaintNumber());
-        logger.info("Complaint Type: " + packageComplaint.getBaseComplaintType());
-        logger.info("Number of Package: " + packageComplaint.getShipment().getPackageNumber());
-        logger.info("Complaint: " + packageComplaint.getComplaint());
+        LOGGER.log(MENU_LOG,"\nYour information");
+        LOGGER.log(MENU_LOG,"Name: " + packageComplaint.getPerson().toString());
+        LOGGER.log(MENU_LOG,"Complaint Number: " + packageComplaint.getComplaintNumber());
+        LOGGER.log(MENU_LOG,"Complaint Type: " + packageComplaint.getBaseComplaintType());
+        LOGGER.log(MENU_LOG,"Number of Package: " + packageComplaint.getShipment().getPackageNumber());
+        LOGGER.log(MENU_LOG,"Complaint: " + packageComplaint.getComplaint());
 
-        complaintCheck();
+        finalizeComplaint();
 
     }
 
@@ -943,31 +969,31 @@ public class Main {
         employeeComplaint.setEmployee(employee);
 
         // Have the user set the name of the employee and the complaint
-        logger.info("\nWhat is the first name of the employee who served you?");
+        LOGGER.log(MENU_LOG,"\nWhat is the first name of the employee who served you?");
         String employeeFirst = scanner.nextLine();
         employeeComplaint.getEmployee().setFirstName(employeeFirst);
 
-        logger.info("\nWhat is the last name of the employee who served you?");
+        LOGGER.log(MENU_LOG,"\nWhat is the last name of the employee who served you?");
         String employeeLast = scanner.nextLine();
         employeeComplaint.getEmployee().setLastName(employeeLast);
 
-        logger.info("\nWhat is the number of the employee? Between 10000 and 99999");
+        LOGGER.log(MENU_LOG,"\nWhat is the number of the employee? Between 10000 and 99999");
         int employeeNum = scanner.nextInt();
         employeeComplaint.getEmployee().setEmployeeNumber(employeeNum);
 
 
-        logger.info("\nWhat is your complaint?");
+        LOGGER.log(MENU_LOG,"\nWhat is your complaint?");
         String complaint = scanner2.nextLine();
         employeeComplaint.setComplaint(complaint);
 
-        logger.info("\nYour information");
-        logger.info("Name: " + employeeComplaint.getPerson().toString());
-        logger.info("Complaint Number: " + employeeComplaint.getComplaintNumber());
-        logger.info("Complaint Type: " + employeeComplaint.getBaseComplaintType());
-        logger.info("Name of Employee: " + employeeComplaint.getEmployee().toString());
-        logger.info("Complaint: " + employeeComplaint.getComplaint());
+        LOGGER.log(MENU_LOG,"\nYour information");
+        LOGGER.log(MENU_LOG,"Name: " + employeeComplaint.getPerson().toString());
+        LOGGER.log(MENU_LOG,"Complaint Number: " + employeeComplaint.getComplaintNumber());
+        LOGGER.log(MENU_LOG,"Complaint Type: " + employeeComplaint.getBaseComplaintType());
+        LOGGER.log(MENU_LOG,"Name of Employee: " + employeeComplaint.getEmployee().toString());
+        LOGGER.log(MENU_LOG,"Complaint: " + employeeComplaint.getComplaint());
 
-        complaintCheck();
+        finalizeComplaint();
 
     }
 
@@ -976,43 +1002,43 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Have the user set the name of the employee and the complaint
-        logger.info("\nWhat is the other type of complaint you would like to make?");
+        LOGGER.log(MENU_LOG,"\nWhat is the other type of complaint you would like to make?");
         String typeOfComplaint = scanner.nextLine();
         otherComplaint.setOtherComplaintType(typeOfComplaint);
-        logger.info("\nWhat is your complaint?");
+        LOGGER.log(MENU_LOG,"\nWhat is your complaint?");
         String complaint = scanner.nextLine();
         otherComplaint.setComplaint(complaint);
 
-        logger.info("\nYour information");
-        logger.info("Name: " + otherComplaint.getPerson().toString());
-        logger.info("Complaint Number: " + otherComplaint.getComplaintNumber());
-        logger.info("Complaint Type: " + otherComplaint.getBaseComplaintType());
-        logger.info("Type of Complaint: " + otherComplaint.getOtherComplaintType());
-        logger.info("Complaint: " + otherComplaint.getComplaint());
+        LOGGER.log(MENU_LOG,"\nYour information");
+        LOGGER.log(MENU_LOG,"Name: " + otherComplaint.getPerson().toString());
+        LOGGER.log(MENU_LOG,"Complaint Number: " + otherComplaint.getComplaintNumber());
+        LOGGER.log(MENU_LOG,"Complaint Type: " + otherComplaint.getBaseComplaintType());
+        LOGGER.log(MENU_LOG,"Type of Complaint: " + otherComplaint.getOtherComplaintType());
+        LOGGER.log(MENU_LOG,"Complaint: " + otherComplaint.getComplaint());
 
-        complaintCheck();
+        finalizeComplaint();
 
 
     }
-    public static void complaintCheck() {
+    public static void finalizeComplaint() {
         Scanner scanner = new Scanner(System.in);
-        logger.info("\nIs this correct? Yes or No? (Not case sensitive)");
+        LOGGER.log(MENU_LOG,"\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                logger.info("\nThank you for your assistance. Goodbye");
+                LOGGER.log(MENU_LOG,"\nThank you for your assistance. Goodbye");
                 System.exit(0);
             case "NO":
-                logger.info("\nPlease enter your information again");
+                LOGGER.log(MENU_LOG,"\nPlease enter your information again");
                 submitComplaint();
             default:
                 try{
                     checkYesOrNo(choice);
                 } catch (Exception e) {
-                    logger.error("\nA problem occurred " + e);
+                    LOGGER.error("\nA problem occurred " + e);
                 }
-                complaintCheck();
+                finalizeComplaint();
         }
     }
 
@@ -1034,6 +1060,15 @@ public class Main {
 
         } else {
             insuranceTotal();
+        }
+    }
+
+    public static void tooManyStamps(int numberOfStamps, Stamp stamp) throws TooManyStampsException {
+        if(numberOfStamps > 100) {
+            throw new TooManyStampsException("\nToo many stamps");
+        }
+        else{
+            calculateStampTotal(numberOfStamps, stamp);
         }
     }
 

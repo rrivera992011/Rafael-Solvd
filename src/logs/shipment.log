@@ -1,0 +1,10 @@
+2022-12-06 11:37:02,337 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-06 11:37:02,338 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-06 11:37:02,339 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-06 11:37:05,253 MENU_LOG TEST_LOGGER [main] Thank you for your service! Have a great day!
