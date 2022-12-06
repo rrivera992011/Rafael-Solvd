@@ -431,19 +431,28 @@ public class Main {
         envelope.setNumberOfStamps(stampNum);
 
         // Use an arraylist to set the stamps on an envelope
-        ArrayList <Stamp> stampArray = new ArrayList<>();
+        ArrayList <Stamp> stamps = new ArrayList<>();
 
-        for(int i = 0; i < stampNum; i++) {
+        /*for(int i = 0; i < stampNum; i++) {
             Stamp stamp = new Stamp();
             int stampNameInt = i+1;
             stamp.setName("Stamp " + stampNameInt);
             stamp.setPrice(0.75);
-            stampArray.add(stamp);
+            stamps.add(stamp);
 
+        }*/
+        int i = 0;
+        while (i < stampNum) {
+            Stamp stamp = new Stamp();
+            int stampNameInt = i+1;
+            stamp.setName("Stamp " + stampNameInt);
+            stamp.setPrice(0.75);
+            stamps.add(stamp);
+            i++;
         }
 
         // Set the array in the envelope
-        envelope.setStampArrayList(stampArray);
+        envelope.setStampArrayList(stamps);
 
         return envelope;
 
@@ -509,10 +518,12 @@ public class Main {
                 Envelope envelope = (Envelope) shipment.getMailing();
                 logger.info("It needs " + envelope.getNumberOfStamps() + " stamp(s)\n");
                 ArrayList <Stamp> stampArray = envelope.getStampArrayList();
-                for(int i = 0; i < envelope.getNumberOfStamps(); i++) {
-                    logger.info(stampArray.get(i).getName());
-                    logger.info(stampArray.get(i).getPrice());
+
+                for (Stamp s: stampArray) {
+                    logger.info(s.getName());
+                    logger.info(s.getPrice());
                 }
+
                 break;
             default:
                 logger.error("This is nothing");
