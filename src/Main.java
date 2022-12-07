@@ -1,7 +1,5 @@
 import complaint.*;
-import exceptions.EmptyCustomerException;
-import exceptions.TooManyStampsException;
-import exceptions.YesOrNoException;
+import exceptions.*;
 import factoid.FactoidOutput;
 import insurance.*;
 import mailing.*;
@@ -92,8 +90,6 @@ public class Main {
                     } finally {
                         menuOptions();
                     }
-
-
                 break;
             case 4:
                 buyStamps();
@@ -105,9 +101,14 @@ public class Main {
                 enterMembershipInfo();
                 break;
             default:
-                // Add exception here
-                LOGGER.error("Please choose one of these options\n");
-                menuOptions();
+                try {
+                    invalidOption(selection);
+                } catch(InvalidDeliveryPlanException e) {
+                    LOGGER.error("\nA problem occurred " + e);
+                } finally {
+                    menuOptions();
+                }
+
                 break;
         }
     }
@@ -194,9 +195,11 @@ public class Main {
         final double FIFTY_DOLLARS = 50;
         final double TN_STATE_TAX = 0.07;
         final double ZERO = 0;
+        final int LOW = 1000000;
+        final int HIGH = 9999999;
 
         // Random number generating bar code
-        long insuranceNumber = setRandomNumber(1000000,9999999 );
+        long insuranceNumber = setRandomNumber(LOW,HIGH );
         insuranceInfo.setInsuranceNumber(insuranceNumber);
 
         // Switch statement used for insurance prices using TN state tax
@@ -685,12 +688,46 @@ public class Main {
         Survey surveyor = new Survey();
         LOGGER.log(MENU_LOG,"\nRate from 1-10. How did you like our service?");
         int choiceNum = scanner.nextInt();
+
+        if (choiceNum < 1 || choiceNum > 10) {
+            try {
+                incorrectSurveyOption();
+            } catch (InvalidSurveyAnswerException e) {
+                LOGGER.error("\nThere is an error" + e);
+            } finally {
+                enterSurveyInfo();
+            }
+        }
+
         surveyor.setServiceNum(choiceNum);
         LOGGER.log(MENU_LOG,"Rate from 1-10. How efficient was our service?");
         choiceNum = scanner.nextInt();
+
+        if (choiceNum < 1 || choiceNum > 10) {
+            try {
+                incorrectSurveyOption();
+            } catch (InvalidSurveyAnswerException e) {
+                LOGGER.error("\nThere is an error" + e);
+            } finally {
+                enterSurveyInfo();
+            }
+        }
+
         surveyor.setEfficiencyNum(choiceNum);
+
         LOGGER.log(MENU_LOG,"Rate from 1-10. How friendly was our staff?");
         choiceNum = scanner.nextInt();
+
+        if (choiceNum < 1 || choiceNum > 10) {
+            try {
+                incorrectSurveyOption();
+            } catch (InvalidSurveyAnswerException e) {
+                LOGGER.error("\nThere is an error" + e);
+            } finally {
+                enterSurveyInfo();
+            }
+        }
+
         surveyor.setFriendlinessNum(choiceNum);
         LOGGER.log(MENU_LOG,"\nYou answers were: " +
                 surveyor.getServiceNum() + ", " + surveyor.getEfficiencyNum() +
@@ -737,12 +774,18 @@ public class Main {
         int numberOfStamps = scanner.nextInt();
 
         try{
-            tooManyStamps(numberOfStamps, stamp);
+            tooManyOrFewerStamps(numberOfStamps);
         } catch (TooManyStampsException e) {
             LOGGER.warn(e);
-        } finally {
-            buyStamps();
         }
+
+        if (numberOfStamps > 100 || numberOfStamps < 1) {
+            buyStamps();
+        } else {
+            calculateStampTotal(numberOfStamps, stamp);
+        }
+
+
 
     }
 
@@ -942,7 +985,6 @@ public class Main {
         Shipment shipment = new Shipment();
         packageComplaint.setShipment(shipment);
         long numberOfPackage = scanner.nextLong();
-        // packageComplaint.setPackageNumber(numberOfPackage);
         packageComplaint.getShipment().setPackageNumber(numberOfPackage);
 
         LOGGER.log(MENU_LOG,"\nWhat is your complaint?");
@@ -1035,7 +1077,7 @@ public class Main {
             default:
                 try{
                     checkYesOrNo(choice);
-                } catch (Exception e) {
+                } catch (YesOrNoException e) {
                     LOGGER.error("\nA problem occurred " + e);
                 }
                 finalizeComplaint();
@@ -1063,13 +1105,24 @@ public class Main {
         }
     }
 
-    public static void tooManyStamps(int numberOfStamps, Stamp stamp) throws TooManyStampsException {
+    public static void tooManyOrFewerStamps(int numberOfStamps) throws TooManyStampsException {
         if(numberOfStamps > 100) {
             throw new TooManyStampsException("\nToo many stamps");
+        } else if (numberOfStamps < 1) {
+            throw new TooManyStampsException("\nToo few stamps");
         }
-        else{
-            calculateStampTotal(numberOfStamps, stamp);
+
+
+    }
+
+    public static void invalidOption(int selection) throws InvalidDeliveryPlanException {
+        if(selection < 0 || selection > 6) {
+            throw new InvalidDeliveryPlanException("\nPlease select a number from the choices given");
         }
+    }
+
+    public static void incorrectSurveyOption() throws InvalidSurveyAnswerException {
+        throw new InvalidSurveyAnswerException("\nPlease enter a number from 1 to 10");
     }
 
 }
