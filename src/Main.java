@@ -2,6 +2,7 @@ import complaint.*;
 import exceptions.*;
 import factoid.FactoidOutput;
 import insurance.*;
+import linkedlist.POBoxLinkedList;
 import mailing.*;
 import membership.*;
 import person.*;
@@ -63,6 +64,7 @@ public class Main {
         LOGGER.log(MENU_LOG,"4. Only buy stamps");
         LOGGER.log(MENU_LOG,"5. File a complaint");
         LOGGER.log(MENU_LOG,"6. Sign up for our membership");
+        LOGGER.log(MENU_LOG,"7. Create a PO Box");
         LOGGER.log(MENU_LOG,"0. Exit the program");
 
     }
@@ -99,6 +101,9 @@ public class Main {
                 break;
             case 6:
                 enterMembershipInfo();
+                break;
+            case 7:
+                createAPOBox();
                 break;
             default:
                 try {
@@ -443,8 +448,8 @@ public class Main {
         envelope.setPackageType("Envelope");
 
         LOGGER.log(MENU_LOG,"\nHow many stamps do you have on the envelope?");
-        int stampNum = scanner.nextInt();
-        envelope.setNumberOfStamps(stampNum);
+        int numberOfStamps = scanner.nextInt();
+        envelope.setNumberOfStamps(numberOfStamps);
 
         // Use an arraylist to set the stamps on an envelope
         ArrayList <Stamp> stamps = new ArrayList<>();
@@ -452,11 +457,10 @@ public class Main {
 
 
         int i = 0;
-        while (i < stampNum) {
-
+        while (i < numberOfStamps) {
             Stamp stamp = new Stamp();
-            int stampNameInt = i+1;
-            stamp.setName("Stamp " + stampNameInt);
+            int numberForStampName = i+1;
+            stamp.setName("Stamp " + numberForStampName);
             stamp.setPrice(STAMP_PRICE);
             stamps.add(stamp);
             i++;
@@ -630,18 +634,18 @@ public class Main {
             LOGGER.log(MENU_LOG,"\n" + parcel.getPackageType() + " received");
             order = shipment.toString();
             LOGGER.log(MENU_LOG,order);
-            moreOptions();
+            moreOptionsForCheckout();
 
         } else if (shipment.getMailing().getPackageType().equals("Envelope")) {
             Envelope envelope = (Envelope) shipment.getMailing();
             LOGGER.log(MENU_LOG,"\n" + envelope.getPackageType() + " received");
             order = shipment.toString();
             LOGGER.log(MENU_LOG,order);
-            moreOptions();
+            moreOptionsForCheckout();
         }
     }
 
-    public static void moreOptions() {
+    public static void moreOptionsForCheckout() {
         // More options
 
         Scanner scanner = new Scanner(System.in);
@@ -675,7 +679,7 @@ public class Main {
                     break;
             default:
                     LOGGER.error("You did not enter a choice given. Try again");
-                    moreOptions();
+                    moreOptionsForCheckout();
                     break;
         }
 
@@ -1116,13 +1120,51 @@ public class Main {
     }
 
     public static void invalidOption(int selection) throws InvalidDeliveryPlanException {
-        if(selection < 0 || selection > 6) {
+        if(selection < 0 || selection > 7) {
             throw new InvalidDeliveryPlanException("\nPlease select a number from the choices given");
         }
     }
 
     public static void incorrectSurveyOption() throws InvalidSurveyAnswerException {
         throw new InvalidSurveyAnswerException("\nPlease enter a number from 1 to 10");
+    }
+
+    public static void createAPOBox(){
+        Scanner scanner = new Scanner(System.in);
+        POBoxLinkedList poBoxList = new POBoxLinkedList();
+
+        POBoxOwner boxOwner = new POBoxOwner();
+        LOGGER.log(MENU_LOG,"\nEnter your first name");
+        String firstName = scanner.nextLine();
+        boxOwner.setFirstName(firstName);
+
+        LOGGER.log(MENU_LOG,"Enter your last name");
+        String lastName = scanner.nextLine();
+        boxOwner.setLastName(lastName);
+
+        LOGGER.log(MENU_LOG,"Enter your address");
+        String address = scanner.nextLine();
+        boxOwner.setAddress(address);
+
+        LOGGER.log(MENU_LOG,"Enter your phone number");
+        String phoneNumber = scanner.nextLine();
+        boxOwner.setPhoneNumber(phoneNumber);
+
+        final int LOW = 1000;
+        final int HIGH = 9999;
+
+        long boxId = setRandomNumber(LOW, HIGH);
+
+        String boxAddress = ("PO Box " + boxId);
+        boxOwner.setPOBox(boxAddress);
+
+
+        poBoxList.add(boxOwner);
+
+
+        LOGGER.log(MENU_LOG, "Here is your box\n" + poBoxList);
+
+        System.exit(0);
     }
 
 }
