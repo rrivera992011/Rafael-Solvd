@@ -2,7 +2,7 @@ package main.java;
 
 import main.java.complaint.*;
 import main.java.exceptions.*;
-import main.java.factoid.*;
+import main.java.factoid.FactoidOutput;
 import main.java.insurance.*;
 import main.java.linkedlist.*;
 import main.java.mailing.*;
@@ -90,13 +90,13 @@ public class Main {
                 continueDelivery();
                 break;
             case 3:
-                    try {
-                        checkCustomers();
-                    } catch (EmptyCustomerException e) {
-                        LOGGER.error("\nA problem occurred " + e);
-                    } finally {
-                        menuOptions();
-                    }
+                try {
+                    checkCustomers();
+                } catch (EmptyCustomerException e) {
+                    LOGGER.error("\nA problem occurred " + e);
+                } finally {
+                    menuOptions();
+                }
                 break;
             case 4:
                 buyStamps();
@@ -223,37 +223,37 @@ public class Main {
         // Switch statement used for insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
-                    final String LIGHT_INSURANCE = "Light insurance";
-                    priceOfInsurance = TEN_DOLLARS + (TEN_DOLLARS * TN_STATE_TAX);
-                    insuranceDetails.put(LIGHT_INSURANCE, priceOfInsurance);
-                    insuranceInfo.setInsuranceDetails(insuranceDetails);
-                    setUpShipment(insuranceInfo, TN_STATE_TAX, LIGHT_INSURANCE);
-                    break;
+                final String LIGHT_INSURANCE = "Light insurance";
+                priceOfInsurance = TEN_DOLLARS + (TEN_DOLLARS * TN_STATE_TAX);
+                insuranceDetails.put(LIGHT_INSURANCE, priceOfInsurance);
+                insuranceInfo.setInsuranceDetails(insuranceDetails);
+                setUpShipment(insuranceInfo, TN_STATE_TAX, LIGHT_INSURANCE);
+                break;
             case 2:
-                    final String MEDIUM_INSURANCE = "Medium insurance";
-                    priceOfInsurance = THIRTY_DOLLARS + (THIRTY_DOLLARS * TN_STATE_TAX);
-                    insuranceDetails.put(MEDIUM_INSURANCE, priceOfInsurance);
-                    insuranceInfo.setInsuranceDetails(insuranceDetails);
-                    setUpShipment(insuranceInfo, TN_STATE_TAX, MEDIUM_INSURANCE);
-                    break;
+                final String MEDIUM_INSURANCE = "Medium insurance";
+                priceOfInsurance = THIRTY_DOLLARS + (THIRTY_DOLLARS * TN_STATE_TAX);
+                insuranceDetails.put(MEDIUM_INSURANCE, priceOfInsurance);
+                insuranceInfo.setInsuranceDetails(insuranceDetails);
+                setUpShipment(insuranceInfo, TN_STATE_TAX, MEDIUM_INSURANCE);
+                break;
             case 3:
-                    final String HEAVY_INSURANCE = "Heavy insurance";
-                    priceOfInsurance = THIRTY_DOLLARS + (FIFTY_DOLLARS * TN_STATE_TAX);
-                    insuranceDetails.put(HEAVY_INSURANCE, priceOfInsurance);
-                    insuranceInfo.setInsuranceDetails(insuranceDetails);
-                    setUpShipment(insuranceInfo, TN_STATE_TAX, HEAVY_INSURANCE);
-                    break;
+                final String HEAVY_INSURANCE = "Heavy insurance";
+                priceOfInsurance = THIRTY_DOLLARS + (FIFTY_DOLLARS * TN_STATE_TAX);
+                insuranceDetails.put(HEAVY_INSURANCE, priceOfInsurance);
+                insuranceInfo.setInsuranceDetails(insuranceDetails);
+                setUpShipment(insuranceInfo, TN_STATE_TAX, HEAVY_INSURANCE);
+                break;
             case 0:
-                    final String NO_INSURANCE = "No insurance";
-                    priceOfInsurance = ZERO;
-                    insuranceDetails.put(NO_INSURANCE, priceOfInsurance);
-                    insuranceInfo.setInsuranceDetails(insuranceDetails);
-                    setUpShipment(insuranceInfo, TN_STATE_TAX, NO_INSURANCE);
-                    break;
+                final String NO_INSURANCE = "No insurance";
+                priceOfInsurance = ZERO;
+                insuranceDetails.put(NO_INSURANCE, priceOfInsurance);
+                insuranceInfo.setInsuranceDetails(insuranceDetails);
+                setUpShipment(insuranceInfo, TN_STATE_TAX, NO_INSURANCE);
+                break;
             default:
-                    LOGGER.error("Please select a number from the choices given\n");
-                    insuranceTotal();
-                    break;
+                LOGGER.error("Please select a number from the choices given\n");
+                insuranceTotal();
+                break;
         }
 
 
@@ -339,24 +339,24 @@ public class Main {
 
         switch(confirmation){
             case "YES":
-                        LOGGER.log(MENU_LOG,"\nSending package now!");
-                        LOGGER.log(MENU_LOG,"Thank you for your business");
-                        company(insuranceInfo, shipment);
+                LOGGER.log(MENU_LOG,"\nSending package now!");
+                LOGGER.log(MENU_LOG,"Thank you for your business");
+                company(insuranceInfo, shipment);
 
-                        break;
+                break;
             case "NO":
-                        LOGGER.log(MENU_LOG,"\nPlease try again then");
-                        insuranceTotal();
-                        break;
+                LOGGER.log(MENU_LOG,"\nPlease try again then");
+                insuranceTotal();
+                break;
             default:
-                        try{
-                            checkYesOrNo(confirmation);
-                        } catch (YesOrNoException e) {
-                            LOGGER.error("\nA problem occurred " + e);
-                        }
+                try{
+                    checkYesOrNo(confirmation);
+                } catch (YesOrNoException e) {
+                    LOGGER.error("\nA problem occurred " + e);
+                }
 
-                        // LOGGER.log(MENU_LOG,"\nPlease try something other than Yes or No");
-                        confirmShipping(insuranceInfo, shipment);
+                // LOGGER.log(MENU_LOG,"\nPlease try something other than Yes or No");
+                confirmShipping(insuranceInfo, shipment);
 
         }
     }
@@ -688,25 +688,25 @@ public class Main {
         // Switch for more options
         switch (optionNum) {
             case 0:
-                    LOGGER.log(MENU_LOG,"Thank you for shopping here");
-                    System.exit(0);
-                    break;
+                LOGGER.log(MENU_LOG,"Thank you for shopping here");
+                System.exit(0);
+                break;
             case 1:
-                    enterSurveyInfo();
-                    break;
+                enterSurveyInfo();
+                break;
             case 2:
-                    factoid();
-                    break;
+                factoid();
+                break;
             case 3:
-                    buyStamps();
-                    break;
+                buyStamps();
+                break;
             case 4:
-                    enterMembershipInfo();
-                    break;
+                enterMembershipInfo();
+                break;
             default:
-                    LOGGER.error("You did not enter a choice given. Try again");
-                    moreOptionsForCheckout();
-                    break;
+                LOGGER.error("You did not enter a choice given. Try again");
+                moreOptionsForCheckout();
+                break;
         }
 
     }
@@ -1115,8 +1115,8 @@ public class Main {
     }
 
     public static long getRandomNumber(long low, long high) {
-        Random r = new Random();
-        return r.nextLong(high-low) + low;
+        Random random = new Random();
+        return random.nextLong(high-low) + low;
     }
 
     public static void checkYesOrNo(String confirmation) throws YesOrNoException {
@@ -1170,29 +1170,29 @@ public class Main {
 
         switch(confirmation) {
             case "ADD":
-                        boxOwner = createAPOBox();
-                        poBoxList.add(boxOwner);
-                        LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
-                        LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
-                        break;
+                boxOwner = createAPOBox();
+                poBoxList.add(boxOwner);
+                LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
+                LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
+                break;
             case "DELETE":
-                        LOGGER.log(MENU_LOG, "What is your PO Box Address?");
-                        int poBoxInput = scanner.nextInt();
-                        String poBoxAddress = ("PO Box " + poBoxInput);
-                        if (poBoxAddress.equals(boxOwner.getPOBox())) {
-                            poBoxList.remove(boxOwner);
-                            LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
-                            if (poBoxList.getSize() != 0) {
-                                LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
-                            }
+                LOGGER.log(MENU_LOG, "What is your PO Box Address?");
+                int poBoxInput = scanner.nextInt();
+                String poBoxAddress = ("PO Box " + poBoxInput);
+                if (poBoxAddress.equals(boxOwner.getPOBox())) {
+                    poBoxList.remove(boxOwner);
+                    LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
+                    if (poBoxList.getSize() != 0) {
+                        LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
+                    }
 
-                        } else {
-                            LOGGER.error("No PO Box exists");
-                        }
-                        break;
+                } else {
+                    LOGGER.error("No PO Box exists");
+                }
+                break;
             default:   LOGGER.error("Incorrect selection. Please try again");
-                        poBoxManagement();
-                        break;
+                poBoxManagement();
+                break;
         }
 
 

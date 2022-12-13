@@ -1,4 +1,4 @@
-package main.java.vehicle;;
+package main.java.vehicle;
 
 public interface IVehicle {
 
