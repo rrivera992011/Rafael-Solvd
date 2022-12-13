@@ -2,7 +2,7 @@ import complaint.*;
 import exceptions.*;
 import factoid.FactoidOutput;
 import insurance.*;
-import linkedlist.POBoxLinkedList;
+import linkedlist.*;
 import mailing.*;
 import membership.*;
 import person.*;
@@ -20,6 +20,8 @@ public class Main {
 
     static Customer sender = new Customer();
     static Customer recipient = new Customer();
+    static POBoxLinkedList poBoxList = new POBoxLinkedList();
+    static POBoxOwner boxOwner = new POBoxOwner();
 
     final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
     private static final Logger LOGGER = LogManager.getLogger("TEST_LOGGER");
@@ -64,7 +66,8 @@ public class Main {
         LOGGER.log(MENU_LOG,"4. Only buy stamps");
         LOGGER.log(MENU_LOG,"5. File a complaint");
         LOGGER.log(MENU_LOG,"6. Sign up for our membership");
-        LOGGER.log(MENU_LOG,"7. Create a PO Box");
+        LOGGER.log(MENU_LOG,"7. Manage the PO Boxes in the system");
+        LOGGER.log(MENU_LOG,"8. Enter the information for the facility televisions");
         LOGGER.log(MENU_LOG,"0. Exit the program");
 
     }
@@ -103,17 +106,20 @@ public class Main {
                 enterMembershipInfo();
                 break;
             case 7:
-                createAPOBox();
+                poBoxManagement();
+                continueDelivery();
+                break;
+            case 8:
+                televisionInformation();
                 break;
             default:
                 try {
-                    invalidOption(selection);
+                    checkOptionIsInvalid(selection);
                 } catch(InvalidDeliveryPlanException e) {
                     LOGGER.error("\nA problem occurred " + e);
                 } finally {
                     menuOptions();
                 }
-
                 break;
         }
     }
@@ -203,27 +209,44 @@ public class Main {
         final int LOW = 1000000;
         final int HIGH = 9999999;
 
+        Map<String, Double> insuranceDetails = new HashMap<>();
+
         // Random number generating bar code
-        long insuranceNumber = setRandomNumber(LOW,HIGH );
+        long insuranceNumber = getRandomNumber(LOW,HIGH );
         insuranceInfo.setInsuranceNumber(insuranceNumber);
+
+
+
 
         // Switch statement used for insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
+                    final String LIGHT_INSURANCE = "Light insurance";
                     priceOfInsurance = TEN_DOLLARS + (TEN_DOLLARS * TN_STATE_TAX);
-                    insuranceInfo.setInsurancePrice(priceOfInsurance);
+                    insuranceDetails.put(LIGHT_INSURANCE, priceOfInsurance);
+                    insuranceInfo.setInsuranceDetails(insuranceDetails);
+                    setUpShipment(insuranceInfo, TN_STATE_TAX, LIGHT_INSURANCE);
                     break;
             case 2:
+                    final String MEDIUM_INSURANCE = "Medium insurance";
                     priceOfInsurance = THIRTY_DOLLARS + (THIRTY_DOLLARS * TN_STATE_TAX);
-                    insuranceInfo.setInsurancePrice(priceOfInsurance);
+                    insuranceDetails.put(MEDIUM_INSURANCE, priceOfInsurance);
+                    insuranceInfo.setInsuranceDetails(insuranceDetails);
+                    setUpShipment(insuranceInfo, TN_STATE_TAX, MEDIUM_INSURANCE);
                     break;
             case 3:
+                    final String HEAVY_INSURANCE = "Heavy insurance";
                     priceOfInsurance = THIRTY_DOLLARS + (FIFTY_DOLLARS * TN_STATE_TAX);
-                    insuranceInfo.setInsurancePrice(priceOfInsurance);
+                    insuranceDetails.put(HEAVY_INSURANCE, priceOfInsurance);
+                    insuranceInfo.setInsuranceDetails(insuranceDetails);
+                    setUpShipment(insuranceInfo, TN_STATE_TAX, HEAVY_INSURANCE);
                     break;
             case 0:
+                    final String NO_INSURANCE = "No insurance";
                     priceOfInsurance = ZERO;
-                    insuranceInfo.setInsurancePrice(priceOfInsurance);
+                    insuranceDetails.put(NO_INSURANCE, priceOfInsurance);
+                    insuranceInfo.setInsuranceDetails(insuranceDetails);
+                    setUpShipment(insuranceInfo, TN_STATE_TAX, NO_INSURANCE);
                     break;
             default:
                     LOGGER.error("Please select a number from the choices given\n");
@@ -231,18 +254,19 @@ public class Main {
                     break;
         }
 
-        setUpShipment(insuranceInfo, TN_STATE_TAX);
-
 
     }
 
-    public static void setUpShipment(Insurance insuranceInfo, final double TN_STATE_TAX) {
+    public static void setUpShipment(Insurance insuranceInfo, final double TN_STATE_TAX, String insuranceName) {
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
         LOGGER.log(MENU_LOG,"Select based on the number of days that you want");
         int numOfDays = scanner.nextInt();
         Shipment shipment = new Shipment();
         shipment.setDays(numOfDays);
+
+        Map<String, Double> insuranceMap = insuranceInfo.getInsuranceDetails();
+        double priceOfInsurance = insuranceMap.get(insuranceName);
 
 
         // Double variable for the price
@@ -255,20 +279,20 @@ public class Main {
         // Switch statement used to calculate total using TN state tax
         switch(numOfDays) {
             case 1:
-                priceOfPackage = NINE_DOLLARS + (NINE_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = NINE_DOLLARS + (NINE_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             case 3:
-                priceOfPackage = SIX_DOLLARS + (SIX_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = SIX_DOLLARS + (SIX_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             case 5:
-                priceOfPackage = THREE_DOLLARS + (THREE_DOLLARS * TN_STATE_TAX) + insuranceInfo.getInsurancePrice();
+                priceOfPackage = THREE_DOLLARS + (THREE_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             default:
                 LOGGER.log(MENU_LOG,"Please select a number from the choices given\n");
-                setUpShipment(insuranceInfo, TN_STATE_TAX);
+                setUpShipment(insuranceInfo, TN_STATE_TAX, insuranceName);
                 break;
         }
 
@@ -282,7 +306,7 @@ public class Main {
         final DecimalFormat df = new DecimalFormat("0.00");
 
         // Use a long to get a random package number
-        long packageNumber = setRandomNumber(100000000, 999999999);
+        long packageNumber = getRandomNumber(100000000, 999999999);
 
         shipment.setPackageNumber(packageNumber);
 
@@ -367,7 +391,7 @@ public class Main {
         String driverALast = scanner.nextLine();
         driver.setLastName(driverALast);
 
-        long driverNumber = setRandomNumber(10000, 99999);
+        long driverNumber = getRandomNumber(10000, 99999);
 
         driver.setEmployeeNumber(driverNumber);
 
@@ -583,7 +607,7 @@ public class Main {
         switch(choice) {
             case "CAR":
                 LOGGER.log(MENU_LOG,"\nYou have chosen a car");
-                carOrPlaneNum = setRandomNumber(100000, 999999);
+                carOrPlaneNum = getRandomNumber(100000, 999999);
                 Car car = new Car();
                 car.setVehicleName("Car");
                 car.setTruckNumber(carOrPlaneNum);
@@ -591,7 +615,7 @@ public class Main {
                 break;
             case "PLANE":
                 LOGGER.log(MENU_LOG,"\nYou have chosen an airplane");
-                carOrPlaneNum = setRandomNumber(1, 1000);
+                carOrPlaneNum = getRandomNumber(1, 1000);
                 Plane plane = new Plane();
                 plane.setVehicleName("Plane");
                 plane.setPlaneNumber(carOrPlaneNum);
@@ -873,7 +897,7 @@ public class Main {
     public static void confirmMembershipInfo(MembershipInformation membershipDetails){
 
         // Use a long for a random membership number
-        long membershipNumber = setRandomNumber(100000000, 999999999);
+        long membershipNumber = getRandomNumber(100000000, 999999999);
 
         membershipDetails.setMembershipNumber(membershipNumber);
 
@@ -940,7 +964,7 @@ public class Main {
 
         // Use this random to set a complaint number
 
-        long complaintNumber = setRandomNumber(1, 999999);
+        long complaintNumber = getRandomNumber(1, 999999);
 
         // Switch to select what type of complaint someone wants
         switch (complaintType){
@@ -1088,7 +1112,7 @@ public class Main {
         }
     }
 
-    public static long setRandomNumber(long low, long high) {
+    public static long getRandomNumber(long low, long high) {
         Random r = new Random();
         return r.nextLong(high-low) + low;
     }
@@ -1119,8 +1143,8 @@ public class Main {
 
     }
 
-    public static void invalidOption(int selection) throws InvalidDeliveryPlanException {
-        if(selection < 0 || selection > 7) {
+    public static void checkOptionIsInvalid(int selection) throws InvalidDeliveryPlanException {
+        if(selection < 0 || selection > 8) {
             throw new InvalidDeliveryPlanException("\nPlease select a number from the choices given");
         }
     }
@@ -1129,11 +1153,52 @@ public class Main {
         throw new InvalidSurveyAnswerException("\nPlease enter a number from 1 to 10");
     }
 
-    public static void createAPOBox(){
-        Scanner scanner = new Scanner(System.in);
-        POBoxLinkedList poBoxList = new POBoxLinkedList();
 
-        POBoxOwner boxOwner = new POBoxOwner();
+
+    public static void poBoxManagement(){
+        Scanner scanner = new Scanner(System.in);
+
+        // Confirm whether the user wants to delete a PO Box or inset a new one
+        LOGGER.log(MENU_LOG, "Would you like to add a PO Box or delete a PO Box?");
+        LOGGER.log(MENU_LOG, "Type " + '"' + "Add" + '"' + " to add a PO Box");
+        LOGGER.log(MENU_LOG, "Type " + '"' + "Delete" + '"' + " to delete a PO Box");
+
+        String confirmation = scanner.nextLine().toUpperCase();
+
+
+        switch(confirmation) {
+            case "ADD":
+                        boxOwner = createAPOBox();
+                        poBoxList.add(boxOwner);
+                        LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
+                        LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
+                        break;
+            case "DELETE":
+                        LOGGER.log(MENU_LOG, "What is your PO Box Address?");
+                        int poBoxInput = scanner.nextInt();
+                        String poBoxAddress = ("PO Box " + poBoxInput);
+                        if (poBoxAddress.equals(boxOwner.getPOBox())) {
+                            poBoxList.remove(boxOwner);
+                            LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
+                            if (poBoxList.getSize() != 0) {
+                                LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
+                            }
+
+                        } else {
+                            LOGGER.error("No PO Box exists");
+                        }
+                        break;
+            default:   LOGGER.error("Incorrect selection. Please try again");
+                        poBoxManagement();
+                        break;
+        }
+
+
+    }
+
+    public static POBoxOwner createAPOBox(){
+
+        Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nEnter your first name");
         String firstName = scanner.nextLine();
         boxOwner.setFirstName(firstName);
@@ -1150,21 +1215,39 @@ public class Main {
         String phoneNumber = scanner.nextLine();
         boxOwner.setPhoneNumber(phoneNumber);
 
-        final int LOW = 1000;
-        final int HIGH = 9999;
+        final long LOW = 1000;
+        final long HIGH = 9999;
 
-        long boxId = setRandomNumber(LOW, HIGH);
+        long boxId = getRandomNumber(LOW, HIGH);
 
         String boxAddress = ("PO Box " + boxId);
         boxOwner.setPOBox(boxAddress);
 
+        return boxOwner;
+    }
 
-        poBoxList.add(boxOwner);
+    public static void televisionInformation() {
+        Set<String> tvInformation = new HashSet<>();
 
+        Scanner scanner = new Scanner(System.in);
+        LOGGER.log(MENU_LOG,"\nWhat's the weather today?");
+        String weather = scanner.nextLine();
+        tvInformation.add(weather);
 
-        LOGGER.log(MENU_LOG, "Here is your box\n" + poBoxList);
+        LOGGER.log(MENU_LOG,"\nEnter the days when the office is closed");
+        String closingDays = scanner.nextLine();
+        tvInformation.add(closingDays);
+
+        LOGGER.log(MENU_LOG,"\nInsert a quote from a famous individual for the day");
+        String quote = scanner.nextLine();
+        tvInformation.add(quote);
+
+        for(String element: tvInformation) {
+            LOGGER.log(MENU_LOG,element);
+        }
 
         System.exit(0);
     }
+
 
 }

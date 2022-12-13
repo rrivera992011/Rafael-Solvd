@@ -1,18 +1,20 @@
 package insurance;
 
+import java.util.Map;
+
 public class Insurance{
-    private double insurancePrice = 0;
+    private Map<String, Double> insuranceDetails;
     private long insuranceNumber = 0;
     public Insurance() {
 
     }
 
-    public void setInsurancePrice(double insurancePrice) {
-        this.insurancePrice = insurancePrice;
+    public void setInsuranceDetails(Map<String, Double> insuranceDetails) {
+        this.insuranceDetails = insuranceDetails;
     }
 
-    public double getInsurancePrice() {
-        return this.insurancePrice;
+    public Map<String, Double> getInsuranceDetails() {
+        return this.insuranceDetails;
     }
 
     public void setInsuranceNumber(long insuranceNumber) {

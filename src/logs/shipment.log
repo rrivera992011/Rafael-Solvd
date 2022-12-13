@@ -501,3 +501,819 @@ PO Box 6864]
 2022-12-09 00:53:09,278 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
 2022-12-09 00:53:09,278 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
 2022-12-09 00:53:09,278 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:23:13,608 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:23:13,610 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:23:16,250 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:23:21,471 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:24:13,331 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:24:13,333 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:24:16,377 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:24:18,187 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:24:19,360 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:24:22,122 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:24:22,850 MENU_LOG TEST_LOGGER [main] Here is your box
+1
+2022-12-09 09:24:22,851 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 1362]
+2022-12-09 09:24:22,851 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:24:22,851 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:24:30,255 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:24:30,256 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:24:33,712 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:24:35,128 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:24:36,465 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:24:38,585 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:24:40,336 MENU_LOG TEST_LOGGER [main] Here is your box
+2
+2022-12-09 09:24:40,336 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 1362][Jack, Apple
+PO Box 2099]
+2022-12-09 09:24:40,336 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:24:40,336 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:26:46,072 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-09 09:26:46,073 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-09 09:26:46,073 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:26:46,074 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:26:48,618 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:26:49,849 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:26:50,864 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:26:51,752 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:26:52,497 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-09 09:26:52,497 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 6607]
+
+2022-12-09 09:26:52,499 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:26:52,499 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:27:09,352 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:27:09,353 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:27:11,400 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:27:12,682 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:27:13,878 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:27:16,207 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:27:18,005 MENU_LOG TEST_LOGGER [main] Number of boxes: 2
+2022-12-09 09:27:18,005 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 6607]
+[Jones, Mac
+PO Box 4346]
+
+2022-12-09 09:27:18,006 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:27:18,006 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:27:39,801 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:27:42,513 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:27:46,807 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:27:49,201 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:27:50,577 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:27:52,880 MENU_LOG TEST_LOGGER [main] Number of boxes: 3
+2022-12-09 09:27:52,880 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 6607]
+[Jones, Mac
+PO Box 4346]
+[Jackson, Michael
+PO Box 1122]
+
+2022-12-09 09:27:52,881 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:27:52,881 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:28:00,360 MENU_LOG TEST_LOGGER [main] Thank you for your service! Have a great day!
+2022-12-09 09:38:06,654 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:38:06,656 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:38:08,867 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:38:10,521 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:38:11,969 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:38:19,017 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:38:24,515 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-09 09:38:24,515 MENU_LOG TEST_LOGGER [main] Here is your box
+[Jack, Apple
+PO Box 2590]
+
+2022-12-09 09:38:24,516 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:38:24,516 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-09 09:38:38,977 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-09 09:38:38,978 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-09 09:38:38,978 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-09 09:38:41,186 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-09 09:38:44,504 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-09 09:38:46,914 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-09 09:38:56,129 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-09 09:39:02,055 MENU_LOG TEST_LOGGER [main] Number of boxes: 2
+2022-12-09 09:39:02,055 MENU_LOG TEST_LOGGER [main] Here is your box
+[Jack, Apple
+PO Box 2590]
+[Jordan, Michael
+PO Box 6862]
+
+2022-12-09 09:39:02,055 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-09 09:39:02,056 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-09 09:39:09,914 MENU_LOG TEST_LOGGER [main] Thank you for your service! Have a great day!
+2022-12-11 16:23:49,563 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:23:49,564 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:23:49,565 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:23:51,939 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:23:51,939 MENU_LOG TEST_LOGGER [main] Type "Add"to add a PO Box
+2022-12-11 16:23:51,939 MENU_LOG TEST_LOGGER [main] Type "Delete"to delete a PO Box
+2022-12-11 16:23:51,939 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:32:17,395 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:32:17,397 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:32:21,570 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:32:21,570 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:32:21,570 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:32:25,703 MENU_LOG TEST_LOGGER [main] Given Value is not present in linked list
+2022-12-11 16:32:25,703 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:32:25,703 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:32:29,250 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:34:00,268 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:34:00,270 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:34:02,451 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:34:02,451 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:34:02,452 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:34:05,036 MENU_LOG TEST_LOGGER [main] Given Value is not present in linked list
+2022-12-11 16:34:05,037 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:34:05,037 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:34:08,217 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:34:08,218 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:34:08,219 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:34:10,187 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:34:10,187 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:34:10,187 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:34:13,106 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:34:15,683 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:34:16,821 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:34:24,043 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:34:25,935 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-11 16:34:25,935 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 7037]
+
+2022-12-11 16:34:25,935 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:34:25,935 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:34:28,786 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:34:31,283 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:34:31,283 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:34:31,284 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:34:33,778 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:34:35,690 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:34:37,363 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:34:56,274 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:34:57,674 MENU_LOG TEST_LOGGER [main] Number of boxes: 2
+2022-12-11 16:34:57,674 MENU_LOG TEST_LOGGER [main] Here is your box
+[Tom, Apple
+PO Box 7037]
+[Jack, Apple
+PO Box 6453]
+
+2022-12-11 16:34:57,675 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:34:57,675 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:35:00,403 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:35:02,722 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:35:02,722 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:35:02,722 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:35:05,018 MENU_LOG TEST_LOGGER [main] Given Value is not present in linked list
+2022-12-11 16:35:05,018 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:35:05,018 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:36:58,933 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:36:58,935 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:37:00,748 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:37:00,748 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:37:00,748 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:37:02,819 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:37:05,202 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:37:06,298 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:37:07,555 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:37:08,380 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-11 16:37:08,381 MENU_LOG TEST_LOGGER [main] Here is your box
+[Jones, Mac
+PO Box 6069]
+
+2022-12-11 16:37:08,381 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:37:08,381 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:37:12,290 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:37:12,290 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:37:12,291 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:37:14,435 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:37:14,435 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:37:14,435 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:37:16,619 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:37:18,123 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:37:20,683 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:37:21,795 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:37:22,635 MENU_LOG TEST_LOGGER [main] Number of boxes: 2
+2022-12-11 16:37:22,635 MENU_LOG TEST_LOGGER [main] Here is your box
+[McDaniel, Mike
+PO Box 8662]
+[McDaniel, Mike
+PO Box 8662]
+
+2022-12-11 16:37:22,635 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:37:22,635 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:37:24,147 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:37:24,147 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:37:24,147 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:37:24,148 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:37:24,148 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:37:24,148 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:37:24,148 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:37:24,148 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:37:25,407 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:37:25,407 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:37:25,407 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:37:27,529 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:37:27,529 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:40:23,299 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:40:23,301 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:40:23,301 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:40:23,301 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:40:23,302 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:40:28,137 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:40:28,139 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:40:29,616 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:40:29,617 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:40:29,617 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:40:32,211 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:40:47,836 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:40:48,819 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:40:50,267 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:40:51,605 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-11 16:40:51,606 MENU_LOG TEST_LOGGER [main] Here is your box
+[Mac, Apple
+PO Box 8281]
+
+2022-12-11 16:40:51,606 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:40:51,606 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:40:58,948 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:41:01,643 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:41:01,643 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:41:01,643 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:41:03,955 MENU_LOG TEST_LOGGER [main] What is your PO Box Address?
+2022-12-11 16:41:15,278 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-11 16:41:15,279 MENU_LOG TEST_LOGGER [main] Here is your box
+[Mac, Apple
+PO Box 8281]
+
+2022-12-11 16:41:15,279 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:41:15,279 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:43:18,081 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:43:18,083 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:43:20,171 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:43:20,171 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:43:20,171 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:43:21,821 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 16:43:23,883 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 16:43:25,148 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 16:43:35,302 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 16:43:39,773 MENU_LOG TEST_LOGGER [main] Number of boxes: 1
+2022-12-11 16:43:39,775 MENU_LOG TEST_LOGGER [main] Here is your box
+[Jones, Mac
+PO Box 7281]
+
+2022-12-11 16:43:39,775 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:43:39,775 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 16:43:41,196 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 16:43:43,043 MENU_LOG TEST_LOGGER [main] Would you like to add a PO Box or delete a PO Box?
+2022-12-11 16:43:43,043 MENU_LOG TEST_LOGGER [main] Type "Add" to add a PO Box
+2022-12-11 16:43:43,043 MENU_LOG TEST_LOGGER [main] Type "Delete" to delete a PO Box
+2022-12-11 16:43:46,324 MENU_LOG TEST_LOGGER [main] What is your PO Box Address?
+2022-12-11 16:43:51,572 MENU_LOG TEST_LOGGER [main] Number of boxes: 0
+2022-12-11 16:43:51,572 MENU_LOG TEST_LOGGER [main] Here is your box
+
+2022-12-11 16:43:51,572 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 16:43:51,572 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:10:27,240 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:10:27,242 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:10:33,206 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 17:10:34,655 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 17:10:35,414 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 17:10:36,232 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 17:10:37,088 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:10:37,088 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:10:38,166 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 123456, 12345
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] Address of sender: 123456
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] Phone number: 123456
+
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:10:38,167 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:10:39,198 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-11 17:10:40,135 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-11 17:10:40,925 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-11 17:10:41,842 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-11 17:10:43,663 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:10:43,663 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 123456, 12345
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] Address of sender: 123456
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] Phone number: 123456
+
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: 123456, 12345
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] Address of recipient: 123456
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] Phone number: 23456y76543
+
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:10:44,831 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:10:44,832 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:10:46,959 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-11 17:10:46,959 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-11 17:10:46,959 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-11 17:10:46,959 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-11 17:10:46,959 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-11 17:10:49,214 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-11 17:10:49,214 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-11 17:10:55,366 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 123456, 12345
+2022-12-11 17:10:55,366 MENU_LOG TEST_LOGGER [main] Address of sender: 123456
+2022-12-11 17:10:55,367 MENU_LOG TEST_LOGGER [main] Phone number: 123456
+
+2022-12-11 17:10:55,367 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: 123456, 12345
+2022-12-11 17:10:55,367 MENU_LOG TEST_LOGGER [main] Address of sender: 123456
+2022-12-11 17:10:55,367 MENU_LOG TEST_LOGGER [main] Phone number: 23456y76543
+
+2022-12-11 17:10:55,368 MENU_LOG TEST_LOGGER [main] 
+Package number: 220010271
+2022-12-11 17:10:55,368 MENU_LOG TEST_LOGGER [main] Insurance name: null
+2022-12-11 17:10:55,368 MENU_LOG TEST_LOGGER [main] Insurance number: 6283727
+2022-12-11 17:10:55,368 MENU_LOG TEST_LOGGER [main] ETA: 3 Day(s)
+2022-12-11 17:10:55,370 MENU_LOG TEST_LOGGER [main] Complete total: 38.52
+2022-12-11 17:10:55,370 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-11 17:16:55,187 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 17:16:55,188 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 17:16:55,188 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:16:55,189 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:16:58,632 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 17:17:00,200 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 17:17:00,927 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 17:17:01,695 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 17:17:02,545 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:17:02,546 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:17:03,175 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 1234567, 12345
+2022-12-11 17:17:03,175 MENU_LOG TEST_LOGGER [main] Address of sender: 1234567
+2022-12-11 17:17:03,175 MENU_LOG TEST_LOGGER [main] Phone number: 234567
+
+2022-12-11 17:17:03,175 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:17:03,176 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:17:03,784 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-11 17:17:04,591 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-11 17:17:05,285 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-11 17:17:06,199 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-11 17:17:07,215 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:17:07,215 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:17:08,046 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 1234567, 12345
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] Address of sender: 1234567
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] Phone number: 234567
+
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: 1234567, 123456
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] Address of recipient: 76543
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] Phone number: 12345678
+
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:17:08,047 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:17:08,048 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:17:08,975 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-11 17:17:08,976 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-11 17:17:08,976 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-11 17:17:08,976 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-11 17:17:08,976 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-11 17:17:11,264 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-11 17:17:11,264 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-11 17:17:17,704 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 1234567, 12345
+2022-12-11 17:17:17,705 MENU_LOG TEST_LOGGER [main] Address of sender: 1234567
+2022-12-11 17:17:17,705 MENU_LOG TEST_LOGGER [main] Phone number: 234567
+
+2022-12-11 17:17:17,705 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: 1234567, 123456
+2022-12-11 17:17:17,705 MENU_LOG TEST_LOGGER [main] Address of sender: 76543
+2022-12-11 17:17:17,705 MENU_LOG TEST_LOGGER [main] Phone number: 12345678
+
+2022-12-11 17:17:17,706 MENU_LOG TEST_LOGGER [main] 
+Package number: 279125501
+2022-12-11 17:17:17,706 MENU_LOG TEST_LOGGER [main] Insurance name: null
+2022-12-11 17:17:17,707 MENU_LOG TEST_LOGGER [main] Insurance number: 5414960
+2022-12-11 17:17:17,707 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-11 17:17:17,708 MENU_LOG TEST_LOGGER [main] Complete total: 9.63
+2022-12-11 17:17:17,708 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-11 17:20:15,558 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 17:20:15,561 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 17:20:15,561 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:20:15,561 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:20:15,562 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:20:22,727 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-11 17:20:23,935 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-11 17:20:25,022 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-11 17:20:26,438 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-11 17:20:27,696 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:20:27,696 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:20:28,817 ERROR TEST_LOGGER [main] Please choose one of these options
+
+2022-12-11 17:20:28,817 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:20:28,817 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:20:29,431 ERROR TEST_LOGGER [main] Please choose one of these options
+
+2022-12-11 17:20:29,431 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:20:29,431 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 123we4rtytr, 123431
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] Address of sender: 12345t6yuhgf
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] Phone number: qawsertyutr
+
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:20:34,872 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:20:34,873 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:20:34,873 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:20:34,873 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:20:34,873 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:20:34,873 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:20:36,072 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-11 17:20:37,599 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-11 17:20:38,679 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-11 17:20:40,016 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-11 17:20:41,590 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-11 17:20:41,590 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] 
+Name of sender: 123we4rtytr, 123431
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] Address of sender: 12345t6yuhgf
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] Phone number: qawsertyutr
+
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: 1q2w3e4rty, 1234tr3
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] Address of recipient: gytrety
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] Phone number: yt5434563
+
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 17:20:43,311 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-11 17:20:43,312 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 17:20:44,974 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-11 17:20:44,974 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-11 17:20:44,974 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-11 17:20:44,974 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-11 17:20:44,974 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-11 17:20:46,864 MENU_LOG TEST_LOGGER [main] null Test for insurance
+2022-12-11 17:20:46,864 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-11 17:20:46,864 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-11 18:12:14,994 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-11 18:12:14,996 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 18:12:32,124 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 18:12:32,125 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 18:12:32,125 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-11 18:12:32,126 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 18:12:54,698 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 18:12:54,699 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 18:12:54,700 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 18:12:54,700 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-11 18:12:54,700 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-11 18:12:54,700 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 18:12:56,229 MENU_LOG TEST_LOGGER [main] 
+What's the weather today?
+2022-12-11 18:13:08,781 MENU_LOG TEST_LOGGER [main] 
+Enter the days when the office is closed
+2022-12-11 18:13:20,757 MENU_LOG TEST_LOGGER [main] 
+Insert a quote from a famous individual for the day
+2022-12-11 18:13:31,918 MENU_LOG TEST_LOGGER [main] Here is the information you wantThanksgiving, Christmas, New Years
+2022-12-11 18:13:31,919 MENU_LOG TEST_LOGGER [main] Here is the information you want"Apple pie is delicious" - Tom holland
+2022-12-11 18:13:31,919 MENU_LOG TEST_LOGGER [main] Here is the information you want30 degrees farenheit
+2022-12-11 18:27:06,576 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 18:27:06,578 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-11 18:27:06,579 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-11 18:27:06,579 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-11 18:28:56,202 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-11 18:28:56,204 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-12 08:34:37,929 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 7. Manage the PO Boxes in the system
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 8. Enter the information for the facility televisions
+2022-12-12 08:34:37,931 MENU_LOG TEST_LOGGER [main] 0. Exit the program
