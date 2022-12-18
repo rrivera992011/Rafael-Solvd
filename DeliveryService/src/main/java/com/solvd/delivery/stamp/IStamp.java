@@ -7,4 +7,7 @@ interface IStamp {
     double getPrice();
     void setName(String name);
     String getName();
+
+    void setColor(String color);
+    String getColor();
 }

@@ -12,20 +12,22 @@ import com.solvd.delivery.shipment.*;
 import com.solvd.delivery.stamp.*;
 import com.solvd.delivery.survey.*;
 import com.solvd.delivery.vehicle.*;
+import com.solvd.delivery.enums.*;
 
 import org.apache.logging.log4j.*;
 
 import java.util.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.lang.*;
 public class Main {
 
     static Customer sender = new Customer();
     static Customer recipient = new Customer();
     static POBoxLinkedList poBoxList = new POBoxLinkedList();
 
-
     final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
+    final static Level FACTOID_LOG = Level.forName("FACTOID_LOG", 700);
     private static final Logger LOGGER = LogManager.getLogger("TEST_LOGGER");
 
 
@@ -211,12 +213,7 @@ public class Main {
 
         Insurance insuranceInfo = new Insurance();
 
-        double priceOfInsurance;
-        final double TEN_DOLLARS = 10;
-        final double THIRTY_DOLLARS = 30;
-        final double FIFTY_DOLLARS = 50;
-        final double TN_STATE_TAX = 0.07;
-        final double ZERO = 0;
+        double totalOfInsurance;
         final int LOW = 100000;
         final int HIGH = 999999;
 
@@ -232,32 +229,33 @@ public class Main {
         // Switch statement used for insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
-                final String LIGHT_INSURANCE = "Light insurance";
-                priceOfInsurance = TEN_DOLLARS + (TEN_DOLLARS * TN_STATE_TAX);
-                insuranceDetails.put(LIGHT_INSURANCE, priceOfInsurance);
+                totalOfInsurance = InsuranceData.LIGHT.getPriceOfInsurance() +
+                        (InsuranceData.LIGHT.getPriceOfInsurance() * StateTax.STATE_TAX.getPercentOfTax());
+                insuranceDetails.put(InsuranceData.LIGHT.getNameOfInsurance(), totalOfInsurance);
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
-                setUpShipment(insuranceInfo, TN_STATE_TAX, LIGHT_INSURANCE);
+                setUpShipment(insuranceInfo, InsuranceData.LIGHT.getNameOfInsurance());
                 break;
             case 2:
-                final String MEDIUM_INSURANCE = "Medium insurance";
-                priceOfInsurance = THIRTY_DOLLARS + (THIRTY_DOLLARS * TN_STATE_TAX);
-                insuranceDetails.put(MEDIUM_INSURANCE, priceOfInsurance);
+
+                totalOfInsurance = InsuranceData.MEDIUM.getPriceOfInsurance() +
+                        (InsuranceData.MEDIUM.getPriceOfInsurance() * StateTax.STATE_TAX.getPercentOfTax());
+                insuranceDetails.put(InsuranceData.MEDIUM.getNameOfInsurance(), totalOfInsurance);
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
-                setUpShipment(insuranceInfo, TN_STATE_TAX, MEDIUM_INSURANCE);
+                setUpShipment(insuranceInfo, InsuranceData.MEDIUM.getNameOfInsurance());
                 break;
             case 3:
-                final String HEAVY_INSURANCE = "Heavy insurance";
-                priceOfInsurance = THIRTY_DOLLARS + (FIFTY_DOLLARS * TN_STATE_TAX);
-                insuranceDetails.put(HEAVY_INSURANCE, priceOfInsurance);
+
+                totalOfInsurance = InsuranceData.HEAVY.getPriceOfInsurance() +
+                        (InsuranceData.HEAVY.getPriceOfInsurance() * StateTax.STATE_TAX.getPercentOfTax());
+                insuranceDetails.put(InsuranceData.HEAVY.getNameOfInsurance(), totalOfInsurance);
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
-                setUpShipment(insuranceInfo, TN_STATE_TAX, HEAVY_INSURANCE);
+                setUpShipment(insuranceInfo, InsuranceData.HEAVY.getNameOfInsurance());
                 break;
             case 0:
-                final String NO_INSURANCE = "No insurance";
-                priceOfInsurance = ZERO;
-                insuranceDetails.put(NO_INSURANCE, priceOfInsurance);
+                insuranceDetails.put(InsuranceData.NONE.getNameOfInsurance(),
+                        InsuranceData.NONE.getPriceOfInsurance());
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
-                setUpShipment(insuranceInfo, TN_STATE_TAX, NO_INSURANCE);
+                setUpShipment(insuranceInfo, InsuranceData.NONE.getNameOfInsurance());
                 break;
             default:
                 LOGGER.error("Please select a number from the choices given\n");
@@ -268,7 +266,7 @@ public class Main {
 
     }
 
-    public static void setUpShipment(Insurance insuranceInfo, final double TN_STATE_TAX, String insuranceName) {
+    public static void setUpShipment(Insurance insuranceInfo, String insuranceName) {
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
         LOGGER.log(MENU_LOG,"Select based on the number of days that you want");
@@ -282,28 +280,32 @@ public class Main {
 
         // Double variable for the price
         double priceOfPackage;
-        final double THREE_DOLLARS = 3;
-        final double SIX_DOLLARS = 6;
-        final double NINE_DOLLARS = 9;
+
 
 
         // Switch statement used to calculate total using TN state tax
         switch(numOfDays) {
             case 1:
-                priceOfPackage = NINE_DOLLARS + (NINE_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
+                priceOfPackage = DaysOfShipping.ONE_DAY.getPricePerDay() +
+                        (DaysOfShipping.ONE_DAY.getPricePerDay() *
+                        StateTax.STATE_TAX.getPercentOfTax()) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             case 3:
-                priceOfPackage = SIX_DOLLARS + (SIX_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
+                priceOfPackage = DaysOfShipping.THREE_DAYS.getPricePerDay() +
+                        (DaysOfShipping.THREE_DAYS.getPricePerDay() *
+                        StateTax.STATE_TAX.getPercentOfTax()) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             case 5:
-                priceOfPackage = THREE_DOLLARS + (THREE_DOLLARS * TN_STATE_TAX) + priceOfInsurance;
+                priceOfPackage = DaysOfShipping.FIVE_DAYS.getPricePerDay() +
+                        (DaysOfShipping.FIVE_DAYS.getPricePerDay() *
+                        StateTax.STATE_TAX.getPercentOfTax()) + priceOfInsurance;
                 shipment.setPrice(priceOfPackage);
                 break;
             default:
                 LOGGER.log(MENU_LOG,"Please select a number from the choices given\n");
-                setUpShipment(insuranceInfo, TN_STATE_TAX, insuranceName);
+                setUpShipment(insuranceInfo, insuranceName);
                 break;
         }
 
@@ -474,6 +476,7 @@ public class Main {
 
     public static Envelope sellEnvelope (double packageWeight, double packageWidth, double packageHeight) {
         Scanner scanner = new Scanner(System.in);
+        Scanner scanner2 = new Scanner(System.in);
 
         // Put all the elements into a single box object
         Envelope envelope = new Envelope();
@@ -486,27 +489,53 @@ public class Main {
         int numberOfStamps = scanner.nextInt();
         envelope.setNumberOfStamps(numberOfStamps);
 
-        // Use an arraylist to set the stamps on an envelope
-        ArrayList <Stamp> stamps = new ArrayList<>();
-        final double STAMP_PRICE = 0.75;
 
+        LOGGER.log(MENU_LOG,"\nWhat is the color of your stamp? ");
+                LOGGER.log(MENU_LOG,"Blue, Red, Green, or Orange (default if any other color is chosen) " +
+                        "(Determines price value)");
+
+        String colorChoice = scanner2.nextLine().toUpperCase();
 
         int i = 0;
+
+
+
+        ArrayList <Stamp> stamps = new ArrayList<>();
+
+
+
         while (i < numberOfStamps) {
             Stamp stamp = new Stamp();
-            int numberForStampName = i+1;
+            switch (colorChoice) {
+                case "BLUE":
+                    stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
+                    stamp.setPrice(TypesOfStamps.BLUE.getPriceOfStamp());
+                    break;
+                case "RED":
+                    stamp.setColor(TypesOfStamps.RED.getColorOfStamp());
+                    stamp.setPrice(TypesOfStamps.RED.getPriceOfStamp());
+                    break;
+                case "GREEN":
+                    stamp.setColor(TypesOfStamps.GREEN.getColorOfStamp());
+                    stamp.setPrice(TypesOfStamps.GREEN.getPriceOfStamp());
+                    break;
+                case "ORANGE":
+                    stamp.setColor(TypesOfStamps.ORANGE.getColorOfStamp());
+                    stamp.setPrice(TypesOfStamps.ORANGE.getPriceOfStamp());
+                    break;
+            }
+
+            int numberForStampName = i + 1;
             stamp.setName("Stamp " + numberForStampName);
-            stamp.setPrice(STAMP_PRICE);
             stamps.add(stamp);
             i++;
         }
 
-        // Set the array in the envelope
-        envelope.setStampArrayList(stamps);
-
+        envelope.setStampArrayList(stamps); // Set the array in the envelope
         return envelope;
 
     }
+
 
     public static Parcel sellParcel (double packageWeight, double packageWidth, double packageHeight) {
         Scanner scanner = new Scanner(System.in);
@@ -548,6 +577,8 @@ public class Main {
 
     public static void weighForFacility(Driver driver, Shipment shipment) {
         Scanner scanner = new Scanner(System.in);
+        final DecimalFormat df = new DecimalFormat("0.00");
+        df.setRoundingMode(RoundingMode.UP);
         String driverFullName = driver.getFirstName() + " " + driver.getLastName();
         String senderFullName = shipment.getSender().getFirstName() + " " + shipment.getSender().getLastName();
 
@@ -570,10 +601,10 @@ public class Main {
                 ArrayList <Stamp> stampArray = envelope.getStampArrayList();
 
                 for (Stamp s: stampArray) {
-                    LOGGER.log(MENU_LOG,s.getName());
-                    LOGGER.log(MENU_LOG,s.getPrice());
+                    LOGGER.log(MENU_LOG, s.getName());
+                    LOGGER.log(MENU_LOG, s.getColor());
+                    LOGGER.log(MENU_LOG, df.format(s.getPrice()));
                 }
-
                 break;
             default:
                 LOGGER.error("This is nothing");
@@ -687,7 +718,7 @@ public class Main {
         LOGGER.log(MENU_LOG,"\nMore options");
         LOGGER.log(MENU_LOG,"1. Take our 3 question survey");
         LOGGER.log(MENU_LOG,"2. Get a small factoid of the mail while leaving");
-        LOGGER.log(MENU_LOG,"3. Buy stamps. 0.75 per stamp");
+        LOGGER.log(MENU_LOG,"3. Buy stamps");
         LOGGER.log(MENU_LOG,"4. Sign up for our membership");
         LOGGER.log(MENU_LOG,"0. End");
 
@@ -801,15 +832,22 @@ public class Main {
     }
     public static void factoid() {
         // Output a small factoid using
-        FactoidOutput factoid = new FactoidOutput();
+        IFactoid factoid = () ->
+        {
+            LOGGER.log(FACTOID_LOG,"Did you know?: THE POSTAL SERVICE EMPLOYS MORE THAN 7.5 MILLION PEOPLE.");
+            LOGGER.log(FACTOID_LOG,"The U.S. postal service is the reason more than 7.5 million people have jobs. " +
+                    "The mailing industry brought in $70.6 billion in operating revenues in 2018.");
+            LOGGER.log(FACTOID_LOG,"Source: Redbook (bit.ly/3VsbI6S)");
+        };
         factoid.outputFactoid();
+
         System.exit(0);
     }
     public static void buyStamps() {
 
         Stamp stamp = new Stamp();
         Scanner scanner = new Scanner(System.in);
-        LOGGER.log(MENU_LOG,"\nHow many stamps would you like to buy? 0.75 per stamp");
+        LOGGER.log(MENU_LOG,"\nHow many stamps would you like to buy?");
         int numberOfStamps = scanner.nextInt();
 
         try{
@@ -830,19 +868,53 @@ public class Main {
 
     public static void calculateStampTotal(int numberOfStamps, Stamp stamp) {
         // Calculate the number of stamps
-        final double STAMP_PRICE = 0.75;
-        stamp.setPrice(STAMP_PRICE);
-        double completeTotal = stamp.getPrice() * numberOfStamps;
+        Scanner scanner = new Scanner(System.in);
+        double completeTotal;
+        LOGGER.log(MENU_LOG, "What color would you like your stamp?");
+        LOGGER.log(MENU_LOG, "Blue for 0.70, Red for 0.75, Green for 0.80,");
+        LOGGER.log(MENU_LOG, "or Orange for 0.85?");
+        String colorChoice = scanner.nextLine().toUpperCase();
 
-        stampOutput(numberOfStamps, completeTotal);
+        switch(colorChoice){
+            case "BLUE":
+                stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
+                stamp.setPrice(TypesOfStamps.BLUE.getPriceOfStamp());
+                completeTotal = stamp.getPrice() * numberOfStamps;
+                stampOutput(numberOfStamps, completeTotal, stamp);
+                break;
+            case "RED":
+                stamp.setColor(TypesOfStamps.RED.getColorOfStamp());
+                stamp.setPrice(TypesOfStamps.RED.getPriceOfStamp());
+                completeTotal = stamp.getPrice() * numberOfStamps;
+                stampOutput(numberOfStamps, completeTotal, stamp);
+                break;
+            case "GREEN":
+                stamp.setColor(TypesOfStamps.GREEN.getColorOfStamp());
+                stamp.setPrice(TypesOfStamps.GREEN.getPriceOfStamp());
+                completeTotal = stamp.getPrice() * numberOfStamps;
+                stampOutput(numberOfStamps, completeTotal, stamp);
+                break;
+            case "ORANGE":
+                stamp.setColor(TypesOfStamps.ORANGE.getColorOfStamp());
+                stamp.setPrice(TypesOfStamps.ORANGE.getPriceOfStamp());
+                completeTotal = stamp.getPrice() * numberOfStamps;
+                stampOutput(numberOfStamps, completeTotal, stamp);
+                break;
+            default:
+                LOGGER.error("Please enter a choice given");
+                calculateStampTotal(numberOfStamps, stamp);
+                break;
+        }
+
+
     }
 
-    public static void stampOutput(int numberOfStamps, double completeTotal) {
+    public static void stampOutput(int numberOfStamps, double completeTotal, Stamp stamp) {
 
         final DecimalFormat df = new DecimalFormat("0.00");
         df.setRoundingMode(RoundingMode.UP);
 
-        LOGGER.log(MENU_LOG,"\nYou bought " + numberOfStamps +
+        LOGGER.log(MENU_LOG,"\nYou bought " + numberOfStamps + " " + stamp.getColor() +
                 " stamps for $" + df.format(completeTotal));
         LOGGER.log(MENU_LOG,"Thank you!");
 
@@ -1245,9 +1317,46 @@ public class Main {
         String weather = scanner.nextLine();
         tvInformation.add(weather);
 
-        LOGGER.log(MENU_LOG,"\nEnter the days when the office is closed");
-        String closingDays = scanner.nextLine();
-        tvInformation.add(closingDays);
+        String day;
+
+
+        LOGGER.log(MENU_LOG,"\nWhat is the day today");
+        String dayOfTheWeek = scanner.nextLine().toUpperCase();
+        switch(dayOfTheWeek){
+            case "MONDAY":
+                day = Days.MONDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "TUESDAY":
+                day = Days.TUESDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "WEDNESDAY":
+                day = Days.WEDNESDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "THURSDAY":
+                day = Days.THURSDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "FRIDAY":
+                day = Days.FRIDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "SATURDAY":
+                day = Days.SATURDAY.getDays();
+                tvInformation.add(day);
+                break;
+            case "SUNDAY":
+                day = Days.SUNDAY.getDays();
+                tvInformation.add(day);
+                break;
+            default:
+                LOGGER.error("Wrong day. Please enter the information again");
+                televisionInformation();
+                break;
+        }
+
 
         LOGGER.log(MENU_LOG,"\nInsert a quote from a famous individual for the day");
         String quote = scanner.nextLine();

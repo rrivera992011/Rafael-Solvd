@@ -3,6 +3,7 @@ package com.solvd.delivery.stamp;
 public class Stamp implements IStamp {
     private String name;
     private double price;
+    private String color;
 
 
     @Override
@@ -23,5 +24,15 @@ public class Stamp implements IStamp {
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String getColor() {
+        return this.color;
     }
 }
