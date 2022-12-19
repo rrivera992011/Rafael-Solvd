@@ -3876,3 +3876,135 @@ You answers were: 7, 8, and 6
 Is this correct? Yes or No? (Not case sensitive)
 2022-12-19 09:32:46,839 MENU_LOG TEST_LOGGER [main] 
 Thank you for your assistance. Goodbye
+2022-12-19 17:42:02,932 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:42:02,934 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:42:02,935 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:42:02,935 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:42:02,935 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:42:02,935 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:42:02,935 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:42:05,466 ERROR TEST_LOGGER [main] File not found. Exiting now
+2022-12-19 17:44:22,603 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:44:22,605 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:44:22,606 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:44:22,606 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:44:22,606 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:44:22,606 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:44:22,606 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:44:24,680 ERROR TEST_LOGGER [main] File not found. Exiting now
+2022-12-19 17:44:24,680 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-19 17:44:24,680 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-19 17:44:39,349 MENU_LOG TEST_LOGGER [main] Thank you for your service! Have a great day!
+2022-12-19 17:45:18,501 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:45:18,502 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:45:18,502 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:45:18,502 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:45:18,503 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:45:19,688 ERROR TEST_LOGGER [main] File not found. Exiting now
+2022-12-19 17:45:19,688 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-19 17:45:19,688 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-19 17:45:30,518 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:45:30,525 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:45:30,525 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:45:30,525 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:45:30,525 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:45:30,526 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:45:30,527 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:45:33,184 ERROR TEST_LOGGER [main] File not found. Exiting now
+2022-12-19 17:45:33,185 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-19 17:45:33,185 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-19 17:45:35,525 MENU_LOG TEST_LOGGER [main] Thank you for your service! Have a great day!
+2022-12-19 17:46:19,090 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:46:19,092 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:46:19,092 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:46:19,092 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:46:19,092 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:46:19,093 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:47:15,471 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:47:15,473 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:47:15,473 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:47:15,473 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:47:15,474 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:48:27,256 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:48:27,257 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:48:27,258 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:48:29,426 MENU_LOG TEST_LOGGER [main] File has been read
+2022-12-19 17:48:51,260 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-19 17:48:51,262 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-19 17:48:51,263 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-19 17:48:54,189 MENU_LOG TEST_LOGGER [main] File has been read

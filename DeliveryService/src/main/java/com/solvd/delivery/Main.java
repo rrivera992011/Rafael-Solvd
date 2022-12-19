@@ -13,10 +13,10 @@ import com.solvd.delivery.stamp.*;
 import com.solvd.delivery.survey.*;
 import com.solvd.delivery.vehicle.*;
 import com.solvd.delivery.enums.*;
-
-import org.apache.logging.log4j.*;
-
+import org.apache.commons.io.FileUtils;
 import java.util.*;
+import java.io.*;
+import org.apache.logging.log4j.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.lang.*;
@@ -75,6 +75,7 @@ public class Main {
         LOGGER.log(MENU_LOG,"8. Clear the list of PO Boxes");
         LOGGER.log(MENU_LOG,"9. View the PO Boxes");
         LOGGER.log(MENU_LOG,"10. Enter the information for the facility televisions");
+        LOGGER.log(MENU_LOG,"11. Read a file");
         LOGGER.log(MENU_LOG,"0. Exit the program");
 
     }
@@ -125,6 +126,22 @@ public class Main {
                 break;
             case 10:
                 televisionInformation();
+                break;
+            case 11:
+                try {
+                    File file = new File("src/main/resources/HeyDiddleDiddle.txt");
+                    readAFile(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    LOGGER.error("File not found. Exiting now");
+                    continueDelivery();
+                } catch(IOException e){
+                    e.printStackTrace();
+                    LOGGER.error("Input and output failed");
+                    continueDelivery();
+                }
+
+
                 break;
             default:
                 try {
@@ -1294,7 +1311,7 @@ public class Main {
     }
 
     public static void checkOptionIsInvalid(int selection) throws InvalidDeliveryPlanException {
-        if(selection < 0 || selection > 10) {
+        if(selection < 0 || selection > 11) {
             throw new InvalidDeliveryPlanException("\nPlease select a number from the choices given");
         }
     }
@@ -1424,7 +1441,6 @@ public class Main {
                 break;
         }
 
-
         LOGGER.log(MENU_LOG,"\nInsert a quote from a famous individual for the day");
         String quote = scanner.nextLine();
         tvInformation.add(quote);
@@ -1436,5 +1452,27 @@ public class Main {
         System.exit(0);
     }
 
+    public static void readAFile(File file) throws IOException {
 
+        String stringFromFile = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
+        Map<String, Integer> wordHashMap = new HashMap<>();
+        String[] words = stringFromFile.split(" ");
+        int iterator = 0;
+
+        for (String word : words) {
+            if (wordHashMap.containsKey(word)) {
+                wordHashMap.put(word, wordHashMap.get(word) + 1);
+            } else {
+                wordHashMap.put(word, 1);
+            }
+
+            String wordsForPrint = words[iterator];
+            iterator = iterator + 1;
+            FileUtils.write(file, "\n" + wordsForPrint + " = " + wordHashMap.get(word),
+                    "UTF-8", true);
+        }
+
+        LOGGER.log(MENU_LOG, "File has been read");
+        System.exit(0);
+    }
 }
