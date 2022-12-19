@@ -20,6 +20,7 @@ import java.util.*;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.lang.*;
+
 public class Main {
 
     static Customer sender = new Customer();
@@ -716,7 +717,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nMore options");
-        LOGGER.log(MENU_LOG,"1. Take our 3 question survey");
+        LOGGER.log(MENU_LOG,"1. Take our four question survey");
         LOGGER.log(MENU_LOG,"2. Get a small factoid of the mail while leaving");
         LOGGER.log(MENU_LOG,"3. Buy stamps");
         LOGGER.log(MENU_LOG,"4. Sign up for our membership");
@@ -769,6 +770,9 @@ public class Main {
             }
         }
 
+        int totalOfChoices = 0;
+        totalOfChoices += choiceNum;
+
         surveyor.setServiceNum(choiceNum);
         LOGGER.log(MENU_LOG,"Rate from 1-10. How efficient was our service?");
         choiceNum = scanner.nextInt();
@@ -782,7 +786,7 @@ public class Main {
                 enterSurveyInfo();
             }
         }
-
+        totalOfChoices += choiceNum;
         surveyor.setEfficiencyNum(choiceNum);
 
         LOGGER.log(MENU_LOG,"Rate from 1-10. How friendly was our staff?");
@@ -798,22 +802,77 @@ public class Main {
             }
         }
 
+        totalOfChoices += choiceNum;
         surveyor.setFriendlinessNum(choiceNum);
+
+
+
+        ISurveyHelper<Integer> averageOfAnswers = (total) -> {
+            int average = (total / 3);
+            LOGGER.log(MENU_LOG, "The average of your answers is " + average);
+            return average;
+        };
+
+
         LOGGER.log(MENU_LOG,"\nYou answers were: " +
                 surveyor.getServiceNum() + ", " + surveyor.getEfficiencyNum() +
                 ", and " + surveyor.getFriendlinessNum());
 
-        confirmSurveyInfo();
+        confirmSurveyInfo(averageOfAnswers.findAverageOrCompensation(totalOfChoices));
+
+
     }
 
-    public static void confirmSurveyInfo() {
+    public static void confirmSurveyInfo(int average) {
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
 
         switch (choice){
             case "YES":
-                LOGGER.log(MENU_LOG,"\nThank you for your assistance. Goodbye");
+                if (average > 8) {
+                    LOGGER.log(MENU_LOG, "We are so happy we provided you great service");
+
+                } else if (average > 4) {
+                    LOGGER.log(MENU_LOG, "We are happy we provided a pleasant experience. " +
+                            "We will improve exponentially");
+                    LOGGER.log(MENU_LOG, "Please take a couple of free stamps as compensation");
+
+                    ISurveyHelper<String> giveCompensationStamps = (givenAverage) -> {
+                        LOGGER.log(MENU_LOG,"What is your favorite color?");
+                        String favoriteColor = scanner.nextLine().toLowerCase();
+                        return (givenAverage + " " + favoriteColor);
+                    };
+
+                    LOGGER.log(MENU_LOG, "Take a total of " +
+                            giveCompensationStamps.findAverageOrCompensation(String.valueOf(average)) + " stamps");
+
+                    LOGGER.log(MENU_LOG, "Please take a ");
+                } else {
+                    LOGGER.log(MENU_LOG, "We apologize for the lackluster service");
+
+
+                    ISurveyHelper<Integer> findDiscount = (givenAverage) -> {
+
+                        if(average == 1) {
+                            return 20;
+                        } else if(average == 2) {
+                            return 15;
+                        } else if(average == 3 || average == 4) {
+                            return 10;
+                        } else {
+                            return 0;
+                        }
+
+
+                    };
+
+                    LOGGER.log(MENU_LOG, "In return, we will give you a " +
+                            findDiscount.findAverageOrCompensation(average) + " percent discount on your next" +
+                            " delivery or purchase of materials for shipping");
+
+                }
+                LOGGER.log(MENU_LOG, "Thank you for your service. Goodbye");
                 System.exit(0);
                 break;
             case "NO":
@@ -826,20 +885,28 @@ public class Main {
                 } catch(YesOrNoException e) {
                     LOGGER.error("\nA problem occurred " + e);
                 }
-                confirmSurveyInfo();
+                confirmSurveyInfo(average);
                 break;
         }
     }
     public static void factoid() {
         // Output a small factoid using
-        IFactoid factoid = () ->
+        IFactoid firstFactoid = () ->
         {
             LOGGER.log(FACTOID_LOG,"Did you know?: THE POSTAL SERVICE EMPLOYS MORE THAN 7.5 MILLION PEOPLE.");
-            LOGGER.log(FACTOID_LOG,"The U.S. postal service is the reason more than 7.5 million people have jobs. " +
-                    "The mailing industry brought in $70.6 billion in operating revenues in 2018.");
+            LOGGER.log(FACTOID_LOG,"The U.S. postal service is the reason more than 7.5 million people have " +
+                    "jobs. The mailing industry brought in $70.6 billion in operating revenues in 2018.");
             LOGGER.log(FACTOID_LOG,"Source: Redbook (bit.ly/3VsbI6S)");
         };
-        factoid.outputFactoid();
+        firstFactoid.outputFactoid();
+
+        IFactoid secondFactoid = () ->
+        {
+            LOGGER.log(FACTOID_LOG, "The Postal Service processes and delivers 46 percent of the world’s" +
+                    " mail and is constantly innovating to make customer experiences better.");
+            LOGGER.log(FACTOID_LOG,"Source: USPS (https://facts.usps.com/top-facts/)");
+        };
+        secondFactoid.outputFactoid();
 
         System.exit(0);
     }

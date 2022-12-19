@@ -5,7 +5,7 @@ public interface ISurvey {
     void setServiceNum(int serviceNum);
     int getEfficiencyNum();
     void setEfficiencyNum(int efficiencyNum);
-    void setFriendlinessNum(int friendlinessNum);
 
     int getFriendlinessNum();
+    void setFriendlinessNum(int friendlinessNum);
 }
