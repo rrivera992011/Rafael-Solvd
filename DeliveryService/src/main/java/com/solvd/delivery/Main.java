@@ -33,13 +33,11 @@ public class Main {
 
 
 
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG, "Welcome to the delivery system. ");
         LOGGER.log(MENU_LOG,"Please choose from one of the following options: ");
         menuOptions();
-
 
         // Loop for menu
         // Do the selection while selection is not 0
@@ -48,6 +46,7 @@ public class Main {
             selection = scanner.nextInt();
             menuSelection(selection);
         } while (selection != 0);
+
     }
 
     public static void menuOptions() {
@@ -140,8 +139,6 @@ public class Main {
                     LOGGER.error("Input and output failed");
                     continueDelivery();
                 }
-
-
                 break;
             default:
                 try {
@@ -193,8 +190,6 @@ public class Main {
         String phoneNumber = scanner.nextLine();
         recipient.setPhoneNumber(phoneNumber);
 
-
-
     }
 
     public static void continueDelivery() {
@@ -241,9 +236,6 @@ public class Main {
         int insuranceNumber = getRandomNumber(LOW,HIGH );
         insuranceInfo.setInsuranceNumber(insuranceNumber);
 
-
-
-
         // Switch statement used for insurance prices using TN state tax
         switch (insuranceSelection) {
             case 1:
@@ -254,7 +246,6 @@ public class Main {
                 setUpShipment(insuranceInfo, InsuranceData.LIGHT.getNameOfInsurance());
                 break;
             case 2:
-
                 totalOfInsurance = InsuranceData.MEDIUM.getPriceOfInsurance() +
                         (InsuranceData.MEDIUM.getPriceOfInsurance() * StateTax.STATE_TAX.getPercentOfTax());
                 insuranceDetails.put(InsuranceData.MEDIUM.getNameOfInsurance(), totalOfInsurance);
@@ -262,7 +253,6 @@ public class Main {
                 setUpShipment(insuranceInfo, InsuranceData.MEDIUM.getNameOfInsurance());
                 break;
             case 3:
-
                 totalOfInsurance = InsuranceData.HEAVY.getPriceOfInsurance() +
                         (InsuranceData.HEAVY.getPriceOfInsurance() * StateTax.STATE_TAX.getPercentOfTax());
                 insuranceDetails.put(InsuranceData.HEAVY.getNameOfInsurance(), totalOfInsurance);
@@ -281,7 +271,6 @@ public class Main {
                 break;
         }
 
-
     }
 
     public static void setUpShipment(Insurance insuranceInfo, String insuranceName) {
@@ -295,11 +284,8 @@ public class Main {
         Map<String, Double> insuranceMap = insuranceInfo.getInsuranceDetails();
         double priceOfInsurance = insuranceMap.get(insuranceName);
 
-
         // Double variable for the price
         double priceOfPackage;
-
-
 
         // Switch statement used to calculate total using TN state tax
         switch(numOfDays) {
@@ -326,8 +312,6 @@ public class Main {
                 setUpShipment(insuranceInfo, insuranceName);
                 break;
         }
-
-
 
         totalOutput(insuranceInfo, shipment);
 
@@ -357,7 +341,6 @@ public class Main {
         LOGGER.log(MENU_LOG,"Complete total: " + df.format(shipment.getPrice()));
 
         confirmShipping(insuranceInfo, shipment);
-
 
     }
 
@@ -398,7 +381,6 @@ public class Main {
         shipment.setRecipient(recipient);
         shipment.setInsurance(insuranceInfo);
 
-
         String outputTest = shipment.toString();
 
         LOGGER.log(MENU_LOG,outputTest + "\n");
@@ -406,7 +388,6 @@ public class Main {
         // Create a driver using the enterDriver function and send it to the confirmation
         Driver driver = enterDriver();
         confirmDriver(driver, shipment);
-
 
     }
 
@@ -470,7 +451,6 @@ public class Main {
 
         }
 
-
     }
 
     public static void determinePackageValues(Driver driver, Shipment shipment){
@@ -486,9 +466,6 @@ public class Main {
         double packageHeight = scanner.nextDouble();
 
         setupForDelivery(packageWeight, packageWidth, packageHeight, driver, shipment);
-
-
-
 
     }
 
@@ -507,7 +484,6 @@ public class Main {
         int numberOfStamps = scanner.nextInt();
         envelope.setNumberOfStamps(numberOfStamps);
 
-
         LOGGER.log(MENU_LOG,"\nWhat is the color of your stamp? ");
                 LOGGER.log(MENU_LOG,"Blue, Red, Green, or Orange (default if any other color is chosen) " +
                         "(Determines price value)");
@@ -516,11 +492,7 @@ public class Main {
 
         int i = 0;
 
-
-
         ArrayList <Stamp> stamps = new ArrayList<>();
-
-
 
         while (i < numberOfStamps) {
             Stamp stamp = new Stamp();
@@ -803,6 +775,7 @@ public class Main {
                 enterSurveyInfo();
             }
         }
+
         totalOfChoices += choiceNum;
         surveyor.setEfficiencyNum(choiceNum);
 
@@ -822,8 +795,6 @@ public class Main {
         totalOfChoices += choiceNum;
         surveyor.setFriendlinessNum(choiceNum);
 
-
-
         ISurveyHelper<Integer> averageOfAnswers = (total) -> {
             int average = (total / 3);
             LOGGER.log(MENU_LOG, "The average of your answers is " + average);
@@ -836,7 +807,6 @@ public class Main {
                 ", and " + surveyor.getFriendlinessNum());
 
         confirmSurveyInfo(averageOfAnswers.findAverageOrCompensation(totalOfChoices));
-
 
     }
 
@@ -868,7 +838,6 @@ public class Main {
                 } else {
                     LOGGER.log(MENU_LOG, "We apologize for the lackluster service");
 
-
                     ISurveyHelper<Integer> findDiscount = (givenAverage) -> {
 
                         if(average == 1) {
@@ -880,8 +849,6 @@ public class Main {
                         } else {
                             return 0;
                         }
-
-
                     };
 
                     LOGGER.log(MENU_LOG, "In return, we will give you a " +
@@ -906,6 +873,7 @@ public class Main {
                 break;
         }
     }
+
     public static void factoid() {
         // Output a small factoid using
         IFactoid firstFactoid = () ->
@@ -927,6 +895,7 @@ public class Main {
 
         System.exit(0);
     }
+
     public static void buyStamps() {
 
         Stamp stamp = new Stamp();
@@ -945,8 +914,6 @@ public class Main {
         } else {
             calculateStampTotal(numberOfStamps, stamp);
         }
-
-
 
     }
 
@@ -990,7 +957,6 @@ public class Main {
                 break;
         }
 
-
     }
 
     public static void stampOutput(int numberOfStamps, double completeTotal, Stamp stamp) {
@@ -1004,7 +970,6 @@ public class Main {
 
         System.exit(0);
     }
-
 
     public static void enterMembershipInfo() {
         Scanner scanner = new Scanner(System.in);
@@ -1061,13 +1026,13 @@ public class Main {
                 break;
         }
     }
+
     public static void confirmMembershipInfo(MembershipInformation membershipDetails){
 
         // Use a long for a random membership number
         int membershipNumber = getRandomNumber(1000000, 999999);
 
         membershipDetails.setMembershipNumber(membershipNumber);
-
 
         // Output for email correction
         LOGGER.log(MENU_LOG,"\nYour name is: " + membershipDetails.getPerson().toString());
@@ -1255,7 +1220,6 @@ public class Main {
 
         finalizeComplaint();
 
-
     }
     public static void finalizeComplaint() {
         Scanner scanner = new Scanner(System.in);
@@ -1294,7 +1258,6 @@ public class Main {
         if(sender.getFirstName().equals("") || recipient.getFirstName().equals("")) {
             throw new EmptyCustomerException("\nPlease enter both a sender and a recipient\n",
                     "Empty sender or recipient");
-
         } else {
             insuranceTotal();
         }
@@ -1306,8 +1269,6 @@ public class Main {
         } else if (numberOfStamps < 1) {
             throw new TooManyStampsException("\nToo few stamps");
         }
-
-
     }
 
     public static void checkOptionIsInvalid(int selection) throws InvalidDeliveryPlanException {
@@ -1319,8 +1280,6 @@ public class Main {
     public static void incorrectSurveyOption() throws InvalidSurveyAnswerException {
         throw new InvalidSurveyAnswerException("\nPlease enter a number from 1 to 10");
     }
-
-
 
     public static void clearThePOBoxList(){
         Scanner scanner = new Scanner(System.in);
@@ -1349,9 +1308,6 @@ public class Main {
                 break;
         }
     }
-
-
-
 
     public static void createAPOBox(){
         POBoxOwner poBox = new POBoxOwner();
@@ -1384,7 +1340,6 @@ public class Main {
         LOGGER.log(MENU_LOG, "Number of boxes: " + poBoxList.getSize());
         LOGGER.log(MENU_LOG, "Here are the boxes in our system\n" + poBoxList);
 
-
     }
 
     public static void viewThePOBoxList() {
@@ -1402,7 +1357,6 @@ public class Main {
         tvInformation.add(weather);
 
         String day;
-
 
         LOGGER.log(MENU_LOG,"\nWhat is the day today");
         String dayOfTheWeek = scanner.nextLine().toUpperCase();
