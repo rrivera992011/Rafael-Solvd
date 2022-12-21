@@ -6,20 +6,20 @@ public enum InsuranceData {
     HEAVY("Heavy insurance", 50),
     NONE("No insurance", 0);
 
-    private final String NAME_OF_INSURANCE;
-    private final double PRICE_OF_INSURANCE;
+    private String nameOfInsurance;
+    private double priceOfInsurance;
 
-    InsuranceData(String NAME_OF_INSURANCE, double PRICE_OF_INSURANCE) {
-        this.NAME_OF_INSURANCE = NAME_OF_INSURANCE;
-        this.PRICE_OF_INSURANCE = PRICE_OF_INSURANCE;
+    InsuranceData(String nameOfInsurance, double priceOfInsurance) {
+        this.nameOfInsurance = nameOfInsurance;
+        this.priceOfInsurance = priceOfInsurance;
     }
 
     public String getNameOfInsurance() {
-        return this.NAME_OF_INSURANCE;
+        return this.nameOfInsurance;
     }
 
     public double getPriceOfInsurance() {
-        return this.PRICE_OF_INSURANCE;
+        return this.priceOfInsurance;
     }
 
 }
