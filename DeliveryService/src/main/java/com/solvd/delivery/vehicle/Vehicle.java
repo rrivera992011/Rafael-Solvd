@@ -1,25 +1,25 @@
 package com.solvd.delivery.vehicle;
 
-public class Plane implements IVehicle {
+public class Vehicle {
+
     private String vehicleName;
-    private long planeNumber;
+    private String vehicleNumber;
 
-    public long getPlaneNumber() {
-        return this.planeNumber;
+    public String getVehicleNumber() {
+        return this.vehicleNumber;
     }
 
-    public void setPlaneNumber(long planeNumber) {
-        this.planeNumber = planeNumber;
+    public void setVehicleNumber(String vehicleNumber) {
+        this.vehicleNumber = vehicleNumber;
     }
 
-    @Override
+
     public String getVehicleName() {
         return this.vehicleName;
     }
 
-    @Override
+
     public void setVehicleName(String vehicleName) {
         this.vehicleName = vehicleName;
     }
-
 }

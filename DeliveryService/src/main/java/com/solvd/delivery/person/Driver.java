@@ -3,16 +3,21 @@ package com.solvd.delivery.person;
 
 public class Driver extends Employee{
 
-    private String status;
+    public enum DriverStatus{
+        CAN_DRIVE(true),
+        CANNOT_DRIVE(false);
+        private boolean driverStatus;
+        DriverStatus(boolean driverStatus){
+            this.driverStatus = driverStatus;
+        }
 
-
-    public void setStatus (String status) {
-        this.status = status;
+        public boolean getDriverStatus() {
+            return this.driverStatus;
+        }
     }
 
-    public String getStatus() {
-        return this.status;
-    }
+
+
 
 
 }

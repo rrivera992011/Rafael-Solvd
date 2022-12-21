@@ -5,10 +5,22 @@ import com.solvd.delivery.person.*;
 public class MembershipInformation implements IMembership {
 
     private Person person;
-    private boolean offerStatus;
+    private String membershipNumber;
 
-    private long membershipNumber;
+    public enum OfferStatus{
+        YES_OFFERS("Yes"),
+        NO_OFFERS("No");
 
+        private String offerStatus;
+
+        OfferStatus(String offerStatus){
+            this.offerStatus = offerStatus;
+        }
+
+        public String getOfferStatus(){
+            return this.offerStatus;
+        }
+    }
 
     @Override
     public void setPerson(Person person) {
@@ -21,22 +33,12 @@ public class MembershipInformation implements IMembership {
     }
 
     @Override
-    public long getMembershipNumber() {
+    public String getMembershipNumber() {
         return this.membershipNumber;
     }
 
     @Override
-    public void setMembershipNumber(long membershipNumber) {
+    public void setMembershipNumber(String membershipNumber) {
         this.membershipNumber = membershipNumber;
-    }
-
-    @Override
-    public void setOfferStatus(boolean offerStatus) {
-        this.offerStatus = offerStatus;
-    }
-
-    @Override
-    public boolean getOfferStatus() {
-        return this.offerStatus;
     }
 }

@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class Envelope extends Mailing {
     private ArrayList<Stamp> stamps = new ArrayList<>();
-    int numberOfStamps;
 
     public void setStampArrayList(ArrayList<Stamp> stamps) {
         this.stamps = stamps;
@@ -16,13 +15,6 @@ public class Envelope extends Mailing {
         return this.stamps;
     }
 
-    public void setNumberOfStamps(int numberOfStamps) {
-        this.numberOfStamps = numberOfStamps;
-    }
-
-    public int getNumberOfStamps() {
-        return this.numberOfStamps;
-    }
 
     @Override
     public String getPackageType() {

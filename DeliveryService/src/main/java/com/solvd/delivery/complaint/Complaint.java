@@ -4,40 +4,48 @@ import com.solvd.delivery.person.Person;
 
 public class Complaint {
     private Person person;
-    private long complaintNumber;
-    private String baseComplaintType;
+    private String complaintNumber;
 
-    private String complaint;
+    public enum ComplaintType{
+        PACKAGE_COMPLAINT("Package complaint"),
+        EMPLOYEE_COMPLAINT("Employee complaint"),
+        MISC_COMPLAINT("Misc complaint");
+
+        private String typeOfComplaint;
+
+        ComplaintType(String typeOfComplaint){
+            this.typeOfComplaint = typeOfComplaint;
+        }
+
+        public String getTypeOfComplaint() {
+            return this.typeOfComplaint;
+        }
+    }
+
+    private String description;
 
     public Person getPerson() {
         return this.person;
     }
 
-    public long getComplaintNumber() {
+    public String getComplaintNumber() {
         return this.complaintNumber;
     }
 
-    public String getBaseComplaintType() {
-        return this.baseComplaintType;
+    public String getDescription() {
+        return this.description;
     }
 
-    public String getComplaint() {
-        return this.complaint;
-    }
-
-    public void setComplaint(String complaint) {
-        this.complaint = complaint;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setPerson(Person person) {
         this.person = person;
     }
 
-    public void setComplaintNumber(long complaintNumber) {
+    public void setComplaintNumber(String complaintNumber) {
         this.complaintNumber = complaintNumber;
     }
 
-    public void setBaseComplaintType(String baseComplaintType) {
-        this.baseComplaintType = baseComplaintType;
-    }
 }

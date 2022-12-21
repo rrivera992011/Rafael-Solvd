@@ -1,6 +1,6 @@
 package com.solvd.delivery.enums;
 
-public enum Days {
+public enum DayOfTheWeek {
     MONDAY ("Monday"),
     TUESDAY("Tuesday"),
     WEDNESDAY("Wednesday"),
@@ -9,12 +9,12 @@ public enum Days {
     SATURDAY("Saturday"),
     SUNDAY("Sunday");
 
-    final String DAY_OF_THE_WEEK;
+    private String day;
 
-    Days(String DAY_OF_THE_WEEK){
-        this.DAY_OF_THE_WEEK = DAY_OF_THE_WEEK;
+    DayOfTheWeek(String day){
+        this.day = day;
     }
     public String getDays() {
-        return this.DAY_OF_THE_WEEK;
+        return this.day;
     }
 }
