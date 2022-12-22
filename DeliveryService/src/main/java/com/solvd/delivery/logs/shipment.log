@@ -5997,3 +5997,813 @@ Your name is: Cider, Apple
 Is this correct? Yes or No? (Not case sensitive)
 2022-12-21 14:50:00,425 MENU_LOG TEST_LOGGER [main] 
 Thank you for information and welcome to our membership
+2022-12-21 19:42:47,712 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 19:42:47,713 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 19:42:47,717 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 19:42:47,717 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:42:47,718 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:56:00,049 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 19:56:00,051 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:56:00,055 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:56:00,056 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:56:00,056 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:56:00,056 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:56:03,878 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-21 19:56:04,790 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-21 19:56:05,391 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-21 19:56:06,053 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-21 19:56:07,462 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:56:07,463 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwsedrf, werfg
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] Address of sender: qwsedrf
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwsedrf
+
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:56:08,148 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:56:08,150 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:56:08,845 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-21 19:56:09,582 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-21 19:56:10,205 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-21 19:56:10,765 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-21 19:56:11,277 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:56:11,277 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:56:12,349 ERROR TEST_LOGGER [main] Please choose one of these options
+
+2022-12-21 19:56:12,349 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:56:12,349 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:56:51,413 ERROR TEST_LOGGER [main] Please choose one of these options
+
+2022-12-21 19:56:51,414 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:56:51,414 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:56:52,797 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwsedrf, werfg
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] Address of sender: qwsedrf
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwsedrf
+
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: wsedrfgh, wsedrfgh
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] Address of recipient: qwedrfgh
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwerfg
+
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:56:52,798 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:56:57,198 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-21 19:56:57,198 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-21 19:56:57,198 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-21 19:56:57,198 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-21 19:56:57,198 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-21 19:56:58,311 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-21 19:56:58,311 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwsedrf, werfg
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] Address of sender: qwsedrf
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] Phone number: qwsedrf
+
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: wsedrfgh, wsedrfgh
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] Address of sender: qwedrfgh
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] Phone number: qwerfg
+
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] 
+Package number: 9549878
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] Insurance number: 933958
+2022-12-21 19:57:00,719 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-21 19:57:00,721 MENU_LOG TEST_LOGGER [main] Complete total: 20.33
+2022-12-21 19:57:00,721 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-21 19:57:03,229 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2022-12-21 19:57:03,229 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2022-12-21 19:57:03,229 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2022-12-21 19:57:03,229 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwsedrf, werfg
+Address of sender: qwsedrf
+Phone number: qwsedrf
+
+Name of recipient: wsedrfgh, wsedrfgh
+Address of sender: qwedrfgh
+Phone number: qwerfg
+
+Insurance number: 933958
+
+ETA: 1 Day(s)
+
+2022-12-21 19:57:03,229 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2022-12-21 19:57:05,340 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2022-12-21 19:57:06,508 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2022-12-21 19:57:06,508 MENU_LOG TEST_LOGGER [main] Name: Jack, Apple
+2022-12-21 19:57:06,508 MENU_LOG TEST_LOGGER [main] Number: 50107
+2022-12-21 19:57:06,509 MENU_LOG TEST_LOGGER [main] 
+Can you confirm that driver Apple Jack
+2022-12-21 19:57:06,509 MENU_LOG TEST_LOGGER [main]  will take this delivery? Yes or No? (Not case sensitive)
+2022-12-21 19:58:01,816 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 19:58:01,819 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:58:01,846 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:58:01,847 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:58:04,380 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-21 19:58:05,044 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-21 19:58:05,597 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-21 19:58:06,060 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-21 19:58:06,468 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:58:06,469 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:58:07,156 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwergh, qwsedfg
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] Address of sender: qwerftg
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwerft
+
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:58:07,157 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:58:08,044 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-21 19:58:09,541 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-21 19:58:10,125 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-21 19:58:10,684 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-21 19:58:11,164 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:58:11,164 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:58:11,916 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwergh, qwsedfg
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] Address of sender: qwerftg
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwerft
+
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: wsedfg, qwsedrftgqw
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] Address of recipient: wsedrfg
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qwefrg
+
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:58:11,917 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:58:11,918 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:58:11,918 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:58:12,725 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-21 19:58:12,725 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-21 19:58:12,725 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-21 19:58:12,725 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-21 19:58:12,725 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-21 19:58:13,981 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-21 19:58:13,981 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwergh, qwsedfg
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] Address of sender: qwerftg
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] Phone number: qwerft
+
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: wsedfg, qwsedrftgqw
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] Address of sender: wsedrfg
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] Phone number: qwefrg
+
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] 
+Package number: 8264437
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] Insurance number: 556650
+2022-12-21 19:58:15,134 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-21 19:58:15,136 MENU_LOG TEST_LOGGER [main] Complete total: 20.33
+2022-12-21 19:58:15,136 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-21 19:58:16,684 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2022-12-21 19:58:16,684 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2022-12-21 19:58:16,684 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2022-12-21 19:58:16,684 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qwergh, qwsedfg
+Address of sender: qwerftg
+Phone number: qwerft
+
+Name of recipient: wsedfg, qwsedrftgqw
+Address of sender: wsedrfg
+Phone number: qwefrg
+
+Insurance number: 556650
+
+ETA: 1 Day(s)
+
+2022-12-21 19:58:16,685 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2022-12-21 19:58:18,685 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2022-12-21 19:58:19,669 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2022-12-21 19:58:19,669 MENU_LOG TEST_LOGGER [main] Name: Tom, Apple
+2022-12-21 19:58:19,669 MENU_LOG TEST_LOGGER [main] Number: 29154
+2022-12-21 19:58:19,669 MENU_LOG TEST_LOGGER [main] 
+Can you confirm that driver Apple Tom
+2022-12-21 19:58:19,669 MENU_LOG TEST_LOGGER [main]  will take this delivery? Yes or No? (Not case sensitive)
+2022-12-21 19:58:21,365 MENU_LOG TEST_LOGGER [main] Driver status is true
+2022-12-21 19:58:21,365 MENU_LOG TEST_LOGGER [main] 
+Preparing package drop off now!
+2022-12-21 19:58:21,365 MENU_LOG TEST_LOGGER [main] 
+Enter the weight of the package in pounds
+2022-12-21 19:59:20,746 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 19:59:20,747 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 19:59:20,753 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 19:59:20,757 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:59:20,757 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:59:20,757 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:59:20,758 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:59:20,759 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:59:20,759 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:59:20,759 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:59:23,989 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-21 19:59:24,684 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-21 19:59:25,213 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-21 19:59:25,740 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-21 19:59:26,261 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:59:26,261 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aqswedrftgh, qawsedrt
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] Address of sender: qaswedrfghn
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] Phone number of recipient: asdfghn
+
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:59:27,180 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:59:27,181 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:59:27,181 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:59:28,132 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-21 19:59:28,868 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-21 19:59:29,565 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-21 19:59:30,067 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-21 19:59:30,564 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 19:59:30,564 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 19:59:31,468 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aqswedrftgh, qawsedrt
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] Address of sender: qaswedrfghn
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] Phone number of recipient: asdfghn
+
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: asdfgh, sdfghnm
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] Address of recipient: sderfgh
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] Phone number of recipient: asdfg
+
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 19:59:31,469 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 19:59:32,812 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-21 19:59:32,812 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-21 19:59:32,812 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-21 19:59:32,812 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-21 19:59:32,812 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-21 19:59:34,109 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-21 19:59:34,109 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aqswedrftgh, qawsedrt
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] Address of sender: qaswedrfghn
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] Phone number: asdfghn
+
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: asdfgh, sdfghnm
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] Address of sender: sderfgh
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] Phone number: asdfg
+
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] 
+Package number: 8290889
+2022-12-21 19:59:35,941 MENU_LOG TEST_LOGGER [main] Insurance number: 823880
+2022-12-21 19:59:35,942 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-21 19:59:35,943 MENU_LOG TEST_LOGGER [main] Complete total: 20.33
+2022-12-21 19:59:35,943 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-21 19:59:37,340 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2022-12-21 19:59:37,340 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2022-12-21 19:59:37,340 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2022-12-21 19:59:37,340 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aqswedrftgh, qawsedrt
+Address of sender: qaswedrfghn
+Phone number: asdfghn
+
+Name of recipient: asdfgh, sdfghnm
+Address of sender: sderfgh
+Phone number: asdfg
+
+Insurance number: 823880
+
+ETA: 1 Day(s)
+
+2022-12-21 19:59:37,341 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2022-12-21 19:59:39,532 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2022-12-21 19:59:40,429 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2022-12-21 19:59:40,429 MENU_LOG TEST_LOGGER [main] Name: Tom, Apple
+2022-12-21 19:59:40,429 MENU_LOG TEST_LOGGER [main] Number: 54398
+2022-12-21 19:59:40,430 MENU_LOG TEST_LOGGER [main] 
+Can you confirm that driver Apple Tom
+2022-12-21 19:59:40,430 MENU_LOG TEST_LOGGER [main]  will take this delivery? Yes or No? (Not case sensitive)
+2022-12-21 19:59:51,429 MENU_LOG TEST_LOGGER [main] Driver status is true
+2022-12-21 19:59:51,429 MENU_LOG TEST_LOGGER [main] 
+Preparing package drop off now!
+2022-12-21 19:59:51,430 MENU_LOG TEST_LOGGER [main] 
+Enter the weight of the package in pounds
+2022-12-21 20:00:20,423 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 20:00:20,425 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:00:20,428 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:00:20,429 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:00:20,429 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:00:20,429 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:00:21,717 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-21 20:00:24,068 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-21 20:00:24,715 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-21 20:00:25,243 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-21 20:00:25,828 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 20:00:25,828 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 20:00:29,748 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qaswedrfgh, swedrfghn
+2022-12-21 20:00:29,748 MENU_LOG TEST_LOGGER [main] Address of sender: qawsedrtgh
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qaswdfghn
+
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:00:29,749 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:00:30,380 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-21 20:00:31,085 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-21 20:00:31,764 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-21 20:00:32,540 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-21 20:00:33,412 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 20:00:33,412 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qaswedrfgh, swedrfghn
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] Address of sender: qawsedrtgh
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] Phone number of recipient: qaswdfghn
+
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: qaswedrfghnjm, asdrfgh
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] Address of recipient: hgfrdesw
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] Phone number of recipient: aswedrfg
+
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:00:34,180 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:00:34,181 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:00:35,404 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-21 20:00:35,405 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-21 20:00:35,405 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-21 20:00:35,405 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-21 20:00:35,406 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-21 20:00:36,557 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-21 20:00:36,557 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-21 20:00:37,876 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qaswedrfgh, swedrfghn
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] Address of sender: qawsedrtgh
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] Phone number: qaswdfghn
+
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: qaswedrfghnjm, asdrfgh
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] Address of sender: hgfrdesw
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] Phone number: aswedrfg
+
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] 
+Package number: 6975845
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] Insurance number: 974317
+2022-12-21 20:00:37,877 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-21 20:00:37,878 MENU_LOG TEST_LOGGER [main] Complete total: 20.33
+2022-12-21 20:00:37,879 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-21 20:00:39,811 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2022-12-21 20:00:39,812 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2022-12-21 20:00:39,812 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2022-12-21 20:00:39,812 MENU_LOG TEST_LOGGER [main] 
+Name of sender: qaswedrfgh, swedrfghn
+Address of sender: qawsedrtgh
+Phone number: qaswdfghn
+
+Name of recipient: qaswedrfghnjm, asdrfgh
+Address of sender: hgfrdesw
+Phone number: aswedrfg
+
+Insurance number: 974317
+
+ETA: 1 Day(s)
+
+2022-12-21 20:00:39,812 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2022-12-21 20:00:44,091 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2022-12-21 20:00:45,237 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2022-12-21 20:00:45,237 MENU_LOG TEST_LOGGER [main] Name: Jones, Mac
+2022-12-21 20:00:45,237 MENU_LOG TEST_LOGGER [main] Number: 47486
+2022-12-21 20:00:45,237 MENU_LOG TEST_LOGGER [main] 
+Can you confirm that driver Mac Jones
+2022-12-21 20:00:45,237 MENU_LOG TEST_LOGGER [main]  will take this delivery? Yes or No? (Not case sensitive)
+2022-12-21 20:02:11,591 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 20:02:11,593 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 20:02:11,597 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:02:11,598 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:02:11,599 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:02:11,599 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:02:11,599 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:02:13,068 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2022-12-21 20:02:13,650 MENU_LOG TEST_LOGGER [main] Enter your last name
+2022-12-21 20:02:14,204 MENU_LOG TEST_LOGGER [main] Enter your address
+2022-12-21 20:02:14,813 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2022-12-21 20:02:15,332 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 20:02:15,332 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aswedrfg, asdfg
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] Address of sender: asderfgh
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] Phone number of recipient: asdfghn
+
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:02:16,276 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:02:16,277 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:02:17,324 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2022-12-21 20:02:18,004 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2022-12-21 20:02:18,532 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2022-12-21 20:02:19,035 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2022-12-21 20:02:19,436 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2022-12-21 20:02:19,436 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aswedrfg, asdfg
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] Address of sender: asderfgh
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] Phone number of recipient: asdfghn
+
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: asdfgh, asdfgbhn
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] Address of recipient: asdfgh
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] Phone number of recipient: sdfgh
+
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:02:20,387 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:02:20,388 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:02:21,452 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2022-12-21 20:02:21,452 MENU_LOG TEST_LOGGER [main] 1. $10 coverage
+2022-12-21 20:02:21,452 MENU_LOG TEST_LOGGER [main] 2. $30 coverage
+2022-12-21 20:02:21,452 MENU_LOG TEST_LOGGER [main] 3. $50 coverage
+2022-12-21 20:02:21,453 MENU_LOG TEST_LOGGER [main] 0. No insurance
+2022-12-21 20:02:22,580 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2022-12-21 20:02:22,580 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2022-12-21 20:02:24,555 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aswedrfg, asdfg
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] Address of sender: asderfgh
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] Phone number: asdfghn
+
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: asdfgh, asdfgbhn
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgh
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] Phone number: sdfgh
+
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] 
+Package number: 8403566
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] Insurance number: 267416
+2022-12-21 20:02:24,556 MENU_LOG TEST_LOGGER [main] ETA: 1 Day(s)
+2022-12-21 20:02:24,558 MENU_LOG TEST_LOGGER [main] Complete total: 20.33
+2022-12-21 20:02:24,558 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2022-12-21 20:02:26,380 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2022-12-21 20:02:26,380 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2022-12-21 20:02:26,380 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2022-12-21 20:02:26,380 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aswedrfg, asdfg
+Address of sender: asderfgh
+Phone number: asdfghn
+
+Name of recipient: asdfgh, asdfgbhn
+Address of sender: asdfgh
+Phone number: sdfgh
+
+Insurance number: 267416
+
+ETA: 1 Day(s)
+
+2022-12-21 20:02:26,381 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2022-12-21 20:02:28,524 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2022-12-21 20:02:29,445 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2022-12-21 20:02:29,445 MENU_LOG TEST_LOGGER [main] Name: Tom, Apple
+2022-12-21 20:02:29,445 MENU_LOG TEST_LOGGER [main] Number: 19336
+2022-12-21 20:02:29,446 MENU_LOG TEST_LOGGER [main] 
+Can you confirm that driver Apple Tom
+2022-12-21 20:02:29,446 MENU_LOG TEST_LOGGER [main]  will take this delivery? Yes or No? (Not case sensitive)
+2022-12-21 20:02:31,268 MENU_LOG TEST_LOGGER [main] Driver status is true
+2022-12-21 20:02:31,269 MENU_LOG TEST_LOGGER [main] 
+Preparing package drop off now!
+2022-12-21 20:02:31,269 MENU_LOG TEST_LOGGER [main] 
+Enter the weight of the package in pounds
+2022-12-21 20:02:35,452 MENU_LOG TEST_LOGGER [main] Enter the width of the package in inches
+2022-12-21 20:02:36,149 MENU_LOG TEST_LOGGER [main] Enter the height of the package in inches
+2022-12-21 20:02:36,747 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2022-12-21 20:02:37,964 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2022-12-21 20:02:37,964 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] 
+The weight of the object is 8.0
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] This is a(n) Envelope
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] It needs 8 stamp(s)
+
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Stamp 1
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Stamp 2
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Stamp 3
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Stamp 4
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Stamp 5
+2022-12-21 20:02:42,174 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Stamp 6
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Stamp 7
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Stamp 8
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] Orange
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] 0.85
+2022-12-21 20:02:42,175 MENU_LOG TEST_LOGGER [main] 
+Enter the weight again in facility to make sure it's the correct object
+2022-12-21 20:02:48,444 MENU_LOG TEST_LOGGER [main] The weight of the object in the facility is: 8.0
+2022-12-21 20:02:48,444 MENU_LOG TEST_LOGGER [main] 
+The correct package is found.
+2022-12-21 20:02:48,444 MENU_LOG TEST_LOGGER [main] ETA is 1 day(s) until delivery
+2022-12-21 20:02:48,444 MENU_LOG TEST_LOGGER [main] Entering in vehicle now
+2022-12-21 20:02:48,445 MENU_LOG TEST_LOGGER [main] 
+Set the name of your vehicle
+2022-12-21 20:02:53,732 MENU_LOG TEST_LOGGER [main] 
+Set the number of your vehicle
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 
+Vehicle name: Truck
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] Vehicle number: 1234565
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] Sending package now
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 
+Order delivered
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 
+Envelope received
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 
+Name of sender: aswedrfg, asdfg
+Address of sender: asderfgh
+Phone number: asdfghn
+
+Name of recipient: asdfgh, asdfgbhn
+Address of sender: asdfgh
+Phone number: sdfgh
+
+Insurance number: 267416
+
+ETA: 1 Day(s)
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 
+More options
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 1. Take our four question survey
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 2. Get a small factoid of the mail while leaving
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 3. Buy stamps
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 4. Sign up for our membership
+2022-12-21 20:02:59,765 MENU_LOG TEST_LOGGER [main] 0. End
+2022-12-21 20:03:09,908 MENU_LOG TEST_LOGGER [main] 
+Rate from 1-10. How did you like our service?
+2022-12-21 20:29:57,736 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-21 20:29:57,738 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-21 20:29:57,745 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-21 20:29:57,745 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-21 20:29:57,745 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-21 20:29:57,745 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-21 20:29:57,746 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-21 20:29:57,747 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-21 20:29:57,747 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-21 20:30:00,705 MENU_LOG TEST_LOGGER [main] 
+What's the weather today?
+2022-12-21 20:30:04,951 MENU_LOG TEST_LOGGER [main] 
+What is the day today
+2022-12-21 20:30:14,920 MENU_LOG TEST_LOGGER [main] 
+Insert a quote from a famous individual for the day
+2022-12-21 20:30:19,496 MENU_LOG TEST_LOGGER [main] Snowy
+2022-12-21 20:30:19,496 MENU_LOG TEST_LOGGER [main] Thursday
+2022-12-21 20:30:19,496 MENU_LOG TEST_LOGGER [main] Apple TOm sucks

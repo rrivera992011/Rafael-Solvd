@@ -22,6 +22,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.lang.*;
 import java.util.function.Predicate;
+import java.util.stream.*;
 
 public class Main {
 
@@ -32,8 +33,6 @@ public class Main {
     final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
     final static Level FACTOID_LOG = Level.forName("FACTOID_LOG", 700);
     private static final Logger LOGGER = LogManager.getLogger("TEST_LOGGER");
-
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -54,7 +53,6 @@ public class Main {
     public static void menuOptions() {
 
         // Print out the sender and the recipient while it's not empty
-
         if(StringUtils.isEmpty(sender.getFirstName())) {
             LOGGER.log(MENU_LOG, "\nPlease enter information about sender\n");
         } else {
@@ -252,6 +250,7 @@ public class Main {
             case 2:
                 InsuranceCalculator mediumInsurance = new InsuranceCalculator(InsuranceData.MEDIUM.getPriceOfInsurance(),
                         StateTax.TN_STATE_TAX.getPercentOfTax());
+
                 insuranceDetails.put(InsuranceData.MEDIUM.getNameOfInsurance(), mediumInsurance.calculateInsurance());
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
                 setUpShipment(insuranceInfo, InsuranceData.MEDIUM.getNameOfInsurance());
@@ -360,7 +359,6 @@ public class Main {
                 LOGGER.log(MENU_LOG,"\nSending package now!");
                 LOGGER.log(MENU_LOG,"Thank you for your business");
                 company(insuranceInfo, shipment);
-
                 break;
             case "NO":
                 LOGGER.log(MENU_LOG,"\nPlease try again then");
@@ -372,8 +370,6 @@ public class Main {
                 } catch (InvalidInputException e) {
                     LOGGER.error("\nA problem occurred ", e);
                 }
-
-                // LOGGER.log(MENU_LOG,"\nPlease try something other than Yes or No");
                 confirmShipping(insuranceInfo, shipment);
 
         }
@@ -398,7 +394,9 @@ public class Main {
     }
 
     public static Driver enterDriver() {
+
         Driver driver = new Driver();
+
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nEnter your driver's first name");
         String driverAFirst = scanner.nextLine();
@@ -413,9 +411,11 @@ public class Main {
 
         driver.setEmployeeNumber(driverNumber);
 
+
         LOGGER.log(MENU_LOG,"\nDriver information");
         // Using the overridden toString to output in LastName, FirstName format
         String fullName = driver.toString();
+
         LOGGER.log(MENU_LOG,"Name: " + fullName);
         LOGGER.log(MENU_LOG,"Number: " + driver.getEmployeeNumber());
 
@@ -871,6 +871,10 @@ public class Main {
         LOGGER.log(MENU_LOG, "Blue for 0.70, Red for 0.75, Green for 0.80,");
         LOGGER.log(MENU_LOG, "or Orange for 0.85?");
         String colorChoice = scanner.nextLine();
+
+
+
+
 
         if (StringUtils.equals(colorChoice,TypesOfStamps.BLUE.getColorOfStamp())){
             stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
