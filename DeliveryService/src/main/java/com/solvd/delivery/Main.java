@@ -11,10 +11,13 @@ import com.solvd.delivery.person.*;
 import com.solvd.delivery.shipment.*;
 import com.solvd.delivery.stamp.*;
 import com.solvd.delivery.survey.*;
+import com.solvd.delivery.television.TelevisionInformation;
 import com.solvd.delivery.vehicle.*;
 import com.solvd.delivery.enums.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+
+import java.lang.reflect.Method;
 import java.util.*;
 import java.io.*;
 import org.apache.logging.log4j.*;
@@ -22,7 +25,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.lang.*;
 import java.util.function.Predicate;
-import java.util.stream.*;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -33,6 +36,8 @@ public class Main {
     final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
     final static Level FACTOID_LOG = Level.forName("FACTOID_LOG", 700);
     private static final Logger LOGGER = LogManager.getLogger("TEST_LOGGER");
+
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -53,6 +58,7 @@ public class Main {
     public static void menuOptions() {
 
         // Print out the sender and the recipient while it's not empty
+
         if(StringUtils.isEmpty(sender.getFirstName())) {
             LOGGER.log(MENU_LOG, "\nPlease enter information about sender\n");
         } else {
@@ -80,6 +86,7 @@ public class Main {
         LOGGER.log(MENU_LOG,"9. View the PO Boxes");
         LOGGER.log(MENU_LOG,"10. Enter the information for the facility televisions");
         LOGGER.log(MENU_LOG,"11. Read a file");
+        LOGGER.log(MENU_LOG, "12. Get a small factoid");
         LOGGER.log(MENU_LOG,"0. Exit the program");
 
     }
@@ -129,7 +136,12 @@ public class Main {
                 continueDelivery();
                 break;
             case 10:
-                televisionInformation();
+                try{
+                    televisionInformation();
+                }catch (Exception e) {
+                    LOGGER.error("An exception occurred", e);
+                }
+
                 break;
             case 11:
                 try {
@@ -142,6 +154,15 @@ public class Main {
                     LOGGER.error("Input and output failed", e);
                     continueDelivery();
                 }
+                break;
+            case 12:
+                try{
+                    factoid();
+                } catch (Exception e) {
+                    LOGGER.error("An error occurred", e);
+                    continueDelivery();
+                }
+
                 break;
             default:
                 try {
@@ -250,7 +271,6 @@ public class Main {
             case 2:
                 InsuranceCalculator mediumInsurance = new InsuranceCalculator(InsuranceData.MEDIUM.getPriceOfInsurance(),
                         StateTax.TN_STATE_TAX.getPercentOfTax());
-
                 insuranceDetails.put(InsuranceData.MEDIUM.getNameOfInsurance(), mediumInsurance.calculateInsurance());
                 insuranceInfo.setInsuranceDetails(insuranceDetails);
                 setUpShipment(insuranceInfo, InsuranceData.MEDIUM.getNameOfInsurance());
@@ -371,7 +391,6 @@ public class Main {
                     LOGGER.error("\nA problem occurred ", e);
                 }
                 confirmShipping(insuranceInfo, shipment);
-
         }
     }
 
@@ -394,9 +413,7 @@ public class Main {
     }
 
     public static Driver enterDriver() {
-
         Driver driver = new Driver();
-
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nEnter your driver's first name");
         String driverAFirst = scanner.nextLine();
@@ -411,11 +428,9 @@ public class Main {
 
         driver.setEmployeeNumber(driverNumber);
 
-
         LOGGER.log(MENU_LOG,"\nDriver information");
         // Using the overridden toString to output in LastName, FirstName format
         String fullName = driver.toString();
-
         LOGGER.log(MENU_LOG,"Name: " + fullName);
         LOGGER.log(MENU_LOG,"Number: " + driver.getEmployeeNumber());
 
@@ -613,9 +628,13 @@ public class Main {
         weightSet.put(senderFullName, shipment.getWeight());
         weightSet.put(driverFullName, weightAtFacility);
 
+        for (Map.Entry<String,Double> nameAndWeight: weightSet.entrySet()){
+            LOGGER.log(MENU_LOG, nameAndWeight.getKey() + " = " + nameAndWeight.getValue());
+        }
+
+
         // If the weight isn't the same as the package weight, return to the function
         if (!weightSet.get(senderFullName).equals(weightSet.get(driverFullName))) {
-
             LOGGER.log(MENU_LOG,"\nThe package is not there. Find the correct package");
             weighForFacility(driver, shipment);
 
@@ -683,9 +702,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nMore options");
         LOGGER.log(MENU_LOG,"1. Take our four question survey");
-        LOGGER.log(MENU_LOG,"2. Get a small factoid of the mail while leaving");
-        LOGGER.log(MENU_LOG,"3. Buy stamps");
-        LOGGER.log(MENU_LOG,"4. Sign up for our membership");
+        LOGGER.log(MENU_LOG,"2. Buy stamps");
+        LOGGER.log(MENU_LOG,"3. Sign up for our membership");
         LOGGER.log(MENU_LOG,"0. End");
 
         // Use integer for output
@@ -698,15 +716,12 @@ public class Main {
                 System.exit(0);
                 break;
             case 1:
-                enterSurveyInfo();
+                    enterSurveyInfo();
                 break;
             case 2:
-                factoid();
-                break;
-            case 3:
                 buyStamps();
                 break;
-            case 4:
+            case 3:
                 enterMembershipInfo();
                 break;
             default:
@@ -717,44 +732,32 @@ public class Main {
 
     }
 
-    public static void enterSurveyInfo() {
+    public static void enterSurveyInfo(){
         Scanner scanner = new Scanner(System.in);
+
+        List<Integer> surveyAnswers = new ArrayList<>();
 
         // Use the surveyor variable to grab the answers
         Survey surveyor = new Survey();
         LOGGER.log(MENU_LOG,"\nRate from 1-10. How did you like our service?");
         int choiceNum = scanner.nextInt();
         outOfRange(choiceNum);
+        surveyAnswers.add(choiceNum);
 
-        int totalOfChoices = 0;
-        totalOfChoices += choiceNum;
-        surveyor.setServiceNum(choiceNum);
 
         LOGGER.log(MENU_LOG,"Rate from 1-10. How efficient was our service?");
         choiceNum = scanner.nextInt();
         outOfRange(choiceNum);
-
-        totalOfChoices += choiceNum;
-        surveyor.setEfficiencyNum(choiceNum);
+        surveyAnswers.add(choiceNum);
 
         LOGGER.log(MENU_LOG,"Rate from 1-10. How friendly was our staff?");
         choiceNum = scanner.nextInt();
         outOfRange(choiceNum);
+        surveyAnswers.add(choiceNum);
 
-        totalOfChoices += choiceNum;
-        surveyor.setFriendlinessNum(choiceNum);
+        surveyor.setAnswerList(surveyAnswers);
 
-        ISurveyHelper<Integer> averageOfAnswers = (total) -> {
-            int average = (total / 3);
-            LOGGER.log(MENU_LOG, "The average of your answers is " + average);
-            return average;
-        };
-
-        LOGGER.log(MENU_LOG,"\nYou answers were: " +
-                surveyor.getServiceNum() + ", " + surveyor.getEfficiencyNum() +
-                ", and " + surveyor.getFriendlinessNum());
-
-        confirmSurveyInfo(averageOfAnswers.findAverageOrCompensation(totalOfChoices));
+        confirmSurveyInfo(surveyor.getAnswerList());
 
     }
 
@@ -772,7 +775,14 @@ public class Main {
 
     }
 
-    public static void confirmSurveyInfo(int average) {
+    public static void confirmSurveyInfo(List<Integer> surveyAnswers) {
+        LOGGER.log(MENU_LOG,"\nYou answers were: ");
+        surveyAnswers.stream().forEach((answers) -> LOGGER.log(MENU_LOG, answers));
+
+        int average = (int) surveyAnswers.stream().mapToInt(a->a).average().orElse(0);
+
+        LOGGER.log(MENU_LOG, "The average of your answers is " + average);
+
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nIs this correct? Yes or No? (Not case sensitive)");
         String choice = scanner.nextLine().toUpperCase();
@@ -815,13 +825,13 @@ public class Main {
                 } catch(InvalidInputException e) {
                     LOGGER.error("\nA problem occurred ", e);
                 }
-                confirmSurveyInfo(average);
+                confirmSurveyInfo(surveyAnswers);
                 break;
         }
     }
 
-    public static void factoid() {
-        // Output a small factoid using
+    public static void factoid() throws Exception {
+
         IFactoid firstFactoid = () ->
         {
             LOGGER.log(FACTOID_LOG,"Did you know?: THE POSTAL SERVICE EMPLOYS MORE THAN 7.5 MILLION PEOPLE.");
@@ -838,6 +848,26 @@ public class Main {
             LOGGER.log(FACTOID_LOG,"Source: USPS (https://facts.usps.com/top-facts/)");
         };
         secondFactoid.outputFactoid();
+
+        FactoidHelper factoidHelper = FactoidHelper.class.getConstructor().newInstance();
+        Method[] factoidMethods = factoidHelper.getClass().getMethods();
+
+        LOGGER.log(MENU_LOG, "Please enter a factoid");
+        Scanner scanner = new Scanner(System.in);
+        String factoidInput = scanner.nextLine();
+
+        // Printing method names
+        for (Method factoidMethod : factoidMethods) {
+            if (factoidMethod.getName().equals("setUserFactoid")) {
+                factoidMethod.setAccessible(true);
+                factoidMethod.invoke(factoidHelper, factoidInput);
+            }
+
+            if(factoidMethod.getName().equals("getUserFactoid")) {
+                factoidMethod.setAccessible(true);
+                LOGGER.log(MENU_LOG, factoidMethod.invoke(factoidHelper) );
+            }
+        }
 
         System.exit(0);
     }
@@ -871,10 +901,6 @@ public class Main {
         LOGGER.log(MENU_LOG, "Blue for 0.70, Red for 0.75, Green for 0.80,");
         LOGGER.log(MENU_LOG, "or Orange for 0.85?");
         String colorChoice = scanner.nextLine();
-
-
-
-
 
         if (StringUtils.equals(colorChoice,TypesOfStamps.BLUE.getColorOfStamp())){
             stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
@@ -1218,7 +1244,7 @@ public class Main {
     }
 
     public static void checkOptionIsInvalid(int selection) throws InvalidDeliveryPlanException {
-        if(selection < 0 || selection > 11) {
+        if(selection < 0 || selection > 12) {
             throw new InvalidDeliveryPlanException("\nPlease select a number from the choices given");
         }
     }
@@ -1294,13 +1320,24 @@ public class Main {
 
     }
 
-    public static void televisionInformation() {
-        Set<String> tvInformation = new HashSet<>();
+    public static void televisionInformation() throws Exception {
+
+        TelevisionInformation televisionInformation = TelevisionInformation.class.getConstructor().newInstance();
+
+        Method [] tvMethods = televisionInformation.getClass().getMethods();
+
+        Set<String> tvInformationSet = new HashSet<>();
+        List<String> donors = Arrays.asList(
+                "Government of the United States",
+                "Government of Tennessee",
+                "Nashville City Council",
+                "Al Johnson",
+                "Tennessee Titans Organization");
 
         Scanner scanner = new Scanner(System.in);
         LOGGER.log(MENU_LOG,"\nWhat's the weather today?");
         String weather = scanner.nextLine();
-        tvInformation.add(weather);
+        tvInformationSet.add(weather);
 
         String day;
 
@@ -1309,31 +1346,31 @@ public class Main {
         switch(dayOfTheWeek){
             case "MONDAY":
                 day = DayOfTheWeek.MONDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "TUESDAY":
                 day = DayOfTheWeek.TUESDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "WEDNESDAY":
                 day = DayOfTheWeek.WEDNESDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "THURSDAY":
                 day = DayOfTheWeek.THURSDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "FRIDAY":
                 day = DayOfTheWeek.FRIDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "SATURDAY":
                 day = DayOfTheWeek.SATURDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             case "SUNDAY":
                 day = DayOfTheWeek.SUNDAY.getDays();
-                tvInformation.add(day);
+                tvInformationSet.add(day);
                 break;
             default:
                 LOGGER.error("Wrong day. Please enter the information again");
@@ -1343,11 +1380,31 @@ public class Main {
 
         LOGGER.log(MENU_LOG,"\nInsert a quote from a famous individual for the day");
         String quote = scanner.nextLine();
-        tvInformation.add(quote);
+        tvInformationSet.add(quote);
 
-        for(String element: tvInformation) {
-            LOGGER.log(MENU_LOG,element);
+        for (Method tvMethod : tvMethods) {
+            if (tvMethod.getName().equals("setInfoForTV")) {
+                tvMethod.setAccessible(true);
+                tvMethod.invoke(televisionInformation, tvInformationSet);
+            }
+
+            if(tvMethod.getName().equals("setListOfDonors")) {
+                tvMethod.setAccessible(true);
+                tvMethod.invoke(televisionInformation, donors);
+            }
         }
+
+
+        tvInformationSet.stream().forEach((element) -> LOGGER.log(MENU_LOG, element));
+
+        List<String> governmentDonors = donors.stream().filter(s->s.startsWith("G")).
+                collect(Collectors.toList());
+
+        LOGGER.log(MENU_LOG, "\nThank you for your contributions to the delivery service");
+        donors.stream().forEach((donor) -> LOGGER.log(MENU_LOG, donor));
+
+        LOGGER.log(MENU_LOG, "\nAnother big thank you for the government donors");
+        governmentDonors.stream().forEach((governmentDonor) -> LOGGER.log(MENU_LOG, governmentDonor));
 
         System.exit(0);
     }
@@ -1357,7 +1414,6 @@ public class Main {
         String stringFromFile = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
         Map<String, Integer> wordHashMap = new HashMap<>();
         String[] words = stringFromFile.split(" ");
-        int iterator = 0;
 
         for (String word : words) {
             if (wordHashMap.containsKey(word)) {
@@ -1366,9 +1422,10 @@ public class Main {
                 wordHashMap.put(word, 1);
             }
 
-            String wordsForPrint = words[iterator];
-            iterator = iterator + 1;
-            FileUtils.write(file, "\n" + wordsForPrint + " = " + wordHashMap.get(word),
+        }
+
+        for (Map.Entry<String,Integer> e: wordHashMap.entrySet()){
+            FileUtils.write(file, "\n" + e.getKey() + " = " + e.getValue(),
                     "UTF-8", true);
         }
 

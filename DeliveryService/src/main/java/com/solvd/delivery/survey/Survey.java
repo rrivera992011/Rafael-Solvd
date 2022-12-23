@@ -1,39 +1,18 @@
 package com.solvd.delivery.survey;
 
 
+import java.util.List;
+
 public class Survey implements ISurvey {
-    private int serviceNum;
-    private int efficiencyNum;
-    private int friendlinessNum;
+    private List<Integer> answerList;
 
-    @Override
-    public int getServiceNum() {
-        return this.serviceNum;
+    public List<Integer> getAnswerList() {
+        return this.answerList;
     }
 
-    @Override
-    public void setServiceNum(int serviceNum) {
-        this.serviceNum = serviceNum;
+    public void setAnswerList(List<Integer> answerList) {
+        this.answerList = answerList;
     }
 
-    @Override
-    public int getEfficiencyNum() {
-        return this.efficiencyNum;
-    }
-
-    @Override
-    public void setEfficiencyNum(int efficiencyNum) {
-        this.efficiencyNum = efficiencyNum;
-    }
-
-    @Override
-    public void setFriendlinessNum(int friendlinessNum) {
-        this.friendlinessNum = friendlinessNum;
-    }
-
-    @Override
-    public int getFriendlinessNum() {
-        return this.friendlinessNum;
-    }
 
 }
