@@ -1,6 +1,6 @@
 package com.solvd.delivery.enums;
 
-public enum TypesOfStamps{
+public enum StampType{
 
     BLUE("Blue", 0.70),
     RED("Red", 0.75),
@@ -10,7 +10,7 @@ public enum TypesOfStamps{
     private String colorOfStamp;
     private double priceOfStamp;
 
-    TypesOfStamps(String colorOfStamp, double priceOfStamp) {
+    StampType(String colorOfStamp, double priceOfStamp) {
         this.colorOfStamp = colorOfStamp;
         this.priceOfStamp = priceOfStamp;
     }

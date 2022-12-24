@@ -311,25 +311,26 @@ public class Main {
 
         // Double variable for the price
         double priceOfPackage;
+        ShipmentCalculator shipmentCalculator;
 
         // Switch statement used to calculate total using TN state tax
         switch(numOfDays) {
             case 1:
-                priceOfPackage = DeliveryTime.ONE_DAY.getPricePerDay() +
-                        (DeliveryTime.ONE_DAY.getPricePerDay() *
-                        StateTax.TN_STATE_TAX.getPercentOfTax()) + priceOfInsurance;
+                shipmentCalculator = new ShipmentCalculator(DeliveryTime.ONE_DAY.getPricePerDay(),
+                        StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
+                priceOfPackage = shipmentCalculator.calculatePackage();
                 shipment.setPrice(priceOfPackage);
                 break;
             case 3:
-                priceOfPackage = DeliveryTime.THREE_DAYS.getPricePerDay() +
-                        (DeliveryTime.THREE_DAYS.getPricePerDay() *
-                        StateTax.TN_STATE_TAX.getPercentOfTax()) + priceOfInsurance;
+                shipmentCalculator = new ShipmentCalculator(DeliveryTime.THREE_DAYS.getPricePerDay(),
+                        StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
+                priceOfPackage = shipmentCalculator.calculatePackage();
                 shipment.setPrice(priceOfPackage);
                 break;
             case 5:
-                priceOfPackage = DeliveryTime.FIVE_DAYS.getPricePerDay() +
-                        (DeliveryTime.FIVE_DAYS.getPricePerDay() *
-                        StateTax.TN_STATE_TAX.getPercentOfTax()) + priceOfInsurance;
+                shipmentCalculator = new ShipmentCalculator(DeliveryTime.FIVE_DAYS.getPricePerDay(),
+                        StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
+                priceOfPackage = shipmentCalculator.calculatePackage();
                 shipment.setPrice(priceOfPackage);
                 break;
             default:
@@ -425,14 +426,18 @@ public class Main {
         driver.setLastName(driverALast);
 
         int driverNumber = getRandomNumber(10000, 99999);
+        driver.setNumber(String.valueOf(driverNumber));
 
-        driver.setEmployeeNumber(driverNumber);
+        LOGGER.log(MENU_LOG,"Enter your driver's license number");
+        String licenseNumber = scanner.nextLine();
+        driver.setLicenseNumber(licenseNumber);
 
         LOGGER.log(MENU_LOG,"\nDriver information");
         // Using the overridden toString to output in LastName, FirstName format
         String fullName = driver.toString();
         LOGGER.log(MENU_LOG,"Name: " + fullName);
-        LOGGER.log(MENU_LOG,"Number: " + driver.getEmployeeNumber());
+        LOGGER.log(MENU_LOG,"Employee Number: " + driver.getNumber());
+        LOGGER.log(MENU_LOG, "License Number: " + driver.getLicenseNumber());
 
         return driver;
     }
@@ -441,28 +446,30 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         //Driver confirmation output
-        LOGGER.log(MENU_LOG,"\nCan you confirm that " + "driver " + driver.getFirstName() + " " + driver.getLastName());
-        LOGGER.log(MENU_LOG," will take this delivery? Yes or No? (Not case sensitive)");
-        String confirmDrive = scanner.nextLine().toUpperCase();
+        LOGGER.log(MENU_LOG,"\nWhat is driver " + driver.getFirstName() + " " + driver.getLastName());
+        LOGGER.log(MENU_LOG,"'s status? Active, Inactive, or On Hold");
+        String driverStatus = scanner.nextLine().toUpperCase();
 
         // Use a switch statement for confirmation
-        switch(confirmDrive){
-            case "YES":
-                LOGGER.log(MENU_LOG, "Driver status is " + Driver.DriverStatus.CAN_DRIVE.getDriverStatus());
+        switch(driverStatus){
+            case "INACTIVE":
+                LOGGER.log(MENU_LOG,"Driver status is " + DriverStatus.INACTIVE.getDriverStatus());
+                LOGGER.log(MENU_LOG,"Alerting driver for dispatching now");
                 LOGGER.log(MENU_LOG,"\nPreparing package drop off now!");
                 determinePackageValues(driver, shipment);
                 break;
-            case "NO":
-                LOGGER.log(MENU_LOG, "Driver status is " + Driver.DriverStatus.CANNOT_DRIVE.getDriverStatus());
-                LOGGER.log(MENU_LOG,"\nPlease go back to the other menu and enter a different driver");
+            case "ACTIVE":
+                LOGGER.log(MENU_LOG,"Driver status is " + DriverStatus.ACTIVE.getDriverStatus());
+                LOGGER.log(MENU_LOG,"Driver cannot fulfill package delivery");
+                LOGGER.log(MENU_LOG,"Please go back to the other menu and enter a different driver");
                 company(shipment.getInsurance(), shipment);
                 break;
+            case "ON HOLD":
+                LOGGER.log(MENU_LOG,"Driver status is " + DriverStatus.ON_HOLD.getDriverStatus());
+                LOGGER.log(MENU_LOG,"Driver is busy. Update status when driver is available");
+                confirmDriver(driver,shipment);
             default:
-                try{
-                    checkYesOrNo(confirmDrive);
-                } catch (InvalidInputException e) {
-                    LOGGER.error("\nA problem occurred ", e);
-                }
+                LOGGER.error("\nA problem occurred. Please select another status of the given choices");
                 confirmDriver(driver, shipment);
                 break;
 
@@ -514,20 +521,20 @@ public class Main {
             Stamp stamp = new Stamp();
             switch (colorChoice) {
                 case "BLUE":
-                    stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
-                    stamp.setPrice(TypesOfStamps.BLUE.getPriceOfStamp());
+                    stamp.setColor(StampType.BLUE.getColorOfStamp());
+                    stamp.setPrice(StampType.BLUE.getPriceOfStamp());
                     break;
                 case "RED":
-                    stamp.setColor(TypesOfStamps.RED.getColorOfStamp());
-                    stamp.setPrice(TypesOfStamps.RED.getPriceOfStamp());
+                    stamp.setColor(StampType.RED.getColorOfStamp());
+                    stamp.setPrice(StampType.RED.getPriceOfStamp());
                     break;
                 case "GREEN":
-                    stamp.setColor(TypesOfStamps.GREEN.getColorOfStamp());
-                    stamp.setPrice(TypesOfStamps.GREEN.getPriceOfStamp());
+                    stamp.setColor(StampType.GREEN.getColorOfStamp());
+                    stamp.setPrice(StampType.GREEN.getPriceOfStamp());
                     break;
                 case "ORANGE":
-                    stamp.setColor(TypesOfStamps.ORANGE.getColorOfStamp());
-                    stamp.setPrice(TypesOfStamps.ORANGE.getPriceOfStamp());
+                    stamp.setColor(StampType.ORANGE.getColorOfStamp());
+                    stamp.setPrice(StampType.ORANGE.getPriceOfStamp());
                     break;
             }
 
@@ -653,10 +660,10 @@ public class Main {
         Vehicle vehicle = new Vehicle();
         LOGGER.log(MENU_LOG,"\nSet the name of your vehicle");
         String vehicleName = scanner.nextLine();
-        vehicle.setVehicleName(vehicleName);
+        vehicle.setName(vehicleName);
         LOGGER.log(MENU_LOG,"\nSet the number of your vehicle");
         String vehicleNumber = scanner2.nextLine();
-        vehicle.setVehicleNumber(vehicleNumber);
+        vehicle.setNumber(vehicleNumber);
 
 
         vehicleOutput(shipment, vehicle);
@@ -667,8 +674,8 @@ public class Main {
     public static void vehicleOutput(Shipment shipment, Vehicle vehicle) {
 
 
-        LOGGER.log(MENU_LOG,"\nVehicle name: " + vehicle.getVehicleName());
-        LOGGER.log(MENU_LOG,"Vehicle number: " + vehicle.getVehicleNumber());
+        LOGGER.log(MENU_LOG,"\nVehicle name: " + vehicle.getName());
+        LOGGER.log(MENU_LOG,"Vehicle number: " + vehicle.getNumber());
         LOGGER.log(MENU_LOG,"Sending package now");
         orderFinished(shipment);
 
@@ -896,31 +903,36 @@ public class Main {
     public static void calculateStampTotal(int numberOfStamps, Stamp stamp) {
         // Calculate the number of stamps
         Scanner scanner = new Scanner(System.in);
+        StampCalculator stampCalculator;
         double completeTotal;
         LOGGER.log(MENU_LOG, "What color would you like your stamp?");
         LOGGER.log(MENU_LOG, "Blue for 0.70, Red for 0.75, Green for 0.80,");
         LOGGER.log(MENU_LOG, "or Orange for 0.85?");
         String colorChoice = scanner.nextLine();
 
-        if (StringUtils.equals(colorChoice,TypesOfStamps.BLUE.getColorOfStamp())){
-            stamp.setColor(TypesOfStamps.BLUE.getColorOfStamp());
-            stamp.setPrice(TypesOfStamps.BLUE.getPriceOfStamp());
-            completeTotal = stamp.getPrice() * numberOfStamps;
+        if (StringUtils.equals(colorChoice,StampType.BLUE.getColorOfStamp())){
+            stamp.setColor(StampType.BLUE.getColorOfStamp());
+            stamp.setPrice(StampType.BLUE.getPriceOfStamp());
+            stampCalculator = new StampCalculator(stamp.getPrice(), numberOfStamps);
+            completeTotal = stampCalculator.calculateStamp();
             stampOutput(numberOfStamps, completeTotal, stamp);
-        } else if (StringUtils.equals(colorChoice,TypesOfStamps.RED.getColorOfStamp())){
-            stamp.setColor(TypesOfStamps.RED.getColorOfStamp());
-            stamp.setPrice(TypesOfStamps.RED.getPriceOfStamp());
-            completeTotal = stamp.getPrice() * numberOfStamps;
+        } else if (StringUtils.equals(colorChoice,StampType.RED.getColorOfStamp())){
+            stamp.setColor(StampType.RED.getColorOfStamp());
+            stamp.setPrice(StampType.RED.getPriceOfStamp());
+            stampCalculator = new StampCalculator(stamp.getPrice(), numberOfStamps);
+            completeTotal = stampCalculator.calculateStamp();
             stampOutput(numberOfStamps, completeTotal, stamp);
-        } else if (StringUtils.equals(colorChoice,TypesOfStamps.GREEN.getColorOfStamp())){
-            stamp.setColor(TypesOfStamps.GREEN.getColorOfStamp());
-            stamp.setPrice(TypesOfStamps.GREEN.getPriceOfStamp());
-            completeTotal = stamp.getPrice() * numberOfStamps;
+        } else if (StringUtils.equals(colorChoice,StampType.GREEN.getColorOfStamp())){
+            stamp.setColor(StampType.GREEN.getColorOfStamp());
+            stamp.setPrice(StampType.GREEN.getPriceOfStamp());
+            stampCalculator = new StampCalculator(stamp.getPrice(), numberOfStamps);
+            completeTotal = stampCalculator.calculateStamp();
             stampOutput(numberOfStamps, completeTotal, stamp);
-        } else if(StringUtils.equals(colorChoice,TypesOfStamps.ORANGE.getColorOfStamp())){
-            stamp.setColor(TypesOfStamps.ORANGE.getColorOfStamp());
-            stamp.setPrice(TypesOfStamps.ORANGE.getPriceOfStamp());
-            completeTotal = stamp.getPrice() * numberOfStamps;
+        } else if(StringUtils.equals(colorChoice,StampType.ORANGE.getColorOfStamp())){
+            stamp.setColor(StampType.ORANGE.getColorOfStamp());
+            stamp.setPrice(StampType.ORANGE.getPriceOfStamp());
+            stampCalculator = new StampCalculator(stamp.getPrice(), numberOfStamps);
+            completeTotal = stampCalculator.calculateStamp();
             stampOutput(numberOfStamps, completeTotal, stamp);
         } else {
             LOGGER.error("Please enter a choice given");
@@ -1153,7 +1165,7 @@ public class Main {
 
         LOGGER.log(MENU_LOG,"\nWhat is the number of the employee? Between 10000 and 99999");
         int employeeNum = scanner.nextInt();
-        employeeComplaint.getEmployee().setEmployeeNumber(employeeNum);
+        employeeComplaint.getEmployee().setNumber(String.valueOf(employeeNum));
 
 
         LOGGER.log(MENU_LOG,"\nWhat is your complaint?");

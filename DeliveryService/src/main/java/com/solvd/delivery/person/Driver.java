@@ -1,23 +1,14 @@
 package com.solvd.delivery.person;
 
-
 public class Driver extends Employee{
 
-    public enum DriverStatus{
-        CAN_DRIVE(true),
-        CANNOT_DRIVE(false);
-        private boolean driverStatus;
-        DriverStatus(boolean driverStatus){
-            this.driverStatus = driverStatus;
-        }
+    private String licenseNumber;
 
-        public boolean getDriverStatus() {
-            return this.driverStatus;
-        }
+    public void setLicenseNumber(String licenseNumber) {
+        this.licenseNumber = licenseNumber;
     }
 
-
-
-
-
+    public String getLicenseNumber(){
+        return this.licenseNumber;
+    }
 }

@@ -2,13 +2,13 @@ package com.solvd.delivery.person;
 
 public class Employee extends Person{
 
-    long employeeNumber;
+    String number;
 
-    public void setEmployeeNumber(long employeeNumber) {
-        this.employeeNumber = employeeNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public long getEmployeeNumber() {
-        return this.employeeNumber;
+    public String getNumber() {
+        return this.number;
     }
 }
