@@ -1,16 +1,10 @@
 package com.solvd.delivery.stamp;
 
+import com.solvd.delivery.enums.StampType;
+
 public class StampCalculator {
-    private double priceOfStamp;
-    private int stampAmount;
 
-    public StampCalculator(double priceOfStamp, int stampAmount){
-        this.priceOfStamp = priceOfStamp;
-        this.stampAmount = stampAmount;
-
-    }
-
-    public double calculateStamp(){
-        return (priceOfStamp * stampAmount);
+    public static double calculateStamp(StampType stampType, int stampAmount){
+        return (stampType.getPrice() * stampAmount);
     }
 }

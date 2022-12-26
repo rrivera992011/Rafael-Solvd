@@ -18,3 +18,23 @@ Please enter information about sender
 2022-12-23 17:36:18,420 MENU_LOG TEST_LOGGER [main] 11. Read a file
 2022-12-23 17:36:18,420 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
 2022-12-23 17:36:18,420 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-26 11:56:22,533 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-26 11:56:22,535 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 0. Exit the program
