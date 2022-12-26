@@ -15,11 +15,11 @@ public enum StampType{
         this.priceOfStamp = priceOfStamp;
     }
 
-    public String getColorOfStamp() {
+    public String getColorName() {
         return this.colorOfStamp;
     }
 
-    public double getPriceOfStamp() {
+    public double getPrice() {
         return this.priceOfStamp;
     }
 }

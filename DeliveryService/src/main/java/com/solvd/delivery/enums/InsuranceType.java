@@ -1,6 +1,6 @@
 package com.solvd.delivery.enums;
 
-public enum InsuranceData {
+public enum InsuranceType {
     LIGHT("Light insurance", 10),
     MEDIUM("Medium insurance", 30),
     HEAVY("Heavy insurance", 50),
@@ -9,7 +9,7 @@ public enum InsuranceData {
     private String nameOfInsurance;
     private double priceOfInsurance;
 
-    InsuranceData(String nameOfInsurance, double priceOfInsurance) {
+    InsuranceType(String nameOfInsurance, double priceOfInsurance) {
         this.nameOfInsurance = nameOfInsurance;
         this.priceOfInsurance = priceOfInsurance;
     }
