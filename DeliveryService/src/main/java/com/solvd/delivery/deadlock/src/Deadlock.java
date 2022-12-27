@@ -1,6 +1,6 @@
 package com.solvd.delivery.deadlock.src;
 
-public class Main {
+public class Deadlock {
     public static void main(String[] args) {
 
         String username = "AwesomeBear100";
