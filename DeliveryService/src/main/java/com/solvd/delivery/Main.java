@@ -1306,10 +1306,8 @@ public class Main {
 
     public static void televisionInformation() throws Exception {
 
-        TelevisionInformation televisionInformation = TelevisionInformation.class.getConstructor().newInstance();
-
+    try(TelevisionInformation televisionInformation = TelevisionInformation.class.getConstructor().newInstance()){
         Method[] tvMethods = televisionInformation.getClass().getMethods();
-
         Set<String> tvInformationSet = new HashSet<>();
         List<String> donors = Arrays.asList(
                 "Government of the United States",
@@ -1390,12 +1388,19 @@ public class Main {
         LOGGER.log(MENU_LOG, "\nAnother big thank you for the government donors");
         governmentDonors.stream().forEach((governmentDonor) -> LOGGER.log(MENU_LOG, governmentDonor));
 
-        System.exit(0);
+    } catch(RuntimeException e){
+        LOGGER.log(MENU_LOG, "Exception",e);
+    }
+
+    System.exit(0);
+
+
     }
 
     public static void readAFile(File file) throws IOException {
 
         String stringFromFile = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
+
         Map<String, Integer> wordHashMap = new HashMap<>();
         String[] words = stringFromFile.split(" ");
 
