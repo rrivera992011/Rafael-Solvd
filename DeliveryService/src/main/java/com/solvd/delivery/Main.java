@@ -291,7 +291,7 @@ public class Main {
         double priceOfInsurance = insuranceMap.get(insuranceName);
 
         // Double variable for the price
-        double priceOfPackage;
+
         ShipmentCalculator shipmentCalculator;
 
         // Switch statement used to calculate total using TN state tax
@@ -299,20 +299,17 @@ public class Main {
             case 1:
                 shipmentCalculator = new ShipmentCalculator(DeliveryTime.ONE_DAY.getPricePerDay(),
                         StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
-                priceOfPackage = shipmentCalculator.calculatePackage();
-                shipment.setPrice(priceOfPackage);
+                shipment.setPrice(shipmentCalculator.calculatePackage());
                 break;
             case 3:
                 shipmentCalculator = new ShipmentCalculator(DeliveryTime.THREE_DAYS.getPricePerDay(),
                         StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
-                priceOfPackage = shipmentCalculator.calculatePackage();
-                shipment.setPrice(priceOfPackage);
+                shipment.setPrice(shipmentCalculator.calculatePackage());
                 break;
             case 5:
                 shipmentCalculator = new ShipmentCalculator(DeliveryTime.FIVE_DAYS.getPricePerDay(),
                         StateTax.TN_STATE_TAX.getPercentOfTax(), priceOfInsurance);
-                priceOfPackage = shipmentCalculator.calculatePackage();
-                shipment.setPrice(priceOfPackage);
+                shipment.setPrice(shipmentCalculator.calculatePackage());
                 break;
             default:
                 LOGGER.log(MENU_LOG, "Please select a number from the choices given\n");
@@ -907,8 +904,7 @@ public class Main {
         }
         stamp.setColor(stampType.getColorName());
         stamp.setPrice(stampType.getPrice());
-        double completeTotal = StampCalculator.calculateStamp(stampType, numberOfStamps);
-        stampOutput(numberOfStamps, completeTotal, stamp);
+        stampOutput(numberOfStamps, StampCalculator.calculateStamp(stampType, numberOfStamps), stamp);
     }
 
     public static void stampOutput(int numberOfStamps, double completeTotal, Stamp stamp) {
