@@ -2,8 +2,7 @@ package com.solvd.delivery.insurance;
 
 import com.solvd.delivery.enums.InsuranceType;
 import com.solvd.delivery.enums.StateTax;
-
-import static com.solvd.delivery.Main.getRandomNumber;
+import com.solvd.delivery.externaloutput.RandomOperations;
 
 public class InsuranceUtils {
 
@@ -11,7 +10,7 @@ public class InsuranceUtils {
         return (insuranceType.getPriceOfInsurance() * (1 + stateTax.getPercentOfTax()));
     }
 
-    public static int getInsuranceNumber() {
-        return getRandomNumber(10000, 999999);
+    public static String getInsuranceNumber() {
+        return String.valueOf(RandomOperations.getRandomNumber(10000, 999999));
     }
 }

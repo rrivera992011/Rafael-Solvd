@@ -12,4 +12,11 @@ public class MiscComplaint extends Complaint {
     public String getMiscDescription() {
         return this.miscDescription;
     }
+
+    @Override
+    public String toString(){
+        return ("Complaint Number: " + getComplaintNumber() +
+                "\nType of Misc Complaint (None from any of the other choices):" + getMiscDescription() +
+                "\nComplaint: " + getDescription());
+    }
 }

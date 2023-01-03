@@ -1,11 +1,8 @@
 package com.solvd.delivery.externaloutput;
 
-import com.solvd.delivery.enums.DayOfTheWeek;
-import com.solvd.delivery.television.TelevisionInformation;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
+import com.solvd.delivery.enums.*;
+import com.solvd.delivery.television.*;
+import org.apache.logging.log4j.*;
 import java.lang.reflect.Method;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -29,38 +26,29 @@ public class TelevisionInfoOutput {
             String weather = scanner.nextLine();
             tvInformationSet.add(weather);
 
-            String day;
-
             LOGGER.log(MENU_LOG, "\nWhat is the day today");
             String dayOfTheWeek = scanner.nextLine().toUpperCase();
             switch (dayOfTheWeek) {
                 case "MONDAY":
-                    day = DayOfTheWeek.MONDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.MONDAY.getDays());
                     break;
                 case "TUESDAY":
-                    day = DayOfTheWeek.TUESDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.TUESDAY.getDays());
                     break;
                 case "WEDNESDAY":
-                    day = DayOfTheWeek.WEDNESDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.WEDNESDAY.getDays());
                     break;
                 case "THURSDAY":
-                    day = DayOfTheWeek.THURSDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.THURSDAY.getDays());
                     break;
                 case "FRIDAY":
-                    day = DayOfTheWeek.FRIDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.FRIDAY.getDays());
                     break;
                 case "SATURDAY":
-                    day = DayOfTheWeek.SATURDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.SATURDAY.getDays());
                     break;
                 case "SUNDAY":
-                    day = DayOfTheWeek.SUNDAY.getDays();
-                    tvInformationSet.add(day);
+                    tvInformationSet.add(DayOfTheWeek.SUNDAY.getDays());
                     break;
                 default:
                     LOGGER.error("Wrong day. Please enter the information again");

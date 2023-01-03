@@ -1,6 +1,6 @@
 package com.solvd.delivery.externaloutput;
 
-import com.solvd.delivery.Main;
+
 import com.solvd.delivery.exceptions.*;
 import com.solvd.delivery.membership.*;
 import com.solvd.delivery.person.*;
@@ -71,7 +71,7 @@ public class MembershipManager {
 
     public static void confirmMembershipInfo(MembershipInformation membershipDetails, String offerStatus) {
         // Use an int for a random membership number
-        String membershipNumber = String.valueOf(Main.getRandomNumber(100000, 999999));
+        String membershipNumber = String.valueOf(RandomOperations.getRandomNumber(100000, 999999));
         membershipDetails.setMembershipNumber(membershipNumber);
 
         // Output for email correction

@@ -3,12 +3,16 @@ package com.solvd.delivery.mailing;
 public class Parcel extends Mailing {
     private boolean fragility;
 
-    public boolean getFragility(){
-        return this.fragility;
+    public Parcel(double weight, double height, double width, String packageType, boolean fragility){
+        this.weight = weight;
+        this.height = height;
+        this.width = width;
+        this.packageType = packageType;
+        this.fragility = fragility;
     }
 
-    public void setFragility(boolean fragility){
-        this.fragility = fragility;
+    public boolean getFragility(){
+        return this.fragility;
     }
 
     @Override
@@ -17,37 +21,8 @@ public class Parcel extends Mailing {
     }
 
     @Override
-    public void setPackageType(String packageType) {
-        this.packageType = packageType;
-    }
-
-    @Override
-    public double getHeight() {
-        return this.height;
-    }
-
-    @Override
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    @Override
-    public double getWidth() {
-        return this.width;
-    }
-
-    @Override
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    @Override
     public double getWeight() {
         return this.weight;
     }
 
-    @Override
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
 }

@@ -1,10 +1,9 @@
 package com.solvd.delivery.person;
 
 public class Driver extends Employee{
-
     private String licenseNumber;
 
-    public void setLicenseNumber(String licenseNumber) {
+    public Driver(String licenseNumber){
         this.licenseNumber = licenseNumber;
     }
 

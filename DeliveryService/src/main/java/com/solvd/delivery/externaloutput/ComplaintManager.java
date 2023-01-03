@@ -1,9 +1,7 @@
 package com.solvd.delivery.externaloutput;
-import com.solvd.delivery.Main;
 import com.solvd.delivery.complaint.*;
 import com.solvd.delivery.exceptions.*;
 import com.solvd.delivery.person.*;
-import com.solvd.delivery.shipment.Shipment;
 import org.apache.logging.log4j.*;
 
 import java.util.Scanner;
@@ -32,7 +30,7 @@ public class ComplaintManager {
         Person person = new Person();
 
         // Use this random to set a complaint number
-        String complaintNumber = String.valueOf(Main.getRandomNumber(1, 99999));
+        String complaintNumber = String.valueOf(RandomOperations.getRandomNumber(1, 99999));
 
         // Switch to select what type of complaint someone wants
         switch (complaintType) {
@@ -42,8 +40,7 @@ public class ComplaintManager {
                 packageComplaint.getPerson().setFirstName(complaintFirstName);
                 packageComplaint.getPerson().setLastName(complaintLastName);
                 packageComplaint.setComplaintNumber(complaintNumber);
-                String nameForPackageComplaint = Complaint.ComplaintType.PACKAGE_COMPLAINT.getTypeOfComplaint();
-                complaintOfPackage(packageComplaint, nameForPackageComplaint);
+                complaintOfPackage(packageComplaint, Complaint.ComplaintType.PACKAGE_COMPLAINT.getTypeOfComplaint());
                 break;
             case 2:
                 EmployeeComplaint employeeComplaint = new EmployeeComplaint();
@@ -51,8 +48,7 @@ public class ComplaintManager {
                 employeeComplaint.getPerson().setFirstName(complaintFirstName);
                 employeeComplaint.getPerson().setLastName(complaintLastName);
                 employeeComplaint.setComplaintNumber(complaintNumber);
-                String nameForEmployeeComplaint = Complaint.ComplaintType.EMPLOYEE_COMPLAINT.getTypeOfComplaint();
-                complaintOfEmployee(employeeComplaint, nameForEmployeeComplaint);
+                complaintOfEmployee(employeeComplaint, Complaint.ComplaintType.EMPLOYEE_COMPLAINT.getTypeOfComplaint());
                 break;
             case 3:
                 MiscComplaint miscComplaint = new MiscComplaint();
@@ -60,8 +56,7 @@ public class ComplaintManager {
                 miscComplaint.getPerson().setFirstName(complaintFirstName);
                 miscComplaint.getPerson().setLastName(complaintLastName);
                 miscComplaint.setComplaintNumber(complaintNumber);
-                String nameForMiscComplaint = Complaint.ComplaintType.MISC_COMPLAINT.getTypeOfComplaint();
-                complaintOfMisc(miscComplaint, nameForMiscComplaint);
+                complaintOfMisc(miscComplaint, Complaint.ComplaintType.MISC_COMPLAINT.getTypeOfComplaint());
                 break;
             case 0:
                 LOGGER.log(MENU_LOG, "\nThank you for your assistance. Goodbye");
@@ -78,10 +73,8 @@ public class ComplaintManager {
 
         // Have the user set the number of the package and the complaint
         LOGGER.log(MENU_LOG, "\nWhat is the number of your package?");
-        Shipment shipment = new Shipment();
-        packageComplaint.setShipment(shipment);
-        long numberOfPackage = scanner.nextLong();
-        packageComplaint.getShipment().setPackageNumber(numberOfPackage);
+        String numberOfPackage = scanner.nextLine();
+        packageComplaint.setPackageNumber(numberOfPackage);
 
         LOGGER.log(MENU_LOG, "\nWhat is your complaint?");
         String complaint = scanner2.nextLine();
@@ -89,10 +82,8 @@ public class ComplaintManager {
 
         LOGGER.log(MENU_LOG, "\nYour information");
         LOGGER.log(MENU_LOG, "Name: " + packageComplaint.getPerson().toString());
-        LOGGER.log(MENU_LOG, "Complaint Number: " + packageComplaint.getComplaintNumber());
         LOGGER.log(MENU_LOG, "Complaint Type: " + complaintName);
-        LOGGER.log(MENU_LOG, "Number of Package: " + packageComplaint.getShipment().getPackageNumber());
-        LOGGER.log(MENU_LOG, "Complaint: " + packageComplaint.getDescription());
+        LOGGER.log(MENU_LOG, packageComplaint);
         finalizeComplaint();
     }
 
@@ -114,7 +105,7 @@ public class ComplaintManager {
 
         LOGGER.log(MENU_LOG, "\nWhat is the number of the employee? Between 10000 and 99999");
         int employeeNum = scanner.nextInt();
-        employeeComplaint.getEmployee().setNumber(String.valueOf(employeeNum));
+        employeeComplaint.getEmployee().setIdNumber(String.valueOf(employeeNum));
 
 
         LOGGER.log(MENU_LOG, "\nWhat is your complaint?");
@@ -123,10 +114,9 @@ public class ComplaintManager {
 
         LOGGER.log(MENU_LOG, "\nYour information");
         LOGGER.log(MENU_LOG, "Name: " + employeeComplaint.getPerson().toString());
-        LOGGER.log(MENU_LOG, "Complaint Number: " + employeeComplaint.getComplaintNumber());
         LOGGER.log(MENU_LOG, "Complaint Type: " + complaintName);
-        LOGGER.log(MENU_LOG, "Name of Employee: " + employeeComplaint.getEmployee().toString());
-        LOGGER.log(MENU_LOG, "Complaint: " + employeeComplaint.getDescription());
+        LOGGER.log(MENU_LOG, employeeComplaint);
+
         finalizeComplaint();
     }
 
@@ -144,11 +134,8 @@ public class ComplaintManager {
 
         LOGGER.log(MENU_LOG, "\nYour information");
         LOGGER.log(MENU_LOG, "Name: " + miscComplaint.getPerson().toString());
-        LOGGER.log(MENU_LOG, "Complaint Number: " + miscComplaint.getComplaintNumber());
         LOGGER.log(MENU_LOG, "Complaint Type: " + complaintName);
-        LOGGER.log(MENU_LOG, "Type of Misc Complaint (None from any of the other choices):\n"
-                + miscComplaint.getMiscDescription());
-        LOGGER.log(MENU_LOG, "Complaint: " + miscComplaint.getDescription());
+        LOGGER.log(MENU_LOG, miscComplaint);
         finalizeComplaint();
 
     }

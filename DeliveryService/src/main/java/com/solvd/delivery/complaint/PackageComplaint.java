@@ -1,17 +1,17 @@
 package com.solvd.delivery.complaint;
 
-import com.solvd.delivery.shipment.Shipment;
-
 
 public class PackageComplaint extends Complaint {
+    private String packageNumber;
 
-    private Shipment shipment;
-
-    public Shipment getShipment() {
-        return this.shipment;
+    public void setPackageNumber(String packageNumber) {
+        this.packageNumber = packageNumber;
     }
 
-    public void setShipment(Shipment shipment) {
-        this.shipment = shipment;
+    @Override
+    public String toString(){
+        return ("Complaint Number: " + getComplaintNumber() +
+                "\nNumber of Package: " + packageNumber +
+                "\nComplaint: " + getDescription());
     }
 }

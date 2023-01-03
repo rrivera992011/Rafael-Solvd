@@ -12,4 +12,11 @@ public class EmployeeComplaint extends Complaint {
     public Employee getEmployee() {
         return this.employee;
     }
+
+    @Override
+    public String toString(){
+        return ("Complaint Number: " + getComplaintNumber() +
+                "\nName of Employee: " + getEmployee().toString() +
+                "\nComplaint: " + getDescription());
+    }
 }

@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class Insurance{
     private Map<String, Double> insuranceDetails;
-    private int insuranceNumber = 0;
+    private String insuranceNumber;
     public Insurance() {
 
     }
@@ -15,10 +15,10 @@ public class Insurance{
     public Map<String, Double> getInsuranceDetails() {
         return this.insuranceDetails;
     }
-    public void setInsuranceNumber(int insuranceNumber) {
+    public void setInsuranceNumber(String insuranceNumber) {
         this.insuranceNumber = insuranceNumber;
     }
-    public int getInsuranceNumber() {
+    public String getInsuranceNumber() {
         return this.insuranceNumber;
     }
 }

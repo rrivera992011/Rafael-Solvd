@@ -4,11 +4,11 @@ public class Employee extends Person{
 
     String number;
 
-    public void setNumber(String number) {
+    public void setIdNumber(String number) {
         this.number = number;
     }
 
-    public String getNumber() {
+    public String getIdNumber() {
         return this.number;
     }
 }

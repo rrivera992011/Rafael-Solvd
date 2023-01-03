@@ -11,27 +11,21 @@ final public class Shipment {
     private double price;
     private double weight;
     private int days;
-    private long packageNumber;
+    private String packageNumber;
 
     private Mailing mailing;
 
-    public Shipment(){
-
-    }
-    public void setSender(Customer sender) {
+    public Shipment(Customer sender, Customer recipient, Insurance insurance, double price, int days, String packageNumber){
         this.sender = sender;
-    }
+        this.recipient = recipient;
+        this.insurance = insurance;
+        this.price = price;
+        this.days = days;
+        this.packageNumber = packageNumber;
 
+    }
     public Person getSender() {
         return this.sender;
-    }
-
-    public void setRecipient(Customer recipient) {
-        this.recipient = recipient;
-    }
-
-    public Person getRecipient() {
-        return this.recipient;
     }
 
     public void setInsurance(Insurance insurance) {
@@ -40,18 +34,6 @@ final public class Shipment {
 
     public Insurance getInsurance() {
         return this.insurance;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getPrice() {
-        return this.price;
-    }
-
-    public void setDays(int days) {
-        this.days = days;
     }
 
     public int getDays() {
@@ -65,13 +47,6 @@ final public class Shipment {
         return this.weight;
     }
 
-    public void setPackageNumber(long packageNumber) {
-        this.packageNumber = packageNumber;
-    }
-
-    public long getPackageNumber() {
-        return this.packageNumber;
-    }
 
     public void setMailing(Mailing mailing) {
         this.mailing = mailing;
@@ -93,13 +68,11 @@ final public class Shipment {
 
     @Override
     public String toString() {
-        return ("\nName of sender: " + sender.toString() +
-                "\nAddress of sender: " + sender.getAddress() +
-                "\nPhone number: " + sender.getPhoneNumber() +
-                "\n\nName of recipient: " + recipient.toString() +
-                "\nAddress of sender: " + recipient.getAddress() +
-                "\nPhone number: " + recipient.getPhoneNumber() +
+        return ("\nSender information: " + sender.toString() +
+                "\nRecipient information: " + recipient.toString() +
                 "\n\nInsurance number: " + insurance.getInsuranceNumber() +
-                "\n\nETA: " + this.getDays() + " Day(s)");
+                "\nTotal: " + this.price +
+                "\nPackage number: " + this.packageNumber +
+                "\n\nETA: " + this.days + " Day(s)");
     }
 }

@@ -20,4 +20,11 @@ public class Customer extends Person {
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
+
+    @Override
+    public String toString() {
+        return (getFirstName() + ", " + getLastName()
+                + "\n" + "Address: " + address +
+                "\n" + "Phone number: " + phoneNumber);
+    }
 }

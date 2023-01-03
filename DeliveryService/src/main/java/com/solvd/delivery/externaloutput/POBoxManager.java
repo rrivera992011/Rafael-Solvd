@@ -35,7 +35,7 @@ public class POBoxManager {
         final int LOW = 1000;
         final int HIGH = 9999;
 
-        int boxId = Main.getRandomNumber(LOW, HIGH);
+        int boxId = RandomOperations.getRandomNumber(LOW, HIGH);
 
         String boxAddress = ("PO Box " + boxId);
         poBox.setPOBox(boxAddress);
@@ -57,7 +57,7 @@ public class POBoxManager {
                 LOGGER.log(MENU_LOG, "List has been cleared");
                 LOGGER.log(MENU_LOG, "Closing the system so changes go into effect");
                 System.exit(0);
-                Main.continueDelivery();
+                ContinueDelivery.continueDelivery();
                 break;
             case "NO":
                 LOGGER.log(MENU_LOG, "List has not been cleared");
