@@ -14,7 +14,7 @@ import com.solvd.delivery.survey.*;
 import com.solvd.delivery.television.TelevisionInformation;
 import com.solvd.delivery.vehicle.*;
 import com.solvd.delivery.enums.*;
-import org.apache.commons.io.FileUtils;
+import com.solvd.delivery.readfile.*;
 import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Method;
@@ -149,7 +149,7 @@ public class Main {
             case 11:
                 try {
                     File file = new File("src/main/resources/HeyDiddleDiddle.txt");
-                    readAFile(file);
+                    ReadFile.readAFile(file);
                 } catch (FileNotFoundException e) {
                     LOGGER.error("File not found. Exiting now", e);
                     continueDelivery();
@@ -281,7 +281,8 @@ public class Main {
 
     public static void setUpShipment(Insurance insuranceInfo, String insuranceName) {
         Scanner scanner = new Scanner(System.in);
-        LOGGER.log(MENU_LOG, "\nWhich delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?");
+        LOGGER.log(MENU_LOG, "\nWhich delivery plan do you want?");
+        LOGGER.log(MENU_LOG, "5 days for $3, 3 days for $6, or 1 day for $9?");
         LOGGER.log(MENU_LOG, "Select based on the number of days that you want");
         int numOfDays = scanner.nextInt();
         Shipment shipment = new Shipment();
@@ -1390,31 +1391,5 @@ public class Main {
 
     System.exit(0);
 
-
-    }
-
-    public static void readAFile(File file) throws IOException {
-
-        String stringFromFile = FileUtils.readFileToString(file, "UTF-8").toLowerCase();
-
-        Map<String, Integer> wordHashMap = new HashMap<>();
-        String[] words = stringFromFile.split(" ");
-
-        for (String word : words) {
-            if (wordHashMap.containsKey(word)) {
-                wordHashMap.put(word, wordHashMap.get(word) + 1);
-            } else {
-                wordHashMap.put(word, 1);
-            }
-
-        }
-
-        for (Map.Entry<String, Integer> e : wordHashMap.entrySet()) {
-            FileUtils.write(file, "\n" + e.getKey() + " = " + e.getValue(),
-                    "UTF-8", true);
-        }
-
-        LOGGER.log(MENU_LOG, "File has been read");
-        System.exit(0);
     }
 }

@@ -38,23 +38,459 @@ Please enter information about sender
 2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 11. Read a file
 2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
 2022-12-26 11:56:22,537 MENU_LOG TEST_LOGGER [main] 0. Exit the program
-2022-12-26 18:01:28,342 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
-2022-12-26 18:01:28,343 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
-2022-12-26 18:01:28,347 MENU_LOG TEST_LOGGER [main] 
+2022-12-26 18:08:16,911 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-26 18:08:16,913 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-26 18:08:16,914 MENU_LOG TEST_LOGGER [main] 
 Please enter information about sender
 
-2022-12-26 18:01:28,347 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+2022-12-26 18:08:16,914 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
 
-2022-12-26 18:01:28,347 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 3. Send a package
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 5. File a complaint
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 11. Read a file
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
-2022-12-26 18:01:28,348 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-26 18:08:16,914 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2022-12-26 18:08:16,915 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-27 22:55:43,296 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2022-12-27 22:55:43,297 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2022-12-27 22:55:43,299 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2022-12-27 22:55:43,300 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2022-12-27 22:55:46,225 MENU_LOG TEST_LOGGER [main] 
+What's the weather today?
+2022-12-27 22:55:49,239 MENU_LOG TEST_LOGGER [main] 
+What is the day today
+2022-12-27 22:55:52,809 MENU_LOG TEST_LOGGER [main] 
+Insert a quote from a famous individual for the day
+2022-12-27 22:56:02,465 MENU_LOG TEST_LOGGER [main] Great
+2022-12-27 22:56:02,465 MENU_LOG TEST_LOGGER [main] Tuesday
+2022-12-27 22:56:02,465 MENU_LOG TEST_LOGGER [main] Michael Jordan I'm back
+2022-12-27 22:56:02,465 MENU_LOG TEST_LOGGER [main] 
+Thank you for your contributions to the delivery service
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Government of the United States
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Government of Tennessee
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Nashville City Council
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Al Johnson
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Tennessee Titans Organization
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] 
+Another big thank you for the government donors
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Government of the United States
+2022-12-27 22:56:02,466 MENU_LOG TEST_LOGGER [main] Government of Tennessee
+2022-12-27 22:56:02,466 TV_LOG TEST_LOGGER [main] Apple jack is closed
+2023-01-02 17:42:49,768 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2023-01-02 17:42:49,770 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2023-01-02 17:42:49,771 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:42:49,772 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:42:57,344 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2023-01-02 17:43:00,375 MENU_LOG TEST_LOGGER [main] Enter your last name
+2023-01-02 17:43:01,903 MENU_LOG TEST_LOGGER [main] Enter your address
+2023-01-02 17:43:02,680 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2023-01-02 17:43:03,319 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2023-01-02 17:43:03,319 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2023-01-02 17:43:04,631 MENU_LOG TEST_LOGGER [main] 
+Name of sender: TOm, Apple
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgb
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] Phone number of recipient: sdfg
+
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:43:04,632 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:43:05,503 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2023-01-02 17:43:08,551 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2023-01-02 17:43:10,056 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2023-01-02 17:43:10,863 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2023-01-02 17:43:11,671 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2023-01-02 17:43:11,671 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 
+Name of sender: TOm, Apple
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgb
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] Phone number of recipient: sdfg
+
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: sdfg, Mac
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] Address of recipient: swedrftg
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] Phone number of recipient: edrftyhu
+
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:43:12,927 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:43:12,928 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:43:15,839 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2023-01-02 17:43:15,843 MENU_LOG TEST_LOGGER [main] 1. Light insurance - $10.0
+2023-01-02 17:43:15,843 MENU_LOG TEST_LOGGER [main] 2. Medium insurance - $30.0
+2023-01-02 17:43:15,843 MENU_LOG TEST_LOGGER [main] 3. Heavy insurance - $50.0
+2023-01-02 17:43:15,843 MENU_LOG TEST_LOGGER [main] 0. No insurance - $0.0
+2023-01-02 17:43:30,650 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2023-01-02 17:43:30,650 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2023-01-02 17:43:48,600 MENU_LOG TEST_LOGGER [main] 
+Name of sender: TOm, Apple
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgb
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] Phone number: sdfg
+
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: sdfg, Mac
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] Address of sender: swedrftg
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] Phone number: edrftyhu
+
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] 
+Package number: 4569230
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] Insurance number: 140109
+2023-01-02 17:43:48,601 MENU_LOG TEST_LOGGER [main] ETA: 3 Day(s)
+2023-01-02 17:43:48,603 MENU_LOG TEST_LOGGER [main] Complete total: 38.52
+2023-01-02 17:43:48,604 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2023-01-02 17:43:50,783 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2023-01-02 17:43:50,783 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2023-01-02 17:43:50,783 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2023-01-02 17:43:50,784 MENU_LOG TEST_LOGGER [main] 
+Name of sender: TOm, Apple
+Address of sender: asdfgb
+Phone number: sdfg
+
+Name of recipient: sdfg, Mac
+Address of sender: swedrftg
+Phone number: edrftyhu
+
+Insurance number: 140109
+
+ETA: 3 Day(s)
+
+2023-01-02 17:43:50,784 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2023-01-02 17:43:53,495 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2023-01-02 17:43:58,671 MENU_LOG TEST_LOGGER [main] Enter your driver's license number
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] Name: Sam, Apple
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] Employee Number: 51661
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] License Number: 112345632
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] 
+What is driver Apple Sam
+2023-01-02 17:44:04,064 MENU_LOG TEST_LOGGER [main] 's status? Active, Inactive, or On Hold
+2023-01-02 17:44:12,632 MENU_LOG TEST_LOGGER [main] Driver status is Inactive
+2023-01-02 17:44:12,632 MENU_LOG TEST_LOGGER [main] Alerting driver for dispatching now
+2023-01-02 17:44:12,632 MENU_LOG TEST_LOGGER [main] 
+Preparing package drop off now!
+2023-01-02 17:44:12,632 MENU_LOG TEST_LOGGER [main] 
+Enter the weight of the package in pounds
+2023-01-02 17:44:21,855 MENU_LOG TEST_LOGGER [main] Enter the width of the package in inches
+2023-01-02 17:44:23,511 MENU_LOG TEST_LOGGER [main] Enter the height of the package in inches
+2023-01-02 17:44:24,567 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:44:28,551 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:44:28,551 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:45:13,158 MENU_LOG TEST_LOGGER [main] Apologies, but you have made a wrong color choice
+2023-01-02 17:45:13,159 MENU_LOG TEST_LOGGER [main] Please try again
+2023-01-02 17:45:13,159 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:45:18,614 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:45:18,614 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:46:00,031 MENU_LOG TEST_LOGGER [main] Apologies, but you have made a wrong color choice
+2023-01-02 17:46:00,032 MENU_LOG TEST_LOGGER [main] Please try again
+2023-01-02 17:46:00,032 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:46:27,466 MENU_LOG TEST_LOGGER [main] Welcome to the delivery system. 
+2023-01-02 17:46:27,468 MENU_LOG TEST_LOGGER [main] Please choose from one of the following options: 
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] 
+Please enter information about sender
+
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:46:27,470 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:46:27,471 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:46:29,519 MENU_LOG TEST_LOGGER [main] 
+Enter your first name
+2023-01-02 17:46:31,127 MENU_LOG TEST_LOGGER [main] Enter your last name
+2023-01-02 17:46:32,726 MENU_LOG TEST_LOGGER [main] Enter your address
+2023-01-02 17:46:34,359 MENU_LOG TEST_LOGGER [main] Enter your phone number
+2023-01-02 17:46:35,376 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2023-01-02 17:46:35,376 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2023-01-02 17:46:36,574 MENU_LOG TEST_LOGGER [main] 
+Name of sender: wertyu, asdfg
+2023-01-02 17:46:36,574 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgh
+2023-01-02 17:46:36,574 MENU_LOG TEST_LOGGER [main] Phone number of recipient: sderftgh
+
+2023-01-02 17:46:36,574 MENU_LOG TEST_LOGGER [main] Please enter information about recipient
+
+2023-01-02 17:46:36,574 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:46:36,575 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:46:37,959 MENU_LOG TEST_LOGGER [main] 
+Enter the recipient's first name
+2023-01-02 17:46:39,055 MENU_LOG TEST_LOGGER [main] Enter the recipient's last name
+2023-01-02 17:46:39,998 MENU_LOG TEST_LOGGER [main] Enter the recipient's address
+2023-01-02 17:46:41,031 MENU_LOG TEST_LOGGER [main] Enter the recipient's phone number
+2023-01-02 17:46:42,022 MENU_LOG TEST_LOGGER [main] 
+To return to operation, press 1
+2023-01-02 17:46:42,022 MENU_LOG TEST_LOGGER [main] To exit the operation, press 0
+
+2023-01-02 17:46:43,591 MENU_LOG TEST_LOGGER [main] 
+Name of sender: wertyu, asdfg
+2023-01-02 17:46:43,591 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgh
+2023-01-02 17:46:43,591 MENU_LOG TEST_LOGGER [main] Phone number of recipient: sderftgh
+
+2023-01-02 17:46:43,591 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: sdfghj, dfghnj
+2023-01-02 17:46:43,591 MENU_LOG TEST_LOGGER [main] Address of recipient: sdrftghyj
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] Phone number of recipient: dfrghj
+
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 1. Enter the sender
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 2. Enter the recipient
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 3. Send a package
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 4. Only buy stamps
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 5. File a complaint
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 6. Sign up for our membership
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 7. Create a PO Box
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 8. Clear the list of PO Boxes
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 9. View the PO Boxes
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 10. Enter the information for the facility televisions
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 11. Read a file
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 12. Get a small factoid
+2023-01-02 17:46:43,592 MENU_LOG TEST_LOGGER [main] 0. Exit the program
+2023-01-02 17:46:44,591 MENU_LOG TEST_LOGGER [main] 
+Do you want insurance? Select from our plans
+2023-01-02 17:46:44,593 MENU_LOG TEST_LOGGER [main] 1. Light insurance - $10.0
+2023-01-02 17:46:44,594 MENU_LOG TEST_LOGGER [main] 2. Medium insurance - $30.0
+2023-01-02 17:46:44,594 MENU_LOG TEST_LOGGER [main] 3. Heavy insurance - $50.0
+2023-01-02 17:46:44,594 MENU_LOG TEST_LOGGER [main] 0. No insurance - $0.0
+2023-01-02 17:46:46,168 MENU_LOG TEST_LOGGER [main] 
+Which delivery plan do you want? 5 days for $3, 3 days for $6, or 1 day for $9?
+2023-01-02 17:46:46,168 MENU_LOG TEST_LOGGER [main] Select based on the number of days that you want
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] 
+Name of sender: wertyu, asdfg
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] Address of sender: asdfgh
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] Phone number: sderftgh
+
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] 
+Name of recipient: sdfghj, dfghnj
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] Address of sender: sdrftghyj
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] Phone number: dfrghj
+
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] 
+Package number: 2253466
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] Insurance number: 152102
+2023-01-02 17:47:03,616 MENU_LOG TEST_LOGGER [main] ETA: 5 Day(s)
+2023-01-02 17:47:03,618 MENU_LOG TEST_LOGGER [main] Complete total: 13.91
+2023-01-02 17:47:03,618 MENU_LOG TEST_LOGGER [main] 
+Is this okay? Yes/No? (Not case sensitive)
+2023-01-02 17:47:07,863 MENU_LOG TEST_LOGGER [main] 
+Sending package now!
+2023-01-02 17:47:07,863 MENU_LOG TEST_LOGGER [main] Thank you for your business
+2023-01-02 17:47:07,863 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2023-01-02 17:47:07,863 MENU_LOG TEST_LOGGER [main] 
+Name of sender: wertyu, asdfg
+Address of sender: asdfgh
+Phone number: sderftgh
+
+Name of recipient: sdfghj, dfghnj
+Address of sender: sdrftghyj
+Phone number: dfrghj
+
+Insurance number: 152102
+
+ETA: 5 Day(s)
+
+2023-01-02 17:47:07,864 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2023-01-02 17:47:10,166 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2023-01-02 17:47:11,254 MENU_LOG TEST_LOGGER [main] Enter your driver's license number
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] Name: Tom, Apple
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] Employee Number: 50495
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] License Number: 1234565432
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] 
+What is driver Apple Tom
+2023-01-02 17:47:14,054 MENU_LOG TEST_LOGGER [main] 's status? Active, Inactive, or On Hold
+2023-01-02 17:47:18,311 MENU_LOG TEST_LOGGER [main] Driver status is Active
+2023-01-02 17:47:18,311 MENU_LOG TEST_LOGGER [main] Driver cannot fulfill package delivery
+2023-01-02 17:47:18,311 MENU_LOG TEST_LOGGER [main] Please go back to the other menu and enter a different driver
+2023-01-02 17:47:18,312 MENU_LOG TEST_LOGGER [main] 
+Order obtained
+2023-01-02 17:47:18,312 MENU_LOG TEST_LOGGER [main] 
+Name of sender: wertyu, asdfg
+Address of sender: asdfgh
+Phone number: sderftgh
+
+Name of recipient: sdfghj, dfghnj
+Address of sender: sdrftghyj
+Phone number: dfrghj
+
+Insurance number: 152102
+
+ETA: 5 Day(s)
+
+2023-01-02 17:47:18,312 MENU_LOG TEST_LOGGER [main] 
+Enter your driver's first name
+2023-01-02 17:47:31,263 MENU_LOG TEST_LOGGER [main] Enter your driver's last name
+2023-01-02 17:47:32,431 MENU_LOG TEST_LOGGER [main] Enter your driver's license number
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] 
+Driver information
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] Name: Sam, Pan
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] Employee Number: 43255
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] License Number: 1234565123
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] 
+What is driver Pan Sam
+2023-01-02 17:47:37,023 MENU_LOG TEST_LOGGER [main] 's status? Active, Inactive, or On Hold
+2023-01-02 17:47:39,495 MENU_LOG TEST_LOGGER [main] Driver status is On Hold
+2023-01-02 17:47:39,495 MENU_LOG TEST_LOGGER [main] Driver is busy. Update status when driver is available
+2023-01-02 17:47:39,495 MENU_LOG TEST_LOGGER [main] 
+What is driver Pan Sam
+2023-01-02 17:47:39,496 MENU_LOG TEST_LOGGER [main] 's status? Active, Inactive, or On Hold
+2023-01-02 17:47:48,670 MENU_LOG TEST_LOGGER [main] Driver status is Inactive
+2023-01-02 17:47:48,670 MENU_LOG TEST_LOGGER [main] Alerting driver for dispatching now
+2023-01-02 17:47:48,670 MENU_LOG TEST_LOGGER [main] 
+Preparing package drop off now!
+2023-01-02 17:47:48,670 MENU_LOG TEST_LOGGER [main] 
+Enter the weight of the package in pounds
+2023-01-02 17:47:51,502 MENU_LOG TEST_LOGGER [main] Enter the width of the package in inches
+2023-01-02 17:47:52,658 MENU_LOG TEST_LOGGER [main] Enter the height of the package in inches
+2023-01-02 17:48:02,855 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:48:04,102 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:48:04,102 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:48:07,110 MENU_LOG TEST_LOGGER [main] Apologies, but you have made a wrong color choice
+2023-01-02 17:48:07,110 MENU_LOG TEST_LOGGER [main] Please try again
+2023-01-02 17:48:07,111 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:48:09,446 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:48:09,446 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:48:14,454 MENU_LOG TEST_LOGGER [main] Apologies, but you have made a wrong color choice
+2023-01-02 17:48:14,454 MENU_LOG TEST_LOGGER [main] Please try again
+2023-01-02 17:48:14,454 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:48:25,263 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:48:25,263 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:48:35,198 MENU_LOG TEST_LOGGER [main] Apologies, but you have made a wrong color choice
+2023-01-02 17:48:35,198 MENU_LOG TEST_LOGGER [main] Please try again
+2023-01-02 17:48:35,199 MENU_LOG TEST_LOGGER [main] 
+How many stamps do you have on the envelope?
+2023-01-02 17:48:38,030 MENU_LOG TEST_LOGGER [main] 
+What is the color of your stamp? 
+2023-01-02 17:48:38,030 MENU_LOG TEST_LOGGER [main] Blue, Red, Green, or Orange (default if any other color is chosen) (Determines price value)
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 
+The weight of the object is 7.0
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] This is a(n) Envelope
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] It needs 7 stamp(s)
+
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 1
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 2
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 3
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 4
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 5
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] Stamp 6
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,078 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,079 MENU_LOG TEST_LOGGER [main] Stamp 7
+2023-01-02 17:48:42,079 MENU_LOG TEST_LOGGER [main] null
+2023-01-02 17:48:42,079 MENU_LOG TEST_LOGGER [main] 0.00
+2023-01-02 17:48:42,079 MENU_LOG TEST_LOGGER [main] 
+Enter the weight again in facility to make sure it's the correct object

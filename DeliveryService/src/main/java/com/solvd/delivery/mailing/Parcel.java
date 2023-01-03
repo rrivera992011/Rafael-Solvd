@@ -7,7 +7,7 @@ public class Parcel extends Mailing {
         return this.fragility;
     }
 
-    public void  setFragility(boolean fragility){
+    public void setFragility(boolean fragility){
         this.fragility = fragility;
     }
 
