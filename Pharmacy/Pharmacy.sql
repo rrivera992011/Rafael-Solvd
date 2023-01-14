@@ -1,6 +1,8 @@
+-- Insert values into the table --
 INSERT INTO category VALUES (1, 'Pizza');
-INSERT INTO category VALUES (2, 'Antibiotic');
-INSERT INTO customer(first_name, last_name, phone_number, age, address) VALUES ('Tom', 'Jackson', '6541231234', 21, 'Road'); 
+INSERT INTO category VALUES (1, 'Antibiotic');
+INSERT INTO customer(first_name, last_name, phone_number, age, address) VALUES
+('Tom', 'Jackson', '6541231234', 21, 'Road');
 INSERT INTO customer VALUES (2, 'Tom', 'Sawyer', '2342345675', 22, '12 easy street');
 INSERT INTO employee_type VALUES (1, 'Pharmacist');
 INSERT INTO appointment VALUES (1, '2023-1-13 13:00:00', 1, 1, 1);
@@ -9,6 +11,7 @@ INSERT INTO appointment_type VALUES (1, 'Vaccine');
 INSERT INTO appointment_type VALUES (2, 'Check-up');
 INSERT INTO recipe VALUES (1, 'Amoxicillin');
 
+-- Update commands --
 UPDATE customer SET first_name = 'Mike' WHERE first_name = 'Tom';
 UPDATE customer SET first_name = 'Sanders' WHERE last_name = 'Jackson';
 UPDATE customer SET address = '152 Pain Avenue' WHERE address = '12 easy street';
@@ -20,6 +23,7 @@ UPDATE category SET category_name = 'Glucose' WHERE category_name = 'Antibiotic'
 UPDATE appointment_type SET appointment_type = 'Refill' WHERE appointment_type = 'Vaccine';
 UPDATE appointment_type SET appointment_type = 'Insurance' WHERE appointment_type = "Vaccine";
 
+-- Delete commands --
 DELETE FROM category WHERE category_name = 'Pizza';
 DELETE FROM category WHERE category_name = 'Antibiotic';
 DELETE FROM customer WHERE age = 22;
@@ -31,12 +35,14 @@ DELETE FROM appointment_type;
 DELETE FROM category;
 DELETE FROM examination;
 
+-- Alter the table --
 ALTER TABLE customer RENAME COLUMN age to how_old;
 ALTER TABLE customer RENAME COLUMN how_old TO age;
 ALTER TABLE recipe RENAME COLUMN size to size_in_milliliters;
 ALTER TABLE prescription RENAME COLUMN rx_number to prescription_number;
 ALTER TABLE category ADD location_in_store varchar(255);
 
+-- Huge command to join all the rows from all the tables --
 SELECT * FROM customer
 	LEFT JOIN appointment ON customer.customer_id = appointment.customer_id
     LEFT JOIN examination ON customer.customer_id = examination.customer_id
@@ -51,6 +57,7 @@ SELECT * FROM customer
     LEFT JOIN category ON inventory.category_id = category.category_id
     LEFT JOIN employee_type ON employee.employee_type_id = employee_type.employee_type_id;
 	
+-- Left join, right join, cross join, and outer join implemented using union of left and right join --
 SELECT * FROM customer LEFT JOIN appointment ON customer.customer_id = appointment.customer_id;
 SELECT * FROM employee RIGHT JOIN employee_type ON employee.employee_type_id = employee_type.employee_type_id;
 SELECT * FROM employee CROSS JOIN employee_type;
@@ -61,14 +68,16 @@ UNION
 SELECT * FROM customer
 RIGHT JOIN appointment ON customer.customer_id = appointment.customer_id;
 
-SELECT COUNT(customer_id) from customer;
-SELECT AVG(age) FROM customer;
-SELECT SUM(age) FROM customer;
-SELECT MAX(price) AS highest_price from inventory;
-SELECT MIN(price) AS lowest_price from inventory;
-SELECT MIN(age) AS youngest FROM customer;
-SELECT MAX(age) AS oldest FROM customer;
+-- Using statements with aggregate functions without having --
+SELECT COUNT(customer_id) from customer GROUP BY customer_id;
+SELECT AVG(age) FROM customer GROUP BY age;
+SELECT SUM(age) FROM customer GROUP BY age;
+SELECT MAX(price) AS highest_price from inventory GROUP BY price;
+SELECT MIN(price) AS lowest_price from inventory GROUP BY price;
+SELECT MIN(age) AS youngest FROM customer GROUP BY age;
+SELECT MAX(age) AS oldest FROM customer GROUP BY age;
 
+-- Using statements with aggregate functions with having --
 SELECT COUNT(customer_id), age FROM customer GROUP BY age HAVING COUNT(customer_id) > 0;
 SELECT COUNT(customer_id), phone_number FROM customer GROUP BY phone_number HAVING COUNT(customer_id) > 0;
 SELECT COUNT(price), category_name FROM category GROUP BY category_name HAVING MIN(price) < 21;
