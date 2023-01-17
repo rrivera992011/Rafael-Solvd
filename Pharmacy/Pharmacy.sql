@@ -23,6 +23,8 @@ UPDATE category SET category_name = 'Glucose' WHERE category_name = 'Antibiotic'
 UPDATE appointment_type SET appointment_type = 'Refill' WHERE appointment_type = 'Vaccine';
 UPDATE appointment_type SET appointment_type = 'Insurance' WHERE appointment_type = "Vaccine";
 
+SELECT * FROM customer;
+
 -- Delete commands --
 DELETE FROM category WHERE category_name = 'Pizza';
 DELETE FROM category WHERE category_name = 'Antibiotic';
