@@ -12,6 +12,27 @@ public class CategoryDAO implements ICategoryDAO {
     @Override
     public void updateEntity(Category category) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE category SET category_name = (?) WHERE category_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, category.getCategoryName());
+            ps.setInt(2, category.getCategoryId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null) {
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Category createEntity(Category category) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO category (category_id, category_name) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, category.getCategoryId());
@@ -28,17 +49,13 @@ public class CategoryDAO implements ICategoryDAO {
                 }
             }
         }
-    }
-
-    @Override
-    public Category createEntity(Category category) {
-        return null;
+        return category;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM category WHERE id = (?)";
+        String query = "DELETE FROM category WHERE category_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -62,11 +79,13 @@ public class CategoryDAO implements ICategoryDAO {
         String query = "SELECT * FROM category";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
-            try(ResultSet rs = ps.getResultSet()){
-                Category category = new Category();
-                category.setCategoryId(rs.getInt("category_id"));
-                category.setCategoryName(rs.getString("category_name"));
-                resultList.add(category);
+            try(ResultSet rs = ps.getResultSet()) {
+                while(rs.next()) {
+                    Category category = new Category();
+                    category.setCategoryId(rs.getInt("category_id"));
+                    category.setCategoryName(rs.getString("category_name"));
+                    resultList.add(category);
+                }
             }
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -86,7 +105,7 @@ public class CategoryDAO implements ICategoryDAO {
     public Category getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         Category category = new Category();
-        String query = "SELECT * FROM appointment_type WHERE id = (?)";
+        String query = "SELECT * FROM category WHERE category_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();

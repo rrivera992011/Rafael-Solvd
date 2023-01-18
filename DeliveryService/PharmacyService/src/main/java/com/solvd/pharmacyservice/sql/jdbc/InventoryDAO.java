@@ -13,6 +13,32 @@ public class InventoryDAO implements IInventoryDAO {
     @Override
     public void updateEntity(Inventory inventory) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE inventory SET medicine_name = (?), amount_left = (?), amount_taken = (?), " +
+                "category_id = (?), price_of_medicine = (?) WHERE inventory_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, inventory.getMedicineName());
+            ps.setInt(2, inventory.getAmountLeft());
+            ps.setInt(3, inventory.getAmountTaken());
+            ps.setInt(4, inventory.getCategoryId());
+            ps.setDouble(5, inventory.getPriceOfMedicine());
+            ps.setInt(6, inventory.getInventoryId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Inventory createEntity(Inventory inventory) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO inventory (inventory_id, medicine_name, amount_left, amount_taken, category_id," +
                 " price_of_medicine) VALUES((?), (?), (?), (?), (?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
@@ -34,17 +60,13 @@ public class InventoryDAO implements IInventoryDAO {
                 }
             }
         }
-    }
-
-    @Override
-    public Inventory createEntity(Inventory inventory) {
-        return null;
+        return inventory;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM inventory WHERE id = (?)";
+        String query = "DELETE FROM inventory WHERE inventory_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -68,15 +90,18 @@ public class InventoryDAO implements IInventoryDAO {
         String query = "SELECT * FROM inventory";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
-            try(ResultSet rs = ps.getResultSet()){
-                Inventory inventory = new Inventory();
-                inventory.setInventoryId(rs.getInt("inventory_id"));
-                inventory.setMedicineName(rs.getString("medicine_name"));
-                inventory.setAmountLeft(rs.getInt("amount_left"));
-                inventory.setAmountTaken(rs.getInt("amount_taken"));
-                inventory.setCategoryId(rs.getInt("category_id"));
-                inventory.setPriceOfMedicine(rs.getDouble("price_of_medicine"));
-                resultList.add(inventory);
+            try(ResultSet rs = ps.getResultSet()) {
+                while(rs.next()){
+                    Inventory inventory = new Inventory();
+                    inventory.setInventoryId(rs.getInt("inventory_id"));
+                    inventory.setMedicineName(rs.getString("medicine_name"));
+                    inventory.setAmountLeft(rs.getInt("amount_left"));
+                    inventory.setAmountTaken(rs.getInt("amount_taken"));
+                    inventory.setCategoryId(rs.getInt("category_id"));
+                    inventory.setPriceOfMedicine(rs.getDouble("price_of_medicine"));
+                    resultList.add(inventory);
+                }
+
             }
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -96,7 +121,7 @@ public class InventoryDAO implements IInventoryDAO {
     public Inventory getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         Inventory inventory = new Inventory();
-        String query = "SELECT * FROM inventory WHERE id = (?)";
+        String query = "SELECT * FROM inventory WHERE inventory_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();

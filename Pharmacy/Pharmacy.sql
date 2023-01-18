@@ -3,7 +3,7 @@ INSERT INTO category VALUES (1, 'Pizza');
 INSERT INTO category VALUES (1, 'Antibiotic');
 INSERT INTO customer(first_name, last_name, phone_number, age, address) VALUES
 ('Tom', 'Jackson', '6541231234', 21, 'Road');
-INSERT INTO customer VALUES (2, 'Tom', 'Sawyer', '2342345675', 22, '12 easy street');
+INSERT INTO customer VALUES (1, 'Tom', 'Sawyer', '2342345675', 22, '12 easy street');
 INSERT INTO employee_type VALUES (1, 'Pharmacist');
 INSERT INTO appointment VALUES (1, '2023-1-13 13:00:00', 1, 1, 1);
 INSERT INTO employee VALUES (1,'Antonio', 'Justin', '1234567', 1);
@@ -23,6 +23,11 @@ UPDATE category SET category_name = 'Glucose' WHERE category_name = 'Antibiotic'
 UPDATE appointment_type SET appointment_type = 'Refill' WHERE appointment_type = 'Vaccine';
 UPDATE appointment_type SET appointment_type = 'Insurance' WHERE appointment_type = "Vaccine";
 
+SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 1;
+
+DELETE FROM category;
+
 SELECT * FROM customer;
 
 -- Delete commands --
@@ -36,6 +41,8 @@ DELETE FROM employee_type WHERE employee_type_id = 1;
 DELETE FROM appointment_type;
 DELETE FROM category;
 DELETE FROM examination;
+
+SELECT * FROM customer;
 
 -- Alter the table --
 ALTER TABLE customer RENAME COLUMN age to how_old;

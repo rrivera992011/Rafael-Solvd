@@ -14,6 +14,35 @@ public class PrescriptionDAO implements IPrescriptionDAO {
     @Override
     public void updateEntity(Prescription prescription) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE prescription SET rx_number = (?), price_of_prescription = (?), " +
+                "amount_of_medicine = (?), date_filled = (?), customer_id = (?), inventory_id = (?), recipe_id = (?) " +
+                "WHERE prescription_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, prescription.getRxNumber());
+            ps.setDouble(2, prescription.getPriceOfPrescription());
+            ps.setInt(3, prescription.getAmountOfMedicine());
+            ps.setDate(4, (Date) prescription.getDateFilled());
+            ps.setInt(5, prescription.getCustomerId());
+            ps.setInt(6, prescription.getInventoryId());
+            ps.setInt(7, prescription.getRecipeId());
+            ps.setInt(8, prescription.getPrescriptionId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Prescription createEntity(Prescription prescription) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO prescription (prescription_id, rx_number, price_of_prescription, " +
                 "amount_of_medicine, date_filled, customer_id, inventory_id, recipe_id) VALUES((?), (?), " +
                 "(?), (?), (?), (?), (?), (?))";
@@ -38,17 +67,13 @@ public class PrescriptionDAO implements IPrescriptionDAO {
                 }
             }
         }
-    }
-
-    @Override
-    public Prescription createEntity(Prescription prescription) {
-        return null;
+        return prescription;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM prescription WHERE id = (?)";
+        String query = "DELETE FROM prescription WHERE prescription_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -73,16 +98,18 @@ public class PrescriptionDAO implements IPrescriptionDAO {
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
-                Prescription prescription = new Prescription();
-                prescription.setPrescriptionId(rs.getInt("prescription_id"));
-                prescription.setRxNumber(rs.getString("rx_number"));
-                prescription.setPriceOfPrescription(rs.getDouble("price_of_prescription"));
-                prescription.setAmountOfMedicine(rs.getInt("amount_of_medicine"));
-                prescription.setDateFilled(rs.getDate("date_filled"));
-                prescription.setCustomerId(rs.getInt("customer_id"));
-                prescription.setInventoryId(rs.getInt("inventory_id"));
-                prescription.setRecipeId(rs.getInt("recipe_id"));
-                resultList.add(prescription);
+                while (rs.next()){
+                    Prescription prescription = new Prescription();
+                    prescription.setPrescriptionId(rs.getInt("prescription_id"));
+                    prescription.setRxNumber(rs.getString("rx_number"));
+                    prescription.setPriceOfPrescription(rs.getDouble("price_of_prescription"));
+                    prescription.setAmountOfMedicine(rs.getInt("amount_of_medicine"));
+                    prescription.setDateFilled(rs.getDate("date_filled"));
+                    prescription.setCustomerId(rs.getInt("customer_id"));
+                    prescription.setInventoryId(rs.getInt("inventory_id"));
+                    prescription.setRecipeId(rs.getInt("recipe_id"));
+                    resultList.add(prescription);
+                }
             }
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -102,7 +129,7 @@ public class PrescriptionDAO implements IPrescriptionDAO {
     public Prescription getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         Prescription prescription = new Prescription();
-        String query = "SELECT * FROM prescription WHERE id = (?)";
+        String query = "SELECT * FROM prescription WHERE prescription_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();

@@ -16,7 +16,7 @@ public class CustomerDAO implements ICustomerDAO {
     public Customer getEntityById(int id){
         Connection connection = connectionPool.getConnection();
         Customer customer = new Customer();
-        String query = "SELECT * FROM customer WHERE id = (?)";
+        String query = "SELECT * FROM customer WHERE customer_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -47,6 +47,32 @@ public class CustomerDAO implements ICustomerDAO {
     @Override
     public void updateEntity(Customer customer) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE customer SET first_name = (?), last_name = (?), phone_number = (?), age = (?), " +
+                "address = (?) WHERE customer_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setString(3, customer.getPhoneNumber());
+            ps.setInt(4, customer.getAge());
+            ps.setString(5, customer.getAddress());
+            ps.setInt(6, customer.getCustomerId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null) {
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Customer createEntity(Customer customer) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO customer (customer_id, first_name, last_name, phone_number, age, address)" +
                 " VALUES((?), (?), (?), (?), (?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
@@ -68,17 +94,14 @@ public class CustomerDAO implements ICustomerDAO {
                 }
             }
         }
-    }
 
-    @Override
-    public Customer createEntity(Customer customer) {
-        return null;
+        return customer;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM customer WHERE id = (?)";
+        String query = "DELETE FROM customer WHERE customer_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -103,14 +126,16 @@ public class CustomerDAO implements ICustomerDAO {
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
-                Customer customer = new Customer();
-                customer.setCustomerId(rs.getInt("customer_id"));
-                customer.setFirstName(rs.getString("first_name"));
-                customer.setLastName(rs.getString("last_name"));
-                customer.setPhoneNumber(rs.getString("phone_number"));
-                customer.setAge(rs.getInt("age"));
-                customer.setAddress(rs.getString("address"));
-                resultList.add(customer);
+                while(rs.next()){
+                    Customer customer = new Customer();
+                    customer.setCustomerId(rs.getInt("customer_id"));
+                    customer.setFirstName(rs.getString("first_name"));
+                    customer.setLastName(rs.getString("last_name"));
+                    customer.setPhoneNumber(rs.getString("phone_number"));
+                    customer.setAge(rs.getInt("age"));
+                    customer.setAddress(rs.getString("address"));
+                    resultList.add(customer);
+                }
             }
         } catch (SQLException e) {
             LOGGER.error(e);

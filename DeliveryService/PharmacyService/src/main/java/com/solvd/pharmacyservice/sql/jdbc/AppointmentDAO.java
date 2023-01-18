@@ -15,7 +15,7 @@ public class AppointmentDAO implements IAppointmentDAO {
     public Appointment getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         Appointment appointment = new Appointment();
-        String query = "SELECT * FROM appointment WHERE id = (?)";
+        String query = "SELECT * FROM appointment WHERE appointment_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -45,6 +45,31 @@ public class AppointmentDAO implements IAppointmentDAO {
     @Override
     public void updateEntity(Appointment appointment) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE appointment SET date_and_time = (?), customer_id = (?), employee_id = (?), " +
+                "appointment_type_id = (?) WHERE appointment_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setDate(1, (Date) appointment.getDateAndTime());
+            ps.setInt(2, appointment.getCustomerId());
+            ps.setInt(3, appointment.getEmployeeId());
+            ps.setInt(4, appointment.getAppointmentTypeId());
+            ps.setInt(5, appointment.getAppointmentId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null) {
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Appointment createEntity(Appointment appointment) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO appointment (appointment_id, date_and_time, customer_id, employee_id, " +
                 "appointment_type_id) VALUES((?), (?), (?), (?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
@@ -65,17 +90,14 @@ public class AppointmentDAO implements IAppointmentDAO {
                 }
             }
         }
-    }
 
-    @Override
-    public Appointment createEntity(Appointment appointment) {
-        return null;
+        return appointment;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM appointment WHERE id = (?)";
+        String query = "DELETE FROM appointment WHERE appointment_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -100,13 +122,15 @@ public class AppointmentDAO implements IAppointmentDAO {
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
-                Appointment appointment = new Appointment();
-                appointment.setAppointmentId(rs.getInt("appointment_id"));
-                appointment.setDateAndTime(rs.getDate("date_and_time"));
-                appointment.setCustomerId(rs.getInt("customer_id"));
-                appointment.setEmployeeId(rs.getInt("employee_id"));
-                appointment.setAppointmentTypeId(rs.getInt("appointment_type_id"));
-                resultList.add(appointment);
+                while(rs.next()){
+                    Appointment appointment = new Appointment();
+                    appointment.setAppointmentId(rs.getInt("appointment_id"));
+                    appointment.setDateAndTime(rs.getDate("date_and_time"));
+                    appointment.setCustomerId(rs.getInt("customer_id"));
+                    appointment.setEmployeeId(rs.getInt("employee_id"));
+                    appointment.setAppointmentTypeId(rs.getInt("appointment_type_id"));
+                    resultList.add(appointment);
+                }
             }
         } catch (SQLException e) {
             LOGGER.error(e);

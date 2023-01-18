@@ -13,6 +13,31 @@ public class ExaminationDAO implements IExaminationDAO {
     @Override
     public void updateEntity(Examination examination) {
         Connection connection = connectionPool.getConnection();
+        String query = "UPDATE examination SET exam_result = (?), employee_id = (?), examination_type_id = (?), " +
+                "customer_id = (?) WHERE examination_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, examination.getExamResult());
+            ps.setInt(2, examination.getEmployeeId());
+            ps.setInt(3, examination.getExaminationTypeId());
+            ps.setInt(4, examination.getCustomerId());
+            ps.setInt(5, examination.getExaminationId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public Examination createEntity(Examination examination) {
+        Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO examination (examination_id, exam_result, employee_id, examination_type_id, " +
                 "customer_id) VALUES((?), (?), (?), (?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
@@ -33,17 +58,13 @@ public class ExaminationDAO implements IExaminationDAO {
                 }
             }
         }
-    }
-
-    @Override
-    public Examination createEntity(Examination examination) {
-        return null;
+        return examination;
     }
 
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM examination WHERE id = (?)";
+        String query = "DELETE FROM examination WHERE examination_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -68,13 +89,15 @@ public class ExaminationDAO implements IExaminationDAO {
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
-                Examination examination = new Examination();
-                examination.setExaminationId(rs.getInt("examination_id"));
-                examination.setExamResult(rs.getString("exam_result"));
-                examination.setEmployeeId(rs.getInt("employee_id"));
-                examination.setExaminationTypeId(rs.getInt("examination_type_id"));
-                examination.setCustomerId(rs.getInt("customer_id"));
-                resultList.add(examination);
+                while (rs.next()){
+                    Examination examination = new Examination();
+                    examination.setExaminationId(rs.getInt("examination_id"));
+                    examination.setExamResult(rs.getString("exam_result"));
+                    examination.setEmployeeId(rs.getInt("employee_id"));
+                    examination.setExaminationTypeId(rs.getInt("examination_type_id"));
+                    examination.setCustomerId(rs.getInt("customer_id"));
+                    resultList.add(examination);
+                }
             }
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -94,7 +117,7 @@ public class ExaminationDAO implements IExaminationDAO {
     public Examination getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         Examination examination = new Examination();
-        String query = "SELECT * FROM examination WHERE id = (?)";
+        String query = "SELECT * FROM examination WHERE examination_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
