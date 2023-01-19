@@ -128,4 +128,32 @@ public class CategoryDAO implements ICategoryDAO {
         }
         return category;
     }
+
+    @Override
+    public Category getCategoryByCategoryName(String categoryName) {
+        Connection connection = connectionPool.getConnection();
+        Category category = new Category();
+        String query = "SELECT * FROM category WHERE category_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, categoryName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    category.setCategoryId(rs.getInt("category_id"));
+                    category.setCategoryName(rs.getString("category_name"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return category;
+    }
 }

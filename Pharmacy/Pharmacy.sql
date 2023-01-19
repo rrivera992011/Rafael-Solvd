@@ -10,6 +10,9 @@ INSERT INTO employee VALUES (1,'Antonio', 'Justin', '1234567', 1);
 INSERT INTO appointment_type VALUES (1, 'Vaccine');
 INSERT INTO appointment_type VALUES (2, 'Check-up');
 INSERT INTO recipe VALUES (1, 'Amoxicillin');
+INSERT INTO employee_type VALUES (2, 'Clerk');
+
+UPDATE employee SET employee_type_id = 2 where last_name = 'Justin';
 
 -- Update commands --
 UPDATE customer SET first_name = 'Mike' WHERE first_name = 'Tom';
@@ -27,8 +30,8 @@ SET SQL_SAFE_UPDATES = 0;
 SET SQL_SAFE_UPDATES = 1;
 
 DELETE FROM category;
-
 SELECT * FROM customer;
+SELECT * FROM employee;
 
 -- Delete commands --
 DELETE FROM category WHERE category_name = 'Pizza';
@@ -45,11 +48,11 @@ DELETE FROM examination;
 SELECT * FROM customer;
 
 -- Alter the table --
-ALTER TABLE customer RENAME COLUMN age to how_old;
+ALTER TABLE customer RENAME COLUMN age TO how_old;
 ALTER TABLE customer RENAME COLUMN how_old TO age;
-ALTER TABLE recipe RENAME COLUMN size to size_in_milliliters;
-ALTER TABLE prescription RENAME COLUMN rx_number to prescription_number;
-ALTER TABLE category ADD location_in_store varchar(255);
+ALTER TABLE recipe RENAME COLUMN size TO size_in_milliliters;
+ALTER TABLE prescription RENAME COLUMN rx_number TO prescription_number;
+ALTER TABLE category ADD location_in_store VARCHAR(255);
 
 -- Huge command to join all the rows from all the tables --
 SELECT * FROM customer

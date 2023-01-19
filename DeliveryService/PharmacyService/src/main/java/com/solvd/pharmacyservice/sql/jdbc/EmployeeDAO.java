@@ -1,5 +1,6 @@
 package com.solvd.pharmacyservice.sql.jdbc;
 
+import com.solvd.pharmacyservice.models.Customer;
 import com.solvd.pharmacyservice.models.Employee;
 import com.solvd.pharmacyservice.sql.*;
 import org.apache.logging.log4j.*;
@@ -58,7 +59,6 @@ public class EmployeeDAO implements IEmployeeDAO {
                 }
             }
         }
-
         return employee;
     }
 
@@ -143,5 +143,26 @@ public class EmployeeDAO implements IEmployeeDAO {
             }
         }
         return employee;
+    }
+
+    @Override
+    public void updateEmployeeTypeIDWithLastName(Employee employee) {
+        Connection connection = connectionPool.getConnection();
+        String query = "UPDATE employee SET employee_type_id = (?) where last_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setInt(1, employee.getEmployeeTypeId());
+            ps.setString(2, employee.getLastName());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
     }
 }

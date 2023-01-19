@@ -55,4 +55,14 @@ public class Inventory {
     public void setPriceOfMedicine(double priceOfMedicine) {
         this.priceOfMedicine = priceOfMedicine;
     }
+
+    @Override
+    public String toString() {
+        return "\nInventory ID = " + inventoryId +
+                ", Medicine Name = '" + medicineName + '\'' +
+                ", Amount Left = " + amountLeft +
+                ", Amount Taken = " + amountTaken +
+                ", Category ID = " + categoryId +
+                ", Price Of Medicine = " + priceOfMedicine;
+    }
 }

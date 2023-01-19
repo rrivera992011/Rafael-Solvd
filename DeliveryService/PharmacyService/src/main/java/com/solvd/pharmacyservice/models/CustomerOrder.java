@@ -57,4 +57,14 @@ public class CustomerOrder {
     public void setProductId(int productId) {
         this.productId = productId;
     }
+
+    @Override
+    public String toString() {
+        return "\nCustomer Order ID = " + customerOrderId +
+                ", Order Total = " + orderTotal +
+                ", Customer ID = " + customerId +
+                ", Order Date = " + orderDate +
+                ", Payment Type ID=" + paymentTypeId +
+                ", Product ID = " + productId;
+    }
 }

@@ -148,4 +148,99 @@ public class InventoryDAO implements IInventoryDAO {
         }
         return inventory;
     }
+
+    @Override
+    public Inventory getInventoryByMedicineName(String medicineName) {
+        Connection connection = connectionPool.getConnection();
+        Inventory inventory = new Inventory();
+        String query = "SELECT * FROM inventory WHERE medicine_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, medicineName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    inventory.setInventoryId(rs.getInt("inventory_id"));
+                    inventory.setMedicineName(rs.getString("medicine_name"));
+                    inventory.setAmountLeft(rs.getInt("amount_left"));
+                    inventory.setAmountTaken(rs.getInt("amount_taken"));
+                    inventory.setCategoryId(rs.getInt("category_id"));
+                    inventory.setPriceOfMedicine(rs.getDouble("price_of_medicine"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return inventory;
+    }
+
+    @Override
+    public void updatePriceByMedicineName(Inventory inventory) {
+        Connection connection = connectionPool.getConnection();
+        String query = "UPDATE inventory SET price_of_medicine = (?) WHERE medicine_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setDouble(1, inventory.getPriceOfMedicine());
+            ps.setString(2, inventory.getMedicineName());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void removeInventoryWithAmountLeft(int amountLeft) {
+        Connection connection = connectionPool.getConnection();
+        String query = "DELETE FROM inventory WHERE amount_left = (?)";
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, amountLeft);
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if (connection != null) {
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
+
+    @Override
+    public void updateAmountTakenAndAmountLeft(Inventory inventory) {
+        Connection connection = connectionPool.getConnection();
+        String query = "UPDATE inventory SET amount_taken = (?), amount_left = (?) WHERE inventory_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setInt(1, inventory.getAmountTaken());
+            ps.setInt(2, inventory.getAmountLeft());
+            ps.setInt(3, inventory.getInventoryId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
 }

@@ -145,4 +145,55 @@ public class AppointmentDAO implements IAppointmentDAO {
         }
         return resultList;
     }
+
+    @Override
+    public Appointment getAppointmentByFirstName(String firstName) {
+        Connection connection = connectionPool.getConnection();
+        Appointment appointment = new Appointment();
+        String query = "SELECT * FROM appointment WHERE first_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, firstName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    appointment.setAppointmentId(rs.getInt("appointment_id"));
+                    appointment.setDateAndTime(rs.getDate("date_and_time"));
+                    appointment.setCustomerId(rs.getInt("customer_id"));
+                    appointment.setEmployeeId(rs.getInt("employee_id"));
+                    appointment.setAppointmentTypeId(rs.getInt("appointment_type_id"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return appointment;
+    }
+
+    @Override
+    public void deleteAppointmentByLastName(String lastName) {
+        Connection connection = connectionPool.getConnection();
+        String query = "DELETE FROM appointment WHERE last_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, lastName);
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
 }

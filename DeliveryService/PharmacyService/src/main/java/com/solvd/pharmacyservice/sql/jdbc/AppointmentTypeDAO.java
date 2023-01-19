@@ -4,7 +4,6 @@ import com.solvd.pharmacyservice.models.AppointmentType;
 import com.solvd.pharmacyservice.sql.*;
 import org.apache.logging.log4j.*;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class AppointmentTypeDAO implements IAppointmentTypeDAO {
@@ -130,5 +129,33 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
             }
         }
         return resultList;
+    }
+
+    @Override
+    public AppointmentType getAppointmentTypeWithAppointmentType(String appointmentTypeName) {
+        Connection connection = connectionPool.getConnection();
+        AppointmentType appointmentType = new AppointmentType();
+        String query = "SELECT * FROM appointment_type WHERE appointment_type = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, appointmentTypeName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    appointmentType.setAppointmentTypeId(rs.getInt("appointment_type_id"));
+                    appointmentType.setAppointmentType(rs.getString("appointment_type"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return appointmentType;
     }
 }

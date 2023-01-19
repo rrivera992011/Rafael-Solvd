@@ -19,4 +19,10 @@ public class AppointmentType {
     public void setAppointmentType(String appointmentType) {
         this.appointmentType = appointmentType;
     }
+
+    @Override
+    public String toString() {
+        return "\nAppointment Type ID = " + appointmentTypeId +
+                ", Appointment Type = '" + appointmentType + '\'';
+    }
 }

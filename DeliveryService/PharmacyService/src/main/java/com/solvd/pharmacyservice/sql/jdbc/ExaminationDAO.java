@@ -143,4 +143,35 @@ public class ExaminationDAO implements IExaminationDAO {
         }
         return examination;
     }
+
+    @Override
+    public Examination getExaminationByResult(String result) {
+        Connection connection = connectionPool.getConnection();
+        Examination examination = new Examination();
+        String query = "SELECT * FROM examination WHERE result = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, result);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    examination.setExaminationId(rs.getInt("examination_id"));
+                    examination.setExamResult(rs.getString("exam_result"));
+                    examination.setEmployeeId(rs.getInt("employee_id"));
+                    examination.setExaminationTypeId(rs.getInt("examination_type_id"));
+                    examination.setCustomerId(rs.getInt("customer_id"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return examination;
+    }
 }

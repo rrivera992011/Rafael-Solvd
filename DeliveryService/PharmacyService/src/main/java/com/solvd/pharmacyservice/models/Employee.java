@@ -46,4 +46,13 @@ public class Employee {
     public void setEmployeeTypeId(int employeeTypeId) {
         this.employeeTypeId = employeeTypeId;
     }
+
+    @Override
+    public String toString() {
+        return "\nEmployee ID = " + employeeId +
+                ", First Name = '" + firstName + '\'' +
+                ", Last Name = '" + lastName + '\'' +
+                ", Employee Number = '" + employeeNumber + '\'' +
+                ", Employee Type ID = " + employeeTypeId;
+    }
 }

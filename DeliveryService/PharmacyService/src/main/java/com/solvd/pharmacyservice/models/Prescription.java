@@ -75,4 +75,16 @@ public class Prescription {
     public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }
+
+    @Override
+    public String toString() {
+        return "\nPrescription ID = " + prescriptionId +
+                ", RX Number = '" + rxNumber + '\'' +
+                ", Price Of Prescription = " + priceOfPrescription +
+                ", Amount Of Medicine = " + amountOfMedicine +
+                ", Date Filled = " + dateFilled +
+                ", Customer ID = " + customerId +
+                ", Inventory ID = " + inventoryId +
+                ", Recipe ID = " + recipeId;
+    }
 }

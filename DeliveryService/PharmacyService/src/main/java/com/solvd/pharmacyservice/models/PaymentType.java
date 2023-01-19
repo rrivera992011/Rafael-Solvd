@@ -19,4 +19,10 @@ public class PaymentType {
     public void setPaymentType(String paymentType) {
         this.paymentType = paymentType;
     }
+
+    @Override
+    public String toString() {
+        return "\nPayment Type ID = " + paymentTypeId +
+                ", Payment Type = '" + paymentType + '\'';
+    }
 }

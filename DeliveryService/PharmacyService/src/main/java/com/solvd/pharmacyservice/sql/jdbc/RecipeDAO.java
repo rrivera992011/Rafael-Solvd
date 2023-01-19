@@ -134,4 +134,54 @@ public class RecipeDAO implements IRecipeDAO {
         }
         return recipe;
     }
+
+    @Override
+    public Recipe getRecipeByMedicineName(String medicineName) {
+        Connection connection = connectionPool.getConnection();
+        Recipe recipe = new Recipe();
+        String query = "SELECT * FROM recipe WHERE medicine_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, medicineName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    recipe.setRecipeId(rs.getInt("recipe_id"));
+                    recipe.setRecipeSize(rs.getDouble("recipe_size"));
+                    recipe.setMedicineName(rs.getString("medicine_name"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return recipe;
+    }
+
+    @Override
+    public void updateRecipeSize(Recipe recipe) {
+        Connection connection = connectionPool.getConnection();
+        String query = "UPDATE recipe SET recipe_size = (?) WHERE recipe_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setDouble(1, recipe.getRecipeSize());
+            ps.setInt(2, recipe.getRecipeId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
 }

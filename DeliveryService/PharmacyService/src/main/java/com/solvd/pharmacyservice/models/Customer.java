@@ -64,6 +64,6 @@ public class Customer {
                 ", Last Name = '" + lastName + '\'' +
                 ", Phone Number = '" + phoneNumber + '\'' +
                 ", Age = " + age +
-                ", Address = '" + address + "'";
+                ", Address = '" + address + '\'';
     }
 }

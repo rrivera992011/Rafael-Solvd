@@ -19,4 +19,11 @@ public class EmployeeType {
     public void setEmployeeType(String employeeType) {
         this.employeeType = employeeType;
     }
+
+    @Override
+    public String toString() {
+        return "\nEmployee Type ID = " + employeeTypeId +
+                ", Employee Type = '" + employeeType + '\'';
+    }
+
 }

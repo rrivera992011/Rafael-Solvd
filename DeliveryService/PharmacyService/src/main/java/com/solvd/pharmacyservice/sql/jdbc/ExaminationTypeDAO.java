@@ -130,4 +130,32 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
         }
         return examinationType;
     }
+
+    @Override
+    public ExaminationType getExaminationTypeByExaminationType(String examinationTypeName) {
+        Connection connection = connectionPool.getConnection();
+        ExaminationType examinationType = new ExaminationType();
+        String query = "SELECT * FROM examination_type WHERE examination_type = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, examinationTypeName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    examinationType.setExaminationTypeId(rs.getInt("examination_type_id"));
+                    examinationType.setExaminationType(rs.getString("examination_type"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return examinationType;
+    }
 }

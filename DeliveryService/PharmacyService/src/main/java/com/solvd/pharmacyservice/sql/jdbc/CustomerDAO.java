@@ -150,4 +150,36 @@ public class CustomerDAO implements ICustomerDAO {
         }
         return resultList;
     }
+
+    @Override
+    public Customer getCustomerByLastName(String lastName) {
+        Connection connection = connectionPool.getConnection();
+        Customer customer = new Customer();
+        String query = "SELECT * FROM customer WHERE last_name = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, lastName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    customer.setCustomerId(rs.getInt("customer_id"));
+                    customer.setFirstName(rs.getString("first_name"));
+                    customer.setLastName(rs.getString("last_name"));
+                    customer.setPhoneNumber(rs.getString("phone_number"));
+                    customer.setAge(rs.getInt("age"));
+                    customer.setAddress(rs.getString("address"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return customer;
+    }
 }

@@ -19,4 +19,10 @@ public class ExaminationType {
     public void setExaminationType(String examinationType) {
         this.examinationType = examinationType;
     }
+
+    @Override
+    public String toString() {
+        return "\nExamination Type ID = " + examinationTypeId +
+                ", Examination Type = '" + examinationType + '\'';
+    }
 }

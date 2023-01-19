@@ -28,4 +28,11 @@ public class Recipe {
     public void setMedicineName(String medicineName) {
         this.medicineName = medicineName;
     }
+
+    @Override
+    public String toString() {
+        return "\nRecipe ID = " + recipeId +
+                ", Recipe Size = " + recipeSize +
+                ", Medicine Name = '" + medicineName + '\'';
+    }
 }

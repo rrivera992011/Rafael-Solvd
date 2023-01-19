@@ -158,4 +158,93 @@ public class PrescriptionDAO implements IPrescriptionDAO {
         }
         return prescription;
     }
+
+    @Override
+    public Prescription getPrescriptionByRxNumber(String rxNumber) {
+        Connection connection = connectionPool.getConnection();
+        Prescription prescription = new Prescription();
+        String query = "SELECT * FROM prescription WHERE rx_number = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, rxNumber);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    prescription.setPrescriptionId(rs.getInt("prescription_id"));
+                    prescription.setRxNumber(rs.getString("rx_number"));
+                    prescription.setPriceOfPrescription(rs.getDouble("price_of_prescription"));
+                    prescription.setAmountOfMedicine(rs.getInt("amount_of_medicine"));
+                    prescription.setDateFilled(rs.getDate("date_filled"));
+                    prescription.setCustomerId(rs.getInt("customer_id"));
+                    prescription.setInventoryId(rs.getInt("inventory_id"));
+                    prescription.setRecipeId(rs.getInt("recipe_id"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return prescription;
+    }
+
+    @Override
+    public Prescription getPrescriptionByCustomerId(int customerId) {
+        Connection connection = connectionPool.getConnection();
+        Prescription prescription = new Prescription();
+        String query = "SELECT * FROM prescription WHERE customer_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setInt(1, customerId);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    prescription.setPrescriptionId(rs.getInt("prescription_id"));
+                    prescription.setRxNumber(rs.getString("rx_number"));
+                    prescription.setPriceOfPrescription(rs.getDouble("price_of_prescription"));
+                    prescription.setAmountOfMedicine(rs.getInt("amount_of_medicine"));
+                    prescription.setDateFilled(rs.getDate("date_filled"));
+                    prescription.setCustomerId(rs.getInt("customer_id"));
+                    prescription.setInventoryId(rs.getInt("inventory_id"));
+                    prescription.setRecipeId(rs.getInt("recipe_id"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return prescription;
+    }
+
+    @Override
+    public void updateDateByPrescriptionId(Prescription prescription) {
+        Connection connection = connectionPool.getConnection();
+        String query = "UPDATE prescription SET date_filled = (?) WHERE prescription_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setDate(1, (Date) prescription.getDateFilled());
+            ps.setInt(2, prescription.getPrescriptionId());
+            ps.execute();
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try {
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+    }
 }

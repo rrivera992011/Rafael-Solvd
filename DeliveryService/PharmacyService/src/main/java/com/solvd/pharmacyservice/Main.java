@@ -11,6 +11,9 @@ public class Main {
     final static Level MENU_LOG = Level.forName("MENU_LOG", 700);
 
     public static void main(String[] args) {
+
+
+
         CustomerDAO customerDAO = new CustomerDAO();
         List<Customer> customers = customerDAO.getAll();
         LOGGER.log(MENU_LOG, customers);

@@ -46,4 +46,13 @@ public class Examination {
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
+
+    @Override
+    public String toString() {
+        return "\nExamination ID = " + examinationId +
+                ", Exam Result = '" + examResult + '\'' +
+                ", Employee ID = " + employeeId +
+                ", Examination Type ID = " + examinationTypeId +
+                ", Customer ID = " + customerId;
+    }
 }

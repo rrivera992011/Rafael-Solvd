@@ -48,4 +48,13 @@ public class Appointment {
     public void setAppointmentTypeId(int appointmentTypeId) {
         this.appointmentTypeId = appointmentTypeId;
     }
+
+    @Override
+    public String toString() {
+        return "\nAppointment ID = " + appointmentId +
+                ", Date and Time = " + dateAndTime +
+                ", Customer ID = " + customerId +
+                ", Employee Id = " + employeeId +
+                ", Appointment Type ID = " + appointmentTypeId;
+    }
 }

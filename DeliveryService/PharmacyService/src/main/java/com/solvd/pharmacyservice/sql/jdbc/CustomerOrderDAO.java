@@ -149,4 +149,36 @@ public class CustomerOrderDAO implements ICustomerOrderDAO {
         }
         return customerOrder;
     }
+
+    @Override
+    public CustomerOrder getCustomerOrderByProductID(int customerOrderId) {
+        Connection connection = connectionPool.getConnection();
+        CustomerOrder customerOrder = new CustomerOrder();
+        String query = "SELECT * FROM customer_order WHERE customer_order_id = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setInt(1, customerOrderId);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    customerOrder.setCustomerOrderId(rs.getInt("customer_order_id"));
+                    customerOrder.setOrderTotal(rs.getDouble("order_total"));
+                    customerOrder.setCustomerId(rs.getInt("customer_id"));
+                    customerOrder.setOrderDate(rs.getDate("order_date"));
+                    customerOrder.setPaymentTypeId(rs.getInt("payment_type_id"));
+                    customerOrder.setProductId(rs.getInt("product_id"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return customerOrder;
+    }
 }

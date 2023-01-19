@@ -130,4 +130,32 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
         }
         return employeeType;
     }
+
+    @Override
+    public EmployeeType getEmployeeTypeByEmployeeType(String employeeTypeName) {
+        Connection connection = connectionPool.getConnection();
+        EmployeeType employeeType = new EmployeeType();
+        String query = "SELECT * FROM employee_type WHERE employee_type = (?)";
+        try(PreparedStatement ps = connection.prepareStatement(query)){
+            ps.setString(1, employeeTypeName);
+            ps.execute();
+            try(ResultSet rs = ps.getResultSet()){
+                while(rs.next()){
+                    employeeType.setEmployeeTypeId(rs.getInt("employee_type_id"));
+                    employeeType.setEmployeeType(rs.getString("employee_type"));
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e);
+        } finally {
+            if(connection != null){
+                try{
+                    connectionPool.releaseConnection(connection);
+                } catch (SQLException e) {
+                    LOGGER.error(e);
+                }
+            }
+        }
+        return employeeType;
+    }
 }
