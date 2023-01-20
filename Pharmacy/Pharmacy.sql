@@ -29,9 +29,23 @@ UPDATE appointment_type SET appointment_type = 'Insurance' WHERE appointment_typ
 SET SQL_SAFE_UPDATES = 0;
 SET SQL_SAFE_UPDATES = 1;
 
+DELETE FROM customer_order;
+DELETE FROM customer;
+DELETE FROM employee;
+DELETE FROM employee_type;
+DELETE FROM examination;
+DELETE FROM examination_type;
 DELETE FROM category;
+DELETE FROM appointment;
+DELETE FROM appointment_type;
+DELETE FROM inventory;
+DELETE FROM recipe;
+DELETE FROM payment_type;
+DELETE FROM prescription;
+
 SELECT * FROM customer;
 SELECT * FROM employee;
+SELECT * FROM appointment_type;
 
 -- Delete commands --
 DELETE FROM category WHERE category_name = 'Pizza';
