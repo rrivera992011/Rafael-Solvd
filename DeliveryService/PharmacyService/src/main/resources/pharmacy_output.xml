@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pharmacy>
+    <customers>
+        <customer customerId="1">
+            <firstName>Daniel</firstName>
+            <lastName>Andrews</lastName>
+            <phoneNumber>12343234123</phoneNumber>
+            <age>25</age>
+            <address>12 Main Ave</address>
+        </customer>
+        <customer customerId="2">
+            <firstName>Adam</firstName>
+            <lastName>Jones</lastName>
+            <phoneNumber>5467896543</phoneNumber>
+            <age>17</age>
+            <address>12 Easy Street</address>
+        </customer>
+    </customers>
+    <employeeTypes>
+        <employeeType employeeTypeId="1">
+            <employeeTypeName>Clerk</employeeTypeName>
+        </employeeType>
+        <employeeType employeeTypeId="2">
+            <employeeTypeName>Doctor</employeeTypeName>
+        </employeeType>
+    </employeeTypes>
+    <employees>
+        <employee employeeId="1">
+            <firstName>Michael</firstName>
+            <lastName>Morris</lastName>
+            <employeeNumber>123443223</employeeNumber>
+            <employeeTypeId>1</employeeTypeId>
+        </employee>
+        <employee employeeId="2">
+            <firstName>Antonio</firstName>
+            <lastName>Mayor</lastName>
+            <employeeNumber>212344553</employeeNumber>
+            <employeeTypeId>2</employeeTypeId>
+        </employee>
+    </employees>
+    <appointmentTypes>
+        <appointmentType appointmentTypeId="1">
+            <appointmentTypeName>Vaccine</appointmentTypeName>
+        </appointmentType>
+        <appointmentType appointmentTypeId="2">
+            <appointmentTypeName>Recommendation</appointmentTypeName>
+        </appointmentType>
+    </appointmentTypes>
+    <examinationTypes>
+        <examinationType examinationTypeId="1">
+            <examinationTypeName>COVID Test</examinationTypeName>
+        </examinationType>
+        <examinationType examinationTypeId="2">
+            <examinationTypeName>Measles Test</examinationTypeName>
+        </examinationType>
+    </examinationTypes>
+    <paymentTypes>
+        <paymentType paymentTypeId="1">
+            <paymentTypeName>Cash</paymentTypeName>
+        </paymentType>
+        <paymentType paymentTypeId="2">
+            <paymentTypeName>Credit Card</paymentTypeName>
+        </paymentType>
+    </paymentTypes>
+    <recipes>
+        <recipe recipeId="1">
+            <recipeSize>20.0</recipeSize>
+        </recipe>
+        <recipe recipeId="2">
+            <recipeSize>100.0</recipeSize>
+        </recipe>
+    </recipes>
+    <categories>
+        <category categoryId="1">
+            <categoryName>Antibiotic</categoryName>
+        </category>
+        <category categoryId="2">
+            <categoryName>Beta blocker</categoryName>
+        </category>
+    </categories>
+    <inventories>
+        <inventory inventoryId="1">
+            <medicineName>Atenolol</medicineName>
+            <amountLeft>2</amountLeft>
+            <amountTaken>100</amountTaken>
+            <categoryId>2</categoryId>
+            <priceOfMedicine>8.25</priceOfMedicine>
+        </inventory>
+        <inventory inventoryId="2">
+            <medicineName>Amoxil</medicineName>
+            <amountLeft>1</amountLeft>
+            <amountTaken>99</amountTaken>
+            <categoryId>1</categoryId>
+            <priceOfMedicine>12.99</priceOfMedicine>
+        </inventory>
+    </inventories>
+    <customerOrders>
+        <customerOrder customerOrderId="1">
+            <orderTotal>18.25</orderTotal>
+            <customerId>1</customerId>
+            <orderDate/>
+            <paymentTypeId>1</paymentTypeId>
+            <productId>1</productId>
+        </customerOrder>
+        <customerOrder customerOrderId="2">
+            <orderTotal>13.57</orderTotal>
+            <customerId>2</customerId>
+            <orderDate/>
+            <paymentTypeId>2</paymentTypeId>
+            <productId>2</productId>
+        </customerOrder>
+    </customerOrders>
+    <prescriptions>
+        <prescription prescriptionId="1">
+            <rxNumber>1234543</rxNumber>
+            <priceOfPrescription>25.13</priceOfPrescription>
+            <amountOfMedicine>50</amountOfMedicine>
+            <dateFilled/>
+            <customerId>1</customerId>
+            <inventoryId>1</inventoryId>
+            <recipeId>1</recipeId>
+        </prescription>
+        <prescription prescriptionId="2">
+            <rxNumber>12343432</rxNumber>
+            <priceOfPrescription>30.79</priceOfPrescription>
+            <amountOfMedicine>100</amountOfMedicine>
+            <dateFilled/>
+            <customerId>2</customerId>
+            <inventoryId>2</inventoryId>
+            <recipeId>2</recipeId>
+        </prescription>
+    </prescriptions>
+    <appointments>
+        <appointment appointmentId="1">
+            <appointmentDate/>
+            <customerId>1</customerId>
+            <employeeId>2</employeeId>
+            <appointmentTypeId>1</appointmentTypeId>
+        </appointment>
+        <appointment appointmentId="2">
+            <appointmentDate/>
+            <customerId>2</customerId>
+            <employeeId>2</employeeId>
+            <appointmentTypeId>1</appointmentTypeId>
+        </appointment>
+    </appointments>
+    <examinations>
+        <examination examinationId="1">
+            <examResult>Positive</examResult>
+            <employeeId>2</employeeId>
+            <examinationTypeId>1</examinationTypeId>
+            <customerId>1</customerId>
+        </examination>
+        <examination examinationId="2">
+            <examResult>Positive</examResult>
+            <employeeId>2</employeeId>
+            <examinationTypeId>2</examinationTypeId>
+            <customerId>2</customerId>
+        </examination>
+    </examinations>
+</pharmacy>

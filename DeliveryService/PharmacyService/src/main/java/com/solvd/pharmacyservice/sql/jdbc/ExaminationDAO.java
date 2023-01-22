@@ -148,7 +148,7 @@ public class ExaminationDAO implements IExaminationDAO {
     public Examination getExaminationByResult(String result) {
         Connection connection = connectionPool.getConnection();
         Examination examination = new Examination();
-        String query = "SELECT * FROM examination WHERE result = (?)";
+        String query = "SELECT * FROM examination WHERE exam_result = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1, result);
             ps.execute();

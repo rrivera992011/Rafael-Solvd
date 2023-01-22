@@ -14,9 +14,9 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
     @Override
     public void updateEntity(PaymentType paymentType) {
         Connection connection = connectionPool.getConnection();
-        String query = "UPDATE payment_type SET payment_type = (?) WHERE payment_type_id = (?)";
+        String query = "UPDATE payment_type SET payment_type_name = (?) WHERE payment_type_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setString(1, paymentType.getPaymentType());
+            ps.setString(1, paymentType.getPaymentTypeName());
             ps.setInt(2, paymentType.getPaymentTypeId());
             ps.execute();
         } catch (SQLException e) {
@@ -35,10 +35,10 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
     @Override
     public PaymentType createEntity(PaymentType paymentType) {
         Connection connection = connectionPool.getConnection();
-        String query = "INSERT INTO payment_type (payment_type_id, payment_type) VALUES((?), (?))";
+        String query = "INSERT INTO payment_type (payment_type_id, payment_type_name) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, paymentType.getPaymentTypeId());
-            ps.setString(2, paymentType.getPaymentType());
+            ps.setString(2, paymentType.getPaymentTypeName());
             ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -57,7 +57,7 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
     @Override
     public void removeEntity(int id) {
         Connection connection = connectionPool.getConnection();
-        String query = "DELETE FROM payment_type WHERE payment_id = (?)";
+        String query = "DELETE FROM payment_type WHERE payment_type_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
@@ -85,7 +85,7 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
                 while (rs.next()) {
                     PaymentType paymentType = new PaymentType();
                     paymentType.setPaymentTypeId(rs.getInt("payment_type_id"));
-                    paymentType.setPaymentType(rs.getString("payment_type"));
+                    paymentType.setPaymentTypeName(rs.getString("payment_type_name"));
                     resultList.add(paymentType);
                 }
             }
@@ -107,14 +107,14 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
     public PaymentType getEntityById(int id) {
         Connection connection = connectionPool.getConnection();
         PaymentType paymentType = new PaymentType();
-        String query = "SELECT * FROM payment_type WHERE payment_id = (?)";
+        String query = "SELECT * FROM payment_type WHERE payment_type_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, id);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     paymentType.setPaymentTypeId(rs.getInt("payment_type_id"));
-                    paymentType.setPaymentType(rs.getString("payment_type"));
+                    paymentType.setPaymentTypeName(rs.getString("payment_type_name"));
                 }
             }
         } catch (SQLException e) {
@@ -132,17 +132,17 @@ public class PaymentTypeDAO implements IPaymentTypeDAO {
     }
 
     @Override
-    public PaymentType getPaymentTypeWithPaymentType(String paymentTypeName) {
+    public PaymentType getPaymentTypeByName(String paymentTypeName) {
         Connection connection = connectionPool.getConnection();
         PaymentType paymentType = new PaymentType();
-        String query = "SELECT * FROM payment_type WHERE payment_type = (?)";
+        String query = "SELECT * FROM payment_type WHERE payment_type_name = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1, paymentTypeName);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     paymentType.setPaymentTypeId(rs.getInt("payment_type_id"));
-                    paymentType.setPaymentType(rs.getString("payment_type"));
+                    paymentType.setPaymentTypeName(rs.getString("payment_type_name"));
                 }
             }
         } catch (SQLException e) {

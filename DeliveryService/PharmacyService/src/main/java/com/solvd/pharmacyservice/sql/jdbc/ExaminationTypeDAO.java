@@ -14,9 +14,9 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
     @Override
     public void updateEntity(ExaminationType examinationType) {
         Connection connection = connectionPool.getConnection();
-        String query = "UPDATE examination_type SET examination_type = (?) WHERE examination_type_id = (?)";
+        String query = "UPDATE examination_type SET examination_type_name = (?) WHERE examination_type_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setString(1, examinationType.getExaminationType());
+            ps.setString(1, examinationType.getExaminationTypeName());
             ps.setInt(2, examinationType.getExaminationTypeId());
             ps.execute();
         } catch (SQLException e) {
@@ -35,10 +35,10 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
     @Override
     public ExaminationType createEntity(ExaminationType examinationType) {
         Connection connection = connectionPool.getConnection();
-        String query = "INSERT INTO examination_type (examination_type_id, examination_type) VALUES((?), (?))";
+        String query = "INSERT INTO examination_type (examination_type_id, examination_type_name) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, examinationType.getExaminationTypeId());
-            ps.setString(2, examinationType.getExaminationType());
+            ps.setString(2, examinationType.getExaminationTypeName());
             ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -85,7 +85,7 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
                 while(rs.next()){
                     ExaminationType examinationType = new ExaminationType();
                     examinationType.setExaminationTypeId(rs.getInt("examination_type_id"));
-                    examinationType.setExaminationType(rs.getString("examination_type"));
+                    examinationType.setExaminationTypeName(rs.getString("examination_type_name"));
                     resultList.add(examinationType);
                 }
             }
@@ -114,7 +114,7 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     examinationType.setExaminationTypeId(rs.getInt("examination_type_id"));
-                    examinationType.setExaminationType(rs.getString("examination_type"));
+                    examinationType.setExaminationTypeName(rs.getString("examination_type_name"));
                 }
             }
         } catch (SQLException e) {
@@ -132,17 +132,17 @@ public class ExaminationTypeDAO implements IExaminationTypeDAO {
     }
 
     @Override
-    public ExaminationType getExaminationTypeByExaminationType(String examinationTypeName) {
+    public ExaminationType getExaminationTypeByName(String examinationTypeName) {
         Connection connection = connectionPool.getConnection();
         ExaminationType examinationType = new ExaminationType();
-        String query = "SELECT * FROM examination_type WHERE examination_type = (?)";
+        String query = "SELECT * FROM examination_type WHERE examination_type_name = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1, examinationTypeName);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     examinationType.setExaminationTypeId(rs.getInt("examination_type_id"));
-                    examinationType.setExaminationType(rs.getString("examination_type"));
+                    examinationType.setExaminationTypeName(rs.getString("examination_type_name"));
                 }
             }
         } catch (SQLException e) {

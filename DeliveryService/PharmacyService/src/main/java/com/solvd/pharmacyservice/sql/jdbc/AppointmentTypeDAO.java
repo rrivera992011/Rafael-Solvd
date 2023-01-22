@@ -21,7 +21,7 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     appointmentType.setAppointmentTypeId(rs.getInt("appointment_type_id"));
-                    appointmentType.setAppointmentType(rs.getString("appointment_type"));
+                    appointmentType.setAppointmentTypeName(rs.getString("appointment_type_name"));
                 }
             }
         } catch (SQLException e) {
@@ -41,9 +41,9 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
     @Override
     public void updateEntity(AppointmentType appointmentType) {
         Connection connection = connectionPool.getConnection();
-        String query = "UPDATE appointment_type SET appointment_type = (?) WHERE appointment_type_id = (?)";
+        String query = "UPDATE appointment_type SET appointment_type_name = (?) WHERE appointment_type_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setString(1, appointmentType.getAppointmentType());
+            ps.setString(1, appointmentType.getAppointmentTypeName());
             ps.setInt(2, appointmentType.getAppointmentTypeId());
             ps.execute();
         } catch (SQLException e) {
@@ -62,10 +62,10 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
     @Override
     public AppointmentType createEntity(AppointmentType appointmentType) {
         Connection connection = connectionPool.getConnection();
-        String query = "INSERT INTO appointment_type (appointment_type_id, appointment_type) VALUES((?), (?))";
+        String query = "INSERT INTO appointment_type (appointment_type_id, appointment_type_name) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, appointmentType.getAppointmentTypeId());
-            ps.setString(2, appointmentType.getAppointmentType());
+            ps.setString(2, appointmentType.getAppointmentTypeName());
             ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -113,7 +113,7 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
                 while(rs.next()){
                     AppointmentType appointmentType = new AppointmentType();
                     appointmentType.setAppointmentTypeId(rs.getInt("appointment_type_id"));
-                    appointmentType.setAppointmentType(rs.getString("appointment_type"));
+                    appointmentType.setAppointmentTypeName(rs.getString("appointment_type_name"));
                     resultList.add(appointmentType);
                 }
             }
@@ -132,17 +132,17 @@ public class AppointmentTypeDAO implements IAppointmentTypeDAO {
     }
 
     @Override
-    public AppointmentType getAppointmentTypeWithAppointmentType(String appointmentTypeName) {
+    public AppointmentType getAppointmentTypeByName(String appointmentTypeName) {
         Connection connection = connectionPool.getConnection();
         AppointmentType appointmentType = new AppointmentType();
-        String query = "SELECT * FROM appointment_type WHERE appointment_type = (?)";
+        String query = "SELECT * FROM appointment_type WHERE appointment_type_name = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1, appointmentTypeName);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     appointmentType.setAppointmentTypeId(rs.getInt("appointment_type_id"));
-                    appointmentType.setAppointmentType(rs.getString("appointment_type"));
+                    appointmentType.setAppointmentTypeName(rs.getString("appointment_type_name"));
                 }
             }
         } catch (SQLException e) {

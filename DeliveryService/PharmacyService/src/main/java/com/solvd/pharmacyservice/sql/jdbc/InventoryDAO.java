@@ -181,26 +181,6 @@ public class InventoryDAO implements IInventoryDAO {
         return inventory;
     }
 
-    @Override
-    public void updatePriceByMedicineName(Inventory inventory) {
-        Connection connection = connectionPool.getConnection();
-        String query = "UPDATE inventory SET price_of_medicine = (?) WHERE medicine_name = (?)";
-        try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setDouble(1, inventory.getPriceOfMedicine());
-            ps.setString(2, inventory.getMedicineName());
-            ps.execute();
-        } catch (SQLException e) {
-            LOGGER.error(e);
-        } finally {
-            if(connection != null){
-                try {
-                    connectionPool.releaseConnection(connection);
-                } catch (SQLException e) {
-                    LOGGER.error(e);
-                }
-            }
-        }
-    }
 
     @Override
     public void removeInventoryWithAmountLeft(int amountLeft) {
@@ -213,28 +193,6 @@ public class InventoryDAO implements IInventoryDAO {
             LOGGER.error(e);
         } finally {
             if (connection != null) {
-                try {
-                    connectionPool.releaseConnection(connection);
-                } catch (SQLException e) {
-                    LOGGER.error(e);
-                }
-            }
-        }
-    }
-
-    @Override
-    public void updateAmountTakenAndAmountLeft(Inventory inventory) {
-        Connection connection = connectionPool.getConnection();
-        String query = "UPDATE inventory SET amount_taken = (?), amount_left = (?) WHERE inventory_id = (?)";
-        try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setInt(1, inventory.getAmountTaken());
-            ps.setInt(2, inventory.getAmountLeft());
-            ps.setInt(3, inventory.getInventoryId());
-            ps.execute();
-        } catch (SQLException e) {
-            LOGGER.error(e);
-        } finally {
-            if(connection != null){
                 try {
                     connectionPool.releaseConnection(connection);
                 } catch (SQLException e) {

@@ -4,7 +4,6 @@ import com.solvd.pharmacyservice.models.Prescription;
 import com.solvd.pharmacyservice.sql.*;
 import org.apache.logging.log4j.*;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class PrescriptionDAO implements IPrescriptionDAO {
@@ -21,7 +20,7 @@ public class PrescriptionDAO implements IPrescriptionDAO {
             ps.setString(1, prescription.getRxNumber());
             ps.setDouble(2, prescription.getPriceOfPrescription());
             ps.setInt(3, prescription.getAmountOfMedicine());
-            ps.setDate(4, (Date) prescription.getDateFilled());
+            ps.setDate(4, prescription.getDateFilled());
             ps.setInt(5, prescription.getCustomerId());
             ps.setInt(6, prescription.getInventoryId());
             ps.setInt(7, prescription.getRecipeId());
@@ -51,7 +50,7 @@ public class PrescriptionDAO implements IPrescriptionDAO {
             ps.setString(2, prescription.getRxNumber());
             ps.setDouble(3, prescription.getPriceOfPrescription());
             ps.setInt(4, prescription.getAmountOfMedicine());
-            ps.setDate(5, (Date) prescription.getDateFilled());
+            ps.setDate(5, prescription.getDateFilled());
             ps.setInt(6, prescription.getCustomerId());
             ps.setInt(7, prescription.getInventoryId());
             ps.setInt(8, prescription.getRecipeId());
@@ -225,26 +224,5 @@ public class PrescriptionDAO implements IPrescriptionDAO {
             }
         }
         return prescription;
-    }
-
-    @Override
-    public void updateDateByPrescriptionId(Prescription prescription) {
-        Connection connection = connectionPool.getConnection();
-        String query = "UPDATE prescription SET date_filled = (?) WHERE prescription_id = (?)";
-        try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setDate(1, (Date) prescription.getDateFilled());
-            ps.setInt(2, prescription.getPrescriptionId());
-            ps.execute();
-        } catch (SQLException e) {
-            LOGGER.error(e);
-        } finally {
-            if(connection != null){
-                try {
-                    connectionPool.releaseConnection(connection);
-                } catch (SQLException e) {
-                    LOGGER.error(e);
-                }
-            }
-        }
     }
 }

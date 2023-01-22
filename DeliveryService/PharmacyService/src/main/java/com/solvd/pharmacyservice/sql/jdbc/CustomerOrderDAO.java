@@ -19,7 +19,7 @@ public class CustomerOrderDAO implements ICustomerOrderDAO {
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setDouble(1, customerOrder.getOrderTotal());
             ps.setInt(2, customerOrder.getCustomerId());
-            ps.setDate(3, (Date) customerOrder.getOrderDate());
+            ps.setDate(3, customerOrder.getOrderDate());
             ps.setInt(4, customerOrder.getPaymentTypeId());
             ps.setInt(5, customerOrder.getProductId());
             ps.setInt(6, customerOrder.getCustomerOrderId());
@@ -46,7 +46,7 @@ public class CustomerOrderDAO implements ICustomerOrderDAO {
             ps.setInt(1, customerOrder.getCustomerOrderId());
             ps.setDouble(2, customerOrder.getOrderTotal());
             ps.setInt(3, customerOrder.getCustomerId());
-            ps.setDate(4, (Date) customerOrder.getOrderDate());
+            ps.setDate(4, customerOrder.getOrderDate());
             ps.setInt(5, customerOrder.getPaymentTypeId());
             ps.setInt(6, customerOrder.getProductId());
             ps.execute();
@@ -151,12 +151,12 @@ public class CustomerOrderDAO implements ICustomerOrderDAO {
     }
 
     @Override
-    public CustomerOrder getCustomerOrderByProductID(int customerOrderId) {
+    public CustomerOrder getCustomerOrderByProductID(int productId) {
         Connection connection = connectionPool.getConnection();
         CustomerOrder customerOrder = new CustomerOrder();
-        String query = "SELECT * FROM customer_order WHERE customer_order_id = (?)";
+        String query = "SELECT * FROM customer_order WHERE product_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)) {
-            ps.setInt(1, customerOrderId);
+            ps.setInt(1, productId);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){

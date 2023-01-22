@@ -1,28 +1,42 @@
 package com.solvd.pharmacyservice.models;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "paymentType")
+@XmlType(propOrder = {"paymentTypeId", "paymentTypeName"})
 public class PaymentType {
     private int paymentTypeId;
-    private String paymentType;
+    private String paymentTypeName;
+
+    public PaymentType(int paymentTypeId, String paymentTypeName) {
+        this.paymentTypeId = paymentTypeId;
+        this.paymentTypeName = paymentTypeName;
+    }
+
+    public PaymentType() {
+    }
 
     public int getPaymentTypeId() {
         return this.paymentTypeId;
     }
 
+    @XmlAttribute(name = "paymentTypeId")
     public void setPaymentTypeId(int paymentTypeId) {
         this.paymentTypeId = paymentTypeId;
     }
 
-    public String getPaymentType() {
-        return this.paymentType;
+    public String getPaymentTypeName() {
+        return this.paymentTypeName;
     }
 
-    public void setPaymentType(String paymentType) {
-        this.paymentType = paymentType;
+    @XmlElement(name = "paymentTypeName")
+    public void setPaymentTypeName(String paymentTypeName) {
+        this.paymentTypeName = paymentTypeName;
     }
 
     @Override
     public String toString() {
         return "\nPayment Type ID = " + paymentTypeId +
-                ", Payment Type = '" + paymentType + '\'';
+                ", Payment Type = '" + paymentTypeName + '\'';
     }
 }

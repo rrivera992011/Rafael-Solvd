@@ -1,6 +1,5 @@
 package com.solvd.pharmacyservice.sql.jdbc;
 
-import com.solvd.pharmacyservice.models.Customer;
 import com.solvd.pharmacyservice.models.Employee;
 import com.solvd.pharmacyservice.sql.*;
 import org.apache.logging.log4j.*;
@@ -40,7 +39,7 @@ public class EmployeeDAO implements IEmployeeDAO {
     public Employee createEntity(Employee employee) {
         Connection connection = connectionPool.getConnection();
         String query = "INSERT INTO employee (employee_id, first_name, last_name, employee_number, employee_type_id)" +
-                " VALUES((?), (?), (?), (?), (?), (?))";
+                " VALUES((?), (?), (?), (?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, employee.getEmployeeId());
             ps.setString(2, employee.getFirstName());

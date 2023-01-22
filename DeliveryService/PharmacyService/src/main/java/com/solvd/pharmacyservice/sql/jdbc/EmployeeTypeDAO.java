@@ -14,9 +14,9 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
     @Override
     public void updateEntity(EmployeeType employeeType) {
         Connection connection = connectionPool.getConnection();
-        String query = "UPDATE employee_type SET employee_type = (?) WHERE employee_type_id = (?) ";
+        String query = "UPDATE employee_type SET employee_type_name = (?) WHERE employee_type_id = (?) ";
         try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setString(1, employeeType.getEmployeeType());
+            ps.setString(1, employeeType.getEmployeeTypeName());
             ps.setInt(2, employeeType.getEmployeeTypeId());
             ps.execute();
         } catch (SQLException e) {
@@ -35,10 +35,10 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
     @Override
     public EmployeeType createEntity(EmployeeType employeeType) {
         Connection connection = connectionPool.getConnection();
-        String query = "INSERT INTO employee_type (employee_type_id, employee_type) VALUES((?), (?))";
+        String query = "INSERT INTO employee_type (employee_type_id, employee_type_name) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, employeeType.getEmployeeTypeId());
-            ps.setString(2, employeeType.getEmployeeType());
+            ps.setString(2, employeeType.getEmployeeTypeName());
             ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -85,7 +85,7 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
                 while(rs.next()){
                     EmployeeType employeeType = new EmployeeType();
                     employeeType.setEmployeeTypeId(rs.getInt("employee_type_id"));
-                    employeeType.setEmployeeType(rs.getString("employee_type"));
+                    employeeType.setEmployeeTypeName(rs.getString("employee_type_name"));
                     resultList.add(employeeType);
                 }
             }
@@ -114,7 +114,7 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     employeeType.setEmployeeTypeId(rs.getInt("employee_type_id"));
-                    employeeType.setEmployeeType(rs.getString("employee_type"));
+                    employeeType.setEmployeeTypeName(rs.getString("employee_type_name"));
                 }
             }
         } catch (SQLException e) {
@@ -132,17 +132,17 @@ public class EmployeeTypeDAO implements IEmployeeTypeDAO {
     }
 
     @Override
-    public EmployeeType getEmployeeTypeByEmployeeType(String employeeTypeName) {
+    public EmployeeType getEmployeeTypeByName(String employeeTypeName) {
         Connection connection = connectionPool.getConnection();
         EmployeeType employeeType = new EmployeeType();
-        String query = "SELECT * FROM employee_type WHERE employee_type = (?)";
+        String query = "SELECT * FROM employee_type WHERE employee_type_name = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setString(1, employeeTypeName);
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     employeeType.setEmployeeTypeId(rs.getInt("employee_type_id"));
-                    employeeType.setEmployeeType(rs.getString("employee_type"));
+                    employeeType.setEmployeeTypeName(rs.getString("employee_type_name"));
                 }
             }
         } catch (SQLException e) {

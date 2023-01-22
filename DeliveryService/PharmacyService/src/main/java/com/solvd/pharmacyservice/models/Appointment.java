@@ -1,34 +1,52 @@
 package com.solvd.pharmacyservice.models;
-import java.util.Date;
+import javax.xml.bind.annotation.*;
+import java.sql.Date;
 
+@XmlRootElement(name = "appointment")
+@XmlType(propOrder = {"appointmentId", "appointmentDate", "customerId", "employeeId", "appointmentTypeId"})
 public class Appointment {
 
     private int appointmentId;
-    private Date dateAndTime;
+    private Date appointmentDate;
     private int customerId;
     private int employeeId;
     private int appointmentTypeId;
+
+    public Appointment(){
+
+    }
+
+    public Appointment(int appointmentId, Date appointmentDate, int customerId, int employeeId, int appointmentTypeId) {
+        this.appointmentId = appointmentId;
+        this.appointmentDate = appointmentDate;
+        this.customerId = customerId;
+        this.employeeId = employeeId;
+        this.appointmentTypeId = appointmentTypeId;
+    }
 
     public int getAppointmentId() {
         return this.appointmentId;
     }
 
+    @XmlAttribute(name = "appointmentId")
     public void setAppointmentId(int appointmentId) {
         this.appointmentId = appointmentId;
     }
 
-    public Date getDateAndTime() {
-        return this.dateAndTime;
+    public Date getAppointmentDate() {
+        return this.appointmentDate;
     }
 
-    public void setDateAndTime(Date dateAndTime) {
-        this.dateAndTime = dateAndTime;
+    @XmlElement(name = "appointmentDate")
+    public void setAppointmentDate(Date appointmentDate) {
+        this.appointmentDate = appointmentDate;
     }
 
     public int getCustomerId() {
         return this.customerId;
     }
 
+    @XmlElement(name = "customerId")
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
@@ -37,6 +55,7 @@ public class Appointment {
         return this.employeeId;
     }
 
+    @XmlElement(name = "employeeId")
     public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
@@ -45,6 +64,7 @@ public class Appointment {
         return this.appointmentTypeId;
     }
 
+    @XmlElement(name = "appointmentTypeId")
     public void setAppointmentTypeId(int appointmentTypeId) {
         this.appointmentTypeId = appointmentTypeId;
     }
@@ -52,7 +72,7 @@ public class Appointment {
     @Override
     public String toString() {
         return "\nAppointment ID = " + appointmentId +
-                ", Date and Time = " + dateAndTime +
+                ", Appointment Date = " + appointmentDate +
                 ", Customer ID = " + customerId +
                 ", Employee Id = " + employeeId +
                 ", Appointment Type ID = " + appointmentTypeId;

@@ -1,14 +1,26 @@
 package com.solvd.pharmacyservice.models;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "recipe")
+@XmlType(propOrder = {"recipeId", "recipeSize"})
 public class Recipe {
     private int recipeId;
     private double recipeSize;
-    private String medicineName;
+
+    public Recipe(int recipeId, double recipeSize) {
+        this.recipeId = recipeId;
+        this.recipeSize = recipeSize;
+    }
+
+    public Recipe() {
+    }
 
     public int getRecipeId() {
         return this.recipeId;
     }
 
+    @XmlAttribute(name = "recipeId")
     public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }
@@ -17,22 +29,14 @@ public class Recipe {
         return this.recipeSize;
     }
 
+    @XmlElement(name = "recipeSize")
     public void setRecipeSize(double recipeSize) {
         this.recipeSize = recipeSize;
-    }
-
-    public String getMedicineName() {
-        return this.medicineName;
-    }
-
-    public void setMedicineName(String medicineName) {
-        this.medicineName = medicineName;
     }
 
     @Override
     public String toString() {
         return "\nRecipe ID = " + recipeId +
-                ", Recipe Size = " + recipeSize +
-                ", Medicine Name = '" + medicineName + '\'';
+                ", Recipe Size = " + recipeSize;
     }
 }

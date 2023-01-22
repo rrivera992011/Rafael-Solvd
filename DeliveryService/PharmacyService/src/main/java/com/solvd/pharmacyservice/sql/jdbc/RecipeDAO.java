@@ -14,10 +14,9 @@ public class RecipeDAO implements IRecipeDAO {
     @Override
     public void updateEntity(Recipe recipe) {
         Connection connection = connectionPool.getConnection();
-        String query = "UPDATE recipe SET recipe_size = (?), medicine_name = (?) WHERE recipe_id = (?)";
+        String query = "UPDATE recipe SET recipe_size = (?) WHERE recipe_id = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setDouble(1, recipe.getRecipeSize());
-            ps.setString(2, recipe.getMedicineName());
             ps.setInt(3, recipe.getRecipeId());
             ps.execute();
         } catch (SQLException e) {
@@ -36,11 +35,10 @@ public class RecipeDAO implements IRecipeDAO {
     @Override
     public Recipe createEntity(Recipe recipe) {
         Connection connection = connectionPool.getConnection();
-        String query = "INSERT INTO recipe (recipe_id, recipe_size, medicine_name) VALUES((?), (?), (?))";
+        String query = "INSERT INTO recipe (recipe_id, recipe_size) VALUES((?), (?))";
         try(PreparedStatement ps = connection.prepareStatement(query)){
             ps.setInt(1, recipe.getRecipeId());
             ps.setDouble(2, recipe.getRecipeSize());
-            ps.setString(3, recipe.getMedicineName());
             ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
@@ -88,7 +86,6 @@ public class RecipeDAO implements IRecipeDAO {
                     Recipe recipe = new Recipe();
                     recipe.setRecipeId(rs.getInt("recipe_id"));
                     recipe.setRecipeSize(rs.getDouble("recipe_size"));
-                    recipe.setMedicineName(rs.getString("medicine_name"));
                     resultList.add(recipe);
                 }
             }
@@ -118,7 +115,6 @@ public class RecipeDAO implements IRecipeDAO {
                 while(rs.next()){
                     recipe.setRecipeId(rs.getInt("recipe_id"));
                     recipe.setRecipeSize(rs.getDouble("recipe_size"));
-                    recipe.setMedicineName(rs.getString("medicine_name"));
                 }
             }
         } catch (SQLException e) {
@@ -136,42 +132,19 @@ public class RecipeDAO implements IRecipeDAO {
     }
 
     @Override
-    public Recipe getRecipeByMedicineName(String medicineName) {
+    public Recipe getRecipeFromRecipeSize(double recipeSize) {
         Connection connection = connectionPool.getConnection();
         Recipe recipe = new Recipe();
-        String query = "SELECT * FROM recipe WHERE medicine_name = (?)";
+        String query = "SELECT * FROM recipe WHERE recipe_size = (?)";
         try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setString(1, medicineName);
+            ps.setDouble(1, recipe.getRecipeSize());
             ps.execute();
             try(ResultSet rs = ps.getResultSet()){
                 while(rs.next()){
                     recipe.setRecipeId(rs.getInt("recipe_id"));
                     recipe.setRecipeSize(rs.getDouble("recipe_size"));
-                    recipe.setMedicineName(rs.getString("medicine_name"));
                 }
             }
-        } catch (SQLException e) {
-            LOGGER.error(e);
-        } finally {
-            if(connection != null){
-                try{
-                    connectionPool.releaseConnection(connection);
-                } catch (SQLException e) {
-                    LOGGER.error(e);
-                }
-            }
-        }
-        return recipe;
-    }
-
-    @Override
-    public void updateRecipeSize(Recipe recipe) {
-        Connection connection = connectionPool.getConnection();
-        String query = "UPDATE recipe SET recipe_size = (?) WHERE recipe_id = (?)";
-        try(PreparedStatement ps = connection.prepareStatement(query)){
-            ps.setDouble(1, recipe.getRecipeSize());
-            ps.setInt(2, recipe.getRecipeId());
-            ps.execute();
         } catch (SQLException e) {
             LOGGER.error(e);
         } finally {
@@ -183,5 +156,6 @@ public class RecipeDAO implements IRecipeDAO {
                 }
             }
         }
+        return recipe;
     }
 }
