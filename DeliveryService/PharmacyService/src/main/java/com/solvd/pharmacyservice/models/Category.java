@@ -20,7 +20,7 @@ public class Category {
         return categoryId;
     }
 
-    @XmlAttribute(name = "categoryId")
+    @XmlAttribute(name = "id")
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
     }

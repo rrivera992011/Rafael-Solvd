@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <pharmacy>
     <customers>
-        <customer customerId="1">
+        <customer id="1">
             <firstName>Sam</firstName>
             <lastName>Martino</lastName>
             <phoneNumber>2345643212</phoneNumber>
             <age>23</age>
             <address>12 Easy Street</address>
         </customer>
-        <customer customerId="2">
+        <customer id="2">
             <firstName>Nugget</firstName>
             <lastName>Lost</lastName>
             <phoneNumber>9742123468</phoneNumber>
@@ -17,21 +17,21 @@
         </customer>
     </customers>
     <employeeTypes>
-        <employeeType employeeTypeId="1">
+        <employeeType id="1">
             <employeeTypeName>Clerk</employeeTypeName>
         </employeeType>
-        <employeeType employeeTypeId="2">
+        <employeeType id="2">
             <employeeTypeName>Doctor</employeeTypeName>
         </employeeType>
     </employeeTypes>
     <employees>
-        <employee employeeId="1">
+        <employee id="1">
             <firstName>Michael</firstName>
             <lastName>Morris</lastName>
             <employeeNumber>123443223</employeeNumber>
             <employeeTypeId>1</employeeTypeId>
         </employee>
-        <employee employeeId="2">
+        <employee id="2">
             <firstName>Antonio</firstName>
             <lastName>Mayor</lastName>
             <employeeNumber>212344553</employeeNumber>
@@ -39,54 +39,54 @@
         </employee>
     </employees>
     <appointmentTypes>
-        <appointmentType appointmentTypeId="1">
+        <appointmentType id="1">
             <appointmentTypeName>Vaccine</appointmentTypeName>
         </appointmentType>
-        <appointmentType appointmentTypeId="2">
+        <appointmentType id="2">
             <appointmentTypeName>Recommendation</appointmentTypeName>
         </appointmentType>
     </appointmentTypes>
     <examinationTypes>
-        <examinationType examinationTypeId="1">
+        <examinationType id="1">
             <examinationTypeName>COVID Test</examinationTypeName>
         </examinationType>
-        <examinationType examinationTypeId="2">
+        <examinationType id="2">
             <examinationTypeName>Measles Test</examinationTypeName>
         </examinationType>
     </examinationTypes>
     <paymentTypes>
-        <paymentType paymentTypeId="1">
+        <paymentType id="1">
             <paymentTypeName>Cash</paymentTypeName>
         </paymentType>
-        <paymentType paymentTypeId="2">
+        <paymentType id="2">
             <paymentTypeName>Credit Card</paymentTypeName>
         </paymentType>
     </paymentTypes>
     <recipes>
-        <recipe recipeId="1">
+        <recipe id="1">
             <recipeSize>50</recipeSize>
         </recipe>
-        <recipe recipeId="2">
+        <recipe id="2">
             <recipeSize>100</recipeSize>
         </recipe>
     </recipes>
     <categories>
-        <category categoryId="1">
+        <category id="1">
             <categoryName>Antibiotic</categoryName>
         </category>
-        <category categoryId="2">
+        <category id="2">
             <categoryName>Beta blocker</categoryName>
         </category>
     </categories>
     <inventories>
-        <inventory inventoryId="1">
+        <inventory id="1">
             <medicineName>Amoxil</medicineName>
             <amountLeft>100</amountLeft>
             <amountTaken>2</amountTaken>
             <categoryId>1</categoryId>
             <priceOfMedicine>12.99</priceOfMedicine>
         </inventory>
-        <inventory inventoryId="2">
+        <inventory id="2">
             <medicineName>Atenolol</medicineName>
             <amountLeft>99</amountLeft>
             <amountTaken>3</amountTaken>
@@ -95,14 +95,14 @@
         </inventory>
     </inventories>
     <customerOrders>
-        <customerOrder customerOrderId="1">
+        <customerOrder id="1">
             <orderTotal>18.25</orderTotal>
             <customerId>1</customerId>
             <orderDate>2022-12-24</orderDate>
             <paymentTypeId>1</paymentTypeId>
             <productId>1</productId>
         </customerOrder>
-        <customerOrder customerOrderId="2">
+        <customerOrder id="2">
             <orderTotal>13.57</orderTotal>
             <customerId>2</customerId>
             <orderDate>2023-01-19</orderDate>
@@ -111,7 +111,7 @@
         </customerOrder>
     </customerOrders>
     <prescriptions>
-        <prescription prescriptionId="1">
+        <prescription id="1">
             <rxNumber>1234543</rxNumber>
             <priceOfPrescription>25.13</priceOfPrescription>
             <amountOfMedicine>50</amountOfMedicine>
@@ -120,7 +120,7 @@
             <inventoryId>1</inventoryId>
             <recipeId>1</recipeId>
             </prescription>
-        <prescription prescriptionId="2">
+        <prescription id="2">
             <rxNumber>12343432</rxNumber>
             <priceOfPrescription>30.79</priceOfPrescription>
             <amountOfMedicine>100</amountOfMedicine>
@@ -131,13 +131,13 @@
         </prescription>
     </prescriptions>
     <appointments>
-        <appointment appointmentId="1">
+        <appointment id="1">
             <appointmentDate>2022-12-27</appointmentDate>
             <customerId>1</customerId>
             <employeeId>2</employeeId>
             <appointmentTypeId>1</appointmentTypeId>
         </appointment>
-        <appointment appointmentId="2">
+        <appointment id="2">
             <appointmentDate>2023-01-3</appointmentDate>
             <customerId>2</customerId>
             <employeeId>2</employeeId>

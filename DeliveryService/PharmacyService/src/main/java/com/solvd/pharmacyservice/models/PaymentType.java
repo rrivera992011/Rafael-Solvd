@@ -20,7 +20,7 @@ public class PaymentType {
         return this.paymentTypeId;
     }
 
-    @XmlAttribute(name = "paymentTypeId")
+    @XmlAttribute(name = "id")
     public void setPaymentTypeId(int paymentTypeId) {
         this.paymentTypeId = paymentTypeId;
     }

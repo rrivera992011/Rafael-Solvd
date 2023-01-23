@@ -21,7 +21,7 @@ public class AppointmentType {
         return this.appointmentTypeId;
     }
 
-    @XmlAttribute(name = "appointmentTypeId")
+    @XmlAttribute(name = "id")
     public void setAppointmentTypeId(int appointmentTypeId) {
         this.appointmentTypeId = appointmentTypeId;
     }

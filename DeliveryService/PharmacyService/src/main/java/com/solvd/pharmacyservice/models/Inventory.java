@@ -28,7 +28,7 @@ public class Inventory {
         return this.inventoryId;
     }
 
-    @XmlAttribute(name = "inventoryId")
+    @XmlAttribute(name = "id")
     public void setInventoryId(int inventoryId) {
         this.inventoryId = inventoryId;
     }

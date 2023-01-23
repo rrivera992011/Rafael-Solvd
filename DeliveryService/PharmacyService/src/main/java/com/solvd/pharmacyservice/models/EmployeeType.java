@@ -20,7 +20,7 @@ public class EmployeeType{
         return this.employeeTypeId;
     }
 
-    @XmlAttribute(name = "employeeTypeId")
+    @XmlAttribute(name = "id")
     public void setEmployeeTypeId(int employeeTypeId) {
         this.employeeTypeId = employeeTypeId;
     }

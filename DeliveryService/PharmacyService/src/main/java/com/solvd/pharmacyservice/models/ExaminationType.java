@@ -20,7 +20,7 @@ public class ExaminationType {
         return this.examinationTypeId;
     }
 
-    @XmlAttribute(name = "examinationTypeId")
+    @XmlAttribute(name = "id")
     public void setExaminationTypeId(int examinationTypeId) {
         this.examinationTypeId = examinationTypeId;
     }

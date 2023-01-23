@@ -20,7 +20,7 @@ public class Recipe {
         return this.recipeId;
     }
 
-    @XmlAttribute(name = "recipeId")
+    @XmlAttribute(name = "id")
     public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
     }

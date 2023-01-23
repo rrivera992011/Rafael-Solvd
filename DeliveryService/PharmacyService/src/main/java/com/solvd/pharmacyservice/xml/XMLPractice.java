@@ -95,7 +95,7 @@ public class XMLPractice {
             switch(entity){
                 case "customer":
                     Customer customer = new Customer();
-                    customer.setCustomerId(Integer.parseInt(attributes.getNamedItem("customerId").getNodeValue()));
+                    customer.setCustomerId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     customer.setFirstName(element.getElementsByTagName("firstName").item(0).getTextContent());
                     customer.setLastName(element.getElementsByTagName("lastName").item(0).getTextContent());
                     customer.setPhoneNumber(element.getElementsByTagName("phoneNumber").item(0).getTextContent());
@@ -105,13 +105,13 @@ public class XMLPractice {
                     break;
                 case "employeeType":
                     EmployeeType employeeType = new EmployeeType();
-                    employeeType.setEmployeeTypeId(Integer.parseInt(attributes.getNamedItem("employeeTypeId").getNodeValue()));
+                    employeeType.setEmployeeTypeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     employeeType.setEmployeeTypeName(element.getElementsByTagName("employeeTypeName").item(0).getTextContent());
                     employeeTypes.add(employeeType);
                     break;
                 case "employee":
                     Employee employee = new Employee();
-                    employee.setEmployeeId(Integer.parseInt(attributes.getNamedItem("employeeId").getNodeValue()));
+                    employee.setEmployeeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     employee.setFirstName(element.getElementsByTagName("firstName").item(0).getTextContent());
                     employee.setLastName(element.getElementsByTagName("lastName").item(0).getTextContent());
                     employee.setEmployeeNumber(element.getElementsByTagName("employeeNumber").item(0).getTextContent());
@@ -120,37 +120,37 @@ public class XMLPractice {
                     break;
                 case "appointmentType":
                     AppointmentType appointmentType = new AppointmentType();
-                    appointmentType.setAppointmentTypeId(Integer.parseInt(attributes.getNamedItem("appointmentTypeId").getNodeValue()));
+                    appointmentType.setAppointmentTypeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     appointmentType.setAppointmentTypeName(element.getElementsByTagName("appointmentTypeName").item(0).getTextContent());
                     appointmentTypes.add(appointmentType);
                     break;
                 case "examinationType":
                     ExaminationType examinationType = new ExaminationType();
-                    examinationType.setExaminationTypeId(Integer.parseInt(attributes.getNamedItem("examinationTypeId").getNodeValue()));
+                    examinationType.setExaminationTypeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     examinationType.setExaminationTypeName(element.getElementsByTagName("examinationTypeName").item(0).getTextContent());
                     examinationTypes.add(examinationType);
                     break;
                 case "paymentType":
                     PaymentType paymentType = new PaymentType();
-                    paymentType.setPaymentTypeId(Integer.parseInt(attributes.getNamedItem("paymentTypeId").getNodeValue()));
+                    paymentType.setPaymentTypeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     paymentType.setPaymentTypeName(element.getElementsByTagName("paymentTypeName").item(0).getTextContent());
                     paymentTypes.add(paymentType);
                     break;
                 case "recipe":
                     Recipe recipe = new Recipe();
-                    recipe.setRecipeId(Integer.parseInt(attributes.getNamedItem("recipeId").getNodeValue()));
+                    recipe.setRecipeId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     recipe.setRecipeSize(Double.parseDouble(element.getElementsByTagName("recipeSize").item(0).getTextContent()));
                     recipes.add(recipe);
                     break;
                 case "category":
                     Category category = new Category();
-                    category.setCategoryId(Integer.parseInt(attributes.getNamedItem("categoryId").getNodeValue()));
+                    category.setCategoryId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     category.setCategoryName(element.getElementsByTagName("categoryName").item(0).getTextContent());
                     categories.add(category);
                     break;
                 case "inventory":
                     Inventory inventory = new Inventory();
-                    inventory.setInventoryId(Integer.parseInt(attributes.getNamedItem("inventoryId").getNodeValue()));
+                    inventory.setInventoryId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     inventory.setMedicineName(element.getElementsByTagName("medicineName").item(0).getTextContent());
                     inventory.setAmountLeft(Integer.parseInt(element.getElementsByTagName("amountLeft").item(0).getTextContent()));
                     inventory.setAmountTaken(Integer.parseInt(element.getElementsByTagName("amountTaken").item(0).getTextContent()));
@@ -160,7 +160,7 @@ public class XMLPractice {
                     break;
                 case "customerOrder":
                     CustomerOrder customerOrder = new CustomerOrder();
-                    customerOrder.setCustomerOrderId(Integer.parseInt(attributes.getNamedItem("customerOrderId").getNodeValue()));
+                    customerOrder.setCustomerOrderId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     customerOrder.setOrderTotal(Double.parseDouble(element.getElementsByTagName("orderTotal").item(0).getTextContent()));
                     customerOrder.setOrderDate(Date.valueOf(element.getElementsByTagName("orderDate").item(0).getTextContent()));
                     customerOrder.setPaymentTypeId(Integer.parseInt(element.getElementsByTagName("paymentTypeId").item(0).getTextContent()));
@@ -169,7 +169,7 @@ public class XMLPractice {
                     break;
                 case "prescription":
                     Prescription prescription = new Prescription();
-                    prescription.setPrescriptionId(Integer.parseInt(attributes.getNamedItem("prescriptionId").getNodeValue()));
+                    prescription.setPrescriptionId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     prescription.setRxNumber(element.getElementsByTagName("rxNumber").item(0).getTextContent());
                     prescription.setPriceOfPrescription(Double.parseDouble(element.getElementsByTagName("priceOfPrescription").item(0).getTextContent()));
                     prescription.setAmountOfMedicine(Integer.parseInt(element.getElementsByTagName("amountOfMedicine").item(0).getTextContent()));
@@ -181,7 +181,7 @@ public class XMLPractice {
                     break;
                 case "appointment":
                     Appointment appointment = new Appointment();
-                    appointment.setAppointmentId(Integer.parseInt(attributes.getNamedItem("appointmentId").getNodeValue()));
+                    appointment.setAppointmentId(Integer.parseInt(attributes.getNamedItem("id").getNodeValue()));
                     appointment.setAppointmentDate(Date.valueOf(element.getElementsByTagName("appointmentDate").item(0).getTextContent()));
                     appointment.setCustomerId(Integer.parseInt(element.getElementsByTagName("customerId").item(0).getTextContent()));
                     appointment.setEmployeeId(Integer.parseInt(element.getElementsByTagName("employeeId").item(0).getTextContent()));

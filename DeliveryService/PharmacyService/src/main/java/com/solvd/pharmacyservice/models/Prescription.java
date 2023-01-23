@@ -4,13 +4,15 @@ import javax.xml.bind.annotation.*;
 import java.sql.Date;
 
 @XmlRootElement(name = "prescription")
-@XmlType(propOrder = {"prescriptionId", "rxNumber", "priceOfPrescription", "amountOfMedicine", "dateFilled",
+@XmlType(propOrder = {"prescriptionId", "rxNumber", "priceOfPrescription", "amountOfMedicine", "jaxbDateFilled",
         "customerId", "inventoryId", "recipeId"})
 public class Prescription {
     private int prescriptionId;
     private String rxNumber;
     private double priceOfPrescription;
     private int amountOfMedicine;
+
+    private java.util.Date jaxbDateFilled;
     private Date dateFilled;
     private int customerId;
     private int inventoryId;
@@ -35,7 +37,7 @@ public class Prescription {
         return prescriptionId;
     }
 
-    @XmlAttribute(name = "prescriptionId")
+    @XmlAttribute(name = "id")
     public void setPrescriptionId(int prescriptionId) {
         this.prescriptionId = prescriptionId;
     }
@@ -71,9 +73,18 @@ public class Prescription {
         return dateFilled;
     }
 
-    @XmlElement(name = "dateFilled")
+
     public void setDateFilled(Date dateFilled) {
         this.dateFilled = dateFilled;
+    }
+
+    public java.util.Date getJaxbDateFilled() {
+        return this.jaxbDateFilled;
+    }
+
+    @XmlElement(name = "dateFilled")
+    public void setJaxbDateFilled(java.util.Date jaxbDateFilled) {
+        this.jaxbDateFilled = jaxbDateFilled;
     }
 
     public int getCustomerId() {

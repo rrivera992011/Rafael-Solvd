@@ -29,7 +29,7 @@ public class Customer {
         return this.customerId;
     }
 
-    @XmlAttribute(name = "customerId")
+    @XmlAttribute(name = "id")
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
