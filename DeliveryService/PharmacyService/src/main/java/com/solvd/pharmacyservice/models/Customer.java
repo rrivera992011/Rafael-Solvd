@@ -1,9 +1,10 @@
 package com.solvd.pharmacyservice.models;
 
 import javax.xml.bind.annotation.*;
+import java.util.Date;
 
 @XmlRootElement(name = "customer")
-@XmlType(propOrder = {"customerId", "firstName", "lastName", "phoneNumber", "age", "address"})
+@XmlType(propOrder = {"customerId", "firstName", "lastName", "phoneNumber", "age", "address", "dateOfBirth"})
 public class Customer {
 
     private int customerId;
@@ -11,6 +12,7 @@ public class Customer {
     private String lastName;
     private String phoneNumber;
     private int age;
+    private Date dateOfBirth;
     private String address;
 
     public Customer(int customerId, String firstName, String lastName, String phoneNumber, int age, String address) {
@@ -77,6 +79,15 @@ public class Customer {
     @XmlElement(name = "address")
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Date getDateOfBirth() {
+        return this.dateOfBirth;
+    }
+
+    @XmlElement(name = "dateOfBirth")
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     @Override

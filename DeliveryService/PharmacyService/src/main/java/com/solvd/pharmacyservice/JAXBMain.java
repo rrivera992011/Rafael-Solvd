@@ -33,6 +33,9 @@ public class JAXBMain {
         Customer adam = new Customer(2, "Adam", "Jones", "5467896543", 17,
                 "12 Easy Street" );
 
+        daniel.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse("1997-08-09"));
+        adam.setDateOfBirth(new SimpleDateFormat("yyyy-MM-dd").parse("2005-10-15"));
+
         customers.add(daniel);
         customers.add(adam);
 
@@ -93,9 +96,6 @@ public class JAXBMain {
         CustomerOrder orderForAdam = new CustomerOrder(2, 13.57, 2,
                 Date.valueOf("2023-01-19"), 2, 2);
 
-        orderForDaniel.setJaxbOrderDate(new SimpleDateFormat("yyyy-MM-dd").parse("2022-12-24"));
-        orderForAdam.setJaxbOrderDate(new SimpleDateFormat("yyyy-MM-dd").parse("2023-01-19"));
-
         customerOrders.add(orderForDaniel);
         customerOrders.add(orderForAdam);
 
@@ -103,9 +103,6 @@ public class JAXBMain {
                 50, Date.valueOf("2022-12-24"), 1, 1, 1);
         Prescription prescriptionForAdam = new Prescription(2, "12343432", 30.79,
                 100, Date.valueOf("2023-01-19"), 2, 2, 2);
-
-        prescriptionForDaniel.setJaxbDateFilled(new SimpleDateFormat("yyyy-MM-dd").parse("2022-12-24"));
-        prescriptionForAdam.setJaxbDateFilled(new SimpleDateFormat("yyyy-MM-dd").parse("2023-01-19"));
 
         prescriptions.add(prescriptionForDaniel);
         prescriptions.add(prescriptionForAdam);
@@ -116,9 +113,6 @@ public class JAXBMain {
         Appointment adamAppointment = new Appointment(2,
                 Date.valueOf("2023-01-03"), 2, 2,
                 1);
-
-        adamAppointment.setJaxbAppointmentDate(new SimpleDateFormat("yyyy-MM-dd").parse("2022-12-27"));
-        danielAppointment.setJaxbAppointmentDate(new SimpleDateFormat("yyyy-MM-dd").parse("2022-01-03"));
 
         appointments.add(danielAppointment);
         appointments.add(adamAppointment);
