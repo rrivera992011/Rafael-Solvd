@@ -96,56 +96,6 @@
             <priceOfMedicine>12.99</priceOfMedicine>
         </inventory>
     </inventories>
-    <customerOrders>
-        <customerOrder id="1">
-            <orderTotal>18.25</orderTotal>
-            <customerId>1</customerId>
-            <orderDate/>
-            <paymentTypeId>1</paymentTypeId>
-            <productId>1</productId>
-        </customerOrder>
-        <customerOrder id="2">
-            <orderTotal>13.57</orderTotal>
-            <customerId>2</customerId>
-            <orderDate/>
-            <paymentTypeId>2</paymentTypeId>
-            <productId>2</productId>
-        </customerOrder>
-    </customerOrders>
-    <prescriptions>
-        <prescription id="1">
-            <rxNumber>1234543</rxNumber>
-            <priceOfPrescription>25.13</priceOfPrescription>
-            <amountOfMedicine>50</amountOfMedicine>
-            <dateFilled/>
-            <customerId>1</customerId>
-            <inventoryId>1</inventoryId>
-            <recipeId>1</recipeId>
-        </prescription>
-        <prescription id="2">
-            <rxNumber>12343432</rxNumber>
-            <priceOfPrescription>30.79</priceOfPrescription>
-            <amountOfMedicine>100</amountOfMedicine>
-            <dateFilled/>
-            <customerId>2</customerId>
-            <inventoryId>2</inventoryId>
-            <recipeId>2</recipeId>
-        </prescription>
-    </prescriptions>
-    <appointments>
-        <appointment id="1">
-            <appointmentDate/>
-            <customerId>1</customerId>
-            <employeeId>2</employeeId>
-            <appointmentTypeId>1</appointmentTypeId>
-        </appointment>
-        <appointment id="2">
-            <appointmentDate/>
-            <customerId>2</customerId>
-            <employeeId>2</employeeId>
-            <appointmentTypeId>1</appointmentTypeId>
-        </appointment>
-    </appointments>
     <examinations>
         <examination id="1">
             <examResult>Positive</examResult>

@@ -5,8 +5,7 @@ import java.util.List;
 
 @XmlRootElement(name = "pharmacy")
 @XmlType(propOrder = {"customerList", "employeeTypeList", "employeeList", "appointmentTypeList", "examinationTypeList",
-"paymentTypeList", "recipeList", "categoryList", "inventoryList", "customerOrderList", "prescriptionList",
-        "appointmentList", "examinationList"})
+"paymentTypeList", "recipeList", "categoryList", "inventoryList", "examinationList"})
 public class Pharmacy {
     private List<Customer> customerList;
     private List<EmployeeType> employeeTypeList;
@@ -17,9 +16,6 @@ public class Pharmacy {
     private List<Recipe> recipeList;
     private List<Category> categoryList;
     private List<Inventory> inventoryList;
-    private List<CustomerOrder> customerOrderList;
-    private List<Prescription> prescriptionList;
-    private List<Appointment> appointmentList;
     private List<Examination> examinationList;
 
     public Pharmacy() {
@@ -29,8 +25,7 @@ public class Pharmacy {
     public Pharmacy(List<Customer> customerList, List<EmployeeType> employeeTypeList, List<Employee> employeeList,
                     List<AppointmentType> appointmentTypeList, List<ExaminationType> examinationTypeList,
                     List<PaymentType> paymentTypeList, List<Recipe> recipeList, List<Category> categoryList,
-                    List<Inventory> inventoryList, List<CustomerOrder> customerOrderList, List<Prescription> prescriptionList,
-                    List<Appointment> appointmentList, List<Examination> examinationList) {
+                    List<Inventory> inventoryList, List<Examination> examinationList) {
 
         this.customerList = customerList;
         this.employeeTypeList = employeeTypeList;
@@ -41,9 +36,6 @@ public class Pharmacy {
         this.recipeList = recipeList;
         this.categoryList = categoryList;
         this.inventoryList = inventoryList;
-        this.customerOrderList = customerOrderList;
-        this.prescriptionList = prescriptionList;
-        this.appointmentList = appointmentList;
         this.examinationList = examinationList;
     }
 
@@ -137,36 +129,6 @@ public class Pharmacy {
         this.inventoryList = inventoryList;
     }
 
-    public List<CustomerOrder> getCustomerOrderList() {
-        return this.customerOrderList;
-    }
-
-    @XmlElementWrapper(name = "customerOrders")
-    @XmlElement (name = "customerOrder", type = CustomerOrder.class)
-    public void setCustomerOrderList(List<CustomerOrder> customerOrderList) {
-        this.customerOrderList = customerOrderList;
-    }
-
-    public List<Prescription> getPrescriptionList() {
-        return this.prescriptionList;
-    }
-
-    @XmlElementWrapper(name = "prescriptions")
-    @XmlElement (name = "prescription", type = Prescription.class)
-    public void setPrescriptionList(List<Prescription> prescriptionList) {
-        this.prescriptionList = prescriptionList;
-    }
-
-    public List<Appointment> getAppointmentList() {
-        return this.appointmentList;
-    }
-
-    @XmlElementWrapper(name = "appointments")
-    @XmlElement (name = "appointment", type = Appointment.class)
-    public void setAppointmentList(List<Appointment> appointmentList) {
-        this.appointmentList = appointmentList;
-    }
-
     public List<Examination> getExaminationList() {
         return this.examinationList;
     }
@@ -175,5 +137,19 @@ public class Pharmacy {
     @XmlElement (name = "examination", type = Examination.class)
     public void setExaminationList(List<Examination> examinationList) {
         this.examinationList = examinationList;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer List = " + customerList +
+                "\nEmployee Type List = " + employeeTypeList +
+                "\nEmployee List=" + employeeList +
+                "\nAppointment Type List = " + appointmentTypeList +
+                "\nExamination Type List = " + examinationTypeList +
+                "\nPayment Type List = " + paymentTypeList +
+                "\nRecipe List = " + recipeList +
+                "\nCategory List = " + categoryList +
+                "\nInventory List = " + inventoryList +
+                "\nExamination List = " + examinationList;
     }
 }

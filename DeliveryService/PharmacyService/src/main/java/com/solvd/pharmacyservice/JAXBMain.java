@@ -23,9 +23,6 @@ public class JAXBMain {
         List<Recipe> recipes = new ArrayList<>();
         List<Category> categories = new ArrayList<>();
         List<Inventory> inventories = new ArrayList<>();
-        List<CustomerOrder> customerOrders = new ArrayList<>();
-        List<Prescription> prescriptions = new ArrayList<>();
-        List<Appointment> appointments = new ArrayList<>();
         List<Examination> examinations = new ArrayList<>();
 
         Customer daniel = new Customer(1, "Daniel", "Andrews","12343234123",
@@ -91,32 +88,6 @@ public class JAXBMain {
         inventories.add(atenolol);
         inventories.add(amoxil);
 
-        CustomerOrder orderForDaniel = new CustomerOrder(1, 18.25, 1,
-                Date.valueOf("2022-12-24"), 1, 1);
-        CustomerOrder orderForAdam = new CustomerOrder(2, 13.57, 2,
-                Date.valueOf("2023-01-19"), 2, 2);
-
-        customerOrders.add(orderForDaniel);
-        customerOrders.add(orderForAdam);
-
-        Prescription prescriptionForDaniel = new Prescription(1, "1234543", 25.13,
-                50, Date.valueOf("2022-12-24"), 1, 1, 1);
-        Prescription prescriptionForAdam = new Prescription(2, "12343432", 30.79,
-                100, Date.valueOf("2023-01-19"), 2, 2, 2);
-
-        prescriptions.add(prescriptionForDaniel);
-        prescriptions.add(prescriptionForAdam);
-
-        Appointment danielAppointment = new Appointment(1,
-                Date.valueOf("2022-12-27"), 1, 2,
-                1);
-        Appointment adamAppointment = new Appointment(2,
-                Date.valueOf("2023-01-03"), 2, 2,
-                1);
-
-        appointments.add(danielAppointment);
-        appointments.add(adamAppointment);
-
         Examination danielExamination = new Examination(1, "Positive", 2,
                 1, 1);
         Examination adamExamination = new Examination(2, "Positive", 2,
@@ -126,13 +97,13 @@ public class JAXBMain {
         examinations.add(adamExamination);
 
         Pharmacy pharmacy = new Pharmacy(customers, employeeTypes, employees, appointmentTypes, examinationTypes,
-                paymentTypes, recipes, categories, inventories, customerOrders, prescriptions, appointments,
+                paymentTypes, recipes, categories, inventories,
                 examinations);
 
         try{
             JAXBContext context = JAXBContext.newInstance(Pharmacy.class, Customer.class, EmployeeType.class,
                     Employee.class, AppointmentType.class, PaymentType.class, Recipe.class, Category.class,
-                    Inventory.class, CustomerOrder.class, Prescription.class, Appointment.class, Examination.class);
+                    Inventory.class, Examination.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             marshaller.marshal(pharmacy, new File(System.getProperty("user.dir") + "/src/main/resources/pharmacy_output.xml"));
@@ -152,7 +123,7 @@ public class JAXBMain {
         try{
             JAXBContext context = JAXBContext.newInstance(Pharmacy.class, Customer.class, EmployeeType.class,
                     Employee.class, AppointmentType.class, PaymentType.class, Recipe.class, Category.class,
-                    Inventory.class, CustomerOrder.class, Prescription.class, Appointment.class, Examination.class);
+                    Inventory.class, Examination.class);
             pharmacy = (Pharmacy) context.createUnmarshaller().unmarshal(new File(System.getProperty("user.dir") +
                     "/src/main/resources/pharmacy_output.xml"));
             LOGGER.log(MENU_LOG, "Unmarshalling complete");

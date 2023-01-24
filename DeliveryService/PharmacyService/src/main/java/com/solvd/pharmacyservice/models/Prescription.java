@@ -11,8 +11,6 @@ public class Prescription {
     private String rxNumber;
     private double priceOfPrescription;
     private int amountOfMedicine;
-
-    private java.util.Date jaxbDateFilled;
     private Date dateFilled;
     private int customerId;
     private int inventoryId;

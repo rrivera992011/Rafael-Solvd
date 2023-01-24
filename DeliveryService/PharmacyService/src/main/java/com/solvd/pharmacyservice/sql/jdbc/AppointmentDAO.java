@@ -4,7 +4,6 @@ import com.solvd.pharmacyservice.models.Appointment;
 import com.solvd.pharmacyservice.sql.*;
 import org.apache.logging.log4j.*;
 import java.sql.*;
-import java.sql.Date;
 import java.util.*;
 
 public class AppointmentDAO implements IAppointmentDAO {
